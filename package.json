@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/mathildeew/semester-project-2#readme",
   "dependencies": {
-    "bootstrap": "^5.2.0"
+    "bootstrap": "^5.2.0",
+    "bootstrap-icons": "^1.10.3"
   },
   "devDependencies": {
     "live-server": "^1.2.2",
