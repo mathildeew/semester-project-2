@@ -18,5 +18,8 @@
   "homepage": "https://github.com/mathildeew/semester-project-2#readme",
   "dependencies": {
     "bootstrap": "^5.2.0"
+  },
+  "devDependencies": {
+    "sass": "^1.58.0"
   }
 }
