@@ -1,3 +1,54 @@
+.gavel {
+  background: url(/assets/loader/gavel.png);
+  width: 200px;
+  height: 80px;
+  top: 70px;
+  left: 575px;
+  transform: rotate(45deg);
+  animation: rotate-gavel 2s linear infinite;
+}
 
+.blobs {
+  background: url(/assets/loader/blobs.png);
+  width: 100px;
+  height: 60px;
+  top: 110px;
+  left: 530px;
+  opacity: 0;
+  animation: show-blobs 2s linear infinite;
+}
+
+.block {
+  background: url(/assets/loader/block.png);
+  width: 100px;
+  height: 80px;
+  top: 150px;
+  left: 546px;
+}
+
+.gavel,
+.blobs,
+.block {
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+}
+
+@keyframes rotate-gavel {
+  50% {
+    rotate: -45deg;
+  }
+}
+@keyframes show-blobs {
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 70;
+  }
+  100% {
+    opacity: 100;
+  }
+}
 
 /*# sourceMappingURL=styles.css.map */
