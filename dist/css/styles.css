@@ -18,6 +18,10 @@ a {
   background-color: #9ee2d8 !important;
 }
 
+.bg-secondary {
+  background-color: #4f958a !important;
+}
+
 nav {
   box-shadow: 0 0 3px 3px #9ee2d8;
 }
