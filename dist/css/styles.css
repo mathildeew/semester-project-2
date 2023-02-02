@@ -1,3 +1,46 @@
+@import url("https://use.typekit.net/hmk0koo.css");
+h1 {
+  font-family: bely-display, sans-serif;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+p,
+a {
+  font-family: "soleil", sans-serif;
+}
+
+a {
+  color: black;
+}
+
+.bg-primary {
+  background-color: #9ee2d8 !important;
+}
+
+nav {
+  box-shadow: 0 0 3px 3px #9ee2d8;
+}
+
+.collapse {
+  box-shadow: 0 0 3px 3px #9ee2d8;
+}
+
+#navbarCollapse {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  box-shadow: 0 0 3px 3px #9ee2d8;
+}
+
+.navpic {
+  width: 40px;
+  height: 40px;
+  background: red;
+  border: 2px solid black;
+  border-radius: 50%;
+}
+
 .gavel {
   background: url(/assets/loader/gavel.png);
   width: 200px;

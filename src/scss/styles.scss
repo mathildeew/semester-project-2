@@ -1,3 +1,16 @@
+@import "variables.scss";
+@import "reboot.scss";
+@import "utilities.scss";
+@import "navbar.scss";
+
+.navpic {
+  width: 40px;
+  height: 40px;
+  background: red;
+  border: 2px solid black;
+  border-radius: 50%;
+}
+
 // Loader
 .gavel {
   background: url(/assets/loader/gavel.png);

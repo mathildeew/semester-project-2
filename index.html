@@ -11,9 +11,30 @@
       href="node_modules/bootstrap/dist/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="dist/css/styles.css" />
-    <title>Document</title>
+    <title>Gavel - Home</title>
   </head>
   <body>
+    <nav class="navbar bg-primary">
+      <div class="container-fluid">
+        <h1>Gavel</h1>
+        <button
+          class="navpic"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarToggleExternalContent"
+          aria-controls="navbarToggleExternalContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        ></button>
+      </div>
+    </nav>
+    <div class="collapse" id="navbarToggleExternalContent">
+      <div class="bg-primary p-4" id="navbarCollapse">
+        <a href="#" class="mb-3">Profile</a>
+        <a href="#">Log out</a>
+      </div>
+    </div>
+
     <main>
       <!-- <div class="loader">
         <div class="gavel"></div>
