@@ -22,6 +22,10 @@ a {
   background-color: #4f958a !important;
 }
 
+.bg-light {
+  background-color: #f7f7f7;
+}
+
 nav {
   box-shadow: 0 0 3px 3px #9ee2d8;
 }
@@ -43,6 +47,13 @@ nav {
   background: red;
   border: 2px solid black;
   border-radius: 50%;
+}
+
+.card-img {
+  background: url(/assets/cat.jpg);
+  height: 110px;
+  width: 110px;
+  background-size: cover;
 }
 
 .gavel {

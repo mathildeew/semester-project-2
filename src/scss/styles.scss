@@ -11,6 +11,13 @@
   border-radius: 50%;
 }
 
+.card-img {
+  background: url(/assets/cat.jpg);
+  height: 110px;
+  width: 110px;
+  background-size: cover;
+}
+
 // Loader
 .gavel {
   background: url(/assets/loader/gavel.png);
