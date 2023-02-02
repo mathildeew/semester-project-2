@@ -2,9 +2,7 @@
   background: url(/assets/loader/gavel.png);
   width: 200px;
   height: 80px;
-  top: 70px;
-  left: 575px;
-  transform: rotate(45deg);
+  rotate: 45deg;
   animation: rotate-gavel 2s linear infinite;
 }
 
@@ -12,8 +10,6 @@
   background: url(/assets/loader/blobs.png);
   width: 100px;
   height: 60px;
-  top: 110px;
-  left: 530px;
   opacity: 0;
   animation: show-blobs 2s linear infinite;
 }
@@ -22,8 +18,6 @@
   background: url(/assets/loader/block.png);
   width: 100px;
   height: 80px;
-  top: 150px;
-  left: 546px;
 }
 
 .gavel,
