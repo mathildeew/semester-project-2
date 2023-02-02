@@ -14,6 +14,10 @@ a {
   color: black;
 }
 
+button {
+  color: white;
+}
+
 .bg-primary {
   background-color: #9ee2d8 !important;
 }
