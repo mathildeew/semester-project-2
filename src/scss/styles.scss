@@ -3,6 +3,10 @@
 @import "utilities.scss";
 @import "navbar.scss";
 
+input:focus {
+  outline: none;
+}
+
 .navpic {
   width: 40px;
   height: 40px;
