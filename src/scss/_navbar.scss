@@ -1,0 +1,14 @@
+nav {
+  box-shadow: 0 0 3px 3px $primary;
+}
+
+.collapse {
+  box-shadow: 0 0 3px 3px $primary;
+}
+
+#navbarCollapse {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  box-shadow: 0 0 3px 3px $primary;
+}

@@ -1,0 +1,25 @@
+@import url("https://use.typekit.net/hmk0koo.css");
+
+h1 {
+  font-family: bely-display, sans-serif;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+p,
+a,
+::placeholder {
+  font-family: "soleil", sans-serif;
+}
+
+a {
+  color: black;
+}
+
+button {
+  color: black;
+
+  ::after {
+    outline: none;
+  }
+}
