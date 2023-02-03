@@ -18,6 +18,9 @@ a {
 button {
   color: black;
 }
+button ::after {
+  outline: none;
+}
 
 .bg-primary {
   background-color: #9ee2d8 !important;

@@ -18,4 +18,8 @@ a {
 
 button {
   color: black;
+
+  ::after {
+    outline: none;
+  }
 }
