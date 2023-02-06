@@ -5,6 +5,29 @@ export function displayAuctions(auctions) {
   for (let i = 0; i < auctions.length; i++) {
     const title = auctions[i].title;
     const image = auctions[i].media[0];
+    const ends = auctions[0].endsAt;
+
+    // Timer
+    const today = new Date();
+    let timer;
+
+    let difference = new Date(ends).getTime() - new Date(today).getTime();
+
+    let seconds = Math.floor(difference / 1000);
+    let minutes = Math.floor(seconds / 60);
+    let hours = Math.floor(minutes / 60);
+    let days = Math.floor(hours / 24);
+
+    hours %= 24;
+    minutes %= 60;
+    seconds %= 60;
+
+    timer = `Time left: ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+
+    if (difference <= 0) {
+      timer = `Ended`;
+    } else {
+    }
 
     // If no bids
     let highestBids;
@@ -48,7 +71,7 @@ export function displayAuctions(auctions) {
             d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"
           />
         </svg>
-        <p class="ms-2 mb-0">Time left</p>
+        <p class="ms-2 mb-0">${timer}</p>
       </div>
       <p class="fs-1 text-end mt-3 mb-0">${highestBids}</p>
     </div>
