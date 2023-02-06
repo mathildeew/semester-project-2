@@ -11,10 +11,11 @@ p,
 a,
 ::placeholder {
   font-family: "soleil", sans-serif;
+  color: black;
 }
 
-a {
-  color: black;
+:hover {
+  color: black !important;
 }
 
 button {
