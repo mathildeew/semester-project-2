@@ -79,6 +79,20 @@ input:focus {
   background-size: cover;
 }
 
+.auctionImg {
+  background: url(/assets/cat.jpg);
+  height: 300px;
+  width: 300px;
+  background-size: cover;
+}
+
+.bidPic {
+  background-color: red;
+  border: 2px solid #9ee2d8;
+  height: 60px;
+  width: 60px;
+}
+
 .gavel {
   background: url(/assets/loader/gavel.png);
   width: 200px;
