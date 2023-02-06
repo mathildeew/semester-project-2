@@ -27,15 +27,11 @@ input:focus {
 }
 
 .auctionImg {
-  height: 110px;
-  width: 110px;
+  height: 130px;
+  width: 130px;
   background-size: cover;
-}
-
-.auctionImg {
-  height: 250px;
-  width: 250px;
-  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .bidPic {
