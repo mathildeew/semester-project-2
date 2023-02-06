@@ -26,18 +26,16 @@ input:focus {
   border: 2px solid $primary;
 }
 
-.card-img {
-  background: url(/assets/cat.jpg);
+.auctionImg {
   height: 110px;
   width: 110px;
   background-size: cover;
 }
 
 .auctionImg {
-  background: url(/assets/cat.jpg);
-  height: 300px;
-  width: 300px;
-  background-size: cover;
+  height: 250px;
+  width: 250px;
+  background-size: contain;
 }
 
 .bidPic {

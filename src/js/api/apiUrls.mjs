@@ -5,4 +5,4 @@ const registerUrl = "auction/auth/register";
 const loginUrl = "auction/auth/login";
 
 // Auctions
-const allAuctions = "auction/listings";
+export const allAuctions = `${baseUrl}auction/listings`;
