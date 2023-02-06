@@ -1,10 +1,3 @@
-// const myModal = document.getElementById("myModal");
-// const myInput = document.getElementById("myInput");
-
-// myModal.addEventListener("shown.bs.modal", () => {
-//   myInput.focus();
-// });
-
 // const auctionsBtn = document.getElementById("auctionsBtn");
 // const auctionsCards = document.getElementById("auctionsCard");
 // const bidsBtn = document.getElementById("bidsBtn");
@@ -36,3 +29,5 @@
 //   auctionsBtn.style.textDecoration = "none";
 //   auctionsCards.style.display = "none";
 // }
+
+import "./router.mjs";
