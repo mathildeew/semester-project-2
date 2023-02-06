@@ -1,5 +1,6 @@
 @import url("https://use.typekit.net/hmk0koo.css");
-h1 {
+h1,
+.logo {
   font-family: bely-display, sans-serif;
   margin-top: auto;
   margin-bottom: auto;
