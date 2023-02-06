@@ -6,49 +6,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="keywords" content="" />
     <meta name="description" content="" />
+
     <link
       rel="stylesheet"
       href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"
     />
 
     <link rel="stylesheet" href="../../dist/css/styles.css" />
-    <title>Gavel - Home</title>
+    <title>Gavel - Log in</title>
   </head>
 
   <body class="bg-primary">
-    <main>
-      <h1>Gavel</h1>
-      <div class="bg-white">
-        <form class="d-flex flex-column align-items-center mb-4 p-3 row">
+    <main class="d-flex flex-column align-items-center">
+      <h1 class="m-5">Gavel</h1>
+      <form class="d-flex flex-column align-items-center mt-5 mb-4">
+        <div class="bg-white d-flex flex-column rounded mb-5 p-4">
           <input
             type="email"
-            class="rounded-pill border-0 mb-3 p-1 col-10 bg-primary"
+            class="rounded-pill border-0 m-3 p-2 bg-primary"
             placeholder="Email"
             required
           />
 
           <input
             type="password"
-            class="rounded border-0 mb-3 p-1 col-10 bg-primary"
+            class="rounded-pill border-0 m-3 p-2 bg-primary"
             placeholder="Password"
             minlength="8"
             required
           />
+          <p class="mx-auto">Invalid email or password</p>
+        </div>
 
-          <p class="">Invalid email or password</p>
-
-          <button
-            type="button"
-            class="fw-bolder col-10 mt-3 rounded bg-secondary border-0 py-2"
-          >
-            Log in
-          </button>
-        </form>
-      </div>
-
+        <button
+          type="button"
+          class="fw-bolder rounded bg-secondary border-0 py-2 px-5"
+        >
+          Log in
+        </button>
+      </form>
       <div class="d-flex flex-column justify-content-center align-items-center">
-        <p>Don't have an account yet?</p>
-        <a href="">Create account here</a>
+        <p class="mb-1">Don't have an account yet?</p>
+        <a href="/accounts/emailsignup/index.html">Create account here</a>
       </div>
     </main>
 
