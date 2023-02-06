@@ -6,6 +6,7 @@ const path = location.pathname;
 
 switch (path) {
   case "/":
+    newAuctionModal();
     break;
 
   case "/profile/":
