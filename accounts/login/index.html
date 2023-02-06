@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link
+      rel="stylesheet"
+      href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+
+    <link rel="stylesheet" href="../../dist/css/styles.css" />
+    <title>Gavel - Home</title>
+  </head>
+
+  <body class="bg-primary">
+    <main>
+      <h1>Gavel</h1>
+      <div class="bg-white">
+        <form class="d-flex flex-column align-items-center mb-4 p-3 row">
+          <input
+            type="email"
+            class="rounded-pill border-0 mb-3 p-1 col-10 bg-primary"
+            placeholder="Email"
+            required
+          />
+
+          <input
+            type="password"
+            class="rounded border-0 mb-3 p-1 col-10 bg-primary"
+            placeholder="Password"
+            minlength="8"
+            required
+          />
+
+          <p class="">Invalid email or password</p>
+
+          <button
+            type="button"
+            class="fw-bolder col-10 mt-3 rounded bg-secondary border-0 py-2"
+          >
+            Log in
+          </button>
+        </form>
+      </div>
+
+      <div class="d-flex flex-column justify-content-center align-items-center">
+        <p>Don't have an account yet?</p>
+        <a href="">Create account here</a>
+      </div>
+    </main>
+
+    <script src="../../src/js/script.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
