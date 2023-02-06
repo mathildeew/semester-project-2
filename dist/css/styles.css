@@ -38,6 +38,10 @@ button ::after {
   background-color: rgba(185, 185, 185, 0.9);
 }
 
+.bg-primarylight {
+  background-color: rgba(158, 226, 216, 0.3);
+}
+
 nav {
   box-shadow: 0 0 3px 3px #9ee2d8;
 }
@@ -55,6 +59,10 @@ nav {
 
 input:focus {
   outline: none;
+}
+
+::placeholder {
+  color: black;
 }
 
 .navpic {
