@@ -18,18 +18,36 @@
 
   <body class="bg-primary">
     <main class="d-flex flex-column align-items-center">
+      <!-- Registered modal -->
+      <div class="modal" tabindex="-1" id="registeredModal">
+        <div class="modal-dialog">
+          <div
+            class="modal-content d-flex align-items-center justify-content-center"
+          >
+            <p class="mb-0 p-4">
+              Account created. Redirecting to your profile.
+            </p>
+          </div>
+        </div>
+      </div>
+
       <h1 class="m-5">Gavel</h1>
-      <form class="d-flex flex-column align-items-center mt-5 mb-4">
+      <form
+        class="d-flex flex-column align-items-center mt-5 mb-4"
+        id="registerForm"
+      >
         <div class="bg-white d-flex flex-column rounded mb-5 p-4">
           <input
             type="text"
             class="rounded-pill border-0 m-3 p-2 bg-primarylight"
+            name="name"
             placeholder="Username"
             required
           />
 
           <input
             type="email"
+            name="email"
             class="rounded-pill border-0 m-3 p-2 bg-primarylight"
             placeholder="Email"
             required
@@ -37,6 +55,7 @@
 
           <input
             type="password"
+            name="password"
             class="rounded-pill border-0 m-3 p-2 bg-primarylight"
             placeholder="Password"
             minlength="8"
@@ -46,11 +65,21 @@
         </div>
 
         <button
-          type="button"
+          id="registerBtn"
+          type="submit"
           class="fw-bolder rounded bg-secondary border-0 py-2 px-5"
         >
           Register
         </button>
+        <!-- <button
+        id="registerBtn"
+        type="button"
+        class="fw-bolder rounded bg-secondary border-0 py-2 px-5"
+        data-bs-toggle="modal"
+        data-bs-target="#registeredModal"
+      >
+        Register
+      </button> -->
       </form>
       <div class="d-flex flex-column justify-content-center align-items-center">
         <a href="/accounts/login/">Log in</a>
