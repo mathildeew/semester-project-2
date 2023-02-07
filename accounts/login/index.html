@@ -19,10 +19,14 @@
   <body class="bg-primary">
     <main class="d-flex flex-column align-items-center">
       <h1 class="m-5">Gavel</h1>
-      <form class="d-flex flex-column align-items-center mt-5 mb-4">
+      <form
+        class="d-flex flex-column align-items-center mt-5 mb-4"
+        id="loginForm"
+      >
         <div class="bg-white d-flex flex-column rounded mb-5 p-4">
           <input
             type="email"
+            name="email"
             class="rounded-pill border-0 m-3 p-2 bg-primarylight"
             placeholder="Email"
             required
@@ -30,6 +34,7 @@
 
           <input
             type="password"
+            name="password"
             class="rounded-pill border-0 m-3 p-2 bg-primarylight"
             placeholder="Password"
             minlength="8"
@@ -39,7 +44,7 @@
         </div>
 
         <button
-          type="button"
+          type="submit"
           class="fw-bolder rounded bg-secondary border-0 py-2 px-5"
         >
           Log in

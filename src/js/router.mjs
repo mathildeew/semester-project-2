@@ -6,6 +6,7 @@ import { getAuctions } from "./home/getAuctions.mjs";
 
 // Profile
 import { register } from "./accounts/register.mjs";
+import { login } from "./accounts/login.mjs";
 // import { auctionsBidsModal } from "./profile/auctionsBidsModal.mjs";
 
 // Run function based on pathname
@@ -25,6 +26,7 @@ switch (path) {
     break;
 
   case "/accounts/login/":
+    login();
     break;
 
   case "/accounts/emailsignup/":
