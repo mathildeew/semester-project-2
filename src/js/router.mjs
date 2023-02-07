@@ -12,6 +12,7 @@ import { getAuctions } from "./home/getAuctions.mjs";
 // Profile
 import { register } from "./accounts/register.mjs";
 import { login } from "./accounts/login.mjs";
+import { changeAvatarModal } from "./profile/changeAvatarModal.mjs";
 
 // import { auctionsBidsModal } from "./profile/auctionsBidsModal.mjs";
 
@@ -30,6 +31,7 @@ switch (path) {
     auctionsBidsModal();
     logout();
     redirect();
+    changeAvatarModal();
 
     break;
 
