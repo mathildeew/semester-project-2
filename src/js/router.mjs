@@ -2,7 +2,8 @@ import * as apiUrl from "./api/apiUrls.mjs";
 
 //UI
 import { logout } from "./ui/nav.mjs";
-import { authorizedVisibility } from "./ui/auth.mjs";
+import { auth } from "./ui/auth.mjs";
+import { redirect } from "./ui/unauth/redirect.mjs";
 
 // Home
 import { newAuctionModal } from "./home/newAuctionModal.mjs";
@@ -19,19 +20,22 @@ const path = location.pathname;
 
 switch (path) {
   case "/":
+    auth();
     logout();
     newAuctionModal();
     getAuctions(apiUrl.allAuctions);
-    authorizedVisibility();
     break;
 
-  //   case "/profile/":
-  //     auctionsBidsModal();
-  // logout();
-  //     break;
+  case "/profile/":
+    //     auctionsBidsModal();
+    logout();
+    redirect();
+
+    break;
 
   case "/profile/auction/":
     logout();
+    redirect();
 
     break;
 
