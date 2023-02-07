@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+
+    <link
+      rel="stylesheet"
+      href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+
+    <link rel="stylesheet" href="../../dist/css/styles.css" />
+    <title>Gavel - Log in</title>
+  </head>
+
+  <body class="bg-primary">
+    <main class="d-flex flex-column align-items-center">
+      <h1 class="m-5">Gavel</h1>
+      <form class="d-flex flex-column align-items-center mt-5 mb-4">
+        <div class="bg-white d-flex flex-column rounded mb-5 p-4">
+          <input
+            type="text"
+            class="rounded-pill border-0 m-3 p-2 bg-primarylight"
+            placeholder="Username"
+            required
+          />
+
+          <input
+            type="email"
+            class="rounded-pill border-0 m-3 p-2 bg-primarylight"
+            placeholder="Email"
+            required
+          />
+
+          <input
+            type="password"
+            class="rounded-pill border-0 m-3 p-2 bg-primarylight"
+            placeholder="Password"
+            minlength="8"
+            required
+          />
+          <p class="mx-auto">Invalid email or password</p>
+        </div>
+
+        <button
+          type="button"
+          class="fw-bolder rounded bg-secondary border-0 py-2 px-5"
+        >
+          Register
+        </button>
+      </form>
+      <div class="d-flex flex-column justify-content-center align-items-center">
+        <a href="/accounts/login/">Log in</a>
+      </div>
+    </main>
+
+    <script type="module" src="../../src/js/script.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
