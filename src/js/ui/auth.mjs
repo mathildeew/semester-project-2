@@ -1,6 +1,6 @@
 import * as storage from "../storage/localStorage.mjs";
-import { unauthorizedBtn } from "./unauth.mjs/auctionBtn.mjs";
-import { unauthorizedNav } from "./unauth.mjs/nav.mjs";
+import { unauthorizedBtn } from "./unauth/auctionBtn.mjs";
+import { unauthorizedNav } from "./unauth/nav.mjs";
 
 const token = storage.get("token");
 
