@@ -23,11 +23,11 @@ switch (path) {
     auth();
     logout();
     newAuctionModal();
-    getAuctions(apiUrl.allAuctions);
+    getAuctions();
     break;
 
   case "/profile/":
-    //     auctionsBidsModal();
+    auctionsBidsModal();
     logout();
     redirect();
 
