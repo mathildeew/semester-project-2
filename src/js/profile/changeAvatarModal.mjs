@@ -3,6 +3,6 @@ const avatarBtn = document.getElementById("avatarBtn");
 
 export function changeAvatarModal() {
   avatarMdl.addEventListener("shown.bs.modal", () => {
-    avatarBtn.focus();
+    changeAvatarBtn.focus();
   });
 }

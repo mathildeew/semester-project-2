@@ -13,8 +13,9 @@ import { getAuctions } from "./home/getAuctions.mjs";
 import { register } from "./accounts/register.mjs";
 import { login } from "./accounts/login.mjs";
 import { changeAvatarModal } from "./profile/changeAvatarModal.mjs";
+// import { changeAvatar } from "./profile/avatar.mjs";
 
-// import { auctionsBidsModal } from "./profile/auctionsBidsModal.mjs";
+import { auctionsBidsModal } from "./profile/auctionsBidsModal.mjs";
 
 // Run function based on pathname
 const path = location.pathname;
@@ -32,6 +33,7 @@ switch (path) {
     logout();
     redirect();
     changeAvatarModal();
+    // changeAvatar();
 
     break;
 
