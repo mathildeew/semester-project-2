@@ -1,4 +1,6 @@
-export function setStorage() {
+import * as storage from "./localStorage.mjs";
+
+export function setStorage(json) {
   const name = json.name;
   storage.set("name", name);
   const credits = json.credits;

@@ -1,5 +1,7 @@
 import { baseUrl } from "../api/apiUrls.mjs";
 import { fetchOptions } from "../api/fetchOptions.mjs";
+import { set } from "../storage/localStorage.mjs";
+import { setStorage } from "../storage/setStorage.mjs";
 
 const loginForm = document.getElementById("loginForm");
 
@@ -18,6 +20,7 @@ export function login() {
       const json = await response.json();
 
       console.log(json);
+      setStorage(json);
     }
     loginAPI(`${baseUrl}/auction/auth/login`, postContent);
   });
