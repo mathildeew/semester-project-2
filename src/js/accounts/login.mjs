@@ -4,6 +4,7 @@ import { set } from "../storage/localStorage.mjs";
 import { setStorage } from "../storage/setStorage.mjs";
 
 const loginForm = document.getElementById("loginForm");
+const errorMessage = document.querySelector(".errorMessage");
 
 export function login() {
   loginForm.addEventListener("submit", (event) => {
@@ -20,7 +21,14 @@ export function login() {
       const json = await response.json();
 
       console.log(json);
-      setStorage(json);
+
+      if (response.ok) {
+        setStorage(json);
+
+        window.location.href = "/";
+      } else {
+        errorMessage.style.display = "block";
+      }
     }
     loginAPI(`${baseUrl}/auction/auth/login`, postContent);
   });

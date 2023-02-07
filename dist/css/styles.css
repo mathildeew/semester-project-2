@@ -59,6 +59,10 @@ nav {
   box-shadow: 0 0 3px 3px #9ee2d8;
 }
 
+.errorMessage {
+  display: none;
+}
+
 input:focus {
   outline: none;
 }

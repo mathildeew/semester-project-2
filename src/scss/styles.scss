@@ -3,6 +3,10 @@
 @import "utilities.scss";
 @import "navbar.scss";
 
+.errorMessage {
+  display: none;
+}
+
 input:focus {
   outline: none;
 }
