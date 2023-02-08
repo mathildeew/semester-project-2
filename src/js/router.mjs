@@ -15,6 +15,7 @@ import { login } from "./accounts/login.mjs";
 import { changeAvatar } from "./profile/changeAvatar.mjs";
 import { showCredits } from "./profile/credits.mjs";
 import { displayAvatar } from "./profile/avatar.mjs";
+import { showUserName } from "./profile/userName.mjs";
 
 // Run function based on pathname
 const path = location.pathname;
@@ -34,6 +35,7 @@ switch (path) {
     redirect();
     displayAvatar();
     showCredits();
+    showUserName();
 
     break;
 
