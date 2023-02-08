@@ -30,28 +30,28 @@ export function displayAuction(auction) {
   }
 
   auctionCard.innerHTML = `
-      <img id="auctionImg" src="${auction.media}" class="rounded border-dark  mb-2" />
-      <a
-      href="/profile/${auction.seller.name}" 
-      class="bg-grey rounded-pill d-flex align-items-center">
-        <img id="sellerAvatar" src="${auction.seller.avatar}" class="rounded-circle border border-grey" />
-        <p class="mb-0 ps-2">${auction.seller.name}</p>
-      </a>
-      <p class="card-title fs-5 fw-semibold">${auction.title}</p>
-      <div class="d-flex justify-content-between align-items-center">
-          <div>
-              <div class="d-flex">
-                  <i class="bi bi-tag-fill me-1"></i>
-               <p class="me-4">Tag tag</p>
-              </div>
-              <div class="d-flex">
-                  <i class="bi bi-clock-fill me-1"></i>
-                  <p class="">${timer}</p>
-              </div>
-          </div>
-      </div>
-      <p class="">${auction.description}</p>
-    `;
+                            <img id="auctionImg" src="${auction.media}" class="rounded mb-2" />
+                            <a href="/profile/${auction.seller.name}" 
+                            id="sellerButton"
+                            class="bg-grey rounded-pill d-flex align-items-center mt-1 ms-1">
+                                <img src="${auction.seller.avatar}" class="rounded-circle border border-grey" />
+                                <p class="mb-0 px-2">${auction.seller.name}</p>
+                            </a>
+                            <div class="px-2">
+                                <p class="card-title fs-5 fw-semibold">${auction.title}</p>
+                                <div class="d-flex flex-column">
+                                    <div class="d-flex mb-1">
+                                        <i class="bi bi-tag-fill me-1"></i>
+                                        <p class="me-4 mb-0">Tag tag</p>
+                                    </div>
+                                    <div class="d-flex">
+                                        <i class="bi bi-clock-fill me-1"></i>
+                                        <p class="">${timer}</p>
+                                    </div>
+                                </div>
+                                <p class="">${auction.description}</p>
+                            </div>
+                            `;
 
   hideButtons(auction);
   showBids(auction);
@@ -82,13 +82,13 @@ function showBids(auction) {
 
     console.log(sortedBids);
     bidsContainer.innerHTML += `
-    <div class=" bg-grey rounded-pill d-flex flex-column mb-2 p-2 col-sm-4">
-        <div class="d-flex justify-content-between">
-            <p class="mb-0">${sortedBids[i].bidderName}</p>
-            <p class="fw-bold mb-0">$${sortedBids[i].amount}</p>
-        </div>
-        <p class="mb-0">${created}</p>
-    </div>
+                                <div class="bg-grey d-flex align-items-center justify-content-between px-4 mb-2 rounded-pill">
+                                    <div class="">
+                                        <p class="fw-bold mb-0">${sortedBids[i].bidderName}</p>
+                                        <p class="mb-0">${created}</p>
+                                    </div>    
+                                    <p class="fw-bold mb-0">$${sortedBids[i].amount}</p>
+                                </div>
     `;
   }
 }

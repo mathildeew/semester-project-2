@@ -80,14 +80,18 @@ input:focus {
   background-size: cover;
 }
 
-#sellerAvatar {
-  width: 50px;
-  height: 50px;
-}
-
 #auctionImg {
   max-width: 100%;
   height: 200px;
+}
+
+#sellerButton {
+  position: absolute;
+  text-decoration: none;
+}
+#sellerButton img {
+  width: 35px;
+  height: 35px;
 }
 
 .navpic {
