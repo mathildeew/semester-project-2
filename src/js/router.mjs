@@ -16,6 +16,7 @@ import { changeAvatar } from "./profile/changeAvatar.mjs";
 import { showCredits } from "./profile/credits.mjs";
 import { displayAvatar } from "./profile/avatar.mjs";
 import { showUserName } from "./profile/userName.mjs";
+import { auctionsBids } from "./profile/auctionsBids.mjs";
 
 // Run function based on pathname
 const path = location.pathname;
@@ -36,6 +37,7 @@ switch (path) {
     displayAvatar();
     showCredits();
     showUserName();
+    auctionsBids();
 
     break;
 

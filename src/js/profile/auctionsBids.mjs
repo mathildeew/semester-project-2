@@ -1,13 +1,13 @@
 const auctionsBtn = document.getElementById("auctionsBtn");
-const auctionsCards = document.getElementById("auctionsCard");
+const auctionsCards = document.getElementById("auctions");
 const bidsBtn = document.getElementById("bidsBtn");
-const bidsCards = document.getElementById("bidsCard");
+const bidsCards = document.getElementById("bids");
 
 auctionsBtn.style.textDecoration = "underline";
 auctionsCards.style.display = "flex";
 bidsCards.style.display = "none";
 
-export function auctionsBidsModal() {
+export function auctionsBids() {
   auctionsBtn.addEventListener("click", () => {
     showAuctions();
   });
