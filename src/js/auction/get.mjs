@@ -10,7 +10,6 @@ export async function getAuction() {
   );
   const json = await response.json();
 
-  console.log(json);
   displayAuction(json);
 }
 

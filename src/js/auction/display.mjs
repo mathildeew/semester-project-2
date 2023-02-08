@@ -1,46 +1,45 @@
+import * as storage from "../storage/localStorage.mjs";
+
 const auctionCard = document.getElementById("auctionCard");
 
 export function displayAuction(auction) {
+  console.log(auction);
+
   auctionCard.innerHTML = `
-    <img id="auctionImg" src="${auction.media}" class="rounded"/>
-        <div>
-          <h2 class="card-title">${auction.title}</h2>
-          <div class="d-flex flex-row align-items-center mb-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-tag-fill"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M2 1a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l4.586-4.586a1 1 0 0 0 0-1.414l-7-7A1 1 0 0 0 6.586 1H2zm4 3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"
-              />
-            </svg>
-            <p class="ms-2 mb-0">Tag, tag, tag</p>
+      <img id="auctionImg" src="${auction.media}" class="rounded border-dark  mb-2" />
+      <a
+      href="/profile/${auction.seller.name}" 
+      class="bg-grey rounded-pill d-flex align-items-center">
+        <img id="sellerAvatar" src="${auction.seller.avatar}" class="rounded-circle border border-grey" />
+        <p class="mb-0 ps-2">${auction.seller.name}</p>
+      </a>
+      <p class="card-title fs-5 fw-semibold">${auction.title}</p>
+      <div class="d-flex justify-content-between align-items-center">
+          <div>
+              <div class="d-flex">
+                  <i class="bi bi-tag-fill me-1"></i>
+               <p class="me-4">Tag tag</p>
+              </div>
+              <div class="d-flex">
+                  <i class="bi bi-clock-fill me-1"></i>
+                  <p class=""></p>
+              </div>
           </div>
-          <div class="d-flex flex-row align-items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-clock-fill"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"
-              />
-            </svg>
-            <p class="ms-2 mb-0">Time left</p>
-          </div>
-        </div>
-        <div class="bg-primary rounded fs-5 fw-bold">
-          <p class="p-3">Highest bid: $999</p>
-        </div>
-        <p>
-         ${auction.description}
-        </p>
+      </div>
+      <p class="">${auction.description}</p>
     `;
+
+  function hideButtons() {
+    if (userName !== auction.seller.name) {
+      updateBtn.style.display = "none";
+      deleteBtn.style.display = "none";
+    }
+  }
+
+  hideButtons();
 }
+
+const updateBtn = document.getElementById("update");
+const deleteBtn = document.getElementById("delete");
+
+const userName = storage.get("name");

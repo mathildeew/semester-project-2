@@ -8,6 +8,10 @@
     <meta name="description" content="" />
     <link
       rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
       href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="/dist/css/styles.css" />
@@ -41,56 +45,12 @@
     </div>
 
     <main class="d-flex flex-column justify-content-center align-items-center">
+      <!-- Auction -->
       <div
         id="auctionCard"
-        class="card-body bg-light rounded p-2 flex-row my-5"
-      >
-        <div class="auctionImg rounded"></div>
-        <div>
-          <h2 class="card-title">Auction title</h2>
-          <div class="d-flex flex-row align-items-center mb-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-tag-fill"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M2 1a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l4.586-4.586a1 1 0 0 0 0-1.414l-7-7A1 1 0 0 0 6.586 1H2zm4 3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"
-              />
-            </svg>
-            <p class="ms-2 mb-0">Tag, tag, tag</p>
-          </div>
-          <div class="d-flex flex-row align-items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-clock-fill"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"
-              />
-            </svg>
-            <p class="ms-2 mb-0">Time left</p>
-          </div>
-        </div>
-        <div class="bg-primary rounded fs-5 fw-bold">
-          <p class="p-3">Highest bid: $999</p>
-        </div>
-        <p>
-          Please let me outside pouty face yay! wait, it’s cold out please let
-          me inside pouty face oh, thank you rub against mommy’s leg oh it looks
-          so nice out, please let me outside again the neighbor cat was mean to
-          me please let me back inside knock dish off table head butt can’t eat
-          out of my own dish.
-        </p>
-      </div>
-
+        class="card-body bg-light rounded d-flex flex-column my-5 mx-1"
+      ></div>
+      <!-- Buttons -->
       <button
         type="button"
         class="fw-bolder col-10 mt-3 rounded bg-secondary border-0 py-2"
@@ -99,12 +59,14 @@
       </button>
 
       <button
+        id="update"
         type="button"
         class="fw-bolder col-10 mt-3 rounded bg-secondary border-0 py-2"
       >
         Update
       </button>
       <button
+        id="delete"
         type="button"
         class="fw-bolder col-10 mt-3 rounded bg-light border-1 py-2"
       >
