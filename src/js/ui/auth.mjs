@@ -5,8 +5,6 @@ import { unauthorizedNav } from "./unauth/nav.mjs";
 const token = storage.get("token");
 
 export function auth() {
-  if (token === undefined || token === null || token === "") {
-    unauthorizedNav();
-    unauthorizedBtn();
-  }
+  unauthorizedNav();
+  unauthorizedBtn();
 }

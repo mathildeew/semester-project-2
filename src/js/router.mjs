@@ -28,6 +28,7 @@ switch (path) {
     break;
 
   case "/profile/":
+    auth();
     openModal();
     changeAvatar();
     logout();
