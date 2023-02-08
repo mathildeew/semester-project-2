@@ -12,7 +12,7 @@ import { getAuctions } from "./home/getAuctions.mjs";
 // Profile
 import { register } from "./accounts/register.mjs";
 import { login } from "./accounts/login.mjs";
-import { changeAvatar } from "./profile/avatar.mjs";
+import { changeAvatar } from "./profile/changeAvatar.mjs";
 import { showCredits } from "./profile/credits.mjs";
 
 // Run function based on pathname
