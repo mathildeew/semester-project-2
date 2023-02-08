@@ -74,7 +74,6 @@ input:focus {
 .navpic {
   width: 40px;
   height: 40px;
-  background: red;
   border: 2px solid black;
   border-radius: 50%;
 }
@@ -82,7 +81,6 @@ input:focus {
 .profilePic {
   width: 100px;
   height: 100px;
-  background-color: red;
   border: 2px solid #9ee2d8;
 }
 

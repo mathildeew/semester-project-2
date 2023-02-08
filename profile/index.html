@@ -42,15 +42,58 @@
 
     <main class="d-flex flex-column justify-content-center align-items-center">
       <!-- Change avatar modal -->
+      <div class="modal" tabindex="-1" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="d-flex justify-content-end pt-3 pe-3">
+              <svg
+                type="button"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                height="30"
+                fill="currentColor"
+                class="bi bi-x-lg"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
+                />
+              </svg>
+            </div>
+            <form
+              id="changeAvatar"
+              class="d-flex flex-column align-items-center mb-4 p-3 row"
+            >
+              <h2>Change avatar</h2>
+              <input
+                class="rounded border-dark mb-3 p-1 col-10"
+                placeholder=""
+                name="avatar"
+                required
+              />
+
+              <button
+                type="submit"
+                class="fw-bolder col-10 mt-3 rounded bg-secondary border-0 py-2"
+              >
+                Update
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
 
       <div class="profilePic rounded-circle"></div>
       <h2>userName</h2>
       <p id="credits" class="fw-bolder"></p>
       <button
-        type="button"
         class="fw-bolder bg-secondary rounded border-0 px-5 py-2 mt-4 newAuctionBtn"
-        id="avatarModalBtn"
+        id="myInput"
         type="button"
+        data-bs-toggle="modal"
+        data-bs-target="#myModal"
       >
         Change avatar
       </button>
