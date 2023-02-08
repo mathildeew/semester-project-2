@@ -15,6 +15,23 @@ input:focus {
   color: black;
 }
 
+// Home
+#auctionCard {
+  .wrapper,
+  img {
+    height: 130px;
+    width: 130px;
+  }
+
+  img {
+    vertical-align: middle;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: all 0.2s ease;
+  }
+}
+
 // Profile
 #avatar {
   width: 100px;
@@ -47,14 +64,6 @@ input:focus {
   height: 40px;
   border: 2px solid black;
   border-radius: 50%;
-}
-
-.auctionImg {
-  height: 130px;
-  width: 130px;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
 }
 
 .bidPic {
@@ -123,5 +132,15 @@ input:focus {
   }
   100% {
     opacity: 100;
+  }
+}
+
+@media (min-width: 992px) {
+  #auctionCard:hover {
+    cursor: pointer;
+
+    img {
+      transform: scale(1.1);
+    }
   }
 }

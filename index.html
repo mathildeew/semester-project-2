@@ -104,23 +104,26 @@
         </div>
       </div>
 
-      <button
-        class="fw-bolder bg-secondary rounded border-0 px-5 py-2 mt-4 newAuctionBtn"
-        id="myInput"
-        type="button"
-        data-bs-toggle="modal"
-        data-bs-target="#myModal"
-      >
-        New auction
-      </button>
+      <!-- Buttons -->
+      <div class="d-flex flex-column align-items-center">
+        <button
+          class="fw-bolder bg-secondary rounded border-0 px-5 py-2 mt-4 newAuctionBtn"
+          id="myInput"
+          type="button"
+          data-bs-toggle="modal"
+          data-bs-target="#myModal"
+        >
+          New auction
+        </button>
 
-      <input
-        id="search"
-        class="text-center rounded mt-4 px-1 py-2"
-        type="search"
-        placeholder="Search..."
-        aria-label="Search"
-      />
+        <input
+          id="search"
+          class="text-center rounded mt-4 px-1 py-2"
+          type="search"
+          placeholder="Search..."
+          aria-label="Search"
+        />
+      </div>
 
       <!-- API auctions -->
       <div id="auctions" class="row justify-content-around mt-4 mx-1">

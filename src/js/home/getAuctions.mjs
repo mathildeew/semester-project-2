@@ -9,5 +9,4 @@ export async function getAuctions() {
   const json = await response.json();
   displayAuctions(json);
   search(json);
-  console.log(json);
 }
