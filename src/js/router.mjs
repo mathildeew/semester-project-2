@@ -14,6 +14,7 @@ import { register } from "./accounts/register.mjs";
 import { login } from "./accounts/login.mjs";
 import { changeAvatar } from "./profile/changeAvatar.mjs";
 import { showCredits } from "./profile/credits.mjs";
+import { displayAvatar } from "./profile/avatar.mjs";
 
 // Run function based on pathname
 const path = location.pathname;
@@ -31,7 +32,7 @@ switch (path) {
     changeAvatar();
     logout();
     redirect();
-
+    displayAvatar();
     showCredits();
 
     break;

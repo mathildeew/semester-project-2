@@ -15,17 +15,21 @@ input:focus {
   color: black;
 }
 
+// Profile
+#avatar {
+  width: 100px;
+  height: 100px;
+  border: 2px solid $primary;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 .navpic {
   width: 40px;
   height: 40px;
   border: 2px solid black;
   border-radius: 50%;
-}
-
-.profilePic {
-  width: 100px;
-  height: 100px;
-  border: 2px solid $primary;
 }
 
 .auctionImg {
