@@ -2,6 +2,7 @@ const auctionsContainer = document.getElementById("auctions");
 
 export function displayAuctions(auctions) {
   auctionsContainer.innerHTML = "";
+
   for (let i = 0; i < auctions.length; i++) {
     const title = auctions[i].title;
     const image = auctions[i].media[0];
@@ -34,7 +35,7 @@ export function displayAuctions(auctions) {
     let highestBids;
 
     if (auctions[i]._count.bids === 0) {
-      highestBids = "No bids yet";
+      highestBids = "No bids";
     } else {
       highestBids = `$${auctions[i]._count.bids}`;
     }
