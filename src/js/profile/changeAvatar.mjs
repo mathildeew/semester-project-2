@@ -18,6 +18,7 @@ export function changeAvatar() {
       const response = await fetch(url, putData);
       const json = await response.json();
       console.log(json);
+      storage.set("avatar", json.avatar);
     }
     changeAvatarAPI(`${baseUrl}/auction/profiles/onkel/media`, putContent);
   });
