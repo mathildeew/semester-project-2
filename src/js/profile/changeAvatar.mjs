@@ -2,6 +2,9 @@ import { baseUrl } from "../api/apiUrls.mjs";
 import { fetchOptions } from "../api/fetchOptions.mjs";
 import * as storage from "../storage/localStorage.mjs";
 
+//  Get params to right profile
+const name = storage.get("name");
+
 const changeAvatarForm = document.getElementById("changeAvatar");
 
 export function changeAvatar() {
@@ -20,6 +23,6 @@ export function changeAvatar() {
       console.log(json);
       storage.set("avatar", json.avatar);
     }
-    changeAvatarAPI(`${baseUrl}/auction/profiles/onkel/media`, putContent);
+    changeAvatarAPI(`${baseUrl}/auction/profiles/${name}/media`, putContent);
   });
 }
