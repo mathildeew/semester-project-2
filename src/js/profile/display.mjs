@@ -5,6 +5,9 @@ const params = new URLSearchParams(queryString);
 const profileName = params.get("name");
 
 export function displayProfile(profile) {
+  const userNameContainer = document.getElementById("username");
+  userNameContainer.innerHTML = `${profile.name}`;
+
   const avatarBtn = document.querySelector(".newAuctionBtn");
   const userName = storage.get("name");
   if (userName !== profileName) {
@@ -23,52 +26,56 @@ export function displayProfile(profile) {
   const auctionsContainer = document.getElementById("auctions");
   const auctions = profile.listings;
 
-  for (let i = 0; i < auctions.length; i++) {
-    const title = auctions[i].title;
-    const image = auctions[i].media[0];
-    const ends = auctions[0].endsAt;
+  if (auctions.length === 0) {
+    auctionsContainer.innerHTML = `<p>No auctions yet</p>`;
+  } else {
+    for (let i = 0; i < auctions.length; i++) {
+      const title = auctions[i].title;
+      const image = auctions[i].media[0];
+      const ends = auctions[0].endsAt;
 
-    // Timer
-    const today = new Date();
-    let timer;
+      // Timer
+      const today = new Date();
+      let timer;
 
-    let difference = new Date(ends).getTime() - new Date(today).getTime();
+      let difference = new Date(ends).getTime() - new Date(today).getTime();
 
-    let seconds = Math.floor(difference / 1000);
-    let minutes = Math.floor(seconds / 60);
-    let hours = Math.floor(minutes / 60);
-    let days = Math.floor(hours / 24);
+      let seconds = Math.floor(difference / 1000);
+      let minutes = Math.floor(seconds / 60);
+      let hours = Math.floor(minutes / 60);
+      let days = Math.floor(hours / 24);
 
-    hours %= 24;
-    minutes %= 60;
-    seconds %= 60;
+      hours %= 24;
+      minutes %= 60;
+      seconds %= 60;
 
-    timer = `Time left: ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+      timer = `Time left: ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
 
-    if (difference <= 0) {
-      timer = `Ended`;
-    } else {
+      if (difference <= 0) {
+        timer = `Ended`;
+      } else {
+      }
+
+      auctionsContainer.innerHTML += `
+        <div class="bg-light rounded mb-3">
+            <div class="p-2">
+                <img src="${image}" class="auctionImg rounded border-dark mb-2" />
+                <p class="card-title fs-5 fw-semibold">${title}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <div class="d-flex">
+                            <i class="bi bi-tag-fill me-1"></i>
+                            <p class="mb-0 me-4">Tag tag</p>
+                        </div>
+                        <div class="d-flex">
+                            <i class="bi bi-clock-fill me-1"></i>
+                            <p class="mb-0">${timer}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        `;
     }
-
-    auctionsContainer.innerHTML += `
-                                      <div class="bg-light rounded mb-3">
-                                          <div class="p-2">
-                                              <img src="${image}" class="auctionImg rounded border-dark mb-2" />
-                                              <p class="card-title fs-5 fw-semibold">${title}</p>
-                                              <div class="d-flex justify-content-between align-items-center">
-                                                  <div>
-                                                      <div class="d-flex">
-                                                          <i class="bi bi-tag-fill me-1"></i>
-                                                          <p class="mb-0 me-4">Tag tag</p>
-                                                      </div>
-                                                      <div class="d-flex">
-                                                          <i class="bi bi-clock-fill me-1"></i>
-                                                          <p class="mb-0">${timer}</p>
-                                                      </div>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                      `;
   }
 }
