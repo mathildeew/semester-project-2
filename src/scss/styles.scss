@@ -3,6 +3,10 @@
 @import "utilities.scss";
 @import "navbar.scss";
 
+a {
+  text-decoration: none;
+}
+
 .errorMessage {
   display: none;
 }

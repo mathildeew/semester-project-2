@@ -6,6 +6,7 @@ export function displayAuctions(auctions) {
     const title = auctions[i].title;
     const image = auctions[i].media[0];
     const ends = auctions[0].endsAt;
+    const id = auctions[i].id;
 
     // Timer
     const today = new Date();
@@ -39,27 +40,29 @@ export function displayAuctions(auctions) {
     }
 
     auctionsContainer.innerHTML += `
-                                    <div id="auctionCard" class="bg-light rounded m-1 col-md-5 col-lg-2 mb-3">
-                                        <div class="p-2">
-                                          <div class="wrapper overflow-hidden rounded">
-                                              <img src="${image}" class="mb-2" />
-                                          </div>
-                                          <p class="card-title fs-5 fw-semibold">${title}</p>
-                                          <div class="d-flex justify-content-between align-items-center">
-                                              <div>
+                                    <a href="/profile/auction/?id=${id}">
+                                      <div id="auctionCard" class="bg-light rounded m-1 col-md-5 col-lg-2 mb-3">
+                                          <div class="p-2">
+                                            <div class="wrapper overflow-hidden rounded">
+                                                <img src="${image}" class="mb-2" />
+                                            </div>
+                                            <p class="card-title fs-5 fw-semibold">${title}</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div>
                                                   <div class="d-flex">
-                                                      <i class="bi bi-tag-fill me-1"></i>
-                                                    <p class="me-4">Tag tag</p>
-                                                  </div>
-                                                  <div class="d-flex">
+                                                        <i class="bi bi-tag-fill me-1"></i>
+                                                      <p class="me-4">Tag tag</p>
+                                                    </div>
+                                                    <div class="d-flex">
                                                       <i class="bi bi-clock-fill me-1"></i>
                                                       <p class="">${timer}</p>
+                                                    </div>
                                                   </div>
                                               </div>
+                                            <p class="fs-5 fw-bold text-end mb-0">${highestBids}</p>
                                           </div>
-                                          <p class="fs-5 fw-bold text-end mb-0">${highestBids}</p>
                                         </div>
-                                      </div>
+                                      </a>  
                                     `;
   }
 }
