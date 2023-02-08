@@ -12,5 +12,3 @@ export async function getAuction() {
 
   displayAuction(json);
 }
-
-getAuction();

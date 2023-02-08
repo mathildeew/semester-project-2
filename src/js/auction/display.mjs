@@ -3,8 +3,6 @@ import * as storage from "../storage/localStorage.mjs";
 const auctionCard = document.getElementById("auctionCard");
 
 export function displayAuction(auction) {
-  console.log(auction);
-
   auctionCard.innerHTML = `
       <img id="auctionImg" src="${auction.media}" class="rounded border-dark  mb-2" />
       <a
@@ -29,17 +27,40 @@ export function displayAuction(auction) {
       <p class="">${auction.description}</p>
     `;
 
-  function hideButtons() {
-    if (userName !== auction.seller.name) {
-      updateBtn.style.display = "none";
-      deleteBtn.style.display = "none";
-    }
-  }
-
-  hideButtons();
+  hideButtons(auction);
+  showBids(auction);
 }
 
-const updateBtn = document.getElementById("update");
-const deleteBtn = document.getElementById("delete");
+function hideButtons(auction) {
+  const updateBtn = document.getElementById("update");
+  const deleteBtn = document.getElementById("delete");
+  const userName = storage.get("name");
 
-const userName = storage.get("name");
+  if (userName !== auction.seller.name) {
+    updateBtn.style.display = "none";
+    deleteBtn.style.display = "none";
+  }
+}
+
+function showBids(auction) {
+  const bids = auction.bids;
+
+  for (let i = 0; i < bids.length; i++) {
+    const sortedBids = bids.sort((a, b) => {
+      return b.amount - a.amount;
+    });
+
+    const bidsContainer = document.getElementById("bidsHistory");
+
+    console.log(sortedBids);
+    bidsContainer.innerHTML += `
+    <div class="bg-grey rounded-pill d-flex flex-column mb-2 p-2">
+        <div class="d-flex justify-content-between">
+            <p class="mb-0 ps-2">${sortedBids[i].bidderName}</p>
+            <p class="mb-0">$${sortedBids[i].amount}</p>
+        </div>
+        <p class="mb-0">${sortedBids[i].created}</p>
+    </div>
+    `;
+  }
+}
