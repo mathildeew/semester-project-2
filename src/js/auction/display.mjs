@@ -31,7 +31,7 @@ export function displayAuction(auction) {
 
   auctionCard.innerHTML = `
                             <img id="auctionImg" src="${auction.media}" class="rounded mb-2" />
-                            <a href="/profile/${auction.seller.name}" 
+                            <a href="/profile/?name=${auction.seller.name}" 
                             id="sellerButton"
                             class="bg-grey rounded-pill d-flex align-items-center mt-1 ms-1">
                                 <img src="${auction.seller.avatar}" class="rounded-circle border border-grey" />
