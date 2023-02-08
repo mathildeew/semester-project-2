@@ -1,6 +1,7 @@
 import * as storage from "../storage/localStorage.mjs";
 
 const auctionCard = document.getElementById("auctionCard");
+const placeBidBtn = document.getElementById("placeBid");
 
 export function displayAuction(auction) {
   console.log(auction);
@@ -24,6 +25,7 @@ export function displayAuction(auction) {
 
   if (difference <= 0) {
     timer = `Ended`;
+    placeBidBtn.style.display = "none";
   } else {
   }
 
