@@ -16,6 +16,7 @@ import { changeAvatar } from "./profile/changeAvatar.mjs";
 import { showCredits } from "./profile/credits.mjs";
 import { displayAvatar } from "./profile/avatar.mjs";
 import { showUserName } from "./profile/userName.mjs";
+import { getAuction } from "./auction/get.mjs";
 // import { auctionsBids } from "./profile/auctionsBids.mjs";
 
 // Run function based on pathname
@@ -43,6 +44,7 @@ switch (path) {
   case "/profile/auction/":
     logout();
     redirect();
+    getAuction();
 
     break;
 

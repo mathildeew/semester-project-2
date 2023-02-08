@@ -80,6 +80,11 @@ input:focus {
   background-size: cover;
 }
 
+#auctionImg {
+  width: 200px;
+  height: 200px;
+}
+
 .navpic {
   width: 40px;
   height: 40px;

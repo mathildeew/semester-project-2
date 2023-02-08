@@ -3,7 +3,6 @@ import { fetchOptions } from "../api/fetchOptions.mjs";
 import * as storage from "../storage/localStorage.mjs";
 
 const name = storage.get("name");
-
 const changeAvatarForm = document.getElementById("changeAvatar");
 
 export function changeAvatar() {
