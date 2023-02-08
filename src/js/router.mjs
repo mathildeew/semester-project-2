@@ -13,11 +13,8 @@ import { getAuctions } from "./home/getAuctions.mjs";
 import { register } from "./accounts/register.mjs";
 import { login } from "./accounts/login.mjs";
 import { changeAvatar } from "./profile/changeAvatar.mjs";
-import { showCredits } from "./profile/credits.mjs";
-import { displayAvatar } from "./profile/avatar.mjs";
-import { showUserName } from "./profile/userName.mjs";
 import { getAuction } from "./auction/get.mjs";
-// import { auctionsBids } from "./profile/auctionsBids.mjs";
+import { getProfileAPI } from "./profile/get.mjs";
 
 // Run function based on pathname
 const path = location.pathname;
@@ -35,17 +32,13 @@ switch (path) {
     changeAvatar();
     logout();
     redirect();
-    displayAvatar();
-    showCredits();
-    showUserName();
-    // auctionsBids();
+    getProfileAPI();
     break;
 
   case "/profile/auction/":
     logout();
     redirect();
     getAuction();
-
     break;
 
   case "/accounts/login/":
