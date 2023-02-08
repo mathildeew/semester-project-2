@@ -6,14 +6,17 @@ import { auth } from "./ui/auth.mjs";
 import { redirect } from "./ui/unauth/redirect.mjs";
 
 // Home
-import { newAuctionModal } from "./home/newAuctionModal.mjs";
+import { openModal } from "./ui/modal.mjs";
 import { getAuctions } from "./home/getAuctions.mjs";
 
 // Profile
 import { register } from "./accounts/register.mjs";
 import { login } from "./accounts/login.mjs";
-
-// import { auctionsBidsModal } from "./profile/auctionsBidsModal.mjs";
+import { changeAvatar } from "./profile/changeAvatar.mjs";
+import { showCredits } from "./profile/credits.mjs";
+import { displayAvatar } from "./profile/avatar.mjs";
+import { showUserName } from "./profile/userName.mjs";
+// import { auctionsBids } from "./profile/auctionsBids.mjs";
 
 // Run function based on pathname
 const path = location.pathname;
@@ -22,15 +25,19 @@ switch (path) {
   case "/":
     auth();
     logout();
-    newAuctionModal();
+    openModal();
     getAuctions();
     break;
 
   case "/profile/":
-    auctionsBidsModal();
+    openModal();
+    changeAvatar();
     logout();
     redirect();
-
+    displayAvatar();
+    showCredits();
+    showUserName();
+    // auctionsBids();
     break;
 
   case "/profile/auction/":
