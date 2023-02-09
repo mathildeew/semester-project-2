@@ -41,6 +41,7 @@ export function displayAuctions(auctions) {
     }
 
     auctionsContainer.innerHTML += `
+                                    <a id="auctionLink" href="/profile/auction/?id=${id}">
                                       <div id="auctionCard" class="bg-light rounded m-1 col-md-5 col-lg-2 mb-3">
                                           <div class="p-2">
                                             <div class="wrapper overflow-hidden rounded">
@@ -62,13 +63,7 @@ export function displayAuctions(auctions) {
                                             <p class="fs-5 fw-bold text-end mb-0">${highestBids}</p>
                                           </div>
                                         </div>
-                                       
+                                      </a>  
                                     `;
   }
 }
-
-{
-  /* <a href="/profile/auction/?id=${id}"> */
-}
-
-// </a>
