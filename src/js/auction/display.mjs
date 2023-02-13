@@ -1,6 +1,7 @@
-import * as storage from "../storage/localStorage.mjs";
+import { hideButtons } from "./auth/auth.mjs";
 
 export function displayAuction(auction) {
+  hideButtons(auction);
   const placeBidBtn = document.getElementById("placeBid");
   console.log(auction);
 
@@ -39,39 +40,41 @@ export function displayAuction(auction) {
   const timeLeftContainer = document.getElementById("timeLeft");
   timeLeftContainer.querySelector("p").innerText = timer;
 
-  hideButtons(auction);
+  function showBids(auction) {
+    const bids = auction.bids;
+
+    for (let i = 0; i < bids.length; i++) {
+      const sortedBids = bids.sort((a, b) => {
+        return b.amount - a.amount;
+      });
+
+      const created = new Date(sortedBids[i].created).toLocaleString();
+
+      console.log(sortedBids);
+
+      const bidsContainer = document.getElementById("bidsHistory");
+      const bidsHistory = document.createElement("div");
+      bidsHistory.className =
+        "bg-grey d-flex align-items-center justify-content-between px-4 mb-2 rounded-pill";
+      bidsHistory.innerHTML += `
+                                  <div>
+                                    <p class="fw-bold mb-0"></p>
+                                    <p class="mb-0"></p>
+                                  </div>
+                                  <div>
+                                  <p class="fw-bold mb-0"></p>
+                                  </div>
+                                  `;
+
+      bidsHistory.querySelector("div p:nth-child(1)").innerText =
+        sortedBids[i].bidderName;
+      bidsHistory.querySelector("div p:nth-child(2)").innerText = created;
+      bidsHistory.querySelector(
+        "div:nth-child(2) p"
+      ).innerText = `$${sortedBids[i].amount}`;
+
+      bidsContainer.append(bidsHistory);
+    }
+  }
   showBids(auction);
-}
-
-function hideButtons(auction) {
-  const updateBtn = document.getElementById("update");
-  const deleteBtn = document.getElementById("delete");
-  const placeBidBtn = document.getElementById("placeBid");
-  const userName = storage.get("name");
-
-  if (userName === auction.seller.name) {
-    placeBidBtn.style.display = "none";
-  }
-}
-
-function showBids(auction) {
-  const bids = auction.bids;
-
-  for (let i = 0; i < bids.length; i++) {
-    const sortedBids = bids.sort((a, b) => {
-      return b.amount - a.amount;
-    });
-
-    const created = new Date(sortedBids[i].created).toLocaleString();
-
-    const bidsContainer = document.getElementById("bidsHistory");
-
-    console.log(sortedBids);
-    const bidderName = document.getElementById("bidderName");
-    bidderName.innerText = `${sortedBids[i].bidderName}`;
-    const bidCreated = document.getElementById("bidCreated");
-    bidCreated.innerText = created;
-    const bidAmount = document.getElementById("bidAmount");
-    bidAmount.innerText = `$${sortedBids[i].amount}`;
-  }
 }
