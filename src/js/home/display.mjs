@@ -4,13 +4,14 @@ const token = storage.get("token");
 export function displayAuctions(auctions) {
   const auctionsContainer = document.getElementById("auctions");
 
+  console.log(auctions);
+
   auctionsContainer.innerHTML = "";
-  console.log(auctions[3]);
 
   for (let i = 0; i < auctions.length; i++) {
     const title = auctions[i].title;
     let image = auctions[i].media[0];
-    const ends = auctions[0].endsAt;
+    const ends = auctions[i].endsAt;
     const id = auctions[i].id;
 
     // Placeholder image
@@ -33,7 +34,7 @@ export function displayAuctions(auctions) {
     minutes %= 60;
     seconds %= 60;
 
-    timer = `Time left: ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+    timer = `${days}d, ${hours}h, ${minutes}m, ${seconds}s`;
 
     if (difference <= 0) {
       timer = `Ended`;
