@@ -5,18 +5,20 @@ import { logout } from "./ui/nav.mjs";
 import { auth } from "./ui/auth.mjs";
 import { redirect } from "./ui/unauth/redirect.mjs";
 
+//Accounts
+import { register } from "./accounts/register.mjs";
+import { login } from "./accounts/login.mjs";
+
 // Home
 import { openModal } from "./ui/modal.mjs";
 import { getAuctions } from "./home/getAuctions.mjs";
 
 // Profile
-import { register } from "./accounts/register.mjs";
-import { login } from "./accounts/login.mjs";
 import { changeAvatar } from "./profile/changeAvatar.mjs";
-import { showCredits } from "./profile/credits.mjs";
-import { displayAvatar } from "./profile/avatar.mjs";
-import { showUserName } from "./profile/userName.mjs";
-// import { auctionsBids } from "./profile/auctionsBids.mjs";
+import { getAuction } from "./auction/get.mjs";
+import { getProfileAPI } from "./profile/get.mjs";
+import { openUnauthModal } from "./home/unauth.mjs";
+import { createAuction } from "./home/create.mjs";
 
 // Run function based on pathname
 const path = location.pathname;
@@ -27,23 +29,23 @@ switch (path) {
     logout();
     openModal();
     getAuctions();
+    openUnauthModal();
+    createAuction();
     break;
 
   case "/profile/":
+    auth();
     openModal();
     changeAvatar();
     logout();
     redirect();
-    displayAvatar();
-    showCredits();
-    showUserName();
-    // auctionsBids();
+    getProfileAPI();
     break;
 
   case "/profile/auction/":
     logout();
     redirect();
-
+    getAuction();
     break;
 
   case "/accounts/login/":

@@ -59,6 +59,10 @@ nav {
   box-shadow: 0 0 3px 3px #9ee2d8;
 }
 
+a {
+  text-decoration: none;
+}
+
 .errorMessage {
   display: none;
 }
@@ -71,6 +75,19 @@ input:focus {
   color: black;
 }
 
+#auctionCard .wrapper,
+#auctionCard img {
+  height: 130px;
+  width: 130px;
+}
+#auctionCard img {
+  vertical-align: middle;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  transition: all 0.2s ease;
+}
+
 #avatar {
   width: 100px;
   height: 100px;
@@ -80,19 +97,25 @@ input:focus {
   background-size: cover;
 }
 
+#auctionImg {
+  max-width: 100%;
+  height: 200px;
+}
+
+#sellerButton {
+  position: absolute;
+  text-decoration: none;
+}
+#sellerButton img {
+  width: 35px;
+  height: 35px;
+}
+
 .navpic {
   width: 40px;
   height: 40px;
   border: 2px solid black;
   border-radius: 50%;
-}
-
-.auctionImg {
-  height: 130px;
-  width: 130px;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
 }
 
 .bidPic {
@@ -159,6 +182,14 @@ input:focus {
   }
   100% {
     opacity: 100;
+  }
+}
+@media (min-width: 992px) {
+  #auctionCard:hover {
+    cursor: pointer;
+  }
+  #auctionCard:hover img {
+    transform: scale(1.1);
   }
 }
 
