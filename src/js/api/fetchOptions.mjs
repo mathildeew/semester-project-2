@@ -2,7 +2,7 @@ import * as storage from "../storage/localStorage.mjs";
 const token = storage.get("token");
 
 export const fetchOptions = [
-  // Get content - users, posts, comments
+  // Get
   {
     method: "GET",
     headers: {
@@ -11,7 +11,7 @@ export const fetchOptions = [
     },
   },
 
-  // Create content - user, posts, comments
+  // Post
   {
     method: "POST",
     headers: {
@@ -21,7 +21,7 @@ export const fetchOptions = [
     body: "",
   },
 
-  // Edit media, follow and unfollow users
+  // Put
   {
     method: "PUT",
     headers: {
@@ -31,7 +31,7 @@ export const fetchOptions = [
     body: "",
   },
 
-  // Delete posts
+  // Delete
   {
     method: "DELETE",
     headers: {
