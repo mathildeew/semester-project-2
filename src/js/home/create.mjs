@@ -10,18 +10,17 @@ export function createAuction() {
   auctionForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    // Send images
+    const title = document.querySelector(".auctionTitle");
+    const description = document.querySelector(".auctionDescp");
     const mediaOne = document.querySelector(".mediaOne");
     const mediaTwo = document.querySelector(".mediaTwo");
     const mediaThree = document.querySelector(".mediaThree");
 
     // Send end time for auction
     const today = new Date();
-
+    let optionValue;
     const optionOne = document.getElementById("sixHours");
     const optionTwo = document.getElementById("twelveHours");
-
-    let optionValue;
 
     if (optionOne.checked) {
       today.setHours(today.getHours() + 6);
@@ -35,24 +34,18 @@ export function createAuction() {
     // const formData = new FormData(form);
     // const postContent = Object.fromEntries(formData.entries());
 
-    const title = document.querySelector(".auctionTitle");
-    const description = document.querySelector(".auctionDescp");
-
     const postContent = {
       title: title.value,
       description: description.value,
       media: [mediaOne.value, mediaTwo.value, mediaThree.value],
       endsAt: `${optionValue}`,
     };
-    console.log(postContent);
 
     async function createAuctionAPI(url, postContent) {
       const [getData, postData] = fetchOptions;
       postData["body"] = JSON.stringify(postContent);
-      postData["body"] = JSON.stringify(postContent);
       const response = await fetch(url, postData);
       const json = await response.json();
-      console.log(postContent);
       console.log(json);
     }
     createAuctionAPI(`${baseUrl}/auction/listings`, postContent);
