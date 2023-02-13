@@ -3,7 +3,6 @@ import { hideButtons } from "./auth/auth.mjs";
 export function displayAuction(auction) {
   hideButtons(auction);
   const placeBidBtn = document.getElementById("placeBid");
-  console.log(auction);
 
   // Timer
   const today = new Date();
@@ -49,8 +48,6 @@ export function displayAuction(auction) {
       });
 
       const created = new Date(sortedBids[i].created).toLocaleString();
-
-      console.log(sortedBids);
 
       const bidsContainer = document.getElementById("bidsHistory");
       const bidsHistory = document.createElement("div");

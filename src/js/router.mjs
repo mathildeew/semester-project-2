@@ -19,6 +19,7 @@ import { getAuction } from "./auction/get.mjs";
 import { getProfileAPI } from "./profile/get.mjs";
 import { openUnauthModal } from "./home/unauth.mjs";
 import { createAuction } from "./home/create.mjs";
+import { placeBid } from "./auction/placeBid.mjs";
 
 // Run function based on pathname
 const path = location.pathname;
@@ -46,6 +47,7 @@ switch (path) {
     logout();
     redirect();
     getAuction();
+    placeBid();
     break;
 
   case "/accounts/login/":
