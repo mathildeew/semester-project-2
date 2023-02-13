@@ -5,12 +5,18 @@ export function displayAuctions(auctions) {
   const auctionsContainer = document.getElementById("auctions");
 
   auctionsContainer.innerHTML = "";
+  console.log(auctions[3]);
 
   for (let i = 0; i < auctions.length; i++) {
     const title = auctions[i].title;
-    const image = auctions[i].media[0];
+    let image = auctions[i].media[0];
     const ends = auctions[0].endsAt;
     const id = auctions[i].id;
+
+    // Placeholder image
+    if (image === undefined || image === "") {
+      image = "../../../assets/placeholder/placeholder_Gavel.png";
+    }
 
     // Timer
     const today = new Date();
@@ -45,7 +51,8 @@ export function displayAuctions(auctions) {
 
     let auctionCard = document.createElement("div");
     auctionCard.id = "auctionCard";
-    auctionCard.className = "bg-light rounded m-1 col-md-5 col-lg-2 mb-3";
+    auctionCard.className =
+      "bg-light rounded m-1 mb-3  col-sm-4 col-md-3 col-lg-2";
     if (token !== null) {
       auctionCard.innerHTML += `
                                 <div class="p-2">
@@ -53,7 +60,7 @@ export function displayAuctions(auctions) {
                                     <div class="wrapper overflow-hidden rounded">
                                       <img class="mb-2" />
                                     </div>
-                                    <p class="card-title fs-5 fw-semibold"></p>
+                                    <p class=""></p>
                                     <div class="d-flex">
                                       <i class="bi bi-tag-fill me-1"></i>
                                       <p class="mb-1">Tag tag</p>
@@ -77,7 +84,7 @@ export function displayAuctions(auctions) {
                                   <div class="wrapper overflow-hidden rounded">
                                     <img class="mb-2" />
                                   </div>
-                                  <p class="card-title fs-5 fw-semibold"></p>
+                                  <p class="mb-0 fw-semibold"></p>
                                   <div class="d-flex">
                                     <i class="bi bi-tag-fill me-1"></i>
                                     <p class="mb-1">Tag tag</p>
