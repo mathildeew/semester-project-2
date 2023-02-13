@@ -72,29 +72,73 @@
                 />
               </svg>
             </div>
-            <form class="d-flex flex-column align-items-center mb-4 p-3 row">
+            <form
+              id="createAuction"
+              class="d-flex flex-column align-items-center mb-4 p-3 row"
+            >
               <input
-                class="rounded border-dark mb-3 p-1 col-10"
+                class="rounded border-dark mb-3 p-1 col-10 auctionTitle"
+                name="title"
                 placeholder="Title"
-                required
               />
 
               <input
-                class="rounded border-dark mb-3 p-1 col-10"
+                class="rounded border-dark mb-3 p-1 col-10 mediaOne"
+                name="media"
                 placeholder="Image"
-                minlength="8"
-                required
+              />
+              <input
+                class="rounded border-dark mb-3 p-1 col-10 mediaTwo"
+                name="media"
+                placeholder="Image"
+              />
+              <input
+                class="rounded border-dark mb-3 p-1 col-10 mediaThree"
+                name="media"
+                placeholder="Image"
               />
 
               <textarea
-                class="rounded ps-2 border-dark p-1 col-10"
+                class="rounded ps-2 border-dark p-1 col-10 auctionDescp"
+                name="description"
                 cols="30"
                 rows="5"
                 placeholder="Description"
-                required
               ></textarea>
+
+              <!-- Radios -->
+              <div class="ps-2 border-dark p-1 col-10">
+                <p>Auctions ends in:</p>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="endsAt"
+                    id="sixHours"
+                    value="6"
+                    checked
+                  />
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    6 hours
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="endsAt"
+                    id="twelveHours"
+                    value="12"
+                  />
+                  <label class="form-check-label" for="flexRadioDefault2">
+                    12 hours
+                  </label>
+                </div>
+              </div>
+
+              <!-- Create auction button -->
               <button
-                type="button"
+                type="submit"
                 class="fw-bolder col-10 mt-3 rounded bg-secondary border-0 py-2"
               >
                 Create auction
