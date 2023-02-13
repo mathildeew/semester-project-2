@@ -17,7 +17,7 @@ import { getAuctions } from "./home/getAuctions.mjs";
 import { changeAvatar } from "./profile/changeAvatar.mjs";
 import { getAuction } from "./auction/get.mjs";
 import { getProfileAPI } from "./profile/get.mjs";
-import { openUnauthModal } from "./home/unauth.mjs";
+// import { openUnauthModal } from "./home/unauth.mjs";
 
 // Run function based on pathname
 const path = location.pathname;
@@ -28,7 +28,7 @@ switch (path) {
     logout();
     openModal();
     getAuctions();
-    openUnauthModal();
+    // openUnauthModal();
     break;
 
   case "/profile/":
