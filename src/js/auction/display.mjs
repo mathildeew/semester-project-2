@@ -1,9 +1,7 @@
 import * as storage from "../storage/localStorage.mjs";
 
-const auctionCard = document.getElementById("auctionCard");
-const placeBidBtn = document.getElementById("placeBid");
-
 export function displayAuction(auction) {
+  const placeBidBtn = document.getElementById("placeBid");
   console.log(auction);
 
   // Timer
@@ -29,29 +27,17 @@ export function displayAuction(auction) {
   } else {
   }
 
-  auctionCard.innerHTML = `
-                            <img id="auctionImg" src="${auction.media}" class="rounded mb-2" />
-                            <a href="/profile/?name=${auction.seller.name}" 
-                            id="sellerButton"
-                            class="bg-grey rounded-pill d-flex align-items-center mt-1 ms-1">
-                                <img src="${auction.seller.avatar}" class="rounded-circle border border-grey" />
-                                <p class="mb-0 px-2">${auction.seller.name}</p>
-                            </a>
-                            <div class="px-2">
-                                <p class="card-title fs-5 fw-semibold">${auction.title}</p>
-                                <div class="d-flex flex-column">
-                                    <div class="d-flex mb-1">
-                                        <i class="bi bi-tag-fill me-1"></i>
-                                        <p class="me-4 mb-0">Tag tag</p>
-                                    </div>
-                                    <div class="d-flex">
-                                        <i class="bi bi-clock-fill me-1"></i>
-                                        <p class="">${timer}</p>
-                                    </div>
-                                </div>
-                                <p class="">${auction.description}</p>
-                            </div>
-                            `;
+  const auctionCard = document.getElementById("auctionCard");
+  const auctionImg = document.getElementById("auctionImg");
+  auctionImg.src = auction.media[0];
+  const sellerBtn = document.getElementById("sellerButton");
+  sellerBtn.href = `/profile/?name=${auction.seller.name}`;
+  sellerBtn.querySelector("img").src = `${auction.seller.avatar}`;
+  sellerBtn.querySelector("p").innerText = `${auction.seller.name}`;
+  const auctionInfo = document.getElementById("auctionInfo");
+  auctionInfo.querySelector("p").innerText = auction.title;
+  const timeLeftContainer = document.getElementById("timeLeft");
+  timeLeftContainer.querySelector("p").innerText = timer;
 
   hideButtons(auction);
   showBids(auction);
@@ -60,11 +46,11 @@ export function displayAuction(auction) {
 function hideButtons(auction) {
   const updateBtn = document.getElementById("update");
   const deleteBtn = document.getElementById("delete");
+  const placeBidBtn = document.getElementById("placeBid");
   const userName = storage.get("name");
 
-  if (userName !== auction.seller.name) {
-    updateBtn.style.display = "none";
-    deleteBtn.style.display = "none";
+  if (userName === auction.seller.name) {
+    placeBidBtn.style.display = "none";
   }
 }
 
@@ -81,14 +67,11 @@ function showBids(auction) {
     const bidsContainer = document.getElementById("bidsHistory");
 
     console.log(sortedBids);
-    bidsContainer.innerHTML += `
-                                <div class="bg-grey d-flex align-items-center justify-content-between px-4 mb-2 rounded-pill">
-                                    <div class="">
-                                        <p class="fw-bold mb-0">${sortedBids[i].bidderName}</p>
-                                        <p class="mb-0">${created}</p>
-                                    </div>    
-                                    <p class="fw-bold mb-0">$${sortedBids[i].amount}</p>
-                                </div>
-    `;
+    const bidderName = document.getElementById("bidderName");
+    bidderName.innerText = `${sortedBids[i].bidderName}`;
+    const bidCreated = document.getElementById("bidCreated");
+    bidCreated.innerText = created;
+    const bidAmount = document.getElementById("bidAmount");
+    bidAmount.innerText = `$${sortedBids[i].amount}`;
   }
 }
