@@ -8,15 +8,12 @@ export async function getAuction() {
   const params = new URLSearchParams(queryString);
   const id = params.get("id");
 
-  console.log(queryString);
-
   const [getData, postData] = fetchOptions;
   const response = await fetch(
     `${baseUrl}/auction/listings/${id}?_seller=true&_bids=true`,
     getData
   );
   const json = await response.json();
-  console.log(json);
 
   displayAuction(json);
 }
