@@ -22,8 +22,11 @@
     <nav class="navbar bg-primary">
       <div class="container-fluid mx-lg-5">
         <a class="navbar-brand" href="/"><h1>Gavel</h1></a>
-        <button class="fw-bolder bg-secondary rounded border-0 px-4 py-2">
-          Log in
+        <button
+          id="loginNav"
+          class="fw-bolder bg-secondary rounded border-0 px-4 py-2"
+        >
+          <a href="accounts/login/"> Log in </a>
         </button>
         <button
           id="navBtn"
@@ -39,7 +42,7 @@
     </nav>
     <div class="collapse" id="navbarToggleExternalContent">
       <div class="bg-primary p-4" id="navbarCollapse">
-        <a href="/profile/" class="mb-3">Profile</a>
+        <a class="mb-3">Profile</a>
         <a href="" class="logoutBtn">Log out</a>
       </div>
     </div>
@@ -91,6 +94,7 @@
       <!-- Auction -->
       <section class="bg-light mx-1 my-3">
         <div id="auctionCard" class="rounded align-items-center p-2"></div>
+
         <!-- Buttons -->
         <div class="d-flex flex-column align-items-center p-2">
           <button
@@ -106,7 +110,7 @@
           <button
             id="update"
             type="button"
-            class="fw-bolder rounded bg-secondary border-0 py-2"
+            class="fw-bolder rounded bg-secondary border-0 py-2 px-5 mb-3"
           >
             Update
           </button>
@@ -114,16 +118,16 @@
           <button
             id="delete"
             type="button"
-            class="fw-bolder rounded bg-light border-1 py-2"
+            class="fw-bolder rounded bg-light border-1 py-2 px-5"
           >
             Delete
           </button>
         </div>
       </section>
 
+      <!-- Bids history -->
       <section class="mx-1">
-        <h2>History</h2>
-        <!-- Bids history -->
+        <h2 class="ms-3">Bids</h2>
         <div id="bidsHistory" class="d-flex flex-column"></div>
       </section>
     </main>
