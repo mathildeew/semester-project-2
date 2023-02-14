@@ -39,15 +39,16 @@ switch (path) {
   case "/profile/":
     nav();
     auth();
-    openModal();
-    changeAvatar();
     logout();
     redirect();
+    openModal();
+    changeAvatar();
     getProfileAPI();
     break;
 
   case "/profile/auction/":
     nav();
+    auth();
     logout();
     redirect();
     getAuction();
