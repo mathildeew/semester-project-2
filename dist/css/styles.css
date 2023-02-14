@@ -1,5 +1,10 @@
 @charset "UTF-8";
 @import url("https://use.typekit.net/hmk0koo.css");
+a {
+  color: black !important;
+  text-decoration: none !important;
+}
+
 h1, .h1,
 .logo {
   font-family: bely-display, sans-serif;
@@ -58,6 +63,13 @@ nav {
   flex-direction: column;
   align-items: flex-end;
   box-shadow: 0 0 3px 3px #9ee2d8;
+}
+
+#navBtn {
+  width: 45px;
+  height: 45px;
+  background-position: center center;
+  background-size: contain;
 }
 
 /*!
@@ -10830,10 +10842,6 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-a {
-  text-decoration: none;
-}
-
 .errorMessage {
   display: none;
 }
@@ -10844,11 +10852,6 @@ input:focus {
 
 ::placeholder {
   color: black;
-}
-
-#navBtn {
-  background-position: center center;
-  background-size: contain;
 }
 
 #avatar {
@@ -10878,13 +10881,6 @@ input:focus {
 #sellerButton img {
   width: 40px;
   height: 40px;
-}
-
-.navpic {
-  width: 40px;
-  height: 40px;
-  border: 2px solid black;
-  border-radius: 50%;
 }
 
 .bidPic {
