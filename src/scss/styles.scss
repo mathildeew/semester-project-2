@@ -3,6 +3,14 @@
 @import "utilities.scss";
 @import "navbar.scss";
 
+a {
+  text-decoration: none;
+}
+
+.errorMessage {
+  display: none;
+}
+
 input:focus {
   outline: none;
 }
@@ -11,27 +19,61 @@ input:focus {
   color: black;
 }
 
+// Nav
+#navBtn {
+  background-position: center center;
+  background-size: contain;
+}
+
+// Home
+#auctionCard {
+  .wrapper,
+  img {
+    height: 130px;
+    width: 130px;
+  }
+
+  img {
+    vertical-align: middle;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: all 0.2s ease;
+  }
+}
+
+// Profile
+#avatar {
+  width: 100px;
+  height: 100px;
+  border: 2px solid $primary;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+// Auction
+
+#auctionImg {
+  width: 130px;
+  height: 130px;
+}
+
+#sellerButton {
+  position: absolute;
+  text-decoration: none;
+
+  img {
+    width: 35px;
+    height: 35px;
+  }
+}
+
 .navpic {
   width: 40px;
   height: 40px;
-  background: red;
   border: 2px solid black;
   border-radius: 50%;
-}
-
-.profilePic {
-  width: 100px;
-  height: 100px;
-  background-color: red;
-  border: 2px solid $primary;
-}
-
-.auctionImg {
-  height: 130px;
-  width: 130px;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
 }
 
 .bidPic {
@@ -100,5 +142,15 @@ input:focus {
   }
   100% {
     opacity: 100;
+  }
+}
+
+@media (min-width: 992px) {
+  #auctionCard:hover {
+    cursor: pointer;
+
+    img {
+      transform: scale(1.1);
+    }
   }
 }
