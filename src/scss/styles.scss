@@ -26,21 +26,21 @@ input:focus {
 }
 
 // Home
-#auctionCard {
-  .wrapper,
-  img {
-    height: 130px;
-    width: 130px;
-  }
+// #auctionCard {
+//   .wrapper,
+//   img {
+//     height: 130px;
+//     width: 130px;
+//   }
 
-  img {
-    vertical-align: middle;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    transition: all 0.2s ease;
-  }
-}
+//   img {
+//     vertical-align: middle;
+//     background-size: cover;
+//     background-position: center center;
+//     background-repeat: no-repeat;
+//     transition: all 0.2s ease;
+//   }
+// }
 
 // Profile
 #avatar {
@@ -53,6 +53,11 @@ input:focus {
 }
 
 // Auction
+.card-img {
+  height: 300px;
+  object-fit: center;
+  object-position: center center;
+}
 
 #auctionImg {
   width: 130px;
