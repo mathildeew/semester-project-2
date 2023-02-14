@@ -1,4 +1,5 @@
 import * as storage from "../storage/localStorage.mjs";
+import { calcEndTime } from "../timer.mjs";
 const token = storage.get("token");
 
 export function displayAuctions(auctions) {
@@ -11,7 +12,6 @@ export function displayAuctions(auctions) {
   for (let i = 0; i < auctions.length; i++) {
     const title = auctions[i].title;
     let image = auctions[i].media[0];
-    const ends = auctions[i].endsAt;
     const id = auctions[i].id;
 
     // Placeholder image
@@ -19,25 +19,10 @@ export function displayAuctions(auctions) {
       image = "../../../assets/placeholder/placeholder_Gavel.png";
     }
 
-    // Timer
+    // Calculate auctions end time
     const today = new Date();
-    let timer;
-    let difference = new Date(ends).getTime() - new Date(today).getTime();
-
-    let seconds = Math.floor(difference / 1000);
-    let minutes = Math.floor(seconds / 60);
-    let hours = Math.floor(minutes / 60);
-    let days = Math.floor(hours / 24);
-
-    hours %= 24;
-    minutes %= 60;
-    seconds %= 60;
-
-    timer = `${days}d, ${hours}h, ${minutes}m, ${seconds}s`;
-
-    if (difference <= 0) {
-      timer = `Ended`;
-    }
+    const ends = auctions[i].endsAt;
+    let timer = calcEndTime(today, ends);
 
     // If no bids
     let highestBids;
