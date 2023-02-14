@@ -3,10 +3,9 @@ import { calcEndTime } from "../timer.mjs";
 const token = storage.get("token");
 
 export function displayAuctions(auctions) {
-  const auctionsContainer = document.getElementById("auctions");
-
   console.log(auctions);
 
+  const auctionsContainer = document.getElementById("auctions");
   auctionsContainer.innerHTML = "";
 
   for (let i = 0; i < auctions.length; i++) {
@@ -33,6 +32,7 @@ export function displayAuctions(auctions) {
       highestBids = `$${auctions[i]._count.bids}`;
     }
 
+    // Display auctions
     let auctionCard = document.createElement("div");
     auctionCard.id = "auctionCard";
     auctionCard.className =
