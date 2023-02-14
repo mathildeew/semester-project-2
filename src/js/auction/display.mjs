@@ -1,6 +1,7 @@
 import { hideButtons } from "./auth/auth.mjs";
 
 export function displayAuction(auction) {
+  console.log(auction);
   hideButtons(auction);
   const placeBidBtn = document.getElementById("placeBid");
 
@@ -19,7 +20,7 @@ export function displayAuction(auction) {
   minutes %= 60;
   seconds %= 60;
 
-  let timer = `Time left: ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+  let timer = `${days}d, ${hours}h, ${minutes}m, ${seconds}s`;
 
   if (difference <= 0) {
     timer = `Ended`;
@@ -28,16 +29,17 @@ export function displayAuction(auction) {
   }
 
   const auctionCard = document.getElementById("auctionCard");
-  const auctionImg = document.getElementById("auctionImg");
-  auctionImg.src = auction.media[0];
-  const sellerBtn = document.getElementById("sellerButton");
-  sellerBtn.href = `/profile/?name=${auction.seller.name}`;
-  sellerBtn.querySelector("img").src = `${auction.seller.avatar}`;
-  sellerBtn.querySelector("p").innerText = `${auction.seller.name}`;
-  const auctionInfo = document.getElementById("auctionInfo");
-  auctionInfo.querySelector("p").innerText = auction.title;
-  const timeLeftContainer = document.getElementById("timeLeft");
-  timeLeftContainer.querySelector("p").innerText = timer;
+  // const auctionImg = document.getElementById("auctionImg");
+  // auctionImg.src = auction.media[0];
+  // const sellerBtn = document.getElementById("sellerButton");
+  // sellerBtn.href = `/profile/?name=${auction.seller.name}`;
+  // sellerBtn.querySelector("img").src = `${auction.seller.avatar}`;
+  // sellerBtn.querySelector("p").innerText = `${auction.seller.name}`;
+  // const auctionInfo = document.getElementById("auctionInfo");
+  // auctionInfo.querySelector("p").innerText = auction.title;
+  // const timeLeftContainer = document.getElementById("timeLeft");
+  // timeLeftContainer.querySelector("p").innerText = timer;
+  // auctionInfo.querySelector("p:nth-child(3)").innerText = auction.description;
 
   function showBids(auction) {
     const bids = auction.bids;
@@ -50,6 +52,10 @@ export function displayAuction(auction) {
       const created = new Date(sortedBids[i].created).toLocaleString();
 
       const bidsContainer = document.getElementById("bidsHistory");
+      if (bids.length <= 0) {
+        // bidsContainer.style.display = "none";
+      }
+
       const bidsHistory = document.createElement("div");
       bidsHistory.className =
         "bg-grey d-flex align-items-center justify-content-between px-4 mb-2 rounded-pill";
