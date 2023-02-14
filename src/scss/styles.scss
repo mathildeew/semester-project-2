@@ -1,7 +1,13 @@
+// Bootstrap overrides
 @import "variables.scss";
 @import "reboot.scss";
 @import "utilities.scss";
 @import "navbar.scss";
+
+// Custom styles
+
+// Bootstrap
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
 a {
   text-decoration: none;
