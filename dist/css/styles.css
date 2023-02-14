@@ -75,6 +75,11 @@ input:focus {
   color: black;
 }
 
+#navBtn {
+  background-position: center center;
+  background-size: contain;
+}
+
 #auctionCard .wrapper,
 #auctionCard img {
   height: 130px;
