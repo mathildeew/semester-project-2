@@ -65,6 +65,11 @@ nav {
   box-shadow: 0 0 3px 3px #9ee2d8;
 }
 
+.form-check-input:checked {
+  background-color: #4f958a !important;
+  border-color: #9ee2d8 !important;
+}
+
 #navBtn {
   width: 45px;
   height: 45px;

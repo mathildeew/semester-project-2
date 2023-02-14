@@ -9,7 +9,7 @@ import { register } from "./accounts/register.mjs";
 import { login } from "./accounts/login.mjs";
 
 // Home
-import { openModal } from "./ui/modal.mjs";
+import { openNewAuctionModal } from "./home/newAuctionModal.mjs";
 import { getAuctions } from "./home/getAuctions.mjs";
 
 // Profile
@@ -28,7 +28,7 @@ switch (path) {
     auth();
     nav();
     logout();
-    openModal();
+    openNewAuctionModal();
     getAuctions();
     openUnauthModal();
     createAuction();
@@ -39,7 +39,7 @@ switch (path) {
     nav();
     auth();
     logout();
-    openModal();
+    openNewAuctionModal();
     changeAvatar();
     getProfileAPI();
     break;
