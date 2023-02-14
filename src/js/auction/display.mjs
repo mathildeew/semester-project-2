@@ -1,33 +1,21 @@
 import { hideButtons } from "./auth/auth.mjs";
+import { calcEndTime } from "../timer.mjs";
 
 export function displayAuction(auction) {
   console.log(auction);
   hideButtons(auction);
   const placeBidBtn = document.getElementById("placeBid");
 
-  // Timer
+  // Calculate auction ends time
   const today = new Date();
   const ends = auction.endsAt;
+  let timer = calcEndTime(today, ends);
 
-  let difference = new Date(ends).getTime() - new Date(today).getTime();
-
-  let seconds = Math.floor(difference / 1000);
-  let minutes = Math.floor(seconds / 60);
-  let hours = Math.floor(minutes / 60);
-  let days = Math.floor(hours / 24);
-
-  hours %= 24;
-  minutes %= 60;
-  seconds %= 60;
-
-  let timer = `${days}d, ${hours}h, ${minutes}m, ${seconds}s`;
-
-  if (difference <= 0) {
-    timer = `Ended`;
+  if (timer === `Ended`) {
     placeBidBtn.style.display = "none";
-  } else {
   }
 
+  // Display auction
   const auctionCard = document.getElementById("auctionCards");
   const cardBody = document.createElement("div");
   cardBody.className = "d-flex flex-column";
@@ -63,25 +51,25 @@ export function displayAuction(auction) {
 
   auctionCard.append(cardBody);
 
-  function showBids(auction) {
-    const bids = auction.bids;
-    const bidsContainer = document.getElementById("bidsHistory");
-    const bidsSection = document.getElementById("bids");
-    if (bids.length <= 0) {
-      bidsSection.style.display = "none";
-    } else {
-      for (let i = 0; i < bids.length; i++) {
-        const sortedBids = bids.sort((a, b) => {
-          return b.amount - a.amount;
-        });
+  // Sort and show bids
+  const bids = auction.bids;
+  const bidsContainer = document.getElementById("bidsHistory");
+  const bidsSection = document.getElementById("bids");
+  if (bids.length <= 0) {
+    bidsSection.style.display = "none";
+  } else {
+    for (let i = 0; i < bids.length; i++) {
+      const sortedBids = bids.sort((a, b) => {
+        return b.amount - a.amount;
+      });
 
-        const created = new Date(sortedBids[i].created).toLocaleString();
+      const created = new Date(sortedBids[i].created).toLocaleString();
 
-        const bidsHistory = document.createElement("div");
-        bidsHistory.className =
-          "bg-grey d-flex align-items-center justify-content-between px-4 mb-3 rounded-pill";
+      const bidsHistory = document.createElement("div");
+      bidsHistory.className =
+        "bg-grey d-flex align-items-center justify-content-between px-4 mb-3 rounded-pill";
 
-        bidsHistory.innerHTML += `
+      bidsHistory.innerHTML += `
                                   <div>
                                     <p class="fw-bold mb-0"></p>
                                     <p class="mb-0"></p>
@@ -91,16 +79,14 @@ export function displayAuction(auction) {
                                   </div>
                                   `;
 
-        bidsHistory.querySelector("div p:nth-child(1)").innerText =
-          sortedBids[i].bidderName;
-        bidsHistory.querySelector("div p:nth-child(2)").innerText = created;
-        bidsHistory.querySelector(
-          "div:nth-child(2) p"
-        ).innerText = `$${sortedBids[i].amount}`;
+      bidsHistory.querySelector("div p:nth-child(1)").innerText =
+        sortedBids[i].bidderName;
+      bidsHistory.querySelector("div p:nth-child(2)").innerText = created;
+      bidsHistory.querySelector(
+        "div:nth-child(2) p"
+      ).innerText = `$${sortedBids[i].amount}`;
 
-        bidsContainer.append(bidsHistory);
-      }
+      bidsContainer.append(bidsHistory);
     }
   }
-  showBids(auction);
 }
