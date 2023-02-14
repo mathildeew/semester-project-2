@@ -30,7 +30,7 @@ export function displayAuction(auction) {
 
   const auctionCard = document.getElementById("auctionCard");
   const cardBody = document.createElement("div");
-  cardBody.className = "d-flex flex-column p-2";
+  cardBody.className = "d-flex flex-column";
   cardBody.innerHTML = `
                         <div class="d-flex flex-column">
                           <img />
@@ -44,7 +44,7 @@ export function displayAuction(auction) {
                           <i class="bi bi-clock-fill me-1"></i>
                           <p><p>
                         </div>
-                        <p class="mb-3"></p>
+                        <p class=""></p>
   `;
   cardBody.querySelector("a img").src = auction.seller.avatar;
   cardBody.querySelector("a p").innerText = auction.seller.name;

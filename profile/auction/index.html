@@ -89,39 +89,37 @@
       </div>
 
       <!-- Auction -->
-      <div
-        id="auctionCard"
-        class="bg-light rounded align-items-center my-5 mx-1"
-      ></div>
+      <section class="bg-light mx-1 my-3">
+        <div id="auctionCard" class="rounded align-items-center p-2"></div>
+        <!-- Buttons -->
+        <div class="d-flex flex-column align-items-center p-2">
+          <button
+            id="placeBid"
+            type="button"
+            class="fw-bolder rounded bg-secondary border-0 py-2 px-5"
+            data-bs-toggle="modal"
+            data-bs-target="#makeBidModal"
+          >
+            Place bid
+          </button>
 
-      <!-- Buttons -->
-      <div class="d-flex flex-column align-items-center">
-        <button
-          id="placeBid"
-          type="button"
-          class="fw-bolder col-10 mt-3 rounded bg-secondary border-0 py-2"
-          data-bs-toggle="modal"
-          data-bs-target="#makeBidModal"
-        >
-          Place bid
-        </button>
+          <button
+            id="update"
+            type="button"
+            class="fw-bolder rounded bg-secondary border-0 py-2"
+          >
+            Update
+          </button>
 
-        <button
-          id="update"
-          type="button"
-          class="fw-bolder col-10 mt-3 rounded bg-secondary border-0 py-2"
-        >
-          Update
-        </button>
-
-        <button
-          id="delete"
-          type="button"
-          class="fw-bolder col-10 mt-3 rounded bg-light border-1 py-2"
-        >
-          Delete
-        </button>
-      </div>
+          <button
+            id="delete"
+            type="button"
+            class="fw-bolder rounded bg-light border-1 py-2"
+          >
+            Delete
+          </button>
+        </div>
+      </section>
 
       <section class="mx-1">
         <h2>History</h2>
