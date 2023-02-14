@@ -29,17 +29,32 @@ export function displayAuction(auction) {
   }
 
   const auctionCard = document.getElementById("auctionCard");
-  // const auctionImg = document.getElementById("auctionImg");
-  // auctionImg.src = auction.media[0];
-  // const sellerBtn = document.getElementById("sellerButton");
-  // sellerBtn.href = `/profile/?name=${auction.seller.name}`;
-  // sellerBtn.querySelector("img").src = `${auction.seller.avatar}`;
-  // sellerBtn.querySelector("p").innerText = `${auction.seller.name}`;
-  // const auctionInfo = document.getElementById("auctionInfo");
-  // auctionInfo.querySelector("p").innerText = auction.title;
-  // const timeLeftContainer = document.getElementById("timeLeft");
-  // timeLeftContainer.querySelector("p").innerText = timer;
-  // auctionInfo.querySelector("p:nth-child(3)").innerText = auction.description;
+  const cardBody = document.createElement("div");
+  cardBody.className = "d-flex flex-column p-2";
+  cardBody.innerHTML = `
+                        <div class="d-flex flex-column">
+                          <img />
+                          <a id="sellerButton" class="bg-grey d-flex align-items-center rounded-pill mt-1 ms-1">
+                            <img class="rounded-circle border border-dark"/>
+                            <p class="mb-0 ms-1"></p>
+                          </a>
+                        <img class="rounded mb-2" />
+                        <p class="fs-4 mb-0"></p>
+                        <div class="d-flex">
+                          <i class="bi bi-clock-fill me-1"></i>
+                          <p><p>
+                        </div>
+                        <p class="mb-3"></p>
+  `;
+  cardBody.querySelector("a img").src = auction.seller.avatar;
+  cardBody.querySelector("a p").innerText = auction.seller.name;
+
+  cardBody.querySelector("img").src = auction.media;
+  cardBody.querySelector("p:nth-child(4)").innerText = auction.title;
+  cardBody.querySelector("div:nth-child(5) p").innerText = timer;
+  cardBody.querySelector("p:nth-child(6)").innerText = auction.description;
+
+  auctionCard.append(cardBody);
 
   function showBids(auction) {
     const bids = auction.bids;
