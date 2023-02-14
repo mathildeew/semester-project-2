@@ -19,6 +19,12 @@ input:focus {
   color: black;
 }
 
+// Nav
+#navBtn {
+  background-position: center center;
+  background-size: contain;
+}
+
 // Home
 #auctionCard {
   .wrapper,
@@ -49,8 +55,8 @@ input:focus {
 // Auction
 
 #auctionImg {
-  max-width: 100%;
-  height: 200px;
+  width: 130px;
+  height: 130px;
 }
 
 #sellerButton {

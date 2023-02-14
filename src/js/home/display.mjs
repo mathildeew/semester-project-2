@@ -22,7 +22,6 @@ export function displayAuctions(auctions) {
     // Timer
     const today = new Date();
     let timer;
-
     let difference = new Date(ends).getTime() - new Date(today).getTime();
 
     let seconds = Math.floor(difference / 1000);
@@ -38,7 +37,6 @@ export function displayAuctions(auctions) {
 
     if (difference <= 0) {
       timer = `Ended`;
-    } else {
     }
 
     // If no bids

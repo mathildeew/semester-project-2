@@ -15,15 +15,18 @@
       href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="/dist/css/styles.css" />
-    <title>Gavel - Home</title>
+    <title>Gavel |</title>
   </head>
 
   <body>
     <nav class="navbar bg-primary">
       <div class="container-fluid mx-lg-5">
         <a class="navbar-brand" href="/"><h1>Gavel</h1></a>
-        <button class="fw-bolder bg-secondary rounded border-0 px-4 py-2">
-          Log in
+        <button
+          id="loginNav"
+          class="fw-bolder bg-secondary rounded border-0 px-4 py-2"
+        >
+          <a href="accounts/login/"> Log in </a>
         </button>
         <button
           id="navBtn"
@@ -39,7 +42,7 @@
     </nav>
     <div class="collapse" id="navbarToggleExternalContent">
       <div class="bg-primary p-4" id="navbarCollapse">
-        <a href="/profile/" class="mb-3">Profile</a>
+        <a class="mb-3">Profile</a>
         <a href="" class="logoutBtn">Log out</a>
       </div>
     </div>
@@ -82,7 +85,7 @@
                 type="submit"
                 class="fw-bolder col-10 mt-3 rounded bg-secondary border-0 py-2"
               >
-                Update
+                <!-- Update -->
               </button>
             </form>
           </div>
@@ -92,7 +95,7 @@
       <!-- User information -->
       <section class="bg-light rounded mt-4">
         <div class="d-flex flex-column align-items-center p-3">
-          <div id="avatar" class="profilePic rounded-circle"></div>
+          <img id="avatar" class="profilePic rounded-circle" />
           <h2 id="username"></h2>
           <p id="credits" class="fw-bolder mb-0"></p>
           <p id="wins" class="fw-bolder mb-0"></p>
@@ -110,9 +113,8 @@
       </section>
 
       <!-- Auctions -->
-      <section class="bg-light mt-4 mx-1">
+      <section id="auctionsProfile" class="mt-4 mx-1">
         <h3>Auctions</h3>
-        <div id="auctions" class=""></div>
       </section>
     </main>
 

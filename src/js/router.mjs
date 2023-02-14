@@ -1,6 +1,7 @@
 import * as apiUrl from "./api/apiUrls.mjs";
 
 //UI
+import { nav } from "./components/nav.mjs";
 import { logout } from "./ui/nav.mjs";
 import { auth } from "./ui/auth.mjs";
 import { redirect } from "./ui/unauth/redirect.mjs";
@@ -26,6 +27,7 @@ const path = location.pathname;
 
 switch (path) {
   case "/":
+    nav();
     auth();
     logout();
     openModal();
@@ -35,6 +37,7 @@ switch (path) {
     break;
 
   case "/profile/":
+    nav();
     auth();
     openModal();
     changeAvatar();
@@ -44,6 +47,7 @@ switch (path) {
     break;
 
   case "/profile/auction/":
+    nav();
     logout();
     redirect();
     getAuction();
