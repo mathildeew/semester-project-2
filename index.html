@@ -47,7 +47,33 @@
       </div>
     </div>
 
-    <main class="mx-auto">
+    <main>
+      <!-- Unauthorized modal -->
+      <div class="modal" tabindex="-1" id="unauthModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="d-flex justify-content-end pt-3 pe-3 mb-5">
+              <i
+                class="bi bi-x-lg"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></i>
+            </div>
+            <div
+              class="d-flex flex-column align-items-center justify-content-center mb-5"
+            >
+              <p>You must log in to view the auctions.</p>
+              <a
+                href="accounts/login/"
+                class="fw-bolder bg-secondary rounded border-0 px-5 py-2 mt-4"
+              >
+                Log in
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- New auction modal -->
       <div class="modal" tabindex="-1" id="myModal">
         <div class="modal-dialog">
@@ -141,17 +167,6 @@
                 Create auction
               </button>
             </form>
-          </div>
-        </div>
-      </div>
-
-      <!-- Not logged in modal -->
-      <div class="modal" tabindex="-1" id="unauthModal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="d-flex justify-content-end pt-3 pe-3">
-              <p>You must log in to see this content</p>
-            </div>
           </div>
         </div>
       </div>

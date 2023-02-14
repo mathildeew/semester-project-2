@@ -1,6 +1,5 @@
-import * as apiUrl from "./api/apiUrls.mjs";
-
 //UI
+import { redirect } from "./ui/auth/redirect.mjs";
 import { nav } from "./components/nav.mjs";
 import { logout } from "./ui/logout.mjs";
 import { auth } from "./ui/auth/auth.mjs";
@@ -17,7 +16,7 @@ import { getAuctions } from "./home/getAuctions.mjs";
 import { changeAvatar } from "./profile/changeAvatar.mjs";
 import { getAuction } from "./auction/get.mjs";
 import { getProfileAPI } from "./profile/get.mjs";
-import { openUnauthModal } from "./home/unauth.mjs";
+import { openUnauthModal } from "./home/unauthModal.mjs";
 import { createAuction } from "./home/create.mjs";
 import { placeBid } from "./auction/placeBid.mjs";
 
@@ -36,6 +35,7 @@ switch (path) {
     break;
 
   case "/profile/":
+    redirect();
     nav();
     auth();
     logout();
@@ -45,6 +45,7 @@ switch (path) {
     break;
 
   case "/profile/auction/":
+    redirect();
     nav();
     auth();
     logout();
