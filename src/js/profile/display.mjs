@@ -1,3 +1,6 @@
+import * as storage from "../storage/localStorage.mjs";
+const userName = storage.get("name");
+
 export function displayProfile(profile) {
   // User info
   document.title += ` ${profile.name}`;
@@ -9,8 +12,16 @@ export function displayProfile(profile) {
   avatarContainer.src = profile.avatar;
   avatarContainer.alt = `${profile.name}'s avatar`;
 
+  // Unauth
   const creditsContainer = document.getElementById("credits");
-  creditsContainer.innerText = `Credits: $${profile.credits}`;
+  const changeAvatarBtn = document.getElementById("myInput");
+
+  if (userName !== profile.name) {
+    creditsContainer.style.display = "none";
+    changeAvatarBtn.style.display = "none";
+  } else if (userName === profile.name) {
+    creditsContainer.innerText = `Credits: $${profile.credits}`;
+  }
 
   const winsContainer = document.getElementById("wins");
   winsContainer.innerText = `Wins: ${profile.wins.length}`;
