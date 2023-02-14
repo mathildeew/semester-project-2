@@ -22,8 +22,11 @@
     <nav class="navbar bg-primary">
       <div class="container-fluid mx-lg-5">
         <a class="navbar-brand" href="/"><h1>Gavel</h1></a>
-        <button class="fw-bolder bg-secondary rounded border-0 px-4 py-2">
-          Log in
+        <button
+          id="loginNav"
+          class="fw-bolder bg-secondary rounded border-0 px-4 py-2"
+        >
+          <a href="accounts/login/"> Log in </a>
         </button>
         <button
           id="navBtn"
@@ -39,7 +42,7 @@
     </nav>
     <div class="collapse" id="navbarToggleExternalContent">
       <div class="bg-primary p-4" id="navbarCollapse">
-        <a href="/profile/" class="mb-3">Profile</a>
+        <a class="mb-3">Profile</a>
         <a href="" class="logoutBtn">Log out</a>
       </div>
     </div>
@@ -89,59 +92,42 @@
       </div>
 
       <!-- Auction -->
-      <div
-        id="auctionCard"
-        class="card-body bg-light rounded d-flex flex-column my-5 mx-1"
-      >
-        <img id="auctionImg" class="rounded mb-2" />
-        <a
-          id="sellerButton"
-          class="bg-grey rounded-pill d-flex align-items-center mt-1 ms-1"
-        >
-          <img class="rounded-circle border border-grey" />
-          <p class="mb-0 px-2">name</p>
-        </a>
-        <div id="auctionInfo" class="px-2">
-          <p class="card-title fs-5 fw-semibold"></p>
-          <div class="d-flex flex-column"></div>
-          <div id="timeLeft" class="d-flex">
-            <i class="bi bi-clock-fill me-1"></i>
-            <p class="">8d 8h 2m</p>
-          </div>
+      <section id="auctions" class="bg-light mx-1 my-3 rounded">
+        <div id="auctionCards" class="align-items-center p-2"></div>
+
+        <!-- Buttons -->
+        <div class="d-flex flex-column align-items-center p-2 mb-3">
+          <button
+            id="placeBid"
+            type="button"
+            class="fw-bolder rounded bg-secondary border-0 py-2 px-5"
+            data-bs-toggle="modal"
+            data-bs-target="#makeBidModal"
+          >
+            Place bid
+          </button>
+
+          <button
+            id="update"
+            type="button"
+            class="fw-bolder rounded bg-secondary border-0 py-2 px-5 mb-3"
+          >
+            Update
+          </button>
+
+          <button
+            id="delete"
+            type="button"
+            class="fw-bolder rounded bg-light border-1 py-2 px-5"
+          >
+            Delete
+          </button>
         </div>
-        <p class="">description description description description</p>
-      </div>
+      </section>
 
-      <!-- Buttons -->
-      <button
-        id="placeBid"
-        type="button"
-        class="fw-bolder col-10 mt-3 rounded bg-secondary border-0 py-2"
-        data-bs-toggle="modal"
-        data-bs-target="#makeBidModal"
-      >
-        Place bid
-      </button>
-
-      <button
-        id="update"
-        type="button"
-        class="fw-bolder col-10 mt-3 rounded bg-secondary border-0 py-2"
-      >
-        Update
-      </button>
-
-      <button
-        id="delete"
-        type="button"
-        class="fw-bolder col-10 mt-3 rounded bg-light border-1 py-2"
-      >
-        Delete
-      </button>
-
-      <section class="mx-1">
-        <h2>History</h2>
-        <!-- Bids history -->
+      <!-- Bids history -->
+      <section id="bids" class="mx-1">
+        <h2 class="ms-3">Bids</h2>
         <div id="bidsHistory" class="d-flex flex-column"></div>
       </section>
     </main>
