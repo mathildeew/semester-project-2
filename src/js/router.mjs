@@ -13,14 +13,14 @@ import { getAuctions } from "./home/auctions/get.mjs";
 
 // Profile
 import { changeAvatar } from "./profile/api/change.mjs";
-import { getAuction } from "./auction/get.mjs";
+import { getAuction } from "./auction/api/get.mjs";
 import { getProfileAPI } from "./profile/api/get.mjs";
 import { createAuction } from "./home/auctions/create.mjs";
-import { placeBid } from "./auction/placeBid.mjs";
+import { placeBid } from "./auction/api/placeBid.mjs";
 
 // Auction
-import { deleteAuction } from "./auction/delete.mjs";
-import { updateAuction } from "./auction/update.mjs";
+import { deleteAuction } from "./auction/api/delete.mjs";
+import { updateAuction } from "./auction/api/update.mjs";
 
 // Run function based on pathname
 const path = location.pathname;
