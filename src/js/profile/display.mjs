@@ -1,7 +1,10 @@
 import * as storage from "../storage/localStorage.mjs";
+import { calcEndTime } from "../timer.mjs";
 const userName = storage.get("name");
 
 export function displayProfile(profile) {
+  console.log(profile);
+
   // User info
   document.title += ` ${profile.name}`;
 
@@ -33,41 +36,38 @@ export function displayProfile(profile) {
   } else {
     for (let i = 0; i < auctions.length; i++) {
       const title = auctions[i].title;
-      const image = auctions[i].media;
-      const ends = auctions[i].endsAt;
+      const id = auctions[i].id;
 
-      // Timer
-      const today = new Date();
-      let timer;
-      let difference = new Date(ends).getTime() - new Date(today).getTime();
+      let image;
 
-      let seconds = Math.floor(difference / 1000);
-      let minutes = Math.floor(seconds / 60);
-      let hours = Math.floor(minutes / 60);
-      let days = Math.floor(hours / 24);
-
-      hours %= 24;
-      minutes %= 60;
-      seconds %= 60;
-
-      timer = `${days}d, ${hours}h, ${minutes}m, ${seconds}s`;
-
-      if (difference <= 0) {
-        timer = `Ended`;
+      // Placeholder if auction image is missing
+      if (auctions[i].media.length === 0) {
+        image = "../../../assets/placeholder/placeholder_Gavel.png";
+      } else {
+        image = auctions[i].media[0];
       }
 
+      // Calculate auction end time
+      const today = new Date();
+      const ends = auctions[i].endsAt;
+      const timer = calcEndTime(today, ends);
+
+      // Display auctions
       const auctionsContainer = document.getElementById("auctionsProfile");
       const auctionCard = document.createElement("div");
       auctionCard.className = "bg-light rounded mb-3 p-2";
       auctionCard.innerHTML += `
-                                <img id="auctionImg" class="rounded border-dark mb-2" />
-                                <p class="card-title fs-5 fw-semibold">title</p>
-                                  <div class="d-flex">
-                                    <i class="bi bi-clock-fill me-1"></i>
-                                    <p class="mb-0"></p>
-                                  </div>
+                                <a>
+                                  <img id="auctionImg" class="rounded border-dark mb-2" />
+                                  <p class="card-title fs-5 fw-semibold">title</p>
+                                    <div class="d-flex">
+                                      <i class="bi bi-clock-fill me-1"></i>
+                                      <p class="mb-0"></p>
+                                    </div>
+                                </a>
                               `;
 
+      auctionCard.querySelector("a").href = `/profile/auction/?id=${id}`;
       auctionCard.querySelector("img").src = image;
       auctionCard.querySelector("p").innerText = title;
       auctionCard.querySelector("div:nth-child(3) p").innerText = timer;

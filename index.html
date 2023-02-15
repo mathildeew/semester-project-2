@@ -13,10 +13,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
     />
-    <link
-      rel="stylesheet"
-      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
-    />
+
     <link rel="stylesheet" href="dist/css/styles.css" />
     <title>Gavel - Home</title>
   </head>
@@ -24,16 +21,16 @@
   <body>
     <nav class="navbar bg-primary">
       <div class="container-fluid mx-lg-5">
-        <a class="navbar-brand" href="/"><h1>Gavel</h1></a>
+        <a class="navbar-brand" href="/"><h1 class="mb-0">Gavel</h1></a>
         <button
           id="loginNav"
           class="fw-bolder bg-secondary rounded border-0 px-4 py-2"
         >
-          <a href="accounts/login/"> Log in </a>
+          <a href="accounts/login/">Log in</a>
         </button>
         <button
           id="navBtn"
-          class="navpic"
+          class="border border-dark border-2 rounded-circle"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarToggleExternalContent"
@@ -50,71 +47,109 @@
       </div>
     </div>
 
-    <main class="mx-auto">
-      <!-- New auction modal -->
-      <div class="modal" tabindex="-1" id="myModal">
+    <main>
+      <!-- Unauthorized modal -->
+      <div class="modal" tabindex="-1" id="unauthModal">
         <div class="modal-dialog">
           <div class="modal-content">
-            <div class="d-flex justify-content-end pt-3 pe-3">
-              <svg
+            <div class="d-flex justify-content-end pt-3 pe-3 mb-5">
+              <i
+                class="bi bi-x-lg"
                 type="button"
                 data-bs-dismiss="modal"
                 aria-label="Close"
-                xmlns="http://www.w3.org/2000/svg"
-                width="30"
-                height="30"
-                fill="currentColor"
-                class="bi bi-x-lg"
-                viewBox="0 0 16 16"
+              ></i>
+            </div>
+            <div
+              class="d-flex flex-column align-items-center justify-content-center mb-5"
+            >
+              <p>You must log in to view the auctions.</p>
+              <a
+                href="accounts/login/"
+                class="fw-bolder bg-secondary rounded border-0 px-5 py-2 mt-4"
               >
-                <path
-                  d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
-                />
-              </svg>
+                Log in
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- New auction modal -->
+      <div class="modal" tabindex="-1" id="newAuctionModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="d-flex justify-content-end pt-3 pe-3">
+              <i
+                class="bi bi-x-lg"
+                type="button"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></i>
             </div>
             <form
               id="createAuction"
-              class="d-flex flex-column align-items-center mb-4 p-3 row"
+              class="row flex-column align-items-center p-3 mb-4"
             >
+              <label for="title" class="col-10 fw-bold p-1"
+                >Title of auction</label
+              >
               <input
-                class="rounded border-dark mb-3 p-1 col-10 auctionTitle"
+                id="auctionTitle"
+                class="col-10 rounded border p-1 mb-3"
                 name="title"
-                placeholder="Title"
+                type="text"
+                placeholder="A very cool..."
+                maxlength="280"
+                required
               />
-
+              <label for="media" class="col-10 fw-bold p-1"
+                >Choose up to three images:</label
+              >
               <input
-                class="rounded border-dark mb-3 p-1 col-10 mediaOne"
+                id="mediaOne"
+                class="col-10 rounded border p-1 mb-3"
                 name="media"
-                placeholder="Image"
+                type="url"
+                placeholder="URL to image one"
               />
               <input
-                class="rounded border-dark mb-3 p-1 col-10 mediaTwo"
+                id="mediaTwo"
+                class="col-10 rounded border p-1 mb-3"
                 name="media"
-                placeholder="Image"
+                type="url"
+                placeholder="URL to image two"
               />
               <input
-                class="rounded border-dark mb-3 p-1 col-10 mediaThree"
+                id="mediaThree"
+                class="col-10 rounded border p-1 mb-4"
                 name="media"
-                placeholder="Image"
+                type="url"
+                placeholder="URL to image three"
               />
-
+              <label for="description" class="col-10 fw-bold p-1"
+                >Description</label
+              >
               <textarea
-                class="rounded ps-2 border-dark p-1 col-10 auctionDescp"
+                id="auctionDesc"
+                class="col-10 rounded border mb-3"
                 name="description"
+                type="text"
                 cols="30"
                 rows="5"
-                placeholder="Description"
+                maxlength="280"
+                placeholder="Max 280 characters"
               ></textarea>
 
               <!-- Radios -->
-              <div class="ps-2 border-dark p-1 col-10">
-                <p>Auctions ends in:</p>
+              <div class="col-10">
+                <p class="fw-bold mb-0">Auctions ends in:</p>
                 <div class="form-check">
                   <input
+                    id="optionOne"
                     class="form-check-input"
                     type="radio"
                     name="endsAt"
-                    id="sixHours"
                     value="6"
                     checked
                   />
@@ -124,10 +159,10 @@
                 </div>
                 <div class="form-check">
                   <input
+                    id="optionTwo"
                     class="form-check-input"
                     type="radio"
                     name="endsAt"
-                    id="twelveHours"
                     value="12"
                   />
                   <label class="form-check-label" for="flexRadioDefault2">
@@ -139,7 +174,7 @@
               <!-- Create auction button -->
               <button
                 type="submit"
-                class="fw-bolder col-10 mt-3 rounded bg-secondary border-0 py-2"
+                class="createAuctionBtn col-10 bg-secondary fw-bolder rounded border-0 py-2 mt-3"
               >
                 Create auction
               </button>
@@ -148,25 +183,14 @@
         </div>
       </div>
 
-      <!-- Not logged in modal -->
-      <div class="modal" tabindex="-1" id="unauthModal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="d-flex justify-content-end pt-3 pe-3">
-              <p>You must log in to see this content</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <!-- Buttons -->
-      <div class="d-flex flex-column align-items-center">
+      <div class="modalBtn d-flex flex-column align-items-center">
         <button
-          class="fw-bolder bg-secondary rounded border-0 px-5 py-2 mt-4 newAuctionBtn"
-          id="myInput"
+          class="fw-bolder bg-secondary rounded border-0 px-5 py-2 mt-4"
+          id="newAuctionModalBtn"
           type="button"
           data-bs-toggle="modal"
-          data-bs-target="#myModal"
+          data-bs-target="#newAuctionModal"
         >
           New auction
         </button>
@@ -183,7 +207,6 @@
       <!-- API auctions -->
       <div id="auctions" class="row justify-content-around mt-4 mx-1">
         <!-- Loader -->
-
         <div class="loader">
           <div class="gavel"></div>
           <div class="blobs"></div>

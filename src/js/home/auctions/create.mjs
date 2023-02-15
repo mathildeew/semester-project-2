@@ -1,8 +1,5 @@
-import { baseUrl } from "../api/apiUrls.mjs";
-import { fetchOptions } from "../api/fetchOptions.mjs";
-import * as storage from "../storage/localStorage.mjs";
-
-const token = storage.get("token");
+import { baseUrl } from "../../api/apiUrls.mjs";
+import { fetchOptions } from "../../api/fetchOptions.mjs";
 
 export function createAuction() {
   const auctionForm = document.getElementById("createAuction");
@@ -10,17 +7,32 @@ export function createAuction() {
   auctionForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    const title = document.querySelector(".auctionTitle");
-    const description = document.querySelector(".auctionDescp");
-    const mediaOne = document.querySelector(".mediaOne");
-    const mediaTwo = document.querySelector(".mediaTwo");
-    const mediaThree = document.querySelector(".mediaThree");
+    const title = document.getElementById("auctionTitle");
+    const description = document.getElementById("auctionDesc");
 
-    // Send end time for auction
+    const mediaOne = document.getElementById("mediaOne");
+    const mediaTwo = document.getElementById("mediaTwo");
+    const mediaThree = document.getElementById("mediaThree");
+
+    // Add images to media object
+    let medias = [];
+
+    if (mediaOne.value !== "") {
+      medias.push(mediaOne.value);
+    }
+    if (mediaTwo.value !== "") {
+      medias.push(mediaTwo.value);
+    }
+    if (mediaThree.value !== "") {
+      medias.push(mediaThree.value);
+    }
+    console.log(medias);
+
+    // Set end time for auction
     const today = new Date();
     let optionValue;
-    const optionOne = document.getElementById("sixHours");
-    const optionTwo = document.getElementById("twelveHours");
+    const optionOne = document.getElementById("optionOne");
+    const optionTwo = document.getElementById("optionTwo");
 
     if (optionOne.checked) {
       today.setHours(today.getHours() + 6);
@@ -30,14 +42,10 @@ export function createAuction() {
       optionValue = today.toISOString();
     }
 
-    // const form = event.target;
-    // const formData = new FormData(form);
-    // const postContent = Object.fromEntries(formData.entries());
-
     const postContent = {
       title: title.value,
       description: description.value,
-      media: [mediaOne.value, mediaTwo.value, mediaThree.value],
+      media: medias,
       endsAt: `${optionValue}`,
     };
 

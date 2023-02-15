@@ -1,5 +1,3 @@
-import * as storage from "../storage/localStorage.mjs";
-
 const logoutBtn = document.querySelector(".logoutBtn");
 
 export function logout() {

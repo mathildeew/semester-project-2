@@ -1,16 +1,25 @@
-@import "variables.scss";
-@import "reboot.scss";
-@import "utilities.scss";
-@import "navbar.scss";
+// Bootstrap overrides
+@import "variables";
+@import "reboot";
+@import "utilities";
+@import "navbar";
+@import "form-check";
 
-a {
-  text-decoration: none;
-}
+// Fonts
+@import url("https://use.typekit.net/hmk0koo.css");
+
+// Custom styles
+@import "./components/nav";
+
+// Bootstrap
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+// Global
 
 .errorMessage {
   display: none;
 }
-
+//
 input:focus {
   outline: none;
 }
@@ -19,28 +28,22 @@ input:focus {
   color: black;
 }
 
-// Nav
-#navBtn {
-  background-position: center center;
-  background-size: contain;
-}
-
 // Home
-#auctionCard {
-  .wrapper,
-  img {
-    height: 130px;
-    width: 130px;
-  }
+// #auctionCard {
+//   .wrapper,
+//   img {
+//     height: 130px;
+//     width: 130px;
+//   }
 
-  img {
-    vertical-align: middle;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    transition: all 0.2s ease;
-  }
-}
+//   img {
+//     vertical-align: middle;
+//     background-size: cover;
+//     background-position: center center;
+//     background-repeat: no-repeat;
+//     transition: all 0.2s ease;
+//   }
+// }
 
 // Profile
 #avatar {
@@ -54,6 +57,12 @@ input:focus {
 
 // Auction
 
+.card-img {
+  height: 300px;
+  object-fit: center;
+  object-position: center center;
+}
+
 #auctionImg {
   width: 130px;
   height: 130px;
@@ -64,16 +73,9 @@ input:focus {
   text-decoration: none;
 
   img {
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
   }
-}
-
-.navpic {
-  width: 40px;
-  height: 40px;
-  border: 2px solid black;
-  border-radius: 50%;
 }
 
 .bidPic {

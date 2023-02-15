@@ -1,17 +1,16 @@
 import * as storage from "../storage/localStorage.mjs";
+import { calcEndTime } from "../timer.mjs";
 const token = storage.get("token");
 
 export function displayAuctions(auctions) {
+  // console.log(auctions);
+
   const auctionsContainer = document.getElementById("auctions");
-
-  console.log(auctions);
-
   auctionsContainer.innerHTML = "";
 
   for (let i = 0; i < auctions.length; i++) {
     const title = auctions[i].title;
     let image = auctions[i].media[0];
-    const ends = auctions[i].endsAt;
     const id = auctions[i].id;
 
     // Placeholder image
@@ -19,25 +18,10 @@ export function displayAuctions(auctions) {
       image = "../../../assets/placeholder/placeholder_Gavel.png";
     }
 
-    // Timer
+    // Calculate auctions end time
     const today = new Date();
-    let timer;
-    let difference = new Date(ends).getTime() - new Date(today).getTime();
-
-    let seconds = Math.floor(difference / 1000);
-    let minutes = Math.floor(seconds / 60);
-    let hours = Math.floor(minutes / 60);
-    let days = Math.floor(hours / 24);
-
-    hours %= 24;
-    minutes %= 60;
-    seconds %= 60;
-
-    timer = `${days}d, ${hours}h, ${minutes}m, ${seconds}s`;
-
-    if (difference <= 0) {
-      timer = `Ended`;
-    }
+    const ends = auctions[i].endsAt;
+    let timer = calcEndTime(today, ends);
 
     // If no bids
     let highestBids;
@@ -48,10 +32,12 @@ export function displayAuctions(auctions) {
       highestBids = `$${auctions[i]._count.bids}`;
     }
 
+    // Display auctions
     let auctionCard = document.createElement("div");
     auctionCard.id = "auctionCard";
     auctionCard.className =
       "bg-light rounded m-1 mb-3  col-sm-4 col-md-3 col-lg-2";
+    // Logged in
     if (token !== null) {
       auctionCard.innerHTML += `
                                 <div class="p-2">
@@ -75,6 +61,7 @@ export function displayAuctions(auctions) {
 
       auctionCard.querySelector("a").href = `/profile/auction/?id=${id}`;
     } else {
+      // Not logged in
       auctionCard.classList.add("unauthBtn");
       auctionCard.setAttribute("data-bs-toggle", "modal");
       auctionCard.setAttribute("data-bs-target", "#unauthModal");

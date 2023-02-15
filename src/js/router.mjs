@@ -1,25 +1,21 @@
-import * as apiUrl from "./api/apiUrls.mjs";
-
-//UI
+// Auth
+import { redirect } from "./auth/redirect.mjs";
 import { nav } from "./components/nav.mjs";
-import { logout } from "./ui/nav.mjs";
-import { auth } from "./ui/auth.mjs";
-import { redirect } from "./ui/unauth/redirect.mjs";
+import { logout } from "./auth/logout.mjs";
 
 //Accounts
-import { register } from "./accounts/register.mjs";
-import { login } from "./accounts/login.mjs";
+import { register } from "./auth/register/register.mjs";
+import { login } from "./auth/login/login.mjs";
 
 // Home
-import { openModal } from "./ui/modal.mjs";
-import { getAuctions } from "./home/getAuctions.mjs";
+import { unauth } from "./home/unauth/unauth.mjs";
+import { getAuctions } from "./home/auctions/get.mjs";
 
 // Profile
-import { changeAvatar } from "./profile/changeAvatar.mjs";
+import { changeAvatar } from "./profile/api/change.mjs";
 import { getAuction } from "./auction/get.mjs";
-import { getProfileAPI } from "./profile/get.mjs";
-import { openUnauthModal } from "./home/unauth.mjs";
-import { createAuction } from "./home/create.mjs";
+import { getProfileAPI } from "./profile/api/get.mjs";
+import { createAuction } from "./home/auctions/create.mjs";
 import { placeBid } from "./auction/placeBid.mjs";
 
 // Run function based on pathname
@@ -28,28 +24,24 @@ const path = location.pathname;
 switch (path) {
   case "/":
     nav();
-    auth();
+    unauth();
     logout();
-    openModal();
     getAuctions();
-    openUnauthModal();
     createAuction();
     break;
 
   case "/profile/":
-    nav();
-    auth();
-    openModal();
-    changeAvatar();
-    logout();
     redirect();
+    nav();
+    logout();
+    changeAvatar();
     getProfileAPI();
     break;
 
   case "/profile/auction/":
+    redirect();
     nav();
     logout();
-    redirect();
     getAuction();
     placeBid();
     break;
