@@ -1,5 +1,5 @@
-import { baseUrl } from "../api/apiUrls.mjs";
-import { fetchOptions } from "../api/fetchOptions.mjs";
+import { baseUrl } from "../../api/apiUrls.mjs";
+import { fetchOptions } from "../../api/fetchOptions.mjs";
 
 export function createAuction() {
   const auctionForm = document.getElementById("createAuction");

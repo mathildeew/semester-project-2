@@ -9,13 +9,13 @@ import { login } from "./auth/login/login.mjs";
 
 // Home
 import { unauth } from "./home/unauth/unauth.mjs";
-import { getAuctions } from "./home/getAuctions.mjs";
+import { getAuctions } from "./home/auctions/get.mjs";
 
 // Profile
 import { changeAvatar } from "./profile/changeAvatar.mjs";
 import { getAuction } from "./auction/get.mjs";
 import { getProfileAPI } from "./profile/get.mjs";
-import { createAuction } from "./home/create.mjs";
+import { createAuction } from "./home/auctions/create.mjs";
 import { placeBid } from "./auction/placeBid.mjs";
 
 // Run function based on pathname
