@@ -1,22 +1,20 @@
-//UI
-import { redirect } from "./ui/auth/redirect.mjs";
+// Auth
+import { redirect } from "./auth/redirect.mjs";
 import { nav } from "./components/nav.mjs";
-import { logout } from "./ui/logout.mjs";
-import { auth } from "./ui/auth/auth.mjs";
+import { logout } from "./auth/logout.mjs";
 
 //Accounts
 import { register } from "./auth/register/register.mjs";
 import { login } from "./auth/login/login.mjs";
 
 // Home
-import { openNewAuctionModal } from "./home/newAuctionModal.mjs";
+import { unauth } from "./home/unauth/unauth.mjs";
 import { getAuctions } from "./home/getAuctions.mjs";
 
 // Profile
 import { changeAvatar } from "./profile/changeAvatar.mjs";
 import { getAuction } from "./auction/get.mjs";
 import { getProfileAPI } from "./profile/get.mjs";
-import { openUnauthModal } from "./home/unauthModal.mjs";
 import { createAuction } from "./home/create.mjs";
 import { placeBid } from "./auction/placeBid.mjs";
 
@@ -25,12 +23,10 @@ const path = location.pathname;
 
 switch (path) {
   case "/":
-    auth();
     nav();
+    unauth();
     logout();
-    openNewAuctionModal();
     getAuctions();
-    openUnauthModal();
     createAuction();
     break;
 
@@ -46,7 +42,6 @@ switch (path) {
   case "/profile/auction/":
     redirect();
     nav();
-    auth();
     logout();
     getAuction();
     placeBid();
