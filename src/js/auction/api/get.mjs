@@ -1,6 +1,6 @@
-import { baseUrl } from "../api/apiUrls.mjs";
-import { fetchOptions } from "../api/fetchOptions.mjs";
-import { displayAuction } from "./display.mjs";
+import { baseUrl } from "../../api/apiUrls.mjs";
+import { fetchOptions } from "../../api/fetchOptions.mjs";
+import { displayAuction } from "../display.mjs";
 
 export async function getAuction() {
   // Get params to link

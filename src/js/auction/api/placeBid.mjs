@@ -1,5 +1,5 @@
-import { baseUrl } from "../api/apiUrls.mjs";
-import { fetchOptions } from "../api/fetchOptions.mjs";
+import { baseUrl } from "../../api/apiUrls.mjs";
+import { fetchOptions } from "../../api/fetchOptions.mjs";
 
 // Get ID param to link
 const queryString = document.location.search;

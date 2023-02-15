@@ -44,6 +44,7 @@
     </div>
 
     <main>
+      <!-- Make bid modal -->
       <div class="modal" tabindex="-1" id="makeBidModal">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -75,12 +76,129 @@
                 placeholder="$ amount"
               />
 
-              <!-- Create auction button -->
+              <!-- Bid button -->
               <button
                 type="submit"
                 class="fw-bolder col-10 mt-3 rounded bg-secondary border-0 py-2"
               >
                 Place bid
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Delete auction modal -->
+      <div class="modal" tabindex="-1" id="deleteAuctionMdl">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="d-flex justify-content-end pt-3 pe-3">
+              <svg
+                type="button"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                height="30"
+                fill="currentColor"
+                class="bi bi-x-lg"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
+                />
+              </svg>
+            </div>
+            <div
+              class="d-flex flex-column align-items-center justify-content-center mb-5"
+            >
+              <p>Are you sure you want to delete this auction?</p>
+              <!-- Delete button -->
+              <button
+                id="deleteBtn"
+                type="submit"
+                class="fw-bolder col-10 mt-3 rounded bg-secondary border-0 py-2"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Update auction modal -->
+      <div class="modal" tabindex="-1" id="updateAuctionMdl">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="d-flex justify-content-end pt-3 pe-3">
+              <i
+                class="bi bi-x-lg"
+                type="button"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></i>
+            </div>
+            <form
+              id="updateAuctionForm"
+              class="row flex-column align-items-center p-3 mb-4"
+            >
+              <label for="title" class="col-10 fw-bold p-1"
+                >Title of auction</label
+              >
+              <input
+                id="newTitle"
+                class="col-10 rounded border p-1 mb-3"
+                name="title"
+                type="text"
+                maxlength="280"
+                required
+              />
+              <label for="media" class="col-10 fw-bold p-1"
+                >Choose up to three images:</label
+              >
+              <input
+                id="newMediaOne"
+                class="col-10 rounded border p-1 mb-3"
+                name="media"
+                type="url"
+                placeholder="Image must be url"
+              />
+              <input
+                id="newMediaTwo"
+                class="col-10 rounded border p-1 mb-3"
+                name="media"
+                type="url"
+                placeholder="Image must be url"
+              />
+              <input
+                id="newMediaThree"
+                class="col-10 rounded border p-1 mb-4"
+                name="media"
+                type="url"
+                placeholder="Image must be url"
+              />
+              <label for="description" class="col-10 fw-bold p-1"
+                >Description</label
+              >
+              <textarea
+                id="newAuctionDesc"
+                class="col-10 rounded border mb-3"
+                name="description"
+                type="text"
+                cols="30"
+                rows="5"
+                maxlength="280"
+              ></textarea>
+
+              <!-- Update auction button -->
+              <button
+                id="updateAuctionBtn"
+                type="submit"
+                class="col-10 bg-secondary fw-bolder rounded border-0 py-2 mt-3"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                Update auction
               </button>
             </form>
           </div>
@@ -107,13 +225,17 @@
             id="update"
             type="button"
             class="fw-bolder rounded bg-secondary border-0 py-2 px-5 mb-3"
+            data-bs-toggle="modal"
+            data-bs-target="#updateAuctionMdl"
           >
             Update
           </button>
 
           <button
-            id="delete"
+            id="deleteModalBtn"
             type="button"
+            data-bs-toggle="modal"
+            data-bs-target="#deleteAuctionMdl"
             class="fw-bolder rounded bg-light border-1 py-2 px-5"
           >
             Delete
