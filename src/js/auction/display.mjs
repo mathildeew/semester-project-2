@@ -1,9 +1,6 @@
-import { hideButtons } from "./auth/auth.mjs";
 import { calcEndTime } from "../timer.mjs";
 
 export function displayAuction(auction) {
-  console.log(auction);
-  hideButtons(auction);
   const placeBidBtn = document.getElementById("placeBid");
 
   // Calculate auction ends time
@@ -102,17 +99,11 @@ export function displayAuction(auction) {
 
   if (auction.media.length > 0) {
     newMediaOne.value = auction.media[0];
-  } else {
-    newMediaOne.setAttribute("placeholder", "Image must be URL");
   }
   if (auction.media.length > 1) {
     newMediaTwo.value = auction.media[1];
-  } else {
-    newMediaTwo.setAttribute("placeholder", "Image must be URL");
   }
   if (auction.media.length > 2) {
-    newMediaThree.value = auction.media[3];
-  } else {
-    newMediaThree.setAttribute("placeholder", "Image must be URL");
+    newMediaThree.value = auction.media[2];
   }
 }

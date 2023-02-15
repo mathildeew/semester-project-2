@@ -139,7 +139,7 @@
               ></i>
             </div>
             <form
-              id="updateAuction"
+              id="updateAuctionForm"
               class="row flex-column align-items-center p-3 mb-4"
             >
               <label for="title" class="col-10 fw-bold p-1"
@@ -161,18 +161,21 @@
                 class="col-10 rounded border p-1 mb-3"
                 name="media"
                 type="url"
+                placeholder="Image must be url"
               />
               <input
                 id="newMediaTwo"
                 class="col-10 rounded border p-1 mb-3"
                 name="media"
                 type="url"
+                placeholder="Image must be url"
               />
               <input
                 id="newMediaThree"
                 class="col-10 rounded border p-1 mb-4"
                 name="media"
                 type="url"
+                placeholder="Image must be url"
               />
               <label for="description" class="col-10 fw-bold p-1"
                 >Description</label
@@ -189,8 +192,11 @@
 
               <!-- Update auction button -->
               <button
+                id="updateAuctionBtn"
                 type="submit"
-                class="createAuctionBtn col-10 bg-secondary fw-bolder rounded border-0 py-2 mt-3"
+                class="col-10 bg-secondary fw-bolder rounded border-0 py-2 mt-3"
+                data-bs-dismiss="modal"
+                aria-label="Close"
               >
                 Update auction
               </button>
