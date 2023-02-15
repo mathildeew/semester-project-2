@@ -95,29 +95,34 @@
                 >Title of auction</label
               >
               <input
-                class="auctionTitle col-10 rounded border p-1 mb-3"
+                id="auctionTitle"
+                class="col-10 rounded border p-1 mb-3"
                 name="title"
                 type="text"
                 placeholder="A very cool..."
+                maxlength="280"
                 required
               />
               <label for="media" class="col-10 fw-bold p-1"
                 >Choose up to three images:</label
               >
               <input
-                class="mediaOne col-10 rounded border p-1 mb-3"
+                id="mediaOne"
+                class="col-10 rounded border p-1 mb-3"
                 name="media"
                 type="url"
                 placeholder="URL to image one"
               />
               <input
-                class="mediaTwo col-10 rounded border p-1 mb-3"
+                id="mediaTwo"
+                class="col-10 rounded border p-1 mb-3"
                 name="media"
                 type="url"
                 placeholder="URL to image two"
               />
               <input
-                class="mediaThree col-10 rounded border p-1 mb-4"
+                id="mediaThree"
+                class="col-10 rounded border p-1 mb-4"
                 name="media"
                 type="url"
                 placeholder="URL to image three"
@@ -126,12 +131,14 @@
                 >Description</label
               >
               <textarea
-                class="auctionDescp col-10 rounded border mb-3"
+                id="auctionDesc"
+                class="col-10 rounded border mb-3"
                 name="description"
                 type="text"
                 cols="30"
                 rows="5"
-                placeholder="Max 180 characters"
+                maxlength="280"
+                placeholder="Max 280 characters"
               ></textarea>
 
               <!-- Radios -->
@@ -139,10 +146,10 @@
                 <p class="fw-bold mb-0">Auctions ends in:</p>
                 <div class="form-check">
                   <input
+                    id="optionOne"
                     class="form-check-input"
                     type="radio"
                     name="endsAt"
-                    id="sixHours"
                     value="6"
                     checked
                   />
@@ -152,10 +159,10 @@
                 </div>
                 <div class="form-check">
                   <input
+                    id="optionOne"
                     class="form-check-input"
                     type="radio"
                     name="endsAt"
-                    id="twelveHours"
                     value="12"
                   />
                   <label class="form-check-label" for="flexRadioDefault2">

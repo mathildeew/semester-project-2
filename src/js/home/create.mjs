@@ -1,8 +1,5 @@
 import { baseUrl } from "../api/apiUrls.mjs";
 import { fetchOptions } from "../api/fetchOptions.mjs";
-import * as storage from "../storage/localStorage.mjs";
-
-const token = storage.get("token");
 
 export function createAuction() {
   const auctionForm = document.getElementById("createAuction");
@@ -10,17 +7,19 @@ export function createAuction() {
   auctionForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    const title = document.querySelector(".auctionTitle");
-    const description = document.querySelector(".auctionDescp");
-    const mediaOne = document.querySelector(".mediaOne");
-    const mediaTwo = document.querySelector(".mediaTwo");
-    const mediaThree = document.querySelector(".mediaThree");
+    const title = document.getElementById("auctionTitle");
+    const description = document.getElementById("auctionDesc");
+    const mediaOne = document.getElementById("mediaOne");
+    const mediaTwo = document.getElementById("mediaTwo");
+    const mediaThree = document.getElementById("mediaThree");
+    const media = [{ mediaOne }, { mediaTwo }, { mediaThree }];
+    // Send empty string if no images
 
-    // Send end time for auction
+    // Set end time for auction
     const today = new Date();
     let optionValue;
-    const optionOne = document.getElementById("sixHours");
-    const optionTwo = document.getElementById("twelveHours");
+    const optionOne = document.getElementById("optionOne");
+    const optionTwo = document.getElementById("optionTwo");
 
     if (optionOne.checked) {
       today.setHours(today.getHours() + 6);
@@ -29,10 +28,6 @@ export function createAuction() {
       today.setHours(today.getHours() + 12);
       optionValue = today.toISOString();
     }
-
-    // const form = event.target;
-    // const formData = new FormData(form);
-    // const postContent = Object.fromEntries(formData.entries());
 
     const postContent = {
       title: title.value,
@@ -47,6 +42,7 @@ export function createAuction() {
       const response = await fetch(url, postData);
       const json = await response.json();
       console.log(json);
+      console.log(postContent);
     }
     createAuctionAPI(`${baseUrl}/auction/listings`, postContent);
   });
