@@ -18,6 +18,9 @@ import { getProfileAPI } from "./profile/api/get.mjs";
 import { createAuction } from "./home/auctions/create.mjs";
 import { placeBid } from "./auction/placeBid.mjs";
 
+// Auction
+import { deleteAuction } from "./auction/delete.mjs";
+
 // Run function based on pathname
 const path = location.pathname;
 
@@ -44,6 +47,7 @@ switch (path) {
     logout();
     getAuction();
     placeBid();
+    deleteAuction();
     break;
 
   case "/accounts/login/":
