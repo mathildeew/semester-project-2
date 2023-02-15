@@ -36,20 +36,16 @@ export function displayAuctions(auctions) {
     let auctionCard = document.createElement("div");
     auctionCard.id = "auctionCard";
     auctionCard.className =
-      "bg-light rounded m-1 mb-3  col-sm-4 col-md-3 col-lg-2";
+      "container-fluid h-100 bg-light rounded col-5 col-sm-4 col-md-3 col-lg-2 mb-2 p-2";
     // Logged in
     if (token !== null) {
       auctionCard.innerHTML += `
-                                <div class="p-2">
+                                <div>
                                   <a>
                                     <div class="wrapper overflow-hidden rounded">
-                                      <img class="mb-2" />
+                                      <img id="auctionsImg" class="mb-2" />
                                     </div>
-                                    <p class=""></p>
-                                    <div class="d-flex">
-                                      <i class="bi bi-tag-fill me-1"></i>
-                                      <p class="mb-1">Tag tag</p>
-                                    </div>
+                                    <p class="fw-bold"></p>
                                     <div class="d-flex">
                                       <i class="bi bi-clock-fill me-1"></i>
                                       <p class="mb-0"></p>
@@ -66,15 +62,11 @@ export function displayAuctions(auctions) {
       auctionCard.setAttribute("data-bs-toggle", "modal");
       auctionCard.setAttribute("data-bs-target", "#unauthModal");
       auctionCard.innerHTML += `
-                                <div class="p-2">
+                                <div>
                                   <div class="wrapper overflow-hidden rounded">
-                                    <img class="mb-2" />
+                                    <img id="auctionsImg" class="mb-2" />
                                   </div>
-                                  <p class="mb-0 fw-semibold"></p>
-                                  <div class="d-flex">
-                                    <i class="bi bi-tag-fill me-1"></i>
-                                    <p class="mb-1">Tag tag</p>
-                                  </div>
+                                  <p class="mb-0 fw-bold"></p>
                                   <div class="d-flex">
                                     <i class="bi bi-clock-fill me-1"></i>
                                     <p class="mb-0"></p>
@@ -86,8 +78,8 @@ export function displayAuctions(auctions) {
 
     auctionCard.querySelector("img").src = image;
     auctionCard.querySelector("p:nth-child(2)").innerText = title;
-    auctionCard.querySelector("div:nth-child(4) p").innerText = timer;
-    auctionCard.querySelector("p:nth-child(5)").innerText = highestBids;
+    auctionCard.querySelector("div:nth-child(3) p").innerText = timer;
+    auctionCard.querySelector("p:nth-child(4)").innerText = highestBids;
 
     auctionsContainer.append(auctionCard);
   }

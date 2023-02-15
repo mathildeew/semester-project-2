@@ -10859,6 +10859,12 @@ input:focus {
   color: black;
 }
 
+#auctionsImg {
+  max-width: 100%;
+  vertical-align: middle;
+  transition: all 0.2s ease;
+}
+
 #avatar {
   width: 100px;
   height: 100px;

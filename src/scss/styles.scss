@@ -29,6 +29,12 @@ input:focus {
 }
 
 // Home
+#auctionsImg {
+  max-width: 100%;
+  vertical-align: middle;
+  transition: all 0.2s ease;
+}
+
 // #auctionCard {
 //   .wrapper,
 //   img {
@@ -37,11 +43,9 @@ input:focus {
 //   }
 
 //   img {
-//     vertical-align: middle;
 //     background-size: cover;
 //     background-position: center center;
 //     background-repeat: no-repeat;
-//     transition: all 0.2s ease;
 //   }
 // }
 
