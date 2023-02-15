@@ -20,6 +20,7 @@ import { placeBid } from "./auction/placeBid.mjs";
 
 // Auction
 import { deleteAuction } from "./auction/delete.mjs";
+import { updateAuction } from "./auction/update.mjs";
 
 // Run function based on pathname
 const path = location.pathname;
@@ -48,6 +49,7 @@ switch (path) {
     getAuction();
     placeBid();
     deleteAuction();
+    updateAuction();
     break;
 
   case "/accounts/login/":

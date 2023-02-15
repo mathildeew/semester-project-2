@@ -26,7 +26,6 @@ export function createAuction() {
     if (mediaThree.value !== "") {
       medias.push(mediaThree.value);
     }
-    console.log(medias);
 
     // Set end time for auction
     const today = new Date();

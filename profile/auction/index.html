@@ -126,6 +126,85 @@
         </div>
       </div>
 
+      <!-- Update auction modal -->
+      <div class="modal" tabindex="-1" id="updateAuctionMdl">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="d-flex justify-content-end pt-3 pe-3">
+              <i
+                class="bi bi-x-lg"
+                type="button"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></i>
+            </div>
+            <form
+              id="updateAuctionForm"
+              class="row flex-column align-items-center p-3 mb-4"
+            >
+              <label for="title" class="col-10 fw-bold p-1"
+                >Title of auction</label
+              >
+              <input
+                id="newTitle"
+                class="col-10 rounded border p-1 mb-3"
+                name="title"
+                type="text"
+                maxlength="280"
+                required
+              />
+              <label for="media" class="col-10 fw-bold p-1"
+                >Choose up to three images:</label
+              >
+              <input
+                id="newMediaOne"
+                class="col-10 rounded border p-1 mb-3"
+                name="media"
+                type="url"
+                placeholder="Image must be url"
+              />
+              <input
+                id="newMediaTwo"
+                class="col-10 rounded border p-1 mb-3"
+                name="media"
+                type="url"
+                placeholder="Image must be url"
+              />
+              <input
+                id="newMediaThree"
+                class="col-10 rounded border p-1 mb-4"
+                name="media"
+                type="url"
+                placeholder="Image must be url"
+              />
+              <label for="description" class="col-10 fw-bold p-1"
+                >Description</label
+              >
+              <textarea
+                id="newAuctionDesc"
+                class="col-10 rounded border mb-3"
+                name="description"
+                type="text"
+                cols="30"
+                rows="5"
+                maxlength="280"
+              ></textarea>
+
+              <!-- Update auction button -->
+              <button
+                id="updateAuctionBtn"
+                type="submit"
+                class="col-10 bg-secondary fw-bolder rounded border-0 py-2 mt-3"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                Update auction
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
       <!-- Auction -->
       <section id="auctions" class="bg-light mx-1 my-3 rounded">
         <div id="auctionCards" class="align-items-center p-2"></div>
@@ -146,6 +225,8 @@
             id="update"
             type="button"
             class="fw-bolder rounded bg-secondary border-0 py-2 px-5 mb-3"
+            data-bs-toggle="modal"
+            data-bs-target="#updateAuctionMdl"
           >
             Update
           </button>
