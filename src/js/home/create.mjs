@@ -9,11 +9,25 @@ export function createAuction() {
 
     const title = document.getElementById("auctionTitle");
     const description = document.getElementById("auctionDesc");
+
     const mediaOne = document.getElementById("mediaOne");
     const mediaTwo = document.getElementById("mediaTwo");
     const mediaThree = document.getElementById("mediaThree");
-    const media = [{ mediaOne }, { mediaTwo }, { mediaThree }];
-    // Send empty string if no images
+
+    // Add images to media object
+    const images = [mediaOne, mediaTwo, mediaThree];
+    let medias = [];
+
+    if (mediaOne.value !== "") {
+      medias.push(mediaOne.value);
+    }
+    if (mediaTwo.value !== "") {
+      medias.push(mediaTwo.value);
+    }
+    if (mediaThree.value !== "") {
+      medias.push(mediaThree.value);
+    }
+    console.log(medias);
 
     // Set end time for auction
     const today = new Date();
@@ -32,7 +46,7 @@ export function createAuction() {
     const postContent = {
       title: title.value,
       description: description.value,
-      media: [mediaOne.value, mediaTwo.value, mediaThree.value],
+      media: medias,
       endsAt: `${optionValue}`,
     };
 
