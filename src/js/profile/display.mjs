@@ -55,7 +55,8 @@ export function displayProfile(profile) {
       // Display auctions
       const auctionsContainer = document.getElementById("auctionsProfile");
       const auctionCard = document.createElement("div");
-      auctionCard.className = "bg-light rounded mb-3 p-2";
+      auctionCard.className =
+        "col-12 col-sm-5 col-md-3 bg-light rounded mb-3 p-2";
       auctionCard.innerHTML += `
                                 <a>
                                   <img id="auctionImg" class="rounded border-dark mb-2" />

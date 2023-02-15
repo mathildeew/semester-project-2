@@ -43,7 +43,7 @@
       </div>
     </div>
 
-    <main class="d-flex flex-column justify-content-center align-items-center">
+    <main class="row justify-content-center align-items-center mx-1">
       <!-- Change avatar modal -->
       <div class="modal" tabindex="-1" id="myModal">
         <div class="modal-dialog">
@@ -89,8 +89,8 @@
       </div>
 
       <!-- User information -->
-      <section class="bg-light rounded mt-4">
-        <div class="d-flex flex-column align-items-center p-3">
+      <section class="col-12 bg-light rounded mt-4">
+        <div class="d-flex flex-column align-items-center px-5 py-3">
           <img id="avatar" class="profilePic rounded-circle" />
           <h2 id="username"></h2>
           <p id="credits" class="fw-bolder mb-0"></p>
@@ -109,7 +109,10 @@
       </section>
 
       <!-- Auctions -->
-      <section id="auctionsProfile" class="mt-4 mx-1">
+      <section
+        id="auctionsProfile"
+        class="row col-12 justify-content-sm-around mt-4"
+      >
         <h3>Auctions</h3>
       </section>
     </main>
