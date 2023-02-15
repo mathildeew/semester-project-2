@@ -5,8 +5,8 @@ import { logout } from "./ui/logout.mjs";
 import { auth } from "./ui/auth/auth.mjs";
 
 //Accounts
-import { register } from "./accounts/register.mjs";
-import { login } from "./accounts/login.mjs";
+import { register } from "./auth/register.mjs";
+import { login } from "./auth/login/login.mjs";
 
 // Home
 import { openNewAuctionModal } from "./home/newAuctionModal.mjs";
