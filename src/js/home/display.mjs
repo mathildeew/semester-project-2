@@ -37,6 +37,7 @@ export function displayAuctions(auctions) {
     auctionCard.id = "auctionCard";
     auctionCard.className =
       "bg-light rounded m-1 mb-3  col-sm-4 col-md-3 col-lg-2";
+    // Logged in
     if (token !== null) {
       auctionCard.innerHTML += `
                                 <div class="p-2">
@@ -60,6 +61,7 @@ export function displayAuctions(auctions) {
 
       auctionCard.querySelector("a").href = `/profile/auction/?id=${id}`;
     } else {
+      // Not logged in
       auctionCard.classList.add("unauthBtn");
       auctionCard.setAttribute("data-bs-toggle", "modal");
       auctionCard.setAttribute("data-bs-target", "#unauthModal");
