@@ -1,6 +1,6 @@
-import { baseUrl } from "../api/apiUrls.mjs";
-import { fetchOptions } from "../api/fetchOptions.mjs";
-import * as storage from "../storage/localStorage.mjs";
+import { baseUrl } from "../../api/apiUrls.mjs";
+import { fetchOptions } from "../../api/fetchOptions.mjs";
+import * as storage from "../../storage/localStorage.mjs";
 
 const name = storage.get("name");
 const changeAvatarForm = document.getElementById("changeAvatar");

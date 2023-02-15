@@ -12,9 +12,9 @@ import { unauth } from "./home/unauth/unauth.mjs";
 import { getAuctions } from "./home/auctions/get.mjs";
 
 // Profile
-import { changeAvatar } from "./profile/changeAvatar.mjs";
+import { changeAvatar } from "./profile/api/change.mjs";
 import { getAuction } from "./auction/get.mjs";
-import { getProfileAPI } from "./profile/get.mjs";
+import { getProfileAPI } from "./profile/api/get.mjs";
 import { createAuction } from "./home/auctions/create.mjs";
 import { placeBid } from "./auction/placeBid.mjs";
 
@@ -33,7 +33,6 @@ switch (path) {
   case "/profile/":
     redirect();
     nav();
-    auth();
     logout();
     changeAvatar();
     getProfileAPI();

@@ -1,6 +1,6 @@
-import { baseUrl } from "../api/apiUrls.mjs";
-import { fetchOptions } from "../api/fetchOptions.mjs";
-import { displayProfile } from "./display.mjs";
+import { baseUrl } from "../../api/apiUrls.mjs";
+import { fetchOptions } from "../../api/fetchOptions.mjs";
+import { displayProfile } from "../display.mjs";
 
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
