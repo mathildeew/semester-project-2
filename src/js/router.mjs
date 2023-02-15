@@ -5,7 +5,7 @@ import { logout } from "./ui/logout.mjs";
 import { auth } from "./ui/auth/auth.mjs";
 
 //Accounts
-import { register } from "./auth/register.mjs";
+import { register } from "./auth/register/register.mjs";
 import { login } from "./auth/login/login.mjs";
 
 // Home
