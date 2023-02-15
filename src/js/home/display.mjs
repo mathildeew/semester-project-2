@@ -36,7 +36,7 @@ export function displayAuctions(auctions) {
     let auctionCard = document.createElement("div");
     auctionCard.id = "auctionCard";
     auctionCard.className =
-      "container-fluid h-100 bg-light rounded col-5 col-sm-4 col-md-3 col-lg-2 mb-2 p-2";
+      "container-fluid h-100 bg-light rounded col-5 col-sm-5 col-md-3 mx-md-1 my-3";
     // Logged in
     if (token !== null) {
       auctionCard.innerHTML += `
