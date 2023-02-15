@@ -39,7 +39,6 @@ switch (path) {
     nav();
     auth();
     logout();
-    openNewAuctionModal();
     changeAvatar();
     getProfileAPI();
     break;

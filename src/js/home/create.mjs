@@ -15,7 +15,6 @@ export function createAuction() {
     const mediaThree = document.getElementById("mediaThree");
 
     // Add images to media object
-    const images = [mediaOne, mediaTwo, mediaThree];
     let medias = [];
 
     if (mediaOne.value !== "") {
@@ -56,7 +55,6 @@ export function createAuction() {
       const response = await fetch(url, postData);
       const json = await response.json();
       console.log(json);
-      console.log(postContent);
     }
     createAuctionAPI(`${baseUrl}/auction/listings`, postContent);
   });

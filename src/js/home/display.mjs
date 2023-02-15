@@ -3,7 +3,7 @@ import { calcEndTime } from "../timer.mjs";
 const token = storage.get("token");
 
 export function displayAuctions(auctions) {
-  console.log(auctions);
+  // console.log(auctions);
 
   const auctionsContainer = document.getElementById("auctions");
   auctionsContainer.innerHTML = "";
