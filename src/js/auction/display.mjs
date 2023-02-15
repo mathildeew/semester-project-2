@@ -89,4 +89,30 @@ export function displayAuction(auction) {
       bidsContainer.append(bidsHistory);
     }
   }
+
+  // Display current auction as placeholder in update form
+  const newTitle = document.getElementById("newTitle");
+  const newDesc = document.getElementById("newAuctionDesc");
+  const newMediaOne = document.getElementById("newMediaOne");
+  const newMediaTwo = document.getElementById("newMediaTwo");
+  const newMediaThree = document.getElementById("newMediaThree");
+
+  newTitle.value = auction.title;
+  newDesc.value = auction.description;
+
+  if (auction.media.length > 0) {
+    newMediaOne.value = auction.media[0];
+  } else {
+    newMediaOne.setAttribute("placeholder", "Image must be URL");
+  }
+  if (auction.media.length > 1) {
+    newMediaTwo.value = auction.media[1];
+  } else {
+    newMediaTwo.setAttribute("placeholder", "Image must be URL");
+  }
+  if (auction.media.length > 2) {
+    newMediaThree.value = auction.media[3];
+  } else {
+    newMediaThree.setAttribute("placeholder", "Image must be URL");
+  }
 }
