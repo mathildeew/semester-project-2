@@ -56,22 +56,26 @@ export function displayProfile(profile) {
       const auctionsContainer = document.getElementById("auctionsProfile");
       const auctionCard = document.createElement("div");
       auctionCard.className =
-        "col-12 col-sm-5 col-md-3 bg-light rounded mb-3 p-2";
+        "col-11 col-sm-7 col-md-5 mx-md-2 col-lg-4 mx-lg-3 col-xl-3 mx-xl-4 mb-4 mb-xl-5 py-3 bg-light rounded";
       auctionCard.innerHTML += `
-                                <a>
-                                  <img id="auctionImg" class="rounded border-dark mb-2" />
-                                  <p class="card-title fs-5 fw-semibold">title</p>
-                                    <div class="d-flex">
+                                <a class="d-flex align-items-center justify-content-start">
+                                  <img id="auctionsImg" class="rounded mb-2" />
+                                  <div class="ms-3">
+                                    <p class="auctionCardTitle fw-bold mb-0"></p>
+                                    <p class="auctionCardSeller fw-light mb-3"></p>
+                                    <div class="d-flex mb-3">
                                       <i class="bi bi-clock-fill me-1"></i>
-                                      <p class="mb-0"></p>
+                                      <p class="auctionCardEnds mb-0"></p>
                                     </div>
+                                    <p class="auctionCardHighestBid fs-5 fw-bold mb-0"></p>
+                                  </div>  
                                 </a>
                               `;
 
       auctionCard.querySelector("a").href = `/profile/auction/?id=${id}`;
-      auctionCard.querySelector("img").src = image;
-      auctionCard.querySelector("p").innerText = title;
-      auctionCard.querySelector("div:nth-child(3) p").innerText = timer;
+      auctionCard.querySelector("#auctionsImg").src = image;
+      auctionCard.querySelector(".auctionCardTitle").innerText = title;
+      auctionCard.querySelector(".auctionCardEnds").innerText = timer;
       auctionsContainer.append(auctionCard);
     }
   }
