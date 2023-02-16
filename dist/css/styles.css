@@ -10871,7 +10871,10 @@ input:focus {
   transition: all 0.2s ease;
 }
 
-#auction img {
+#auction img,
+#auction .slideOne,
+#auction .slideTwo,
+#auction .slideThree {
   max-width: 600px;
   max-height: 450px;
   object-fit: cover;
