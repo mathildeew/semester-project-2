@@ -43,7 +43,7 @@
       </div>
     </div>
 
-    <main>
+    <main class="maxWidth mx-auto">
       <!-- Make bid modal -->
       <div class="modal" tabindex="-1" id="makeBidModal">
         <div class="modal-dialog">
@@ -206,11 +206,26 @@
       </div>
 
       <!-- Auction -->
-      <section id="auctions" class="bg-light mx-1 my-3 rounded">
-        <div id="auctionCards" class="align-items-center p-2"></div>
+      <section
+        id="auction"
+        class="row mx-1 my-3 justify-content-center justify-content-md-center"
+      >
+        <div class="d-flex justify-content-center">
+          <img id="auctionImg" class="col-12 rounded mb-4" src="" alt="" />
+        </div>
 
-        <!-- Buttons -->
-        <div class="d-flex flex-column align-items-center p-2 mb-3">
+        <div class="col-12 col-sm-9 col-md-7 me-md-4 col-lg-6 mb-4">
+          <div>
+            <h2></h2>
+            <div class="d-flex">
+              <i class="bi bi-clock-fill me-1"></i>
+              <p></p>
+            </div>
+            <p id="highestBid" class="bg-primary fs-5 p-1 mb-3 rounded">
+              No bids
+            </p>
+          </div>
+
           <button
             id="placeBid"
             type="button"
@@ -220,7 +235,18 @@
           >
             Place bid
           </button>
+          <p id="auctionDesc"></p>
+        </div>
 
+        <div
+          id="sellerCard"
+          class="bg-light rounded d-flex flex-column justify-content-center align-items-center col-8 col-sm-5 col-md-4 col-lg-4 mx-1 mb-4 py-3"
+        >
+          <img
+            id="sellerCard"
+            class="rounded-circle border border-2 border-dark"
+          />
+          <h3 id="sellerName"></h3>
           <button
             id="update"
             type="button"
@@ -244,9 +270,9 @@
       </section>
 
       <!-- Bids history -->
-      <section id="bids" class="mx-1">
+      <section id="bids" class="d-flex flex-column justify-content-center mx-1">
         <h2 class="ms-3">Bids</h2>
-        <div id="bidsHistory" class="d-flex flex-column"></div>
+        <div id="bidsHistory" class="mx-3"></div>
       </section>
     </main>
 

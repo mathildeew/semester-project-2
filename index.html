@@ -183,7 +183,7 @@
         </div>
       </div>
 
-      <!-- Buttons -->
+      <!-- New auction -->
       <div class="modalBtn d-flex flex-column align-items-center">
         <button
           class="fw-bolder bg-secondary rounded border-0 px-5 py-2 mt-4"
@@ -194,18 +194,40 @@
         >
           New auction
         </button>
+      </div>
 
-        <input
-          id="search"
-          class="text-center rounded mt-4 px-1 py-2"
-          type="search"
-          placeholder="Search..."
-          aria-label="Search"
-        />
+      <!-- Search and filter -->
+      <div class="maxWidth row mx-auto mb-4">
+        <div
+          class="d-flex align-items-center mx-auto justify-content-center col-11 justify-content-md-end col-lg-10 col-xl-11"
+        >
+          <input
+            id="search"
+            class="text-center rounded mt-4 me-3 px-1 py-2"
+            type="search"
+            placeholder="Search..."
+            aria-label="Search"
+          />
+
+          <div class="dropdown mt-4">
+            <i
+              class="bi bi-funnel-fill dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+            </i>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Most popular</a></li>
+              <li><a class="dropdown-item" href="#">Without test</a></li>
+              <li><a class="dropdown-item" href="#">Ended</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
 
       <!-- API auctions -->
-      <div id="auctions" class="row justify-content-around mt-4 mx-1">
+      <div id="auctions" class="maxWidth row justify-content-center mx-auto">
         <!-- Loader -->
         <div class="loader">
           <div class="gavel"></div>

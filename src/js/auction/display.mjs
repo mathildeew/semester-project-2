@@ -1,6 +1,7 @@
 import { calcEndTime } from "../timer.mjs";
 
 export function displayAuction(auction) {
+  console.log(auction);
   const placeBidBtn = document.getElementById("placeBid");
 
   // Calculate auction ends time
@@ -14,39 +15,20 @@ export function displayAuction(auction) {
 
   // Display auction
   const auctionCard = document.getElementById("auctionCards");
-  const cardBody = document.createElement("div");
-  cardBody.className = "d-flex flex-column";
-  cardBody.innerHTML = `
-                        <div class="d-flex flex-column">
-                          <img class="rounded"/>
-                          <a id="sellerButton" class="bg-grey d-flex align-items-center rounded-pill mt-1 ms-1">
-                            <img class="rounded-circle border border-dark"/>
-                            <p class="mb-0 ms-2 me-3"></p>
-                          </a>
-                        <img class="rounded mb-2" />
-                        <p class="fs-3 fw-bold mb-2"></p>
-                        <div class="d-flex">
-                          <i class="bi bi-clock-fill me-1"></i>
-                          <p><p>
-                        </div>
-                        <p class="bg-primary w-75 fs-5 p-2 mb-3 rounded">No bids</p>
-                        <p class="fs-5 mb-0">Description</p>
-                        <p></p>
-  `;
-  cardBody.querySelector("a img").src = auction.seller.avatar;
-  cardBody.querySelector("a p").innerText = auction.seller.name;
-
-  cardBody.querySelector("img").src = auction.media;
-  cardBody.querySelector("p:nth-child(4)").innerText = auction.title;
-  cardBody.querySelector("div:nth-child(5) p").innerText = timer;
+  const auctionContainer = document.getElementById("auction");
+  auctionContainer.querySelector("img").src = auction.media;
+  auctionContainer.querySelector("h2").innerText = auction.title;
+  auctionContainer.querySelector("div p").innerText = timer;
   if (auction.bids.length > 0) {
-    cardBody.querySelector("p:nth-child(6)").innerText = `Highest bid: $${
+    auctionContainer.querySelector("#highestBid").innerText = `Highest bid: $${
       auction.bids[auction.bids.length - 1].amount
     }`;
   }
-  cardBody.querySelector("p:nth-child(8)").innerText = auction.description;
-
-  auctionCard.append(cardBody);
+  auctionContainer.querySelector("#auctionDesc").innerText =
+    auction.description;
+  auctionContainer.querySelector("#sellerCard img").src = auction.seller.avatar;
+  auctionContainer.querySelector("#sellerCard h3").innerText =
+    auction.seller.name;
 
   // Sort and show bids
   const bids = auction.bids;

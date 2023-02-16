@@ -10847,6 +10847,10 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.maxWidth {
+  max-width: 900px;
+}
+
 .errorMessage {
   display: none;
 }
@@ -10857,6 +10861,26 @@ input:focus {
 
 ::placeholder {
   color: black;
+}
+
+#auctionsImg {
+  width: 125px;
+  height: 125px;
+  object-fit: cover;
+  vertical-align: middle;
+  transition: all 0.2s ease;
+}
+
+#auction img {
+  max-width: 600px;
+  max-height: 450px;
+  object-fit: cover;
+}
+
+#sellerCard img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
 }
 
 #avatar {
@@ -10872,11 +10896,6 @@ input:focus {
   height: 300px;
   object-fit: center;
   object-position: center center;
-}
-
-#auctionImg {
-  width: 130px;
-  height: 130px;
 }
 
 #sellerButton {
