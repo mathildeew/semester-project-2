@@ -10847,6 +10847,10 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.maxWidth {
+  max-width: 1300px;
+}
+
 .errorMessage {
   display: none;
 }
@@ -10860,8 +10864,8 @@ input:focus {
 }
 
 #auctionsImg {
-  width: 120px;
-  height: 120px;
+  width: 125px;
+  height: 125px;
   object-fit: cover;
   vertical-align: middle;
   transition: all 0.2s ease;
