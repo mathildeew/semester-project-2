@@ -42,7 +42,10 @@ input:focus {
 
 // Auction
 #auction {
-  img {
+  img,
+  .slideOne,
+  .slideTwo,
+  .slideThree {
     max-width: 600px;
     max-height: 450px;
     object-fit: cover;

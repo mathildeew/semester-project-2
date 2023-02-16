@@ -1,7 +1,7 @@
 import { calcEndTime } from "../timer.mjs";
+import { auctionCarousel } from "./carousel.mjs";
 
 export function displayAuction(auction) {
-  console.log(auction);
   const placeBidBtn = document.getElementById("placeBid");
 
   // Calculate auction ends time
@@ -14,9 +14,15 @@ export function displayAuction(auction) {
   }
 
   // Display auction
-  const auctionCard = document.getElementById("auctionCards");
   const auctionContainer = document.getElementById("auction");
-  auctionContainer.querySelector("img").src = auction.media;
+
+  // Run image carousel
+  if (auction.media.length > 1) {
+    auctionCarousel(auction);
+  } else {
+    auctionContainer.querySelector("img").src = auction.media;
+  }
+
   auctionContainer.querySelector("h2").innerText = auction.title;
   auctionContainer.querySelector("div p").innerText = timer;
   if (auction.bids.length > 0) {
