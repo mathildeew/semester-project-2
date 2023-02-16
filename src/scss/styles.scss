@@ -16,7 +16,7 @@
 
 // Global
 .maxWidth {
-  max-width: 1300px;
+  max-width: 900px;
 }
 
 .errorMessage {
@@ -38,6 +38,23 @@ input:focus {
   object-fit: cover;
   vertical-align: middle;
   transition: all 0.2s ease;
+}
+
+// Auction
+#auction {
+  img {
+    max-width: 600px;
+    max-height: 450px;
+    object-fit: cover;
+  }
+}
+
+#sellerCard {
+  img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
 }
 
 // #auctionCard {
@@ -70,11 +87,6 @@ input:focus {
   height: 300px;
   object-fit: center;
   object-position: center center;
-}
-
-#auctionImg {
-  width: 130px;
-  height: 130px;
 }
 
 #sellerButton {
