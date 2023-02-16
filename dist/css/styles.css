@@ -10860,8 +10860,9 @@ input:focus {
 }
 
 #auctionsImg {
-  width: 100%;
-  max-width: 300px;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
   vertical-align: middle;
   transition: all 0.2s ease;
 }

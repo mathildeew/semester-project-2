@@ -3,7 +3,7 @@ import { calcEndTime } from "../timer.mjs";
 const token = storage.get("token");
 
 export function displayAuctions(auctions) {
-  // console.log(auctions);
+  console.log(auctions);
 
   const auctionsContainer = document.getElementById("auctions");
   auctionsContainer.innerHTML = "";
@@ -12,6 +12,7 @@ export function displayAuctions(auctions) {
     const title = auctions[i].title;
     let image = auctions[i].media[0];
     const id = auctions[i].id;
+    const seller = auctions[i].seller.name;
 
     // Placeholder image
     if (image === undefined || image === "") {
@@ -35,51 +36,48 @@ export function displayAuctions(auctions) {
     // Display auctions
     let auctionCard = document.createElement("div");
     auctionCard.id = "auctionCard";
-    auctionCard.className =
-      "container-fluid h-100 bg-light rounded col-5 col-sm-5 col-md-3 mx-md-1 my-3";
+    auctionCard.className = "bg-light rounded mb-4 py-3";
     // Logged in
     if (token !== null) {
       auctionCard.innerHTML += `
-                                <div>
-                                  <a>
-                                    <div class="wrapper overflow-hidden rounded">
-                                      <img id="auctionsImg" class="mb-2" />
-                                    </div>
-                                    <p class="fw-bold"></p>
-                                    <div class="d-flex">
+                                <a class="d-flex align-items-center justify-content-start">
+                                  <img id="auctionsImg" class="rounded mb-2" />
+                                  <div class="ms-3">
+                                    <p class="auctionCardTitle fw-bold mb-0"></p>
+                                    <p class="auctionCardSeller fw-light mb-3"></p>
+                                    <div class="d-flex mb-3">
                                       <i class="bi bi-clock-fill me-1"></i>
-                                      <p class="mb-0"></p>
+                                      <p class="auctionCardEnds mb-0"></p>
                                     </div>
-                                    <p class="fs-5 fw-bold text-end mb-0"></p>
-                                  </a>
-                                </div>  
+                                    <p class="auctionCardHighestBid fs-5 fw-bold mb-0"></p>
+                                  </div>  
+                                </a>
                             `;
-
       auctionCard.querySelector("a").href = `/profile/auction/?id=${id}`;
+      auctionCard.querySelector(".auctionCardSeller").innerText = seller;
     } else {
       // Not logged in
       auctionCard.classList.add("unauthBtn");
       auctionCard.setAttribute("data-bs-toggle", "modal");
       auctionCard.setAttribute("data-bs-target", "#unauthModal");
       auctionCard.innerHTML += `
-                                <div>
-                                  <div class="wrapper overflow-hidden rounded">
-                                    <img id="auctionsImg" class="mb-2" />
-                                  </div>
-                                  <p class="mb-0 fw-bold"></p>
-                                  <div class="d-flex">
-                                    <i class="bi bi-clock-fill me-1"></i>
-                                    <p class="mb-0"></p>
-                                  </div>
-                                  <p class="fs-5 fw-bold text-end mb-0"></p>
-                                </div>  
+                                <div class="d-flex align-items-center justify-content-start">
+                                  <img id="auctionsImg" class="rounded mb-2" />
+                                  <div class="ms-3">
+                                    <p class="auctionCardTitle fw-bold mb-0"></p>
+                                    <div class="d-flex mb-3">
+                                      <i class="bi bi-clock-fill me-1"></i>
+                                      <p class="auctionCardEnds mb-0"></p>
+                                    </div>
+                                    <p class="auctionCardHighestBid fs-5 fw-bold mb-0"></p>
+                                  </div>  
+                                </div>
                               `;
     }
-
-    auctionCard.querySelector("img").src = image;
-    auctionCard.querySelector("p:nth-child(2)").innerText = title;
-    auctionCard.querySelector("div:nth-child(3) p").innerText = timer;
-    auctionCard.querySelector("p:nth-child(4)").innerText = highestBids;
+    auctionCard.querySelector("#auctionsImg").src = image;
+    auctionCard.querySelector(".auctionCardTitle").innerText = title;
+    auctionCard.querySelector(".auctionCardEnds ").innerText = timer;
+    auctionCard.querySelector(".auctionCardHighestBid").innerText = highestBids;
 
     auctionsContainer.append(auctionCard);
   }
