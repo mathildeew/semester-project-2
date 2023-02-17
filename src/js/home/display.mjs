@@ -1,9 +1,10 @@
-import * as storage from "../storage/localStorage.mjs";
 import { calcEndTime } from "../timer.mjs";
+import * as storage from "../storage/localStorage.mjs";
+import { filter } from "./filter.mjs";
 const token = storage.get("token");
 
 export function displayAuctions(auctions) {
-  console.log(auctions);
+  filter(auctions);
 
   const auctionsContainer = document.getElementById("auctions");
   auctionsContainer.innerHTML = "";
@@ -37,19 +38,21 @@ export function displayAuctions(auctions) {
     let auctionCard = document.createElement("div");
     auctionCard.id = "auctionCard";
     auctionCard.className =
-      "col-11 col-sm-7 col-md-5 mx-md-2 col-lg-4 mx-lg-3 col-xl-3 mx-xl-4 mb-4 mb-xl-5 py-3 bg-light rounded";
+      "col-11 col-sm-7 col-md-5 mx-md-2 col-lg-4 mx-lg-4 col-xl-3 mx-xl-4 mb-4 mb-xl-5 py-3 bg-light rounded";
     // Logged in
     if (token !== null) {
       auctionCard.innerHTML += `
-                                <a class="d-flex align-items-center justify-content-start">
+                                <a class="d-flex justify-content-start">
+                                <div>
                                   <img id="auctionsImg" class="rounded mb-2" />
-                                  <div class="ms-3">
-                                    <p class="auctionCardTitle fw-bold mb-0"></p>
-                                    <p class="auctionCardSeller fw-light mb-3"></p>
-                                    <div class="d-flex mb-3">
+                                  <div class="d-flex">
                                       <i class="bi bi-clock-fill me-1"></i>
                                       <p class="auctionCardEnds mb-0"></p>
                                     </div>
+                                    </div>
+                                  <div class="ms-2">
+                                    <p class="auctionCardTitle fw-bold mb-0"></p>
+                                    <p class="auctionCardSeller fw-light mb-3"></p>
                                     <p class="auctionCardHighestBid fs-5 fw-bold mb-0"></p>
                                   </div>  
                                 </a>
