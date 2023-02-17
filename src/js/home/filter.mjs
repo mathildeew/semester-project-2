@@ -7,6 +7,15 @@ export function filter(auctions) {
   const endedFilter = document.querySelector("#filterThree");
 
   //Filter by popularity
+  popularFilter.addEventListener("click", (event) => {
+    const mostPopular = auctions.sort(function (a, b) {
+      return b._count.bids - a._count.bids;
+    });
+    console.log(mostPopular);
+    displayAuctions(mostPopular);
+  });
+
+  //Filter no test
   noTestFilter.addEventListener("click", (event) => {
     const filter = "test";
 
