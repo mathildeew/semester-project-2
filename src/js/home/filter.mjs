@@ -1,10 +1,10 @@
+import { calcEndTime } from "../timer.mjs";
 import { displayAuctions } from "./display.mjs";
 
 export function filter(auctions) {
-  console.log(auctions);
   const popularFilter = document.querySelector("#filterOne");
-  const noTestFilter = document.querySelector("#filterTwo");
-  const endedFilter = document.querySelector("#filterThree");
+  const endedFilter = document.querySelector("#filterTwo");
+  const noTestFilter = document.querySelector("#filterThree");
 
   //Filter by popularity
   popularFilter.addEventListener("click", (event) => {
@@ -27,5 +27,16 @@ export function filter(auctions) {
       }
     });
     displayAuctions(auctionWithoutTest);
+  });
+
+  endedFilter.addEventListener("click", (event) => {
+    const today = new Date().getTime();
+    const onGoing = auctions.filter((auction) => {
+      if (new Date(auction.endsAt).getTime() > today) {
+        return true;
+      }
+    });
+    displayAuctions(onGoing);
+    console.log(onGoing);
   });
 }
