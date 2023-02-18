@@ -91,11 +91,12 @@ input:focus {
 }
 
 // Auction
-
-.card-img {
-  height: 300px;
-  object-fit: center;
-  object-position: center center;
+#auction {
+  img {
+    width: 300px;
+    object-fit: contain;
+    object-position: center center;
+  }
 }
 
 #sellerButton {

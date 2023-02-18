@@ -1,10 +1,13 @@
 import { calcEndTime } from "../timer.mjs";
+import { hideButtons } from "./auth/auth.mjs";
 import { auctionCarousel } from "./carousel.mjs";
 
 export function displayAuction(auction) {
-  const placeBidBtn = document.getElementById("placeBid");
+  console.log(auction);
 
+  hideButtons(auction);
   // Calculate auction ends time
+  const placeBidBtn = document.getElementById("placeBidModalBtn");
   const today = new Date();
   const ends = auction.endsAt;
   let timer = calcEndTime(today, ends);
@@ -15,34 +18,47 @@ export function displayAuction(auction) {
 
   // Display auction
   const auctionContainer = document.getElementById("auction");
+  const auctionTitle = document.getElementById("singleAuctionTitle");
+  const auctionSeller = document.getElementById("singleAuctionSeller");
+  const auctionTimer = document.getElementById("singleAuctionTimer");
+  // const highestBid = document.getElementById("singleAuctionBid");
+  const auctionDesc = document.getElementById("singleAuctionDesc");
 
-  // Run image carousel
+  // // Run image carousel & placeholder image
+  const carouselContainer = document.getElementById("carouselCont");
+  const singleImageContainer = document.getElementById("auctionImg");
+
   if (auction.media.length > 1) {
     auctionCarousel(auction);
-  } else {
-    auctionContainer.querySelector("img").src = auction.media;
+    singleImageContainer.style.display = "none";
+  }
+  if (auction.media.length === 1) {
+    singleImageContainer.src = auction.media;
+    carouselContainer.style.display = "none";
+  }
+  if ((auction.media = [] || auction.media.length === 0)) {
+    singleImageContainer.src = "/assets/placeholder/placeholder_Gavel.png";
   }
 
-  auctionContainer.querySelector("h2").innerText = auction.title;
-  auctionContainer.querySelector("div p").innerText = timer;
-  if (auction.bids.length > 0) {
-    auctionContainer.querySelector("#highestBid").innerText = `Highest bid: $${
-      auction.bids[auction.bids.length - 1].amount
-    }`;
-  }
-  auctionContainer.querySelector("#auctionDesc").innerText =
-    auction.description;
-  auctionContainer.querySelector("#sellerCard img").src = auction.seller.avatar;
-  auctionContainer.querySelector("#sellerCard h3").innerText =
-    auction.seller.name;
+  auctionTitle.innerText = auction.title;
+  auctionSeller.innerText = `${auction.seller.name}`;
+  auctionSeller.href = `/profile/?name=${auction.seller.name}`;
+
+  auctionTimer.innerText = timer;
+  // if (auction.bids.length > 0) {
+  //   highestBid.innerText = `Highest bid: $${
+  //     auction.bids[auction.bids.length - 1].amount
+  //   }`;
+  // }
+  auctionDesc.innerText = auction.description;
 
   // Sort and show bids
-  const bids = auction.bids;
+  const bids = auction._count.bids;
+
   const bidsContainer = document.getElementById("bidsHistory");
-  const bidsSection = document.getElementById("bids");
-  if (bids.length <= 0) {
-    bidsSection.style.display = "none";
-  } else {
+  if (bids.length === undefined) {
+    bidsContainer.style.display = "none";
+  } else if (bids.length >= 0) {
     for (let i = 0; i < bids.length; i++) {
       const sortedBids = bids.sort((a, b) => {
         return b.amount - a.amount;
@@ -74,7 +90,6 @@ export function displayAuction(auction) {
       bidsContainer.append(bidsHistory);
     }
   }
-
   // Display current auction as placeholder in update form
   const newTitle = document.getElementById("newTitle");
   const newDesc = document.getElementById("newAuctionDesc");
