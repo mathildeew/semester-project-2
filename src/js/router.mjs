@@ -29,7 +29,6 @@ switch (path) {
   case "/":
     nav();
     unauth();
-    // logout();
     getAuctions();
     createAuction();
     break;
@@ -45,7 +44,6 @@ switch (path) {
   case "/profile/auction/":
     redirect();
     nav();
-    logout();
     getAuction();
     placeBid();
     deleteAuction();

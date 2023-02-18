@@ -61,6 +61,7 @@ export function displayAuctions(auctions) {
       auctionCard.querySelector(".auctionCardSeller").innerText = seller;
     } else {
       // Not logged in
+
       auctionCard.classList.add("unauthBtn");
       auctionCard.setAttribute("data-bs-toggle", "modal");
       auctionCard.setAttribute("data-bs-target", "#unauthModal");

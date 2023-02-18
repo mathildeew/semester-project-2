@@ -22,6 +22,7 @@ export function displayProfile(profile) {
   if (userName !== profile.name) {
     creditsContainer.style.display = "none";
     changeAvatarBtn.style.display = "none";
+    document.getElementById("logoutBtn").style.display = "none";
   } else if (userName === profile.name) {
     creditsContainer.innerText = `Credits: $${profile.credits}`;
   }
