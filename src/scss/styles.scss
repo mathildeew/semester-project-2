@@ -81,7 +81,8 @@ input:focus {
 
 // Profile
 #avatar {
-  width: 100px;
+  min-width: 120px;
+  min-height: 120px;
   height: 100px;
   border: 2px solid $primary;
   background-repeat: no-repeat;
@@ -177,6 +178,12 @@ input:focus {
 }
 
 // Loading spinner
+@media (min-width: 768px) {
+  #avatar {
+    width: 150px;
+    height: 150px;
+  }
+}
 
 @media (min-width: 992px) {
   #auctionCard:hover {

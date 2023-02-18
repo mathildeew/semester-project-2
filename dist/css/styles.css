@@ -10891,7 +10891,8 @@ input:focus {
 }
 
 #avatar {
-  width: 100px;
+  min-width: 120px;
+  min-height: 120px;
   height: 100px;
   border: 2px solid #9ee2d8;
   background-repeat: no-repeat;
@@ -10978,6 +10979,12 @@ input:focus {
   }
   100% {
     opacity: 100;
+  }
+}
+@media (min-width: 768px) {
+  #avatar {
+    width: 150px;
+    height: 150px;
   }
 }
 @media (min-width: 992px) {
