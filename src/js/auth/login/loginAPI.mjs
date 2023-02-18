@@ -22,7 +22,7 @@ export async function loginAPI(url, postContent) {
 
   if (response.ok) {
     setStorage(json);
-    window.location.href = "/";
+    // window.location.href = "/";
   } else {
     errorMessage.style.display = "block";
   }
