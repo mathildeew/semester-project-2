@@ -10847,6 +10847,10 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+#navBtn {
+  object-position: bottom center;
+}
+
 .maxWidth {
   max-width: 900px;
 }

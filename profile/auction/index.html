@@ -16,32 +16,17 @@
 
   <body>
     <nav class="navbar bg-primary">
-      <div class="container-fluid mx-lg-5">
+      <div class="container-fluid maxWidth mx-auto mx-sm-5 mx-lg-auto">
         <a class="navbar-brand" href="/"><h1 class="mb-0">Gavel</h1></a>
-        <button
-          id="loginNav"
-          class="fw-bolder bg-secondary rounded border-0 px-4 py-2"
-        >
-          <a href="accounts/login/">Log in</a>
-        </button>
-        <button
-          id="navBtn"
-          class="border border-dark border-2 rounded-circle"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarToggleExternalContent"
-          aria-controls="navbarToggleExternalContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        ></button>
+        <a id="profileLink">
+          <button
+            id="navBtn"
+            class="bg-primary border border-dark border-2 rounded-circle"
+            type=""
+          ></button>
+        </a>
       </div>
     </nav>
-    <div class="collapse" id="navbarToggleExternalContent">
-      <div class="bg-primary p-4" id="navbarCollapse">
-        <a class="mb-3">Profile</a>
-        <a href="" class="logoutBtn">Log out</a>
-      </div>
-    </div>
 
     <main class="maxWidth mx-auto">
       <!-- Make bid modal -->

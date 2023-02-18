@@ -29,7 +29,7 @@ switch (path) {
   case "/":
     nav();
     unauth();
-    logout();
+    // logout();
     getAuctions();
     createAuction();
     break;
