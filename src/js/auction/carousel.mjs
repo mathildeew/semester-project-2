@@ -10,10 +10,10 @@ export function auctionCarousel(auction) {
 
   if (images.length === 2) {
     carousel.innerHTML = `
-                          <div class="carousel-item carouselImage slideOne active">
+                          <div class="carousel-item slideOne active">
                             <img class="" />
                           </div>
-                          <div class="carousel-item carouselImage slideTwo">
+                          <div class="carousel-item slideTwo">
                             <img class="" />
                           </div>
                           `;
@@ -21,13 +21,13 @@ export function auctionCarousel(auction) {
     carousel.querySelector(".slideTwo img").src = images[1];
   } else if (images.length === 3) {
     carousel.innerHTML = `
-                          <div class="carousel-item carouselImage slideOne active">
+                          <div class="carousel-item slideOne active">
                             <img class="" />
                           </div>
-                          <div class="carousel-item carouselImage slideTwo">
+                          <div class="carousel-item slideTwo">
                             <img class="" />
                           </div>
-                          <div class="carousel-item carouselImage slideThree">
+                          <div class="carousel-item slideThree">
                             <img class="" />
                           </div>
                           `;

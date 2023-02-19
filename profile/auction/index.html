@@ -28,7 +28,7 @@
       </div>
     </nav>
 
-    <main class="maxWidth mx-auto">
+    <main class="maxWidth mx-auto border border-1">
       <!-- Make bid modal -->
       <div class="modal" tabindex="-1" id="makeBidModal">
         <div class="modal-dialog">
@@ -191,76 +191,66 @@
       </div>
 
       <!-- Auction -->
-      <div class="container mt-5">
+      <div class="container mt-5 mx-auto">
         <div
           id="auction"
-          class="row mx-auto justify-content-center justify-content-md-between"
+          class="row justify-content-center justify-content-lg-between"
         >
+          <div class="col-12 col-sm-10 col-md-8 col-lg-6 border border-2">
+            <!-- Images -->
+            <div
+              id="imageContainer"
+              class="d-flex justify-content-center d-lg-block mb-3"
+            >
+              <img id="auctionImg" class="rounded" src="" alt="" />
 
-          <!-- Images -->
-          <div id="imageContainer" class="text-center col-12 mb-4">
-            <img id="auctionImg" class="rounded mb-4" src="" alt="" />
-            <div id="carouselCont" class="container">
-              <div
-                id="carouselExampleControls"
-                class="carousel slide"
-                data-bs-ride="carousel"
-              >
-                <div class="carousel-inner">
-                </div>
+              <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner"></div>
                 <button
                   class="carousel-control-prev"
                   type="button"
-                  data-bs-target="#carouselExampleControls"
+                  data-bs-target="#carouselExample"
                   data-bs-slide="prev"
                 >
                   <span
                     class="carousel-control-prev-icon"
                     aria-hidden="true"
                   ></span>
-                  <span class="visually-hidden">Previous</span>
                 </button>
                 <button
                   class="carousel-control-next"
                   type="button"
-                  data-bs-target="#carouselExampleControls"
+                  data-bs-target="#carouselExample"
                   data-bs-slide="next"
                 >
                   <span
                     class="carousel-control-next-icon"
                     aria-hidden="true"
                   ></span>
-                  <span class="visually-hidden">Next</span>
                 </button>
               </div>
             </div>
-          </div>
 
-          <!-- Info -->
-            <div class="d-flex flex-column col-11 col-sm-9 col-md-6">
+            <!-- Info -->
+            <div class="mb-3">
               <h2 id="singleAuctionTitle" class="mb-0"></h2>
-              <a id="singleAuctionSeller" class="fs-3 fw-light mb-2"></a>
+              <a id="singleAuctionSeller" class="fs-3 fw-light"></a>
+              <h3 class="mt-4">Description</h3>
+              <p id="singleAuctionDesc" class=""></p>
               <div class="d-flex">
                 <i class="bi bi-clock-fill me-1"></i>
                 <p id="singleAuctionTimer"></p>
               </div>
-              <!-- <p id="singleAuctionBid" class="bg-primary fs-5 p-1 rounded">
-                No bids
-              </p> -->
-              <h3>Description</h3>
-              <p id="singleAuctionDesc"></p>
             </div>
+          </div>
 
-           
-
-            <!-- Bids history -->
-            <div id="bids" class="col-11  col-sm-9 col-md-6">
-               <!-- Buttons -->
+          <div class="col-12 col-sm-10 col-md-8 col-lg-6 border border-2">
+            <!-- Buttons -->
             <div class="d-flex flex-column mb-5">
               <button
                 id="placeBidModalBtn"
                 type="button"
-                class="fw-bolder rounded bg-secondary border-0 py-2 px-5 mb-3 "
+                class="fw-bolder rounded bg-secondary border-0 py-2 px-5 mb-3"
                 data-bs-toggle="modal"
                 data-bs-target="#makeBidModal"
               >
@@ -286,21 +276,19 @@
               >
                 Delete
               </button>
-              
-              <div id="bidsHistory" class="mx-3">
-                <h2 class="ms-3">Bidding history</h2>
-              </div>
+            </div>
 
-              
+            <!-- Bids history -->
+            <div id="bidsHistory" class="mx-3">
+              <h2 class="ms-3">Bidding history</h2>
             </div>
-            </div>
+          </div>
         </div>
       </div>
     </main>
 
     <footer class="bg-secondary mt-auto text-center">
-        <p class="my-auto p-2">&#169; Mathilde Elinor Wiik</p>
-      </div>
+      <p class="my-auto p-2">&#169; Mathilde Elinor Wiik</p>
     </footer>
 
     <script type="module" src="/src/js/script.js"></script>

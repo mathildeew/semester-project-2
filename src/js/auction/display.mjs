@@ -21,11 +21,11 @@ export function displayAuction(auction) {
   const auctionTitle = document.getElementById("singleAuctionTitle");
   const auctionSeller = document.getElementById("singleAuctionSeller");
   const auctionTimer = document.getElementById("singleAuctionTimer");
-  // const highestBid = document.getElementById("singleAuctionBid");
+  const highestBid = document.getElementById("singleAuctionBid");
   const auctionDesc = document.getElementById("singleAuctionDesc");
 
   // // Run image carousel & placeholder image
-  const carouselContainer = document.getElementById("carouselCont");
+  const carouselContainer = document.getElementById("carouselExample");
   const singleImageContainer = document.getElementById("auctionImg");
 
   console.log(auction.media);
@@ -44,20 +44,16 @@ export function displayAuction(auction) {
   auctionSeller.href = `/profile/?name=${auction.seller.name}`;
 
   auctionTimer.innerText = timer;
-  // if (auction.bids.length > 0) {
-  //   highestBid.innerText = `Highest bid: $${
-  //     auction.bids[auction.bids.length - 1].amount
-  //   }`;
-  // }
-  auctionDesc.innerText = auction.description;
 
   // Sort and show bids
-  const bids = auction._count.bids;
-
   const bidsContainer = document.getElementById("bidsHistory");
-  if (bids.length === undefined) {
-    bidsContainer.style.display = "none";
-  } else if (bids.length >= 0) {
+  const bids = auction.bids;
+
+  if (bids.length > 0) {
+    // highestBid.innerText = `Highest bid: $${
+    //   auction.bids[auction.bids.length - 1].amount
+    // }`;
+
     for (let i = 0; i < bids.length; i++) {
       const sortedBids = bids.sort((a, b) => {
         return b.amount - a.amount;
@@ -70,14 +66,14 @@ export function displayAuction(auction) {
         "bg-grey d-flex align-items-center justify-content-between px-4 mb-3 rounded-pill";
 
       bidsHistory.innerHTML += `
-                                  <div>
+                                    <div>
+                                      <p class="fw-bold mb-0"></p>
+                                      <p class="mb-0"></p>
+                                    </div>
+                                    <div>
                                     <p class="fw-bold mb-0"></p>
-                                    <p class="mb-0"></p>
-                                  </div>
-                                  <div>
-                                  <p class="fw-bold mb-0"></p>
-                                  </div>
-                                  `;
+                                    </div>
+                                    `;
 
       bidsHistory.querySelector("div p:nth-child(1)").innerText =
         sortedBids[i].bidderName;
@@ -88,7 +84,12 @@ export function displayAuction(auction) {
 
       bidsContainer.append(bidsHistory);
     }
+  } else {
+    // highestBid.style.display = "none";
+    bidsHistory.style.display = "none";
   }
+  auctionDesc.innerText = auction.description;
+
   // Display current auction as placeholder in update form
   const newTitle = document.getElementById("newTitle");
   const newDesc = document.getElementById("newAuctionDesc");
