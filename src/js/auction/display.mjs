@@ -28,15 +28,14 @@ export function displayAuction(auction) {
   const carouselContainer = document.getElementById("carouselCont");
   const singleImageContainer = document.getElementById("auctionImg");
 
-  if (auction.media.length > 1) {
+  console.log(auction.media);
+  if (auction.media.length === 1) {
+    singleImageContainer.src = auction.media[0];
+    carouselContainer.style.display = "none";
+  } else if (auction.media.length > 1) {
     auctionCarousel(auction);
     singleImageContainer.style.display = "none";
-  }
-  if (auction.media.length === 1) {
-    singleImageContainer.src = auction.media;
-    carouselContainer.style.display = "none";
-  }
-  if ((auction.media = [] || auction.media.length === 0)) {
+  } else if ((auction.media = [] || auction.media.length === 0)) {
     singleImageContainer.src = "/assets/placeholder/placeholder_Gavel.png";
   }
 
