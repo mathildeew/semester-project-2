@@ -169,15 +169,15 @@
       </div>
 
       <!-- New auction, search and filter-->
-      <div class="container">
+      <div class="container maxWidth">
         <div
-          class="row mt-5 mb-4 justify-content-center justify-content-md-between"
+          class="row mt-5 mb-4 justify-content-center justify-content-md-around"
         >
           <div
             class="d-flex flex-column p-0 col-10 mb-4 col-sm-7 col-md-3 mb-md-0"
           >
             <button
-              class="modalBtn rounded border-2 py-2"
+              class="modalBtn bg-secondary rounded border-2 py-2"
               id="newAuctionModalBtn"
               type="button"
               data-bs-toggle="modal"
@@ -217,12 +217,14 @@
       </div>
 
       <!-- API auctions -->
-      <div id="auctions" class="row justify-content-center mx-auto">
-        <!-- Loader -->
-        <div class="loader">
-          <div class="gavel"></div>
-          <div class="blobs"></div>
-          <div class="block"></div>
+      <div class="container">
+        <div id="auctions" class="row justify-content-center mx-auto">
+          <!-- Loader -->
+          <div class="loader">
+            <div class="gavel"></div>
+            <div class="blobs"></div>
+            <div class="block"></div>
+          </div>
         </div>
       </div>
     </main>
