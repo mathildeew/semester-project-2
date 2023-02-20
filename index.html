@@ -169,15 +169,16 @@
       </div>
 
       <!-- New auction, search and filter-->
-      <div class="container maxWidth">
+      <div class="container">
         <div
           class="row mt-5 mb-4 justify-content-center justify-content-md-around"
         >
           <div
-            class="d-flex flex-column p-0 col-10 mb-4 col-sm-7 col-md-3 mb-md-0"
+            class="bg-light d-flex flex-column border align-items-center justyfy-content-center p-2 col-11 col-sm-9 mb-4 mb-md-0"
           >
+            <p>Something about making auction</p>
             <button
-              class="modalBtn bg-secondary rounded border-2 py-2"
+              class="modalBtn bg-secondary text-white rounded border-2 py-2 px-5"
               id="newAuctionModalBtn"
               type="button"
               data-bs-toggle="modal"
@@ -188,11 +189,11 @@
           </div>
 
           <div
-            class="d-flex align-items-center justify-content-between p-0 col-sm-7 col-md-4 justify-content-md-center col-10"
+            class="d-flex align-items-center border border-1 justify-content-between p-0 col-11 col-sm-9 col-md-9 col-lg-11 justify-content-md-end"
           >
             <input
               id="search"
-              class="text-center rounded me-3 py-2 py-2"
+              class="text-center rounded border-1 border-secondary me-3 py-2 py-2"
               type="search"
               placeholder="Search..."
               aria-label="Search"
@@ -214,11 +215,12 @@
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- API auctions -->
-      <div class="container">
-        <div id="auctions" class="row justify-content-center mx-auto">
+        <!-- API auctions -->
+        <div
+          id="auctions"
+          class="row justify-content-center mx-auto col-12 col-sm-9 col-md-10 col-lg-12 justify-content-md-between border border-2"
+        >
           <!-- Loader -->
           <div class="loader">
             <div class="gavel"></div>
@@ -229,8 +231,9 @@
       </div>
     </main>
 
-    <footer class="bg-secondary mt-auto text-center">
-      <p class="my-auto p-2">&#169; Mathilde Elinor Wiik</p>
+    <footer class="text-center bg-secondary mt-auto p-2">
+      <h1 class="text-white">Gavel</h1>
+      <p class="text-white my-auto">&#169; Mathilde Elinor Wiik</p>
     </footer>
 
     <script type="module" src="src/js/script.js"></script>
