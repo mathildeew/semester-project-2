@@ -3,6 +3,7 @@ import { fetchOptions } from "../../api/fetchOptions.mjs";
 import { setStorage } from "../../storage/setStorage.mjs";
 
 const errorMessage = document.querySelector(".errorMessage");
+const loginBtn = document.getElementById("loginBtn");
 
 /**
  *
@@ -18,12 +19,14 @@ export async function loginAPI(url, postContent) {
   const response = await fetch(url, postData);
   const json = await response.json();
 
-  console.log(typeof postContent);
+  console.log(json);
 
   if (response.ok) {
     setStorage(json);
     window.location.href = "/";
   } else {
     errorMessage.style.display = "block";
+    errorMessage.innerText = json.errors[0].message;
+    loginBtn.innerHTML = "Log in";
   }
 }
