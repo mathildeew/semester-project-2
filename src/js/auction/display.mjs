@@ -21,7 +21,7 @@ export function displayAuction(auction) {
   const auctionTitle = document.getElementById("singleAuctionTitle");
   const auctionSeller = document.getElementById("singleAuctionSeller");
   const auctionTimer = document.getElementById("singleAuctionTimer");
-  const highestBid = document.getElementById("singleAuctionBid");
+  const highestBid = document.getElementById("highestBid");
   const auctionDesc = document.getElementById("singleAuctionDesc");
 
   // // Run image carousel & placeholder image
@@ -50,9 +50,9 @@ export function displayAuction(auction) {
   const bids = auction.bids;
 
   if (bids.length > 0) {
-    // highestBid.innerText = `Highest bid: $${
-    //   auction.bids[auction.bids.length - 1].amount
-    // }`;
+    highestBid.innerText = `Highest bid: $${
+      auction.bids[auction.bids.length - 1].amount
+    }`;
 
     for (let i = 0; i < bids.length; i++) {
       const sortedBids = bids.sort((a, b) => {
@@ -85,7 +85,7 @@ export function displayAuction(auction) {
       bidsContainer.append(bidsHistory);
     }
   } else {
-    // highestBid.style.display = "none";
+    highestBid.innerText = "No bids";
     bidsHistory.style.display = "none";
   }
   auctionDesc.innerText = auction.description;
