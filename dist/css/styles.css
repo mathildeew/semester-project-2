@@ -10892,13 +10892,11 @@ input:focus {
 }
 
 #avatar {
-  min-width: 120px;
-  min-height: 120px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   border: 2px solid #9ee2d8;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  object-position: center center;
+  object-fit: cover;
 }
 
 #auction img {
