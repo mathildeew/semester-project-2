@@ -169,26 +169,26 @@
         </div>
       </div>
 
-      <!-- New auction, search and filter-->
+      <header
+        class="w-100 bg-primary d-flex flex-column align-items-center justify-content-end py-3"
+      >
+        <p>Something about making auction</p>
+        <button
+          class="modalBtn bg-secondary text-white rounded border-0 py-2 px-5"
+          id="newAuctionModalBtn"
+          type="button"
+          data-bs-toggle="modal"
+          data-bs-target="#newAuctionModal"
+        >
+          New auction
+        </button>
+      </header>
+
+      <!-- New auction, search, filter and auctions-->
       <div class="container">
         <div
           class="row mt-5 mb-4 justify-content-center justify-content-md-around"
         >
-          <div
-            class="bg-light d-flex flex-column border align-items-center justyfy-content-center p-2 col-11 col-sm-9 mb-4 mb-md-0"
-          >
-            <p>Something about making auction</p>
-            <button
-              class="modalBtn bg-secondary text-white rounded border-0 py-2 px-5"
-              id="newAuctionModalBtn"
-              type="button"
-              data-bs-toggle="modal"
-              data-bs-target="#newAuctionModal"
-            >
-              New auction
-            </button>
-          </div>
-
           <div
             class="d-flex align-items-center justify-content-between p-0 col-11 col-sm-9 col-md-9 col-lg-11 justify-content-md-end"
           >
@@ -223,11 +223,12 @@
           class="row justify-content-center mx-auto col-12 col-sm-9 col-md-10 col-lg-12 justify-content-md-between"
         >
           <!-- Loader -->
-          <div class="loader">
+          <div class="loader col-12 mx-auto mt-5">
             <div class="gavel"></div>
             <div class="blobs"></div>
             <div class="block"></div>
           </div>
+          <p class="text-center">Loading...</p>
         </div>
       </div>
     </main>

@@ -8,6 +8,7 @@ import { register } from "./auth/register/register.mjs";
 import { login } from "./auth/login/login.mjs";
 
 // Home
+import { headerAnimation } from "./home/header.mjs";
 import { unauth } from "./home/unauth/unauth.mjs";
 import { getAuctions } from "./home/auctions/get.mjs";
 
@@ -29,7 +30,10 @@ switch (path) {
   case "/":
     nav();
     unauth();
-    getAuctions();
+    setTimeout(() => {
+      getAuctions();
+    }, "1000");
+    headerAnimation();
     createAuction();
     break;
 

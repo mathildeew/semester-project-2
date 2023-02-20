@@ -10868,6 +10868,31 @@ input:focus {
   color: black;
 }
 
+header {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  height: 300px;
+  animation: imageChange 10s infinite;
+}
+
+@keyframes imageChange {
+  0% {
+    background-image: url("/assets/headerShoe.png");
+  }
+  20% {
+    background-image: url("/assets/bookStack.png");
+  }
+  40% {
+    background-image: url("/assets/catHeader.png");
+  }
+  60% {
+    background-image: url("/assets/headerJacket.png");
+  }
+  100% {
+    background-image: url("/assets/headerPlant.png");
+  }
+}
 #auctionsImg {
   width: 125px;
   height: 125px;
@@ -10885,20 +10910,12 @@ input:focus {
   object-fit: cover;
 }
 
-#sellerCard img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-}
-
 #avatar {
-  min-width: 120px;
-  min-height: 120px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   border: 2px solid #9ee2d8;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  object-position: center center;
+  object-fit: cover;
 }
 
 #auction img {
@@ -10906,22 +10923,6 @@ input:focus {
   max-height: 100%;
   object-fit: cover;
   object-position: center center;
-}
-
-#sellerButton {
-  position: absolute;
-  text-decoration: none;
-}
-#sellerButton img {
-  width: 40px;
-  height: 40px;
-}
-
-.bidPic {
-  background-color: red;
-  border: 2px solid #9ee2d8;
-  height: 60px;
-  width: 60px;
 }
 
 .loader {
@@ -10936,7 +10937,7 @@ input:focus {
   width: 100px;
   height: 40px;
   top: 20px;
-  left: 20px;
+  left: 35px;
   transform: rotate(45deg);
   animation: rotate-gavel 2s linear infinite;
 }
@@ -10946,7 +10947,7 @@ input:focus {
   width: 50px;
   height: 30px;
   top: 40px;
-  left: 0px;
+  left: 15px;
   opacity: 0;
   animation: show-blobs 2s linear infinite;
 }
@@ -10956,7 +10957,7 @@ input:focus {
   width: 50px;
   height: 40px;
   top: 60px;
-  left: 6px;
+  left: 21px;
 }
 
 .gavel,

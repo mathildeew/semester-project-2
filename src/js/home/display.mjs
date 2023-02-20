@@ -43,7 +43,7 @@ export function displayAuctions(auctions) {
     if (token !== null) {
       auctionCard.innerHTML += `
                                 <a class="p-1 d-flex flex-lg-column justify-content-start align-items-center align-items-lg-start">
-                                  <div class="">
+                                  <div class="overflow-hidden rounded">
                                     <img id="auctionsImg" class="rounded" />
                                   </div>
                                     <div class="ms-2 ms-sm-4 ms-lg-0">

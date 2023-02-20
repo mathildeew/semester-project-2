@@ -14,12 +14,12 @@
 // Bootstrap
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
-//Nav
+// Nav - - - - - - - - - - - - - - - - - - - -
 #navBtn {
   object-position: bottom center;
 }
 
-// Global
+// Global - - - - - - - - - - - - - - - - - - - -
 .maxWidth {
   max-width: 900px;
 }
@@ -36,7 +36,34 @@ input:focus {
   color: black;
 }
 
-// Home
+// Home - - - - - - - - - - - - - - - - - - - -
+header {
+  // background-image: url("/assets/headerShoe.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  height: 300px;
+  animation: imageChange 10s infinite;
+}
+
+@keyframes imageChange {
+  0% {
+    background-image: url("/assets/headerShoe.png");
+  }
+  20% {
+    background-image: url("/assets/bookStack.png");
+  }
+  40% {
+    background-image: url("/assets/catHeader.png");
+  }
+  60% {
+    background-image: url("/assets/headerJacket.png");
+  }
+  100% {
+    background-image: url("/assets/headerPlant.png");
+  }
+}
+
 #auctionsImg {
   width: 125px;
   height: 125px;
@@ -45,7 +72,7 @@ input:focus {
   transition: all 0.2s ease;
 }
 
-// Auction
+// Auction - - - - - - - - - - - - - - - - - - - -
 #auction {
   img,
   .slideOne,
@@ -57,40 +84,16 @@ input:focus {
   }
 }
 
-#sellerCard {
-  img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-  }
-}
-
-// #auctionCard {
-//   .wrapper,
-//   img {
-//     height: 130px;
-//     width: 130px;
-//   }
-
-//   img {
-//     background-size: cover;
-//     background-position: center center;
-//     background-repeat: no-repeat;
-//   }
-// }
-
-// Profile
+// Profile - - - - - - - - - - - - - - - - - - - -
 #avatar {
-  min-width: 120px;
-  min-height: 120px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   border: 2px solid $primary;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  object-position: center center;
+  object-fit: cover;
 }
 
-// Auction
+// Auction - - - - - - - - - - - - - - - - - - - -
 #auction {
   img {
     max-width: 100%;
@@ -100,24 +103,7 @@ input:focus {
   }
 }
 
-#sellerButton {
-  position: absolute;
-  text-decoration: none;
-
-  img {
-    width: 40px;
-    height: 40px;
-  }
-}
-
-.bidPic {
-  background-color: red;
-  border: 2px solid $primary;
-  height: 60px;
-  width: 60px;
-}
-
-// Loader
+// Loader - - - - - - - - - - - - - - - - - - - -
 .loader {
   display: inline-block;
   position: relative;
@@ -130,7 +116,7 @@ input:focus {
   width: 100px;
   height: 40px;
   top: 20px;
-  left: 20px;
+  left: 35px;
   transform: rotate(45deg);
   animation: rotate-gavel 2s linear infinite;
 }
@@ -140,7 +126,7 @@ input:focus {
   width: 50px;
   height: 30px;
   top: 40px;
-  left: 0px;
+  left: 15px;
   opacity: 0;
   animation: show-blobs 2s linear infinite;
 }
@@ -150,7 +136,7 @@ input:focus {
   width: 50px;
   height: 40px;
   top: 60px;
-  left: 6px;
+  left: 21px;
 }
 
 .gavel,
@@ -179,11 +165,7 @@ input:focus {
   }
 }
 
-// Media quieres
-
-@media (min-width: 576px) {
-}
-
+// Media quieres - - - - - - - - - - - - - - - - - - - -
 @media (min-width: 768px) {
   #avatar {
     width: 150px;
