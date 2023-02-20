@@ -63,7 +63,7 @@ export function displayAuction(auction) {
 
       const bidsHistory = document.createElement("div");
       bidsHistory.className =
-        "bg-grey d-flex align-items-center justify-content-between px-4 mb-3 rounded-pill";
+        "bg-light d-flex align-items-center justify-content-between px-4 mb-3 rounded-pill";
 
       bidsHistory.innerHTML += `
                                     <div>
