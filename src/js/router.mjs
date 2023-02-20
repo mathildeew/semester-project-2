@@ -29,7 +29,10 @@ switch (path) {
   case "/":
     nav();
     unauth();
-    getAuctions();
+    setTimeout(() => {
+      getAuctions();
+    }, "1000");
+
     createAuction();
     break;
 

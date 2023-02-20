@@ -89,7 +89,7 @@ input:focus {
   width: 100px;
   height: 40px;
   top: 20px;
-  left: 20px;
+  left: 35px;
   transform: rotate(45deg);
   animation: rotate-gavel 2s linear infinite;
 }
@@ -99,7 +99,7 @@ input:focus {
   width: 50px;
   height: 30px;
   top: 40px;
-  left: 0px;
+  left: 15px;
   opacity: 0;
   animation: show-blobs 2s linear infinite;
 }
@@ -109,7 +109,7 @@ input:focus {
   width: 50px;
   height: 40px;
   top: 60px;
-  left: 6px;
+  left: 21px;
 }
 
 .gavel,
