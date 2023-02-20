@@ -1,9 +1,14 @@
 import * as storage from "../storage/localStorage.mjs";
 import { calcEndTime } from "../timer.mjs";
 const userName = storage.get("name");
+const avatar = storage.get("avatar");
 
 export function displayProfile(profile) {
   console.log(profile);
+
+  //Update avatar modal
+  const modalPlaceholderText = document.querySelector("#changeAvatar input");
+  modalPlaceholderText.placeholder = avatar;
 
   // User info
   document.title += ` ${profile.name}`;

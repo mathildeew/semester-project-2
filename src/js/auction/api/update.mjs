@@ -1,5 +1,6 @@
 import { baseUrl } from "../../api/apiUrls.mjs";
 import { fetchOptions } from "../../api/fetchOptions.mjs";
+import * as storage from "../../storage/localStorage.mjs";
 
 // Get params to link
 const queryString = document.location.search;
@@ -49,7 +50,3 @@ export function updateAuction() {
     updateAuctionAPI(`${baseUrl}/auction/listings/${id}`, putContent);
   });
 }
-
-// const form = event.target;
-// const formData = new FormData(form);
-// const putContent = Object.fromEntries(formData.entries());
