@@ -47,11 +47,14 @@
             >
               <label for="avatar" class="col-10 fw-bold p-1">New avatar</label>
               <input
-                class="rounded border-dark mb-3 p-1 col-10"
+                class="rounded border-dark mb-2 p-1 col-10"
                 placeholder="Must be a URL link"
                 name="avatar"
                 required
               />
+              <p class="text-muted mb-4 col-10"><small>*Required</small></p>
+
+              <p class="errorMessage text-danger col-10"></p>
 
               <button
                 type="submit"
