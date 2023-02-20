@@ -43,7 +43,7 @@ header {
   background-repeat: no-repeat;
   background-position: right bottom;
   height: 300px;
-  animation: imageChange 10s infinite;
+  animation: imageChange 8s infinite;
 }
 
 @keyframes imageChange {
@@ -51,7 +51,7 @@ header {
     background-image: url("/assets/headerShoe.png");
   }
   20% {
-    background-image: url("/assets/bookStack.png");
+    background-image: url("/assets/headerBooks.png");
   }
   40% {
     background-image: url("/assets/catHeader.png");
