@@ -12,7 +12,7 @@ export function register() {
     const formData = new FormData(form);
     const postContent = Object.fromEntries(formData.entries());
 
-    registerBtn.innerHTML = "Please wait";
+    registerBtn.innerHTML = "Please wait...";
 
     setTimeout(() => {
       registerAPI(`${baseUrl}/auction/auth/register`, postContent);

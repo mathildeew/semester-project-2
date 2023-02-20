@@ -3,9 +3,12 @@ import { fetchOptions } from "../../api/fetchOptions.mjs";
 
 export function createAuction() {
   const auctionForm = document.getElementById("createAuction");
+  const errorMessage = auctionForm.querySelector(".errorMessage");
 
   auctionForm.addEventListener("submit", (event) => {
     event.preventDefault();
+
+    auctionForm.querySelector("button").innerText = "Creating auction...";
 
     const title = document.getElementById("auctionTitle");
     const description = document.getElementById("auctionDesc");
@@ -54,7 +57,17 @@ export function createAuction() {
       const response = await fetch(url, postData);
       const json = await response.json();
       console.log(json);
+
+      if (response.ok) {
+        window.location.href = "/";
+      } else {
+        errorMessage.style.display = "block";
+        errorMessage.innerText = json.errors[0].message;
+        auctionForm.querySelector("button").innerText = "Create auction";
+      }
     }
-    createAuctionAPI(`${baseUrl}/auction/listings`, postContent);
+    setTimeout(() => {
+      createAuctionAPI(`${baseUrl}/auction/listings`, postContent);
+    }, "1000");
   });
 }

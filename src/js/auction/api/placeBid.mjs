@@ -8,17 +8,16 @@ const id = params.get("id");
 
 export function placeBid() {
   const bidForm = document.getElementById("makeBid");
+  const errorMessage = document.querySelector(".errorMessage");
 
   bidForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    // const form = event.target;
-    // const formData = new FormData(form);
-    // const postContent = Object.fromEntries(formData.entries());
-
     const postContent = {
       amount: parseInt(document.querySelector("input").value),
     };
+
+    bidForm.querySelector("button").innerText = "Please wait...";
 
     console.log(postContent);
 
@@ -29,7 +28,17 @@ export function placeBid() {
       const json = await response.json();
       console.log(response);
       console.log(json);
+
+      if (response.ok) {
+        window.location.href = `/profile/auction/?id=${id}`;
+      } else {
+        errorMessage.style.display = "block";
+        errorMessage.innerText = json.errors[0].message;
+        bidForm.querySelector("button").innerText = "Place bid";
+      }
     }
-    placeBidAPI(`${baseUrl}/auction/listings/${id}/bids`, postContent);
+    setTimeout(() => {
+      placeBidAPI(`${baseUrl}/auction/listings/${id}/bids`, postContent);
+    }, "1000");
   });
 }

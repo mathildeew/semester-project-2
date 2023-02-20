@@ -1,5 +1,7 @@
 import { fetchOptions } from "../../api/fetchOptions.mjs";
 
+const errorMessage = document.querySelector(".errorMessage");
+
 const registerBtn = document.getElementById("registerBtn");
 
 /**
@@ -23,6 +25,8 @@ export async function registerAPI(url, postContent) {
       window.location.href = "/accounts/login/";
     }, "1000");
   } else {
-    // errormessage
+    errorMessage.style.display = "block";
+    errorMessage.innerText = json.errors[0].message;
+    registerBtn.innerHTML = "Register";
   }
 }
