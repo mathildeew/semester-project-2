@@ -14,34 +14,19 @@
     <title>Gavel - Home</title>
   </head>
 
-  <body>
+  <body class="vh-100 d-flex flex-column">
     <nav class="navbar bg-primary">
-      <div class="container-fluid mx-lg-5">
+      <div class="container-fluid maxWidth mx-auto mx-sm-5 mx-lg-auto">
         <a class="navbar-brand" href="/"><h1 class="mb-0">Gavel</h1></a>
-        <button
-          id="loginNav"
-          class="fw-bolder bg-secondary rounded border-0 px-4 py-2"
-        >
-          <a href="accounts/login/">Log in</a>
-        </button>
-        <button
-          id="navBtn"
-          class="border border-dark border-2 rounded-circle"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarToggleExternalContent"
-          aria-controls="navbarToggleExternalContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        ></button>
+        <a id="profileLink">
+          <button
+            id="navBtn"
+            class="bg-primary border border-secondary border-2 rounded-circle"
+            type=""
+          ></button>
+        </a>
       </div>
     </nav>
-    <div class="collapse" id="navbarToggleExternalContent">
-      <div class="bg-primary p-4" id="navbarCollapse">
-        <a class="mb-3">Profile</a>
-        <a href="" class="logoutBtn">Log out</a>
-      </div>
-    </div>
 
     <main class="maxWidth mx-auto">
       <!-- Make bid modal -->
@@ -206,81 +191,110 @@
       </div>
 
       <!-- Auction -->
-      <section
-        id="auction"
-        class="row mx-1 my-3 justify-content-center justify-content-md-center"
-      >
-        <div id="carouselContainer" class="d-flex justify-content-center">
-          <img id="auctionImg" class="col-12 rounded mb-4" src="" alt="" />
-        </div>
+      <div class="container mt-5 mx-auto">
+        <div
+          id="auction"
+          class="row justify-content-center justify-content-lg-between"
+        >
+          <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+            <!-- Images -->
+            <div
+              id="imageContainer"
+              class="d-flex justify-content-center d-lg-block mb-3"
+            >
+              <img id="auctionImg" class="rounded" src="" alt="" />
 
-        <div class="col-12 col-sm-9 col-md-7 me-md-4 col-lg-6 mb-4">
-          <div>
-            <h2></h2>
-            <div class="d-flex">
-              <i class="bi bi-clock-fill me-1"></i>
-              <p></p>
+              <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner"></div>
+                <button
+                  class="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#carouselExample"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    class="carousel-control-prev-icon bg-secondary rounded"
+                    aria-hidden="true"
+                  ></span>
+                </button>
+                <button
+                  class="carousel-control-next"
+                  type="button"
+                  data-bs-target="#carouselExample"
+                  data-bs-slide="next"
+                >
+                  <span
+                    class="carousel-control-next-icon bg-secondary rounded"
+                    aria-hidden="true"
+                  ></span>
+                </button>
+              </div>
             </div>
-            <p id="highestBid" class="bg-primary fs-5 p-1 mb-3 rounded">
-              No bids
-            </p>
+
+            <!-- Info -->
+            <div class="mb-3 bg-light rounded p-2">
+              <h2 id="singleAuctionTitle" class="mb-0"></h2>
+              <a id="singleAuctionSeller" class="fs-3 fw-light"></a>
+              <h3 class="mt-4">Description</h3>
+              <p id="singleAuctionDesc" class=""></p>
+              <div class="d-flex">
+                <i class="bi bi-clock-fill me-1"></i>
+                <p id="singleAuctionTimer"></p>
+              </div>
+            </div>
           </div>
 
-          <button
-            id="placeBid"
-            type="button"
-            class="fw-bolder rounded bg-secondary border-0 py-2 px-5"
-            data-bs-toggle="modal"
-            data-bs-target="#makeBidModal"
-          >
-            Place bid
-          </button>
-          <p id="auctionDesc"></p>
+          <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+            <p
+              id="highestBid"
+              class="fs-5 fw-bold bg-primary rounded p-2 mb-5"
+            ></p>
+
+            <!-- Buttons -->
+            <div class="d-flex flex-column mb-5">
+              <button
+                id="placeBidModalBtn"
+                type="button"
+                class="text-white fw-bolderrounded bg-secondary border-0 py-2 px-5 mb-3"
+                data-bs-toggle="modal"
+                data-bs-target="#makeBidModal"
+              >
+                Place bid
+              </button>
+
+              <button
+                id="updateBtn"
+                type="button"
+                class="text-white fw-bolder rounded bg-secondary border-0 py-2 px-5 mb-3"
+                data-bs-toggle="modal"
+                data-bs-target="#updateAuctionMdl"
+              >
+                Update
+              </button>
+
+              <button
+                id="deleteModalBtn"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#deleteAuctionMdl"
+                class="text-secondary fw-bolder rounded bg-white border-2 border-secondary py-2 px-5"
+              >
+                Delete
+              </button>
+            </div>
+
+            <!-- Bids history -->
+            <div id="bidsHistory" class="mx-3">
+              <h2 class="ms-3">Bidding history</h2>
+            </div>
+          </div>
         </div>
-
-        <div
-          id="sellerCard"
-          class="bg-light rounded d-flex flex-column justify-content-center align-items-center col-8 col-sm-5 col-md-4 col-lg-4 mx-1 mb-4 py-3"
-        >
-          <img
-            id="sellerCard"
-            class="rounded-circle border border-2 border-dark"
-          />
-          <h3 id="sellerName"></h3>
-          <button
-            id="update"
-            type="button"
-            class="fw-bolder rounded bg-secondary border-0 py-2 px-5 mb-3"
-            data-bs-toggle="modal"
-            data-bs-target="#updateAuctionMdl"
-          >
-            Update
-          </button>
-
-          <button
-            id="deleteModalBtn"
-            type="button"
-            data-bs-toggle="modal"
-            data-bs-target="#deleteAuctionMdl"
-            class="fw-bolder rounded bg-light border-1 py-2 px-5"
-          >
-            Delete
-          </button>
-        </div>
-      </section>
-
-      <!-- Bids history -->
-      <section id="bids" class="d-flex flex-column justify-content-center mx-1">
-        <h2 class="ms-3">Bids</h2>
-        <div id="bidsHistory" class="mx-3"></div>
-      </section>
+      </div>
     </main>
 
-    <footer class="bg-secondary">
-      <div class="py-1 px-2">
-        <p class="logo fs-1 mb-0">Gavel</p>
-        <p>&#169; Mathilde Elinor Wiik</p>
-      </div>
+    <footer class="text-center bg-secondary mt-auto p-2">
+      <h1 class="text-white">Gavel</h1>
+      <p class="text-white my-auto">&#169; Mathilde Elinor Wiik</p>
     </footer>
 
     <script type="module" src="/src/js/script.js"></script>

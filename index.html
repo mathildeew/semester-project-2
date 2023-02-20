@@ -18,36 +18,21 @@
     <title>Gavel - Home</title>
   </head>
 
-  <body>
+  <body class="vh-100 d-flex flex-column">
     <nav class="navbar bg-primary">
-      <div class="container-fluid mx-lg-5">
+      <div class="container-fluid maxWidth mx-auto mx-sm-5 mx-lg-auto">
         <a class="navbar-brand" href="/"><h1 class="mb-0">Gavel</h1></a>
-        <button
-          id="loginNav"
-          class="fw-bolder bg-secondary rounded border-0 px-4 py-2"
-        >
-          <a href="accounts/login/">Log in</a>
-        </button>
-        <button
-          id="navBtn"
-          class="border border-dark border-2 rounded-circle"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarToggleExternalContent"
-          aria-controls="navbarToggleExternalContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        ></button>
+        <a id="profileLink">
+          <button
+            id="navBtn"
+            class="bg-primary border border-secondary border-2 rounded-circle"
+            type=""
+          ></button>
+        </a>
       </div>
     </nav>
-    <div class="collapse" id="navbarToggleExternalContent">
-      <div class="bg-primary p-4" id="navbarCollapse">
-        <a class="mb-3">Profile</a>
-        <a href="" class="logoutBtn">Log out</a>
-      </div>
-    </div>
 
-    <main>
+    <main class="d-flex flex-column justify-content-center align-items-center">
       <!-- Unauthorized modal -->
       <div class="modal" tabindex="-1" id="unauthModal">
         <div class="modal-dialog">
@@ -183,65 +168,72 @@
         </div>
       </div>
 
-      <!-- New auction -->
-      <div class="modalBtn d-flex flex-column align-items-center">
-        <button
-          class="fw-bolder bg-secondary rounded border-0 px-5 py-2 mt-4"
-          id="newAuctionModalBtn"
-          type="button"
-          data-bs-toggle="modal"
-          data-bs-target="#newAuctionModal"
-        >
-          New auction
-        </button>
-      </div>
-
-      <!-- Search and filter -->
-      <div class="maxWidth row mx-auto mb-4">
+      <!-- New auction, search and filter-->
+      <div class="container">
         <div
-          class="d-flex align-items-center mx-auto justify-content-center col-11 justify-content-md-end col-lg-10 col-xl-11"
+          class="row mt-5 mb-4 justify-content-center justify-content-md-around"
         >
-          <input
-            id="search"
-            class="text-center rounded mt-4 me-3 px-1 py-2"
-            type="search"
-            placeholder="Search..."
-            aria-label="Search"
-          />
-
-          <div class="dropdown mt-4">
-            <i
-              class="bi bi-funnel-fill dropdown-toggle"
+          <div
+            class="bg-light d-flex flex-column border align-items-center justyfy-content-center p-2 col-11 col-sm-9 mb-4 mb-md-0"
+          >
+            <p>Something about making auction</p>
+            <button
+              class="modalBtn bg-secondary text-white rounded border-2 py-2 px-5"
+              id="newAuctionModalBtn"
               type="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
+              data-bs-toggle="modal"
+              data-bs-target="#newAuctionModal"
             >
-            </i>
-            <ul class="dropdown-menu">
-              <li id="filterOne" class="dropdown-item">Most popular</li>
-              <li id="filterTwo" class="dropdown-item">Ongoing auctions</li>
-              <li id="filterThree" class="dropdown-item">Without test</li>
-            </ul>
+              New auction
+            </button>
+          </div>
+
+          <div
+            class="d-flex align-items-center border border-1 justify-content-between p-0 col-11 col-sm-9 col-md-9 col-lg-11 justify-content-md-end"
+          >
+            <input
+              id="search"
+              class="text-center rounded border-1 border-secondary me-3 py-2 py-2"
+              type="search"
+              placeholder="Search..."
+              aria-label="Search"
+            />
+
+            <div class="dropdown">
+              <i
+                class="bi bi-funnel-fill dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+              </i>
+              <ul class="dropdown-menu">
+                <li id="filterOne" class="dropdown-item">Most popular</li>
+                <li id="filterTwo" class="dropdown-item">Ongoing auctions</li>
+                <li id="filterThree" class="dropdown-item">Without test</li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- API auctions -->
-      <div id="auctions" class="maxWidth row justify-content-center mx-auto">
-        <!-- Loader -->
-        <div class="loader">
-          <div class="gavel"></div>
-          <div class="blobs"></div>
-          <div class="block"></div>
+        <!-- API auctions -->
+        <div
+          id="auctions"
+          class="row justify-content-center mx-auto col-12 col-sm-9 col-md-10 col-lg-12 justify-content-md-between border border-2"
+        >
+          <!-- Loader -->
+          <div class="loader">
+            <div class="gavel"></div>
+            <div class="blobs"></div>
+            <div class="block"></div>
+          </div>
         </div>
       </div>
     </main>
 
-    <footer class="bg-secondary">
-      <div class="py-1 px-2">
-        <p class="logo fs-1 mb-0">Gavel</p>
-        <p>&#169; Mathilde Elinor Wiik</p>
-      </div>
+    <footer class="text-center bg-secondary mt-auto p-2">
+      <h1 class="text-white">Gavel</h1>
+      <p class="text-white my-auto">&#169; Mathilde Elinor Wiik</p>
     </footer>
 
     <script type="module" src="src/js/script.js"></script>

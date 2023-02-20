@@ -22,6 +22,7 @@ export function displayProfile(profile) {
   if (userName !== profile.name) {
     creditsContainer.style.display = "none";
     changeAvatarBtn.style.display = "none";
+    document.getElementById("logoutBtn").style.display = "none";
   } else if (userName === profile.name) {
     creditsContainer.innerText = `Credits: $${profile.credits}`;
   }
@@ -56,10 +57,10 @@ export function displayProfile(profile) {
       const auctionsContainer = document.getElementById("auctionsProfile");
       const auctionCard = document.createElement("div");
       auctionCard.className =
-        "col-11 col-sm-7 col-md-5 mx-md-2 col-lg-4 mx-lg-3 col-xl-3 mx-xl-4 mb-4 mb-xl-5 py-3 bg-light rounded";
+        " bg-light rounded col-12 col-sm-9 col-md-5 col-lg-5 mb-3";
       auctionCard.innerHTML += `
-                                <a class="d-flex align-items-center justify-content-start">
-                                  <img id="auctionsImg" class="rounded mb-2" />
+                                <a class="d-flex my-auto justify-content-start py-2">
+                                  <img id="auctionsImg" class="rounded" />
                                   <div class="ms-3">
                                     <p class="auctionCardTitle fw-bold mb-0"></p>
                                     <p class="auctionCardSeller fw-light mb-3"></p>

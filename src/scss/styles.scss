@@ -14,6 +14,11 @@
 // Bootstrap
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
+//Nav
+#navBtn {
+  object-position: bottom center;
+}
+
 // Global
 .maxWidth {
   max-width: 900px;
@@ -76,7 +81,8 @@ input:focus {
 
 // Profile
 #avatar {
-  width: 100px;
+  min-width: 120px;
+  min-height: 120px;
   height: 100px;
   border: 2px solid $primary;
   background-repeat: no-repeat;
@@ -85,11 +91,13 @@ input:focus {
 }
 
 // Auction
-
-.card-img {
-  height: 300px;
-  object-fit: center;
-  object-position: center center;
+#auction {
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
 }
 
 #sellerButton {
@@ -168,6 +176,18 @@ input:focus {
   }
   100% {
     opacity: 100;
+  }
+}
+
+// Media quieres
+
+@media (min-width: 576px) {
+}
+
+@media (min-width: 768px) {
+  #avatar {
+    width: 150px;
+    height: 150px;
   }
 }
 
