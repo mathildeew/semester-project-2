@@ -10885,12 +10885,6 @@ input:focus {
   object-fit: cover;
 }
 
-#sellerCard img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-}
-
 #avatar {
   width: 120px;
   height: 120px;
@@ -10904,22 +10898,6 @@ input:focus {
   max-height: 100%;
   object-fit: cover;
   object-position: center center;
-}
-
-#sellerButton {
-  position: absolute;
-  text-decoration: none;
-}
-#sellerButton img {
-  width: 40px;
-  height: 40px;
-}
-
-.bidPic {
-  background-color: red;
-  border: 2px solid #9ee2d8;
-  height: 60px;
-  width: 60px;
 }
 
 .loader {

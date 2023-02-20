@@ -14,12 +14,12 @@
 // Bootstrap
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
-//Nav
+// Nav - - - - - - - - - - - - - - - - - - - -
 #navBtn {
   object-position: bottom center;
 }
 
-// Global
+// Global - - - - - - - - - - - - - - - - - - - -
 .maxWidth {
   max-width: 900px;
 }
@@ -36,7 +36,7 @@ input:focus {
   color: black;
 }
 
-// Home
+// Home - - - - - - - - - - - - - - - - - - - -
 #auctionsImg {
   width: 125px;
   height: 125px;
@@ -45,7 +45,7 @@ input:focus {
   transition: all 0.2s ease;
 }
 
-// Auction
+// Auction - - - - - - - - - - - - - - - - - - - -
 #auction {
   img,
   .slideOne,
@@ -57,29 +57,7 @@ input:focus {
   }
 }
 
-#sellerCard {
-  img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-  }
-}
-
-// #auctionCard {
-//   .wrapper,
-//   img {
-//     height: 130px;
-//     width: 130px;
-//   }
-
-//   img {
-//     background-size: cover;
-//     background-position: center center;
-//     background-repeat: no-repeat;
-//   }
-// }
-
-// Profile
+// Profile - - - - - - - - - - - - - - - - - - - -
 #avatar {
   width: 120px;
   height: 120px;
@@ -88,7 +66,7 @@ input:focus {
   object-fit: cover;
 }
 
-// Auction
+// Auction - - - - - - - - - - - - - - - - - - - -
 #auction {
   img {
     max-width: 100%;
@@ -98,24 +76,7 @@ input:focus {
   }
 }
 
-#sellerButton {
-  position: absolute;
-  text-decoration: none;
-
-  img {
-    width: 40px;
-    height: 40px;
-  }
-}
-
-.bidPic {
-  background-color: red;
-  border: 2px solid $primary;
-  height: 60px;
-  width: 60px;
-}
-
-// Loader
+// Loader - - - - - - - - - - - - - - - - - - - -
 .loader {
   display: inline-block;
   position: relative;
@@ -177,11 +138,7 @@ input:focus {
   }
 }
 
-// Media quieres
-
-@media (min-width: 576px) {
-}
-
+// Media quieres - - - - - - - - - - - - - - - - - - - -
 @media (min-width: 768px) {
   #avatar {
     width: 150px;
