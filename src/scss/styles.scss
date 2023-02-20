@@ -1,0 +1,184 @@
+// Bootstrap overrides
+@import "variables";
+@import "reboot";
+@import "utilities";
+@import "navbar";
+@import "form-check";
+
+// Fonts
+@import url("https://use.typekit.net/hmk0koo.css");
+
+// Custom styles
+@import "./components/nav";
+
+// Bootstrap
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+// Nav - - - - - - - - - - - - - - - - - - - -
+#navBtn {
+  object-position: bottom center;
+}
+
+// Global - - - - - - - - - - - - - - - - - - - -
+.maxWidth {
+  max-width: 900px;
+}
+
+.errorMessage {
+  display: none;
+}
+//
+input:focus {
+  outline: none;
+}
+
+::placeholder {
+  color: black;
+}
+
+// Home - - - - - - - - - - - - - - - - - - - -
+header {
+  // background-image: url("/assets/headerShoe.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  height: 300px;
+  animation: imageChange 10s infinite;
+}
+
+@keyframes imageChange {
+  0% {
+    background-image: url("/assets/headerShoe.png");
+  }
+  20% {
+    background-image: url("/assets/bookStack.png");
+  }
+  40% {
+    background-image: url("/assets/catHeader.png");
+  }
+  60% {
+    background-image: url("/assets/headerJacket.png");
+  }
+  100% {
+    background-image: url("/assets/headerPlant.png");
+  }
+}
+
+#auctionsImg {
+  width: 125px;
+  height: 125px;
+  object-fit: cover;
+  vertical-align: middle;
+  transition: all 0.2s ease;
+}
+
+// Auction - - - - - - - - - - - - - - - - - - - -
+#auction {
+  img,
+  .slideOne,
+  .slideTwo,
+  .slideThree {
+    max-width: 600px;
+    max-height: 450px;
+    object-fit: cover;
+  }
+}
+
+// Profile - - - - - - - - - - - - - - - - - - - -
+#avatar {
+  width: 120px;
+  height: 120px;
+  border: 2px solid $primary;
+  object-position: center center;
+  object-fit: cover;
+}
+
+// Auction - - - - - - - - - - - - - - - - - - - -
+#auction {
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+
+// Loader - - - - - - - - - - - - - - - - - - - -
+.loader {
+  display: inline-block;
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.gavel {
+  background: url(/assets/loader/gavel.png);
+  width: 100px;
+  height: 40px;
+  top: 20px;
+  left: 35px;
+  transform: rotate(45deg);
+  animation: rotate-gavel 2s linear infinite;
+}
+
+.blobs {
+  background: url(/assets/loader/blobs.png);
+  width: 50px;
+  height: 30px;
+  top: 40px;
+  left: 15px;
+  opacity: 0;
+  animation: show-blobs 2s linear infinite;
+}
+
+.block {
+  background: url(/assets/loader/block.png);
+  width: 50px;
+  height: 40px;
+  top: 60px;
+  left: 21px;
+}
+
+.gavel,
+.blobs,
+.block {
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+}
+
+@keyframes rotate-gavel {
+  50% {
+    rotate: -45deg;
+  }
+}
+
+@keyframes show-blobs {
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 70;
+  }
+  100% {
+    opacity: 100;
+  }
+}
+
+// Media quieres - - - - - - - - - - - - - - - - - - - -
+@media (min-width: 768px) {
+  #avatar {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (min-width: 992px) {
+  #auctionCard:hover {
+    cursor: pointer;
+
+    img {
+      transform: scale(1.1);
+    }
+  }
+}

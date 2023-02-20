@@ -1,0 +1,19 @@
+.bg-primary {
+  background-color: $primary !important;
+}
+
+.bg-secondary {
+  background-color: $secondary !important;
+}
+
+.bg-light {
+  background-color: $light;
+}
+
+.bg-grey {
+  background-color: $grey;
+}
+
+.bg-primarylight {
+  background-color: rgba($primary, 0.3);
+}
