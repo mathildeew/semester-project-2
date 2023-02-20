@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "sass src/scss:dist/css",
-    "watch": "sass --watch src/scss:dist/css & live-server"
+    "watch": "sass --watch src/scss:dist/css & live-server",
+    "test-jest": "jest"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
     "bootstrap-icons": "^1.10.3"
   },
   "devDependencies": {
+    "jest": "^29.2.0",
     "live-server": "^1.2.2",
     "sass": "^1.58.0"
   }
