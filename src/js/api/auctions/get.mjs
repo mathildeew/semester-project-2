@@ -1,7 +1,5 @@
-import { baseUrl } from "../../api/apiUrls.mjs";
-import { fetchOptions } from "../../api/fetchOptions.mjs";
-import { displayAuctions } from "../display.mjs";
-import { search } from "../search.mjs";
+import { baseUrl } from "../apiUrls.mjs";
+import { fetchOptions } from "../fetchOptions.mjs";
 
 export async function getAuctions() {
   const [getData, postData] = fetchOptions;
@@ -10,6 +8,6 @@ export async function getAuctions() {
     getData
   );
   const json = await response.json();
-  displayAuctions(json);
-  search(json);
+
+  return json;
 }

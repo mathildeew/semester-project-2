@@ -1,4 +1,3 @@
-import { calcEndTime } from "../timer.mjs";
 import { displayAuctions } from "./display.mjs";
 
 export function filter(auctions) {
@@ -7,11 +6,10 @@ export function filter(auctions) {
   const noTestFilter = document.querySelector("#filterThree");
 
   //Filter by popularity
-  popularFilter.addEventListener("click", (event) => {
+  popularFilter.addEventListener("click", () => {
     const mostPopular = auctions.sort(function (a, b) {
       return b._count.bids - a._count.bids;
     });
-    console.log(mostPopular);
     displayAuctions(mostPopular);
   });
 
@@ -37,6 +35,5 @@ export function filter(auctions) {
       }
     });
     displayAuctions(onGoing);
-    console.log(onGoing);
   });
 }

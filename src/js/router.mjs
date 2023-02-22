@@ -8,9 +8,8 @@ import { loginListener } from "./handlers/loginListener.mjs";
 import { registerListener } from "./handlers/registerListener.mjs";
 
 // Home
-import { headerAnimation } from "./home/header.mjs";
 import { unauth } from "./home/unauth/unauth.mjs";
-import { getAuctions } from "./home/auctions/get.mjs";
+import { displayAuctions } from "./home/display.mjs";
 
 // Profile
 import { getAuction } from "./auction/api/get.mjs";
@@ -31,9 +30,8 @@ switch (path) {
     nav();
     unauth();
     setTimeout(() => {
-      getAuctions();
+      displayAuctions();
     }, "1000");
-    headerAnimation();
     createAuction();
     break;
 

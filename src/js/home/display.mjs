@@ -1,10 +1,15 @@
 import { calcEndTime } from "../timer.mjs";
 import * as storage from "../storage/localStorage.mjs";
 import { filter } from "./filter.mjs";
+import { getAuctions } from "../api/auctions/get.mjs";
+import { search } from "./search.mjs";
 const token = storage.get("token");
 
-export function displayAuctions(auctions) {
-  filter(auctions);
+export async function displayAuctions() {
+  const auctions = await getAuctions();
+
+  // filter(auctions);
+  // search(auctions);
 
   const auctionsContainer = document.getElementById("auctions");
   auctionsContainer.innerHTML = "";
@@ -54,7 +59,7 @@ export function displayAuctions(auctions) {
                                         <p class="auctionCardEnds mb-0"></p>
                                       </div>
                                       <p class="auctionCardHighestBid fs-5 fw-bold"></p>
-                                    </div>  
+                                    </div>
                                   </a>
                                 `;
       auctionCard.querySelector("a").href = `/profile/auction/?id=${id}`;
@@ -75,7 +80,7 @@ export function displayAuctions(auctions) {
                                       <p class="auctionCardEnds mb-0"></p>
                                     </div>
                                     <p class="auctionCardHighestBid fs-5 fw-bold mb-0"></p>
-                                  </div>  
+                                  </div>
                                 </div>
                               `;
     }
