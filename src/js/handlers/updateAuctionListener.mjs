@@ -1,16 +1,9 @@
-import { baseUrl } from "../../api/apiUrls.mjs";
-import { fetchOptions } from "../../api/fetchOptions.mjs";
-import * as storage from "../../storage/localStorage.mjs";
+import { updateAuction } from "../api/auction/update.mjs";
 
-// Get params to link
-const queryString = document.location.search;
-const params = new URLSearchParams(queryString);
-const id = params.get("id");
-
-export function updateAuction() {
+export function updateAuctionListener() {
   const updateAuctionForm = document.getElementById("updateAuctionForm");
 
-  updateAuctionForm.addEventListener("submit", (event) => {
+  updateAuctionForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     const title = document.getElementById("newTitle");
@@ -39,14 +32,8 @@ export function updateAuction() {
       media: medias,
     };
 
-    async function updateAuctionAPI(url, putContent) {
-      const [getData, postData, putData] = fetchOptions;
-      putData["body"] = JSON.stringify(putContent);
-      const response = await fetch(url, putData);
-      const json = await response.json();
-      console.log(json);
-      //   window.location.reload;
-    }
-    updateAuctionAPI(`${baseUrl}/auction/listings/${id}`, putContent);
+    const response = await updateAuction(putContent);
+
+    response.ok ? window.location.reload() : window.location.reload;
   });
 }

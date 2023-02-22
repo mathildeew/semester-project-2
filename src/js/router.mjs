@@ -18,7 +18,7 @@ import { placeBid } from "./auction/api/placeBid.mjs";
 
 // Auction
 import { deleteAuctionListener } from "./handlers/deleteAuctionListener.mjs";
-import { updateAuction } from "./auction/api/update.mjs";
+import { updateAuctionListener } from "./handlers/updateAuctionListener.mjs";
 import { displayProfile } from "./profile/display.mjs";
 import { changeAvatarListener } from "./handlers/changeAvatarListener.mjs";
 
@@ -49,7 +49,7 @@ switch (path) {
     displayAuction();
     placeBid();
     deleteAuctionListener();
-    updateAuction();
+    updateAuctionListener();
     break;
 
   case "/accounts/login/":
