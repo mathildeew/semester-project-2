@@ -12,12 +12,12 @@ import { unauth } from "./home/unauth/unauth.mjs";
 import { displayAuctions } from "./home/display.mjs";
 
 // Profile
-import { getAuction } from "./auction/api/get.mjs";
+import { displayAuction } from "./auction/display.mjs";
 import { createAuction } from "./home/auctions/create.mjs";
 import { placeBid } from "./auction/api/placeBid.mjs";
 
 // Auction
-import { deleteAuction } from "./auction/api/delete.mjs";
+import { deleteAuctionListener } from "./handlers/deleteAuctionListener.mjs";
 import { updateAuction } from "./auction/api/update.mjs";
 import { displayProfile } from "./profile/display.mjs";
 import { changeAvatarListener } from "./handlers/changeAvatarListener.mjs";
@@ -43,12 +43,12 @@ switch (path) {
     changeAvatarListener();
     break;
 
-  case "/profile/auction/":
+  case "/auction/":
     redirect();
     nav();
-    getAuction();
+    displayAuction();
     placeBid();
-    deleteAuction();
+    deleteAuctionListener();
     updateAuction();
     break;
 

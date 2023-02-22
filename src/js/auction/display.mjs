@@ -1,11 +1,13 @@
 import { calcEndTime } from "../timer.mjs";
+import { getAuction } from "../api/auction/get.mjs";
 import { hideButtons } from "./auth/auth.mjs";
 import { auctionCarousel } from "./carousel.mjs";
 
-export function displayAuction(auction) {
-  console.log(auction);
+export async function displayAuction() {
+  const auction = await getAuction();
 
   hideButtons(auction);
+
   // Calculate auction ends time
   const placeBidBtn = document.getElementById("placeBidModalBtn");
   const today = new Date();

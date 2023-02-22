@@ -1,7 +1,7 @@
 import { calcEndTime } from "../timer.mjs";
 import * as storage from "../storage/localStorage.mjs";
 import { filter } from "./filter.mjs";
-import { getAuctions } from "../api/auctions/get.mjs";
+import { getAuctions } from "../api/home/get.mjs";
 import { search } from "./search.mjs";
 const token = storage.get("token");
 
@@ -62,7 +62,7 @@ export async function displayAuctions() {
                                     </div>
                                   </a>
                                 `;
-      auctionCard.querySelector("a").href = `/profile/auction/?id=${id}`;
+      auctionCard.querySelector("a").href = `/auction/?id=${id}`;
       auctionCard.querySelector(".auctionCardSeller").innerText = seller;
     } else {
       // Not logged in
