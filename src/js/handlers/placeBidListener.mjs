@@ -22,7 +22,9 @@ export function placeBidListener() {
       postContent
     );
 
-    response.ok
+    console.log(response);
+
+    response.id
       ? window.location.reload()
       : (errorMessage.style.display = "block"),
       (errorMessage.innerText =
