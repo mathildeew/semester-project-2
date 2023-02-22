@@ -1,7 +1,7 @@
 // Auth
-import { redirect } from "./api/auth/redirect.mjs";
+import { redirect } from "./auth/redirect.mjs";
 import { nav } from "./components/nav.mjs";
-import { logout } from "./api/auth/logout.mjs";
+import { logout } from "./auth/logout.mjs";
 import { loginListener } from "./handlers/loginListener.mjs";
 
 //Accounts
