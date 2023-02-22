@@ -1,4 +1,6 @@
-import { deleteAuction } from "../api/auction/delete.mjs";
+import { baseUrl } from "../api/apiUrls.mjs";
+import { deleteAPI } from "../api/delete.mjs";
+import { getParams } from "../globals/params.mjs";
 import * as storage from "../storage/localStorage.mjs";
 
 const deleteBtn = document.getElementById("deleteBtn");
@@ -9,8 +11,11 @@ export function deleteAuctionListener() {
   deleteBtn.addEventListener("click", async (event) => {
     event.preventDefault();
 
-    const response = await deleteAuction();
+    // Get params to link
+    const id = getParams("id");
+    const response = await deleteAPI(`${baseUrl}/auction/listings/${id}`);
 
+    console.log(response);
     response.ok
       ? (window.location.href = `/profile/?name=${userName}`)
       : (errorMessage.innerText = "Something went wrong! Try again later.");
