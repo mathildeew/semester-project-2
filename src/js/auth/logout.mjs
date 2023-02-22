@@ -1,8 +1,5 @@
-const logoutBtn = document.getElementById("logoutBtn");
+import { remove } from "../storage/localStorage.mjs";
 
 export function logout() {
-  logoutBtn.addEventListener("click", (event) => {
-    localStorage.clear();
-    window.location.href = "/";
-  });
+  window.localStorage.clear();
 }

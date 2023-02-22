@@ -1,7 +1,6 @@
 // Auth
 import { redirect } from "./auth/redirect.mjs";
 import { nav } from "./components/nav.mjs";
-import { logout } from "./auth/logout.mjs";
 import { loginListener } from "./handlers/loginListener.mjs";
 
 //Accounts
@@ -15,6 +14,7 @@ import { createAuctionListener } from "./handlers/createAuctionListener.mjs";
 // Profile
 import { displayProfile } from "./profile/display.mjs";
 import { changeAvatarListener } from "./handlers/changeAvatarListener.mjs";
+import { logoutListener } from "./handlers/logoutListener.mjs";
 
 // Auction
 import { displayAuction } from "./auction/display.mjs";
@@ -38,7 +38,7 @@ switch (path) {
   case "/profile/":
     redirect();
     nav();
-    logout();
+    logoutListener();
     displayProfile();
     changeAvatarListener();
     break;
