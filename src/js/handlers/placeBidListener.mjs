@@ -1,4 +1,6 @@
-import { placeBid } from "../api/auction/placeBid.mjs";
+import { baseUrl } from "../api/apiUrls.mjs";
+import { post } from "../api/post.mjs";
+import { getParams } from "../globals/params.mjs";
 
 export function placeBidListener() {
   const bidForm = document.getElementById("makeBid");
@@ -13,7 +15,12 @@ export function placeBidListener() {
       amount: parseInt(document.querySelector("input").value),
     };
 
-    const response = await placeBid(postContent);
+    // Get ID param to link
+    const id = getParams("id");
+    const response = await post(
+      `${baseUrl}/auction/listings/${id}/bids`,
+      postContent
+    );
 
     response.ok
       ? window.location.reload()

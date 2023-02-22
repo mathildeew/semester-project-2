@@ -1,4 +1,6 @@
-import { login } from "../api/auth/login.mjs";
+import { baseUrl } from "../api/apiUrls.mjs";
+import { post } from "../api/post.mjs";
+import { setStorage } from "../storage/setStorage.mjs";
 
 const loginForm = document.getElementById("loginForm");
 const loginBtn = document.getElementById("loginBtn");
@@ -14,17 +16,13 @@ export function loginListener() {
 
     loginBtn.innerHTML = "Logging in...";
 
-    const response = await login(postContent);
+    const json = await post(`${baseUrl}/auction/auth/login`, postContent);
+    console.log(json);
 
-    response.ok
-      ? (window.location.href = "/")
-      : (errorMessage.style.display = "block"),
-      (errorMessage.innerText = "Invalid email or password"),
-      (loginBtn.innerHTML = "Log in");
-
-    // MAYBE USE THIS ?? - - - - - - - - - - - - - - - - - - - -
-    // setTimeout(() => {
-    //   login(postContent);
-    // }, "1000");
+    json.accessToken
+      ? setStorage(json)((window.location.href = "/"))
+      : (errorMessage.style.display = "block")(
+          (errorMessage.innerText = "Invalid email or password")
+        )((loginBtn.innerHTML = "Log in"));
   });
 }

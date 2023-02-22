@@ -1,4 +1,5 @@
-import { createAuction } from "../api/home/create.mjs";
+import { baseUrl } from "../api/apiUrls.mjs";
+import { post } from "../api/post.mjs";
 
 export function createAuctionListener() {
   const auctionForm = document.getElementById("createAuction");
@@ -49,7 +50,7 @@ export function createAuctionListener() {
       endsAt: `${optionValue}`,
     };
 
-    const response = await createAuction(postContent);
+    const response = await post(`${baseUrl}/auction/listings`, postContent);
 
     response.ok
       ? window.location.reload()

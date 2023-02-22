@@ -1,4 +1,6 @@
-import { register } from "../api/auth/register.mjs";
+import { baseUrl } from "../api/apiUrls.mjs";
+// import { register } from "../api/auth/register.mjs";
+import { post } from "../api/post.mjs";
 
 const registerForm = document.getElementById("registerForm");
 const registerBtn = document.getElementById("registerBtn");
@@ -14,9 +16,12 @@ export function registerListener() {
 
     registerBtn.innerHTML = "Please wait...";
 
-    const response = await register(postContent);
+    const response = await post(
+      `${baseUrl}/auction/auth/register`,
+      postContent
+    );
 
-    response.ok
+    response.id
       ? (window.location.href = "/accounts/login/")
       : (errorMessage.style.display = "block"),
       (errorMessage.innerText = "Profile already exist"),
