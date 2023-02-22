@@ -1,7 +1,7 @@
 import { calcEndTime } from "../globals/timer.mjs";
 import * as storage from "../storage/localStorage.mjs";
 import { filter } from "./filter.mjs";
-import { get } from "../api/get.mjs";
+import { get } from "../api/apiCalls/get.mjs";
 import { search } from "./search.mjs";
 import { baseUrl } from "../api/apiUrls.mjs";
 const token = storage.get("token");

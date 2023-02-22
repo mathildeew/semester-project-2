@@ -1,5 +1,5 @@
 import { baseUrl } from "../api/apiUrls.mjs";
-import { put } from "../api/put.mjs";
+import { put } from "../api/apiCalls/put.mjs";
 import * as storage from "../storage/localStorage.mjs";
 
 // const name = storage.get("name");

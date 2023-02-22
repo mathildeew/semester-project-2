@@ -1,5 +1,5 @@
 import { baseUrl } from "../api/apiUrls.mjs";
-import { post } from "../api/post.mjs";
+import { post } from "../api/apiCalls/post.mjs";
 import { getParams } from "../globals/params.mjs";
 
 export function placeBidListener() {

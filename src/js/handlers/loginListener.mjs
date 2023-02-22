@@ -1,5 +1,5 @@
 import { baseUrl } from "../api/apiUrls.mjs";
-import { post } from "../api/post.mjs";
+import { post } from "../api/apiCalls/post.mjs";
 import { setStorage } from "../storage/setStorage.mjs";
 
 const loginForm = document.getElementById("loginForm");

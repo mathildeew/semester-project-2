@@ -1,6 +1,6 @@
 import * as storage from "../storage/localStorage.mjs";
 import { calcEndTime } from "../globals/timer.mjs";
-import { get } from "../api/get.mjs";
+import { get } from "../api/apiCalls/get.mjs";
 import { baseUrl } from "../api/apiUrls.mjs";
 import { getParams } from "../globals/params.mjs";
 const userName = storage.get("name");

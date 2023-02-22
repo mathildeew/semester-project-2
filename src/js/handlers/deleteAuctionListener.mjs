@@ -1,5 +1,5 @@
 import { baseUrl } from "../api/apiUrls.mjs";
-import { deleteAPI } from "../api/delete.mjs";
+import { deleteAPI } from "../api/apiCalls/delete.mjs";
 import { getParams } from "../globals/params.mjs";
 import * as storage from "../storage/localStorage.mjs";
 

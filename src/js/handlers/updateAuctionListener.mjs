@@ -1,5 +1,5 @@
 import { baseUrl } from "../api/apiUrls.mjs";
-import { put } from "../api/put.mjs";
+import { put } from "../api/apiCalls/put.mjs";
 import { getParams } from "../globals/params.mjs";
 
 export function updateAuctionListener() {

@@ -1,4 +1,4 @@
-import { fetchOptions } from "./fetchOptions.mjs";
+import { fetchOptions } from "../fetchOptions.mjs";
 
 export async function post(url, postContent) {
   const [getData, postData] = fetchOptions;

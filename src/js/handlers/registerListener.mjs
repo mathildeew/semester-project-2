@@ -1,6 +1,5 @@
 import { baseUrl } from "../api/apiUrls.mjs";
-// import { register } from "../api/auth/register.mjs";
-import { post } from "../api/post.mjs";
+import { post } from "../api/apiCalls/post.mjs";
 
 const registerForm = document.getElementById("registerForm");
 const registerBtn = document.getElementById("registerBtn");

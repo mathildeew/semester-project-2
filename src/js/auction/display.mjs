@@ -3,7 +3,7 @@ import { hideButtons } from "./auth/auth.mjs";
 import { auctionCarousel } from "./carousel.mjs";
 import { baseUrl } from "../api/apiUrls.mjs";
 import { getParams } from "../globals/params.mjs";
-import { get } from "../api/get.mjs";
+import { get } from "../api/apiCalls/get.mjs";
 
 export async function displayAuction() {
   const id = getParams("id");

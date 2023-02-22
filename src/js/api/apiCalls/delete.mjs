@@ -1,6 +1,4 @@
-import { baseUrl } from "./apiUrls.mjs";
-import { fetchOptions } from "./fetchOptions.mjs";
-import { getParams } from "../globals/params.mjs";
+import { fetchOptions } from "../fetchOptions.mjs";
 
 export async function deleteAPI(url) {
   const [getData, postData, putData, deleteData] = fetchOptions;
