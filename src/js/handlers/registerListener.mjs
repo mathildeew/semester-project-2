@@ -5,7 +5,7 @@ const registerBtn = document.getElementById("registerBtn");
 const errorMessage = document.querySelector(".errorMessage");
 
 export function registerListener() {
-  registerForm.addEventListener("submit", (event) => {
+  registerForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     const form = event.target;
@@ -14,10 +14,10 @@ export function registerListener() {
 
     registerBtn.innerHTML = "Please wait...";
 
-    const response = register(postContent);
+    const response = await register(postContent);
 
     response.ok
-      ? (window.location.replace = "/")
+      ? (window.location.href = "/accounts/login/")
       : (errorMessage.style.display = "block"),
       (errorMessage.innerText = "Profile already exist"),
       (registerBtn.innerHTML = "Register");

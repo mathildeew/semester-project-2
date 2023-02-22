@@ -58,7 +58,7 @@ switch (path) {
     loginListener();
     break;
 
-  case "/accounts/emailsignup/":
+  case "/accounts/register/":
     registerListener();
     break;
 }
