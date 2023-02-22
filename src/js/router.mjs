@@ -10,7 +10,6 @@ import { registerListener } from "./handlers/registerListener.mjs";
 // Home
 import { unauth } from "./home/unauth/unauth.mjs";
 import { displayAuctions } from "./home/display.mjs";
-import { createAuction } from "./home/auctions/create.mjs";
 
 // Profile
 import { displayProfile } from "./profile/display.mjs";
@@ -21,6 +20,7 @@ import { displayAuction } from "./auction/display.mjs";
 import { deleteAuctionListener } from "./handlers/deleteAuctionListener.mjs";
 import { updateAuctionListener } from "./handlers/updateAuctionListener.mjs";
 import { placeBidListener } from "./handlers/placeBidListener.mjs";
+import { createAuctionListener } from "./handlers/createAuctionListener.mjs";
 
 // Run function based on pathname
 const path = location.pathname;
@@ -32,7 +32,7 @@ switch (path) {
     setTimeout(() => {
       displayAuctions();
     }, "1000");
-    createAuction();
+    createAuctionListener();
     break;
 
   case "/profile/":
