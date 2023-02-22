@@ -4,7 +4,6 @@ import { setStorage } from "../storage/setStorage.mjs";
 
 /**
  * Sends API request to url with login credentials and saves response to localStorage
- * @param {URL} url API url
  * @param {*} postContent Entries from login form
  * @returns Response
  */
