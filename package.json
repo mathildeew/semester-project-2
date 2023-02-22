@@ -42,7 +42,7 @@
     "sass": "^1.58.0"
   },
   "lint-staged": {
-    "*.mjs": [
+    "*.js": [
       "prettier --write",
       "eslint --fix"
     ],
