@@ -8,7 +8,9 @@
     "watch": "sass --watch src/scss:dist/css & live-server",
     "format": "prettier -w src/js/**/*.js",
     "test-jest": "jest",
-    "test-cypress": "cypress open"
+    "test-cypress": "cypress open",
+    "lint": "eslint src/**/*.js",
+    "lint-fix": "eslint src/js/**/*.js --cache --fix"
   },
   "repository": {
     "type": "git",
