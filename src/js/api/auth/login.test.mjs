@@ -1,4 +1,4 @@
-import { loginAPI } from "../login.mjs";
+import { loginAPI } from "./login.mjs";
 import { LocalStorageMock } from "../../storage/localStorageMock.js";
 
 const TEST_EMAIL = "johnsmith@stud.noroff.no";

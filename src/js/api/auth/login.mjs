@@ -1,6 +1,6 @@
-import { baseUrl } from "../api/apiUrls.mjs";
-import { fetchOptions } from "../api/fetchOptions.mjs";
-import { setStorage } from "../storage/setStorage.mjs";
+import { baseUrl } from "../apiUrls.mjs";
+import { fetchOptions } from "../fetchOptions.mjs";
+import { setStorage } from "../../storage/setStorage.mjs";
 
 /**
  * Sends API request to url with login credentials and saves response to localStorage

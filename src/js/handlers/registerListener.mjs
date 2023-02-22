@@ -1,4 +1,4 @@
-import { register } from "../auth/register.mjs";
+import { register } from "../api/auth/register.mjs";
 
 const registerForm = document.getElementById("registerForm");
 const registerBtn = document.getElementById("registerBtn");

@@ -1,5 +1,5 @@
-import { baseUrl } from "../api/apiUrls.mjs";
-import { fetchOptions } from "../api/fetchOptions.mjs";
+import { baseUrl } from "../apiUrls.mjs";
+import { fetchOptions } from "../fetchOptions.mjs";
 
 /**
  *  Register to auction site

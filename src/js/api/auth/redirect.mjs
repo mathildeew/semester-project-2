@@ -1,4 +1,4 @@
-import * as storage from "../storage/localStorage.mjs";
+import * as storage from "../../storage/localStorage.mjs";
 const token = storage.get("token");
 
 export function redirect() {
