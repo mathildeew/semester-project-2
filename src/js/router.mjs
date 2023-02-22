@@ -2,10 +2,10 @@
 import { redirect } from "./auth/redirect.mjs";
 import { nav } from "./components/nav.mjs";
 import { logout } from "./auth/logout.mjs";
+import { loginListener } from "./handlers/loginListener.mjs";
 
 //Accounts
 import { register } from "./auth/register/register.mjs";
-import { login } from "./auth/login/login.mjs";
 
 // Home
 import { headerAnimation } from "./home/header.mjs";
@@ -55,7 +55,7 @@ switch (path) {
     break;
 
   case "/accounts/login/":
-    login();
+    loginListener();
     break;
 
   case "/accounts/emailsignup/":
