@@ -1,11 +1,14 @@
-import { baseUrl } from "../../api/apiUrls.mjs";
-import { fetchOptions } from "../../api/fetchOptions.mjs";
-import { displayProfile } from "../display.mjs";
+import { baseUrl } from "../apiUrls.mjs";
+import { fetchOptions } from "../fetchOptions.mjs";
+import { displayProfile } from "../../profile/display.mjs";
 
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const profileName = params.get("name");
 
+/**
+ * Sends API request to server and gets the profile info as response
+ */
 export async function getProfileAPI() {
   const [getData, postData] = fetchOptions;
   const response = await fetch(
@@ -13,5 +16,6 @@ export async function getProfileAPI() {
     getData
   );
   const json = await response.json();
-  displayProfile(json);
+
+  return json;
 }
