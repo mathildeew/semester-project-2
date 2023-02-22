@@ -1,4 +1,4 @@
-import { calcEndTime } from "../timer.mjs";
+import { calcEndTime } from "../handlers/globals/timer.mjs";
 import { getAuction } from "../api/auction/get.mjs";
 import { hideButtons } from "./auth/auth.mjs";
 import { auctionCarousel } from "./carousel.mjs";

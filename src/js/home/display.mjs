@@ -1,4 +1,4 @@
-import { calcEndTime } from "../timer.mjs";
+import { calcEndTime } from "../handlers/globals/timer.mjs";
 import * as storage from "../storage/localStorage.mjs";
 import { filter } from "./filter.mjs";
 import { getAuctions } from "../api/home/get.mjs";
