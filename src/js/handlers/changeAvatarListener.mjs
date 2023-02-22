@@ -1,4 +1,6 @@
-import { changeAvatar } from "../api/profile/change.mjs";
+import { baseUrl } from "../api/apiUrls.mjs";
+import { put } from "../api/put.mjs";
+import * as storage from "../storage/localStorage.mjs";
 
 // const name = storage.get("name");
 const changeAvatarForm = document.getElementById("changeAvatar");
@@ -14,11 +16,16 @@ export function changeAvatarListener() {
 
     changeAvatarForm.querySelector("button").innerText = "Please wait...";
 
-    const json = await changeAvatar(putContent);
-
+    const name = storage.get("name");
+    const json = await put(
+      `${baseUrl}/auction/profiles/${name}/media`,
+      putContent
+    );
     console.log(json);
 
-    json.ok ? window.location.reload() : (errorMessage.style.display = "block"),
+    json.ok
+      ? (window.location.reload(), storage.set("avatar", json.avatar))
+      : (errorMessage.style.display = "block"),
       (errorMessage.innerText = "Please try another UR link"),
       (changeAvatarForm.querySelector("button").innerText = "Update");
   });

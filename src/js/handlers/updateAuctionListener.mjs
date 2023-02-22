@@ -1,4 +1,6 @@
-import { updateAuction } from "../api/auction/update.mjs";
+import { baseUrl } from "../api/apiUrls.mjs";
+import { put } from "../api/put.mjs";
+import { getParams } from "../globals/params.mjs";
 
 export function updateAuctionListener() {
   const updateAuctionForm = document.getElementById("updateAuctionForm");
@@ -32,7 +34,9 @@ export function updateAuctionListener() {
       media: medias,
     };
 
-    const response = await updateAuction(putContent);
+    // Get params to link
+    const id = getParams("id");
+    const response = await put(`${baseUrl}/auction/listings/${id}`, putContent);
 
     response.ok ? window.location.reload() : window.location.reload;
   });
