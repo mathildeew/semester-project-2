@@ -52,7 +52,9 @@ export function createAuctionListener() {
 
     const response = await post(`${baseUrl}/auction/listings`, postContent);
 
-    response.ok
+    console.log(response);
+
+    response.id
       ? window.location.reload()
       : (errorMessage.style.display = "block"),
       console.log(response);

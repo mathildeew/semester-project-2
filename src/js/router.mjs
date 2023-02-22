@@ -10,6 +10,7 @@ import { registerListener } from "./handlers/registerListener.mjs";
 // Home
 import { unauth } from "./home/unauth/unauth.mjs";
 import { displayAuctions } from "./home/display.mjs";
+import { createAuctionListener } from "./handlers/createAuctionListener.mjs";
 
 // Profile
 import { displayProfile } from "./profile/display.mjs";
@@ -17,10 +18,9 @@ import { changeAvatarListener } from "./handlers/changeAvatarListener.mjs";
 
 // Auction
 import { displayAuction } from "./auction/display.mjs";
-import { deleteAuctionListener } from "./handlers/deleteAuctionListener.mjs";
 import { updateAuctionListener } from "./handlers/updateAuctionListener.mjs";
+import { deleteAuctionListener } from "./handlers/deleteAuctionListener.mjs";
 import { placeBidListener } from "./handlers/placeBidListener.mjs";
-import { createAuctionListener } from "./handlers/createAuctionListener.mjs";
 
 // Run function based on pathname
 const path = location.pathname;
