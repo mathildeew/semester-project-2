@@ -13,9 +13,7 @@ import { unauth } from "./home/unauth/unauth.mjs";
 import { getAuctions } from "./home/auctions/get.mjs";
 
 // Profile
-import { changeAvatar } from "./profile/api/change.mjs";
 import { getAuction } from "./auction/api/get.mjs";
-import { getProfileAPI } from "./api/profile/get.mjs";
 import { createAuction } from "./home/auctions/create.mjs";
 import { placeBid } from "./auction/api/placeBid.mjs";
 
@@ -23,6 +21,7 @@ import { placeBid } from "./auction/api/placeBid.mjs";
 import { deleteAuction } from "./auction/api/delete.mjs";
 import { updateAuction } from "./auction/api/update.mjs";
 import { displayProfile } from "./profile/display.mjs";
+import { changeAvatarListener } from "./handlers/changeAvatarListener.mjs";
 
 // Run function based on pathname
 const path = location.pathname;
@@ -42,9 +41,8 @@ switch (path) {
     redirect();
     nav();
     logout();
-    changeAvatar();
     displayProfile();
-    // getProfileAPI();
+    changeAvatarListener();
     break;
 
   case "/profile/auction/":
