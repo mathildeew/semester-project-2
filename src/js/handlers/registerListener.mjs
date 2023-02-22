@@ -1,10 +1,10 @@
-import { baseUrl } from "../../api/apiUrls.mjs";
-import { registerAPI } from "./registerAPI.mjs";
+import { register } from "../auth/register.mjs";
 
 const registerForm = document.getElementById("registerForm");
 const registerBtn = document.getElementById("registerBtn");
+const errorMessage = document.querySelector(".errorMessage");
 
-export function register() {
+export function registerListener() {
   registerForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
@@ -14,8 +14,12 @@ export function register() {
 
     registerBtn.innerHTML = "Please wait...";
 
-    setTimeout(() => {
-      registerAPI(`${baseUrl}/auction/auth/register`, postContent);
-    }, "1000");
+    const response = register(postContent);
+
+    response.ok
+      ? (window.location.replace = "/")
+      : (errorMessage.style.display = "block"),
+      (errorMessage.innerText = "Profile already exist"),
+      (registerBtn.innerHTML = "Register");
   });
 }

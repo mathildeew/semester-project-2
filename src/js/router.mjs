@@ -5,7 +5,7 @@ import { logout } from "./auth/logout.mjs";
 import { loginListener } from "./handlers/loginListener.mjs";
 
 //Accounts
-import { register } from "./auth/register/register.mjs";
+import { registerListener } from "./handlers/registerListener.mjs";
 
 // Home
 import { headerAnimation } from "./home/header.mjs";
@@ -59,6 +59,6 @@ switch (path) {
     break;
 
   case "/accounts/emailsignup/":
-    register();
+    registerListener();
     break;
 }
