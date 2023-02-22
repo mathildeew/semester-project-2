@@ -10,17 +10,17 @@ import { registerListener } from "./handlers/registerListener.mjs";
 // Home
 import { unauth } from "./home/unauth/unauth.mjs";
 import { displayAuctions } from "./home/display.mjs";
+import { createAuction } from "./home/auctions/create.mjs";
 
 // Profile
-import { displayAuction } from "./auction/display.mjs";
-import { createAuction } from "./home/auctions/create.mjs";
-import { placeBid } from "./auction/api/placeBid.mjs";
-
-// Auction
-import { deleteAuctionListener } from "./handlers/deleteAuctionListener.mjs";
-import { updateAuctionListener } from "./handlers/updateAuctionListener.mjs";
 import { displayProfile } from "./profile/display.mjs";
 import { changeAvatarListener } from "./handlers/changeAvatarListener.mjs";
+
+// Auction
+import { displayAuction } from "./auction/display.mjs";
+import { deleteAuctionListener } from "./handlers/deleteAuctionListener.mjs";
+import { updateAuctionListener } from "./handlers/updateAuctionListener.mjs";
+import { placeBidListener } from "./handlers/placeBidListener.mjs";
 
 // Run function based on pathname
 const path = location.pathname;
@@ -47,7 +47,7 @@ switch (path) {
     redirect();
     nav();
     displayAuction();
-    placeBid();
+    placeBidListener();
     deleteAuctionListener();
     updateAuctionListener();
     break;
