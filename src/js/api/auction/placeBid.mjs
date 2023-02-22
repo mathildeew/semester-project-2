@@ -6,6 +6,11 @@ const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
+/**
+ * Places a bid on an auction
+ * @param {*} postContent
+ * @returns response
+ */
 export async function placeBid(postContent) {
   const [getData, postData] = fetchOptions;
   postData["body"] = JSON.stringify(postContent);
