@@ -1,11 +1,17 @@
-import { getProfileAPI } from "../api/profile/get.mjs";
 import * as storage from "../storage/localStorage.mjs";
 import { calcEndTime } from "../globals/timer.mjs";
+import { get } from "../api/get.mjs";
+import { baseUrl } from "../api/apiUrls.mjs";
+import { getParams } from "../globals/params.mjs";
 const userName = storage.get("name");
 const avatar = storage.get("avatar");
 
+const profileName = getParams("name");
+
 export async function displayProfile() {
-  const profile = await getProfileAPI();
+  const profile = await get(
+    `${baseUrl}/auction/profiles/${profileName}?_listings=true&_count.listings=true`
+  );
 
   //Update avatar modal
   const modalPlaceholderText = document.querySelector("#changeAvatar input");

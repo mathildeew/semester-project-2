@@ -1,10 +1,16 @@
 import { calcEndTime } from "../globals/timer.mjs";
-import { getAuction } from "../api/auction/get.mjs";
 import { hideButtons } from "./auth/auth.mjs";
 import { auctionCarousel } from "./carousel.mjs";
+import { baseUrl } from "../api/apiUrls.mjs";
+import { getParams } from "../globals/params.mjs";
+import { get } from "../api/get.mjs";
 
 export async function displayAuction() {
-  const auction = await getAuction();
+  const id = getParams("id");
+
+  const auction = await get(
+    `${baseUrl}/auction/listings/${id}?_seller=true&_bids=true`
+  );
 
   hideButtons(auction);
 
@@ -30,7 +36,6 @@ export async function displayAuction() {
   const carouselContainer = document.getElementById("carouselExample");
   const singleImageContainer = document.getElementById("auctionImg");
 
-  console.log(auction.media);
   if (auction.media.length === 1) {
     singleImageContainer.src = auction.media[0];
     carouselContainer.style.display = "none";
