@@ -79,7 +79,7 @@ export async function displayProfile() {
                                 </a>
                               `;
 
-      auctionCard.querySelector("a").href = `/profile/auction/?id=${id}`;
+      auctionCard.querySelector("a").href = `/auction/?id=${id}`;
       auctionCard.querySelector("#auctionsImg").src = image;
       auctionCard.querySelector(".auctionCardTitle").innerText = title;
       auctionCard.querySelector(".auctionCardEnds").innerText = timer;
