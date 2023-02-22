@@ -7,7 +7,7 @@
     "build": "sass src/scss:dist/css",
     "watch": "sass --watch src/scss:dist/css & live-server",
     "format": "prettier -w src/js/**/*.js",
-    "test-jest": "jest",
+    "test-unit": "jest",
     "test-cypress": "cypress open",
     "lint": "eslint src/**/*.js",
     "lint-fix": "eslint src/js/**/*.js --cache --fix",
@@ -42,7 +42,7 @@
     "sass": "^1.58.0"
   },
   "lint-staged": {
-    "*.js": [
+    "*.mjs": [
       "prettier --write",
       "eslint --fix"
     ],
@@ -51,6 +51,30 @@
     ],
     "*.scss": [
       "prettier --write"
+    ]
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "mjs",
+      "js",
+      "jsx",
+      "ts",
+      "tsx",
+      "json",
+      "node"
+    ],
+    "testMatch": [
+      "**/?(*.)test.?js"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/cypress/"
+    ],
+    "transform": {
+      "^.+\\.m?js$": "babel-jest"
+    },
+    "transformIgnorePatterns": [
+      "\\.pnp\\.[^\\/]+$"
     ]
   }
 }
