@@ -1,10 +1,9 @@
-import { baseUrl } from "../../api/apiUrls.mjs";
+import { getParams } from "../../globals/params.mjs";
 import { fetchOptions } from "../../api/fetchOptions.mjs";
+import { baseUrl } from "../../api/apiUrls.mjs";
 
 // Get params to link
-const queryString = document.location.search;
-const params = new URLSearchParams(queryString);
-const id = params.get("id");
+const id = getParams("id");
 /**
  * Updates auction with new content
  * @param {*} putContent Data sent to API

@@ -1,7 +1,6 @@
 import { getProfileAPI } from "../api/profile/get.mjs";
 import * as storage from "../storage/localStorage.mjs";
 import { calcEndTime } from "../globals/timer.mjs";
-import { getParams } from "../globals/params.mjs";
 const userName = storage.get("name");
 const avatar = storage.get("avatar");
 

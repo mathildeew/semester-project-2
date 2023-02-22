@@ -1,10 +1,9 @@
 import { baseUrl } from "../../api/apiUrls.mjs";
 import { fetchOptions } from "../../api/fetchOptions.mjs";
+import { getParams } from "../../globals/params.mjs";
 
 // Get ID param to link
-const queryString = document.location.search;
-const params = new URLSearchParams(queryString);
-const id = params.get("id");
+const id = getParams("id");
 
 /**
  * Places a bid on an auction

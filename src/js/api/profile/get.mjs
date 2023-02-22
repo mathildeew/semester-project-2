@@ -1,10 +1,9 @@
-import { baseUrl } from "../apiUrls.mjs";
+import { getParams } from "../../globals/params.mjs";
 import { fetchOptions } from "../fetchOptions.mjs";
-import { displayProfile } from "../../profile/display.mjs";
+import { baseUrl } from "../apiUrls.mjs";
 
-const queryString = document.location.search;
-const params = new URLSearchParams(queryString);
-const profileName = params.get("name");
+// Get params to link
+const profileName = getParams("name");
 
 /**
  * Sends API request to server and gets the profile info as response
