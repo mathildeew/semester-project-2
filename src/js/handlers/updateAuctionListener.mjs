@@ -4,9 +4,13 @@ import { getParams } from "../globals/params.mjs";
 
 export function updateAuctionListener() {
   const updateAuctionForm = document.getElementById("updateAuctionForm");
+  const updateBtn = document.getElementById("updateAuctionBtn");
+  const errorMessage = document.querySelector(".errorMessage");
 
   updateAuctionForm.addEventListener("submit", async (event) => {
     event.preventDefault();
+
+    updateBtn.innerText = "Please wait...";
 
     const title = document.getElementById("newTitle");
     const description = document.getElementById("newAuctionDesc");
@@ -38,6 +42,9 @@ export function updateAuctionListener() {
     const id = getParams("id");
     const response = await put(`${baseUrl}/auction/listings/${id}`, putContent);
 
-    response.ok ? window.location.reload() : window.location.reload;
+    response.id ? window.location.reload() : window.location.reload,
+      (errorMessage.style.display = "block"),
+      (errorMessage.innerText = "Something went wrong. Please try again later"),
+      (updateBtn.innerText = "Update");
   });
 }
