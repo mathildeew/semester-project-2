@@ -3,21 +3,27 @@ const TEST_USER = {
   password: "Gurkemeie69",
 };
 
-describe("Log out", () => {
+describe("post", () => {
   beforeEach(() => {
     cy.clearLocalStorage();
-    cy.visit("/accounts/login");
+    cy.visit("/");
     cy.wait(1000);
+  });
+
+  it("Can log in with valid credentials", () => {
+    cy.get("#navBtn").click();
     cy.get("#loginForm button").contains("Log in").click();
     cy.wait(1000);
     cy.get("input[name=email]").type(TEST_USER.email);
     cy.get("input[name=password").type(TEST_USER.password);
     cy.get("#loginBtn").contains("Log in").click();
-    cy.wait(3000);
-    // cy.visit("/profile/");
+
+    cy.url().should("include", "/", () => {
+      expect(localStorage.getItem("token")).to.exist();
+    });
   });
 
-  it("Can log out with the logout button", () => {
-    // cy.visit("/profile/");
-  });
+  //   it("Can create an auction", () => {});
+  //   it("Can place a bid on an auction", () => {});
+  //   it("Can register a new user", () => {});
 });
