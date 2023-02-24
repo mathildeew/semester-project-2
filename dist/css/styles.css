@@ -10860,6 +10860,10 @@ textarea.form-control-lg {
   display: none;
 }
 
+#loginBtn {
+  display: none;
+}
+
 input:focus {
   outline: none;
 }
