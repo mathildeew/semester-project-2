@@ -1,15 +1,14 @@
-import { baseUrl } from "../../api/apiUrls.mjs";
-import { fetchOptions } from "../../api/fetchOptions.mjs";
+import { baseUrl } from "../api/apiUrls.mjs";
+import { post } from "../api/apiCalls/post.mjs";
 
-export function createAuction() {
+export function createAuctionListener() {
   const auctionForm = document.getElementById("createAuction");
   const errorMessage = auctionForm.querySelector(".errorMessage");
 
-  auctionForm.addEventListener("submit", (event) => {
+  auctionForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     auctionForm.querySelector("button").innerText = "Creating auction...";
-
     const title = document.getElementById("auctionTitle");
     const description = document.getElementById("auctionDesc");
 
@@ -51,23 +50,15 @@ export function createAuction() {
       endsAt: `${optionValue}`,
     };
 
-    async function createAuctionAPI(url, postContent) {
-      const [getData, postData] = fetchOptions;
-      postData["body"] = JSON.stringify(postContent);
-      const response = await fetch(url, postData);
-      const json = await response.json();
-      console.log(json);
+    const response = await post(`${baseUrl}/auction/listings`, postContent);
 
-      if (response.ok) {
-        window.location.href = "/";
-      } else {
-        errorMessage.style.display = "block";
-        errorMessage.innerText = json.errors[0].message;
-        auctionForm.querySelector("button").innerText = "Create auction";
-      }
-    }
-    setTimeout(() => {
-      createAuctionAPI(`${baseUrl}/auction/listings`, postContent);
-    }, "1000");
+    console.log(response);
+
+    response.id
+      ? window.location.reload()
+      : (errorMessage.style.display = "block"),
+      console.log(response);
+    errorMessage.innerText = "Something went wrong! Please try again later";
+    auctionForm.querySelector("button").innerText = "Create auction";
   });
 }

@@ -92,12 +92,14 @@
             <div
               class="d-flex flex-column align-items-center justify-content-center mb-5"
             >
-              <p>Are you sure you want to delete this auction?</p>
+              <p class="deleteMessage">
+                Are you sure you want to delete this auction?
+              </p>
               <!-- Delete button -->
               <button
                 id="deleteBtn"
                 type="submit"
-                class="fw-bolder col-10 mt-3 rounded bg-secondary border-0 py-2"
+                class="text-white fw-bolder col-10 mt-3 rounded bg-secondary border-0 py-2"
               >
                 Delete
               </button>
@@ -169,6 +171,8 @@
                 rows="5"
                 maxlength="280"
               ></textarea>
+
+              <p class="errorMessage text-danger col-10"></p>
 
               <!-- Update auction button -->
               <button

@@ -1,27 +1,26 @@
 // Auth
 import { redirect } from "./auth/redirect.mjs";
 import { nav } from "./components/nav.mjs";
-import { logout } from "./auth/logout.mjs";
+import { loginListener } from "./handlers/loginListener.mjs";
 
 //Accounts
-import { register } from "./auth/register/register.mjs";
-import { login } from "./auth/login/login.mjs";
+import { registerListener } from "./handlers/registerListener.mjs";
 
 // Home
-import { headerAnimation } from "./home/header.mjs";
 import { unauth } from "./home/unauth/unauth.mjs";
-import { getAuctions } from "./home/auctions/get.mjs";
+import { displayAuctions } from "./home/display.mjs";
+import { createAuctionListener } from "./handlers/createAuctionListener.mjs";
 
 // Profile
-import { changeAvatar } from "./profile/api/change.mjs";
-import { getAuction } from "./auction/api/get.mjs";
-import { getProfileAPI } from "./profile/api/get.mjs";
-import { createAuction } from "./home/auctions/create.mjs";
-import { placeBid } from "./auction/api/placeBid.mjs";
+import { displayProfile } from "./profile/display.mjs";
+import { changeAvatarListener } from "./handlers/changeAvatarListener.mjs";
+import { logoutListener } from "./handlers/logoutListener.mjs";
 
 // Auction
-import { deleteAuction } from "./auction/api/delete.mjs";
-import { updateAuction } from "./auction/api/update.mjs";
+import { displayAuction } from "./auction/display.mjs";
+import { updateAuctionListener } from "./handlers/updateAuctionListener.mjs";
+import { deleteAuctionListener } from "./handlers/deleteAuctionListener.mjs";
+import { placeBidListener } from "./handlers/placeBidListener.mjs";
 
 // Run function based on pathname
 const path = location.pathname;
@@ -31,34 +30,33 @@ switch (path) {
     nav();
     unauth();
     setTimeout(() => {
-      getAuctions();
+      displayAuctions();
     }, "1000");
-    headerAnimation();
-    createAuction();
+    createAuctionListener();
     break;
 
   case "/profile/":
     redirect();
     nav();
-    logout();
-    changeAvatar();
-    getProfileAPI();
+    logoutListener();
+    displayProfile();
+    changeAvatarListener();
     break;
 
-  case "/profile/auction/":
+  case "/auction/":
     redirect();
     nav();
-    getAuction();
-    placeBid();
-    deleteAuction();
-    updateAuction();
+    displayAuction();
+    placeBidListener();
+    deleteAuctionListener();
+    updateAuctionListener();
     break;
 
   case "/accounts/login/":
-    login();
+    loginListener();
     break;
 
-  case "/accounts/emailsignup/":
-    register();
+  case "/accounts/register/":
+    registerListener();
     break;
 }

@@ -1,11 +1,19 @@
-import { calcEndTime } from "../timer.mjs";
+import { calcEndTime } from "../globals/timer.mjs";
 import { hideButtons } from "./auth/auth.mjs";
 import { auctionCarousel } from "./carousel.mjs";
+import { baseUrl } from "../api/apiUrls.mjs";
+import { getParams } from "../globals/params.mjs";
+import { get } from "../api/apiCalls/get.mjs";
 
-export function displayAuction(auction) {
-  console.log(auction);
+export async function displayAuction() {
+  const id = getParams("id");
+
+  const auction = await get(
+    `${baseUrl}/auction/listings/${id}?_seller=true&_bids=true`
+  );
 
   hideButtons(auction);
+
   // Calculate auction ends time
   const placeBidBtn = document.getElementById("placeBidModalBtn");
   const today = new Date();
@@ -28,7 +36,6 @@ export function displayAuction(auction) {
   const carouselContainer = document.getElementById("carouselExample");
   const singleImageContainer = document.getElementById("auctionImg");
 
-  console.log(auction.media);
   if (auction.media.length === 1) {
     singleImageContainer.src = auction.media[0];
     carouselContainer.style.display = "none";

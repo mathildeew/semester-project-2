@@ -1,10 +1,17 @@
 import * as storage from "../storage/localStorage.mjs";
-import { calcEndTime } from "../timer.mjs";
+import { calcEndTime } from "../globals/timer.mjs";
+import { get } from "../api/apiCalls/get.mjs";
+import { baseUrl } from "../api/apiUrls.mjs";
+import { getParams } from "../globals/params.mjs";
 const userName = storage.get("name");
 const avatar = storage.get("avatar");
 
-export function displayProfile(profile) {
-  console.log(profile);
+const profileName = getParams("name");
+
+export async function displayProfile() {
+  const profile = await get(
+    `${baseUrl}/auction/profiles/${profileName}?_listings=true&_count.listings=true`
+  );
 
   //Update avatar modal
   const modalPlaceholderText = document.querySelector("#changeAvatar input");
@@ -78,7 +85,7 @@ export function displayProfile(profile) {
                                 </a>
                               `;
 
-      auctionCard.querySelector("a").href = `/profile/auction/?id=${id}`;
+      auctionCard.querySelector("a").href = `/auction/?id=${id}`;
       auctionCard.querySelector("#auctionsImg").src = image;
       auctionCard.querySelector(".auctionCardTitle").innerText = title;
       auctionCard.querySelector(".auctionCardEnds").innerText = timer;

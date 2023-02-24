@@ -1,17 +1,16 @@
-import { baseUrl } from "../../api/apiUrls.mjs";
-import { fetchOptions } from "../../api/fetchOptions.mjs";
-import * as storage from "../../storage/localStorage.mjs";
+import { baseUrl } from "../api/apiUrls.mjs";
+import { put } from "../api/apiCalls/put.mjs";
+import { getParams } from "../globals/params.mjs";
 
-// Get params to link
-const queryString = document.location.search;
-const params = new URLSearchParams(queryString);
-const id = params.get("id");
-
-export function updateAuction() {
+export function updateAuctionListener() {
   const updateAuctionForm = document.getElementById("updateAuctionForm");
+  const updateBtn = document.getElementById("updateAuctionBtn");
+  const errorMessage = document.querySelector(".errorMessage");
 
-  updateAuctionForm.addEventListener("submit", (event) => {
+  updateAuctionForm.addEventListener("submit", async (event) => {
     event.preventDefault();
+
+    updateBtn.innerText = "Please wait...";
 
     const title = document.getElementById("newTitle");
     const description = document.getElementById("newAuctionDesc");
@@ -39,14 +38,13 @@ export function updateAuction() {
       media: medias,
     };
 
-    async function updateAuctionAPI(url, putContent) {
-      const [getData, postData, putData] = fetchOptions;
-      putData["body"] = JSON.stringify(putContent);
-      const response = await fetch(url, putData);
-      const json = await response.json();
-      console.log(json);
-      //   window.location.reload;
-    }
-    updateAuctionAPI(`${baseUrl}/auction/listings/${id}`, putContent);
+    // Get params to link
+    const id = getParams("id");
+    const response = await put(`${baseUrl}/auction/listings/${id}`, putContent);
+
+    response.id ? window.location.reload() : window.location.reload,
+      (errorMessage.style.display = "block"),
+      (errorMessage.innerText = "Something went wrong. Please try again later"),
+      (updateBtn.innerText = "Update");
   });
 }
