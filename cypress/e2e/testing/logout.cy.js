@@ -6,18 +6,29 @@ const TEST_USER = {
 describe("Log out", () => {
   beforeEach(() => {
     cy.clearLocalStorage();
-    cy.visit("/accounts/login");
+    cy.visit("/");
     cy.wait(1000);
+    cy.get("#navBtn").click();
     cy.get("#loginForm button").contains("Log in").click();
     cy.wait(1000);
     cy.get("input[name=email]").type(TEST_USER.email);
     cy.get("input[name=password").type(TEST_USER.password);
     cy.get("#loginBtn").contains("Log in").click();
-    cy.wait(3000);
-    // cy.visit("/profile/");
+    cy.wait(1000);
+
+    cy.request("POST", "/json").then((response) => {
+      expect(response.status).to.eq(200);
+    });
   });
 
   it("Can log out with the logout button", () => {
-    // cy.visit("/profile/");
+    cy.get("#navBtn").click();
+    cy.wait(1000);
+    cy.get("#logoutBtn").contains("Log out").click();
+    cy.wait(1000);
+
+    cy.then(() => {
+      expect(localStorage.getItem("token")).to.eq(null);
+    });
   });
 });
