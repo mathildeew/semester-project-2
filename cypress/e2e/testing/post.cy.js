@@ -3,7 +3,7 @@ const TEST_USER = {
   password: "Gurkemeie69",
 };
 
-describe("post", () => {
+describe("POST /json", () => {
   beforeEach(() => {
     cy.clearLocalStorage();
     cy.visit("/");
@@ -18,8 +18,8 @@ describe("post", () => {
     cy.get("input[name=password").type(TEST_USER.password);
     cy.get("#loginBtn").contains("Log in").click();
 
-    cy.url().should("include", "/", () => {
-      expect(localStorage.getItem("token")).to.exist();
+    cy.request("POST", "/json").then((response) => {
+      expect(response.status).to.eq(200);
     });
   });
 
