@@ -10873,7 +10873,15 @@ header {
   background-repeat: no-repeat;
   background-position: right bottom;
   height: 300px;
-  animation: imageChange 8s infinite;
+}
+
+#headerText {
+  font-family: bely-display;
+}
+
+#headerOutline {
+  font-family: bely-display;
+  font-size: 4rem;
 }
 
 @keyframes imageChange {

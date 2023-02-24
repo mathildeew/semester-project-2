@@ -37,13 +37,25 @@ input:focus {
 }
 
 // Home - - - - - - - - - - - - - - - - - - - -
+
+// Login
 header {
   // background-image: url("/assets/headerShoe.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right bottom;
   height: 300px;
-  animation: imageChange 8s infinite;
+  // animation: imageChange 8s infinite;
+}
+
+#headerText {
+  font-family: bely-display;
+}
+
+#headerOutline {
+  font-family: bely-display;
+  font-size: 4rem;
+  // -webkit-text-stroke: 1px $secondary;
 }
 
 @keyframes imageChange {
