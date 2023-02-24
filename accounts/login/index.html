@@ -16,19 +16,25 @@
     <main
       class="maxWidth vh-100 d-flex justify-content-center align-items-center mx-auto"
     >
-      <div class="row align-items-center justify-content-center">
-        <div
-          class="d-flex flex-column align-items-center mt-5 mb-4 col-12 me-md-5 col-md-5"
-        >
+      <div class="row gx-0">
+        <div class="text-center col-11 mt-5 mb-4">
           <h1 class="">Gavel</h1>
-
-          <p class="text-secondary d-none d-md-inline">
-            Log in to see the auction details, make an auction or a bid.
+          <p class="">
+            Log in to view the auction, place bids and make an auction!
           </p>
+        </div>
+        <div
+          id="logRegAnim"
+          class="mt-5 mb-4 d-none k col-md-6 d-md-flex flex-column justify-content-end"
+        >
+          <div class="text-start">
+            <p class="mt-5">Maybe it's time to sell your</p>
+            <p id="animText" class="shoe text-secondary"></p>
+          </div>
         </div>
 
         <form
-          class="d-flex flex-column justify-content-center align-items-center col-12 col-md-6"
+          class="d-flex flex-column justify-content-center col-10 mx-auto col-md-6"
           id="loginForm"
         >
           <div

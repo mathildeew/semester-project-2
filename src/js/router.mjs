@@ -23,6 +23,7 @@ import { displayAuction } from "./auction/display.mjs";
 import { updateAuctionListener } from "./handlers/updateAuctionListener.mjs";
 import { deleteAuctionListener } from "./handlers/deleteAuctionListener.mjs";
 import { placeBidListener } from "./handlers/placeBidListener.mjs";
+import { frontAnimation } from "./components/logregAnimation.mjs";
 
 // Run function based on pathname
 const path = location.pathname;
@@ -57,6 +58,7 @@ switch (path) {
 
   case "/accounts/login/":
     loginListener();
+    frontAnimation();
     break;
 
   case "/accounts/register/":
