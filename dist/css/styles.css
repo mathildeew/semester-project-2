@@ -10868,11 +10868,16 @@ input:focus {
   color: black;
 }
 
+#logRegAnim,
 header {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right bottom;
-  height: 300px;
+}
+
+#animText {
+  font-family: bely-display, serif;
+  font-size: 4rem;
 }
 
 #headerText {
@@ -10884,23 +10889,6 @@ header {
   font-size: 4rem;
 }
 
-@keyframes imageChange {
-  0% {
-    background-image: url("/assets/headerShoe.png");
-  }
-  20% {
-    background-image: url("/assets/headerBooks.png");
-  }
-  40% {
-    background-image: url("/assets/catHeader.png");
-  }
-  60% {
-    background-image: url("/assets/headerJacket.png");
-  }
-  100% {
-    background-image: url("/assets/headerPlant.png");
-  }
-}
 #auctionsImg {
   width: 125px;
   height: 125px;
