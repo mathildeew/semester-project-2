@@ -7,6 +7,8 @@ import { loginListener } from "./handlers/loginListener.mjs";
 import { registerListener } from "./handlers/registerListener.mjs";
 
 // Home
+import { headerRandom } from "./components/header.mjs";
+
 import { unauth } from "./home/unauth/unauth.mjs";
 import { displayAuctions } from "./home/display.mjs";
 import { createAuctionListener } from "./handlers/createAuctionListener.mjs";
@@ -28,6 +30,7 @@ const path = location.pathname;
 switch (path) {
   case "/":
     nav();
+    headerRandom();
     unauth();
     setTimeout(() => {
       displayAuctions();
