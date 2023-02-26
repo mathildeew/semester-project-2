@@ -50,13 +50,10 @@ input:focus {
   object-position: right;
 }
 
-#logRegAnim,
 header {
-  // background-image: url("/assets/headerShoe.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center right;
-  // animation: imageChange 8s infinite;
 }
 
 #animText {
@@ -73,27 +70,6 @@ header {
   font-size: 4rem;
   // -webkit-text-stroke: 1px $secondary;
 }
-
-// @media (min-width: 768px) {
-//   @keyframes imageChange {
-//     0% {
-//       background-image: url("/assets/headerShoe.png");
-//     }
-//     20% {
-//       background-image: url("/assets/headerBooks.png");
-//     }
-//     40% {
-//       background-image: url("/assets/catHeader.png");
-//     }
-//     60% {
-//       background-image: url("/assets/headerJacket.png");
-//     }
-//     100% {
-//       background-image: url("/assets/headerPlant.png");
-//     }
-//   }
-
-// }
 
 #auctionsImg {
   width: 125px;
@@ -143,7 +119,7 @@ header {
 }
 
 .gavel {
-  background: url(/assets/loader/gavel.png);
+  background: url(semester-project-2/assets/loader/gavel.png);
   width: 100px;
   height: 40px;
   top: 20px;
@@ -153,7 +129,7 @@ header {
 }
 
 .blobs {
-  background: url(/assets/loader/blobs.png);
+  background: url(semester-project-2/assets/loader/blobs.png);
   width: 50px;
   height: 30px;
   top: 40px;
@@ -163,7 +139,7 @@ header {
 }
 
 .block {
-  background: url(/assets/loader/block.png);
+  background: url(semester-project-2/assets/loader/block.png);
   width: 50px;
   height: 40px;
   top: 60px;

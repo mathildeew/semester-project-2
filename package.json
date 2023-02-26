@@ -22,7 +22,7 @@
   "bugs": {
     "url": "https://github.com/mathildeew/semester-project-2/issues"
   },
-  "homepage": "https://mathildeew.github.io/semester-project-2/",
+  "homepage": "https://github.com/mathildeew/semester-project-2#readme",
   "dependencies": {
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.3"

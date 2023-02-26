@@ -10879,7 +10879,6 @@ input:focus {
   object-position: right;
 }
 
-#logRegAnim,
 header {
   background-size: contain;
   background-repeat: no-repeat;
@@ -10940,7 +10939,7 @@ header {
 }
 
 .gavel {
-  background: url(/assets/loader/gavel.png);
+  background: url(semester-project-2/assets/loader/gavel.png);
   width: 100px;
   height: 40px;
   top: 20px;
@@ -10950,7 +10949,7 @@ header {
 }
 
 .blobs {
-  background: url(/assets/loader/blobs.png);
+  background: url(semester-project-2/assets/loader/blobs.png);
   width: 50px;
   height: 30px;
   top: 40px;
@@ -10960,7 +10959,7 @@ header {
 }
 
 .block {
-  background: url(/assets/loader/block.png);
+  background: url(semester-project-2/assets/loader/block.png);
   width: 50px;
   height: 40px;
   top: 60px;
