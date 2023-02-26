@@ -3,23 +3,28 @@ export function getRandom() {
     {
       image: "../../../assets/animationHeader/headerCatBorder.png",
       text: "cat?",
+      alt: "Grey cat profile view",
     },
     {
       image: "../../../assets/animationHeader/headerBooksBorder.png",
       text: "books?",
+      alt: "Stable of books",
     },
     {
       image: "../../../assets/animationHeader/headerJacketBorder.png",
       text: "jacket?",
+      alt: "Jacket on coat hanger held by hand ",
     },
 
     {
       image: "../../../assets/animationHeader/headerShoeBorder.png",
       text: "shoes?",
+      alt: "Shoe dropped from hand",
     },
     {
       image: "../../../assets/animationHeader/headerArtBorder.png",
       text: "art?",
+      alt: "Two hands holding images",
     },
   ];
 

@@ -9,5 +9,6 @@ export function frontAnimation() {
 
   // animationContainer.style.backgroundImage = `url(${random.image})`;
   image.src = random.image;
+  image.alt = random.alt;
   text.innerHTML = random.text;
 }
