@@ -16,8 +16,8 @@ export async function home() {
 
   search(auctions);
 
+  //   Run filter function if user are logged in
   const token = storage.get("token");
   const filterContainer = document.getElementById("filter");
-
   token ? filter(auctions) : (filterContainer.style.display = "none");
 }

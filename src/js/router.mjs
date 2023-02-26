@@ -14,7 +14,7 @@ import { display } from "./path/home/display.mjs";
 import { createAuctionListener } from "./handlers/createAuctionListener.mjs";
 
 // Profile
-import { displayProfile } from "./profile/display.mjs";
+// import { display } from "./path/profile/display.mjs";
 import { changeAvatarListener } from "./handlers/changeAvatarListener.mjs";
 import { logoutListener } from "./handlers/logoutListener.mjs";
 
@@ -25,6 +25,7 @@ import { deleteAuctionListener } from "./handlers/deleteAuctionListener.mjs";
 import { placeBidListener } from "./handlers/placeBidListener.mjs";
 import { frontAnimation } from "./components/logregAnimation.mjs";
 import { home } from "./path/home/home.mjs";
+import { profile } from "./path/profile/profile.mjs";
 
 // Run function based on pathname
 const path = location.pathname;
@@ -43,7 +44,8 @@ switch (path) {
     redirect();
     nav();
     logoutListener();
-    displayProfile();
+    profile();
+    // displayProfile();
     changeAvatarListener();
     break;
 
