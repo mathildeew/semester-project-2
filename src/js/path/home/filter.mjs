@@ -1,4 +1,4 @@
-import { displayAuctions } from "./display.mjs";
+import { display } from "./display.mjs";
 
 export function filter(auctions) {
   const popularFilter = document.querySelector("#filterOne");
@@ -10,7 +10,7 @@ export function filter(auctions) {
     const mostPopular = auctions.sort(function (a, b) {
       return b._count.bids - a._count.bids;
     });
-    displayAuctions(mostPopular);
+    display(mostPopular);
   });
 
   //Filter no test
@@ -24,7 +24,7 @@ export function filter(auctions) {
         return true;
       }
     });
-    displayAuctions(auctionWithoutTest);
+    display(auctionWithoutTest);
   });
 
   endedFilter.addEventListener("click", (event) => {
@@ -34,6 +34,6 @@ export function filter(auctions) {
         return true;
       }
     });
-    displayAuctions(onGoing);
+    display(onGoing);
   });
 }

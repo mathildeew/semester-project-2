@@ -9,8 +9,8 @@ import { registerListener } from "./handlers/registerListener.mjs";
 // Home
 import { headerRandom } from "./components/header.mjs";
 
-import { unauth } from "./home/unauth/unauth.mjs";
-import { displayAuctions } from "./home/display.mjs";
+import { unauth } from "./path/home/unauth/unauth.mjs";
+import { display } from "./path/home/display.mjs";
 import { createAuctionListener } from "./handlers/createAuctionListener.mjs";
 
 // Profile
@@ -24,6 +24,7 @@ import { updateAuctionListener } from "./handlers/updateAuctionListener.mjs";
 import { deleteAuctionListener } from "./handlers/deleteAuctionListener.mjs";
 import { placeBidListener } from "./handlers/placeBidListener.mjs";
 import { frontAnimation } from "./components/logregAnimation.mjs";
+import { home } from "./path/home/home.mjs";
 
 // Run function based on pathname
 const path = location.pathname;
@@ -31,11 +32,10 @@ const path = location.pathname;
 switch (path) {
   case "/" || "/semester-project-2/":
     nav();
+    home();
     headerRandom();
     unauth();
-    setTimeout(() => {
-      displayAuctions();
-    }, "1000");
+
     createAuctionListener();
     break;
 

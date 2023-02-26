@@ -1,4 +1,4 @@
-import { displayAuctions } from "./display.mjs";
+import { display } from "./display.mjs";
 
 export function search(auctions) {
   const searchInput = document.getElementById("search");
@@ -11,6 +11,6 @@ export function search(auctions) {
         return true;
       }
     });
-    displayAuctions(filteredAuctions);
+    display(filteredAuctions);
   });
 }

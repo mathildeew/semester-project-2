@@ -1,20 +1,9 @@
-import { calcEndTime } from "../globals/timer.mjs";
-import * as storage from "../storage/localStorage.mjs";
-import { filter } from "./filter.mjs";
-import { get } from "../api/apiCalls/get.mjs";
-import { search } from "./search.mjs";
-import { baseUrl } from "../api/apiUrls.mjs";
+import { calcEndTime } from "../../globals/timer.mjs";
+import * as storage from "../../storage/localStorage.mjs";
 const token = storage.get("token");
-baseUrl;
 
-export async function displayAuctions() {
-  const auctions = await get(
-    `${baseUrl}/auction/listings?sort=created&sortOrder=desc&_seller=true`
-  );
-  // console.log(auctions);
-
-  // filter(auctions);
-  // search(auctions);
+export function display(auctions) {
+  console.log(auctions);
 
   const auctionsContainer = document.getElementById("auctions");
   auctionsContainer.innerHTML = "";
@@ -71,7 +60,6 @@ export async function displayAuctions() {
       auctionCard.querySelector(".auctionCardSeller").innerText = seller;
     } else {
       // Not logged in
-
       auctionCard.classList.add("unauthBtn");
       auctionCard.setAttribute("data-bs-toggle", "modal");
       auctionCard.setAttribute("data-bs-target", "#unauthModal");
