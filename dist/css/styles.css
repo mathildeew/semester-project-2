@@ -31,6 +31,15 @@ button ::after {
   outline: none;
 }
 
+input,
+button,
+select,
+optgroup,
+textarea,
+label {
+  font-family: soleil, sans-serif !important;
+}
+
 .bg-primary {
   background-color: #9ee2d8 !important;
 }

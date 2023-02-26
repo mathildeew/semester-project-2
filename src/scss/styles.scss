@@ -10,10 +10,10 @@
 
 // Custom styles
 @import "./components/nav";
-@import "./pages/styles.scss";
+@import "./pages/styles";
 
 // Bootstrap
-@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../../node_modules/bootstrap/scss/bootstrap";
 
 // Nav - - - - - - - - - - - - - - - - - - - -
 #navBtn {
@@ -32,7 +32,7 @@
 #loginBtn {
   display: none;
 }
-//
+
 input:focus {
   outline: none;
 }
@@ -40,8 +40,6 @@ input:focus {
 ::placeholder {
   color: black;
 }
-
-// Login - - - - - - - - - - - - - - - - - - - -
 
 // Home - - - - - - - - - - - - - - - - - - - -
 header {
