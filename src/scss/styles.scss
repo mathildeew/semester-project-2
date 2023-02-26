@@ -43,12 +43,19 @@ input:focus {
 // Home - - - - - - - - - - - - - - - - - - - -
 
 // Login
+#animImg {
+  width: 320px;
+  height: 320px;
+  object-fit: contain;
+  object-position: right;
+}
+
 #logRegAnim,
 header {
   // background-image: url("/assets/headerShoe.png");
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: right bottom;
+  background-position: center right;
   // animation: imageChange 8s infinite;
 }
 
