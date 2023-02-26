@@ -4,7 +4,7 @@ export function unauth() {
   const token = storage.get("token");
   const newAuctionBtn = document.getElementById("newAuctionModalBtn");
   const navBtn = document.getElementById("navBtn");
-  const loginBtn = document.getElementById("loginBtn");
+  const loginBtn = document.getElementById("loginBtnHeader");
 
   if (token === undefined || token === null || token === "") {
     newAuctionBtn.style.display = "none";
