@@ -29,7 +29,7 @@ import { frontAnimation } from "./components/logregAnimation.mjs";
 const path = location.pathname;
 
 switch (path) {
-  case "/":
+  case "/" || "/semester-project-2/":
     nav();
     headerRandom();
     unauth();
