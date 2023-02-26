@@ -65,15 +65,14 @@ export function display(auctions) {
       auctionCard.setAttribute("data-bs-toggle", "modal");
       auctionCard.setAttribute("data-bs-target", "#unauthModal");
       auctionCard.innerHTML += `
-                                <div class="d-flex align-items-center justify-content-start">
+                                <div class="p-1 d-flex flex-lg-column justify-content-start align-items-center align-items-lg-start">
                                   <img id="auctionsImg" class="rounded mb-2" />
-                                  <div class="ms-3">
+                                  <div class="ms-3 ms-lg-0">
                                     <p class="auctionCardTitle fw-bold mb-0"></p>
                                     <div class="d-flex mb-3">
                                       <i class="bi bi-clock-fill me-1"></i>
                                       <p class="auctionCardEnds mb-0"></p>
                                     </div>
-                                    <p class="auctionCardHighestBid fs-5 fw-bold mb-0"></p>
                                   </div>
                                 </div>
                               `;
@@ -81,7 +80,6 @@ export function display(auctions) {
     auctionCard.querySelector("#auctionsImg").src = image;
     auctionCard.querySelector(".auctionCardTitle").innerText = title;
     auctionCard.querySelector(".auctionCardEnds ").innerText = timer;
-    auctionCard.querySelector(".auctionCardHighestBid").innerText = highestBids;
 
     auctionsContainer.append(auctionCard);
   }
