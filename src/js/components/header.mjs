@@ -13,7 +13,7 @@ export function getRandom() {
     {
       image: "../../../assets/animationHeader/headerJacketBorder.png",
       text: "jacket?",
-      alt: "Jacket on coat hanger held by hand ",
+      alt: "Jacket on coat hanger held by hand",
     },
 
     {

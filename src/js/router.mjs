@@ -64,5 +64,6 @@ switch (path) {
 
   case "/accounts/register/":
     registerListener();
+    setInterval(frontAnimation, 1500);
     break;
 }
