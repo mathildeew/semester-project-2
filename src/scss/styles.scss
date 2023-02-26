@@ -10,6 +10,7 @@
 
 // Custom styles
 @import "./components/nav";
+@import "./pages/styles.scss";
 
 // Bootstrap
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
@@ -40,25 +41,13 @@ input:focus {
   color: black;
 }
 
+// Login - - - - - - - - - - - - - - - - - - - -
+
 // Home - - - - - - - - - - - - - - - - - - - -
-
-// Login
-#animImg {
-  width: 320px;
-  height: 320px;
-  object-fit: contain;
-  object-position: right;
-}
-
 header {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center right;
-}
-
-#animText {
-  font-family: bely-display, serif;
-  font-size: 4rem;
 }
 
 #headerText {
@@ -68,7 +57,6 @@ header {
 #headerOutline {
   font-family: bely-display;
   font-size: 4rem;
-  // -webkit-text-stroke: 1px $secondary;
 }
 
 #auctionsImg {
