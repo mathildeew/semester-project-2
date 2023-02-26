@@ -11,6 +11,7 @@ export async function displayAuctions() {
   const auctions = await get(
     `${baseUrl}/auction/listings?sort=created&sortOrder=desc&_seller=true`
   );
+  // console.log(auctions);
 
   // filter(auctions);
   // search(auctions);

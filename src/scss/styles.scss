@@ -27,6 +27,10 @@
 .errorMessage {
   display: none;
 }
+
+#loginBtn {
+  display: none;
+}
 //
 input:focus {
   outline: none;
@@ -37,32 +41,59 @@ input:focus {
 }
 
 // Home - - - - - - - - - - - - - - - - - - - -
+
+// Login
+#animImg {
+  width: 320px;
+  height: 320px;
+  object-fit: contain;
+  object-position: right;
+}
+
+#logRegAnim,
 header {
   // background-image: url("/assets/headerShoe.png");
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: right bottom;
-  height: 300px;
-  animation: imageChange 8s infinite;
+  background-position: center right;
+  // animation: imageChange 8s infinite;
 }
 
-@keyframes imageChange {
-  0% {
-    background-image: url("/assets/headerShoe.png");
-  }
-  20% {
-    background-image: url("/assets/headerBooks.png");
-  }
-  40% {
-    background-image: url("/assets/catHeader.png");
-  }
-  60% {
-    background-image: url("/assets/headerJacket.png");
-  }
-  100% {
-    background-image: url("/assets/headerPlant.png");
-  }
+#animText {
+  font-family: bely-display, serif;
+  font-size: 4rem;
 }
+
+#headerText {
+  font-family: bely-display;
+}
+
+#headerOutline {
+  font-family: bely-display;
+  font-size: 4rem;
+  // -webkit-text-stroke: 1px $secondary;
+}
+
+// @media (min-width: 768px) {
+//   @keyframes imageChange {
+//     0% {
+//       background-image: url("/assets/headerShoe.png");
+//     }
+//     20% {
+//       background-image: url("/assets/headerBooks.png");
+//     }
+//     40% {
+//       background-image: url("/assets/catHeader.png");
+//     }
+//     60% {
+//       background-image: url("/assets/headerJacket.png");
+//     }
+//     100% {
+//       background-image: url("/assets/headerPlant.png");
+//     }
+//   }
+
+// }
 
 #auctionsImg {
   width: 125px;

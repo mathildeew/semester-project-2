@@ -7,6 +7,8 @@ import { loginListener } from "./handlers/loginListener.mjs";
 import { registerListener } from "./handlers/registerListener.mjs";
 
 // Home
+import { headerRandom } from "./components/header.mjs";
+
 import { unauth } from "./home/unauth/unauth.mjs";
 import { displayAuctions } from "./home/display.mjs";
 import { createAuctionListener } from "./handlers/createAuctionListener.mjs";
@@ -21,6 +23,7 @@ import { displayAuction } from "./auction/display.mjs";
 import { updateAuctionListener } from "./handlers/updateAuctionListener.mjs";
 import { deleteAuctionListener } from "./handlers/deleteAuctionListener.mjs";
 import { placeBidListener } from "./handlers/placeBidListener.mjs";
+import { frontAnimation } from "./components/logregAnimation.mjs";
 
 // Run function based on pathname
 const path = location.pathname;
@@ -28,6 +31,7 @@ const path = location.pathname;
 switch (path) {
   case "/":
     nav();
+    headerRandom();
     unauth();
     setTimeout(() => {
       displayAuctions();
@@ -54,6 +58,8 @@ switch (path) {
 
   case "/accounts/login/":
     loginListener();
+    setInterval(frontAnimation, 1500);
+
     break;
 
   case "/accounts/register/":

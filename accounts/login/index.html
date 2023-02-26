@@ -11,28 +11,36 @@
   </head>
 
   <body
-    class="bg-primary vh-100 vw-100 d-flex flex-column justify-content-center align-items-center"
+    class="bg-primary d-flex flex-column justify-content-center align-items-center"
   >
     <main
-      class="maxWidth vh-100 d-flex justify-content-center align-items-center mx-auto"
+      class="maxWidth d-flex justify-content-center align-items-center mx-auto mx-md-4"
     >
-      <div class="row align-items-center justify-content-center">
-        <div
-          class="d-flex flex-column align-items-center mt-5 mb-4 col-12 me-md-5 col-md-5"
-        >
+      <div class="row gx-0 align-items-center justify-content-center">
+        <div class="text-center col-11 my-4">
           <h1 class="">Gavel</h1>
-
-          <p class="text-secondary d-none d-md-inline">
-            Log in to see the auction details, make an auction or a bid.
+          <p class="text-secondary">
+            Log in to view the auction, place bids and make an auction!
           </p>
         </div>
 
+        <div
+          id="logRegAnim"
+          class="mt-5 mb-5 d-none k col-md-6 d-md-flex justify-content-between"
+        >
+          <div>
+            <p class="text-secondary mt-5">Maybe it's time to sell your</p>
+            <p id="animText" class="shoe text-secondary"></p>
+          </div>
+          <img id="animImg" />
+        </div>
+
         <form
-          class="d-flex flex-column justify-content-center align-items-center col-12 col-md-6"
+          class="d-flex flex-column justify-content-center col-11 col-sm-9 mx-auto col-md-6"
           id="loginForm"
         >
           <div
-            class="bg-white d-flex flex-column border border-1 border-secondary rounded p-5"
+            class="bg-white d-flex flex-column border border-1 border-secondary rounded px-4 py-5"
           >
             <h2 class="text-secondary mb-4">Log in</h2>
             <input
@@ -71,7 +79,7 @@
       </div>
     </main>
 
-    <footer class="mt-auto col-12">
+    <footer class="mt-5 col-12">
       <p class="text-secondary text-center">&#169; 2021 Mathilde Elinor Wiik</p>
     </footer>
 
