@@ -11,7 +11,7 @@ describe("POST /json", () => {
   });
 
   it("Can log in with valid credentials", () => {
-    cy.get("#navBtn").click();
+    cy.get("#loginBtnHeader").click();
     cy.get("#loginForm button").contains("Log in").click();
     cy.wait(1000);
     cy.get("input[name=email]").type(TEST_USER.email);
@@ -21,6 +21,11 @@ describe("POST /json", () => {
     cy.request("POST", "/json").then((response) => {
       expect(response.status).to.eq(200);
     });
+    cy.location("pathname")
+      .should("equal", "/")
+      .then(() => {
+        expect(localStorage.getItem("token")).to.be.a("string");
+      });
   });
 
   //   it("Can create an auction", () => {});
