@@ -13,6 +13,7 @@ export function display(auctions) {
     let image = auctions[i].media[0];
     const id = auctions[i].id;
     const seller = auctions[i].seller.name;
+    const bids = auctions[i].bids;
 
     // Placeholder image
     if (image === undefined || image === "") {
@@ -27,10 +28,10 @@ export function display(auctions) {
     // If no bids
     let highestBids;
 
-    if (auctions[i]._count.bids === 0) {
+    if (bids.length === 0) {
       highestBids = "No bids";
     } else {
-      highestBids = `$${auctions[i]._count.bids}`;
+      highestBids = `Highest bid: $${bids[0].amount}`;
     }
 
     // Display auctions

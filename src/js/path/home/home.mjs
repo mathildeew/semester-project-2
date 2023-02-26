@@ -6,7 +6,7 @@ import { search } from "./search.mjs";
 
 export async function home() {
   const auctions = await get(
-    `${baseUrl}/auction/listings?sort=created&sortOrder=desc&_seller=true`
+    `${baseUrl}/auction/listings?sort=created&sortOrder=desc&_seller=true&_bids=true`
   );
 
   setTimeout(() => {
