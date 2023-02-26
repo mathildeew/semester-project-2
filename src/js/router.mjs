@@ -10,7 +10,6 @@ import { registerListener } from "./handlers/registerListener.mjs";
 import { headerRandom } from "./components/header.mjs";
 
 import { unauth } from "./path/home/unauth/unauth.mjs";
-import { display } from "./path/home/display.mjs";
 import { createAuctionListener } from "./handlers/createAuctionListener.mjs";
 
 // Profile
@@ -19,13 +18,13 @@ import { changeAvatarListener } from "./handlers/changeAvatarListener.mjs";
 import { logoutListener } from "./handlers/logoutListener.mjs";
 
 // Auction
-import { displayAuction } from "./auction/display.mjs";
 import { updateAuctionListener } from "./handlers/updateAuctionListener.mjs";
 import { deleteAuctionListener } from "./handlers/deleteAuctionListener.mjs";
 import { placeBidListener } from "./handlers/placeBidListener.mjs";
 import { frontAnimation } from "./components/logregAnimation.mjs";
 import { home } from "./path/home/home.mjs";
 import { profile } from "./path/profile/profile.mjs";
+import { auction } from "./path/auction/auction.mjs";
 
 // Run function based on pathname
 const path = location.pathname;
@@ -52,7 +51,7 @@ switch (path) {
   case "/auction/":
     redirect();
     nav();
-    displayAuction();
+    auction();
     placeBidListener();
     deleteAuctionListener();
     updateAuctionListener();

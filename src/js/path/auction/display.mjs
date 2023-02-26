@@ -1,20 +1,8 @@
-import { calcEndTime } from "../globals/timer.mjs";
-import { hideButtons } from "./auth/auth.mjs";
+import { calcEndTime } from "../../globals/timer.mjs";
 import { auctionCarousel } from "./carousel.mjs";
-import { baseUrl } from "../api/apiUrls.mjs";
-import { getParams } from "../globals/params.mjs";
-import { get } from "../api/apiCalls/get.mjs";
 
-export async function displayAuction() {
-  const id = getParams("id");
-
-  const auction = await get(
-    `${baseUrl}/auction/listings/${id}?_seller=true&_bids=true`
-  );
-
-  hideButtons(auction);
-
-  // Calculate auction ends time
+export function displayAuction(auction) {
+  // Calculate auction end time
   const placeBidBtn = document.getElementById("placeBidModalBtn");
   const today = new Date();
   const ends = auction.endsAt;
@@ -25,36 +13,36 @@ export async function displayAuction() {
   }
 
   // Display auction
-  const auctionContainer = document.getElementById("auction");
   const auctionTitle = document.getElementById("singleAuctionTitle");
   const auctionSeller = document.getElementById("singleAuctionSeller");
   const auctionTimer = document.getElementById("singleAuctionTimer");
   const highestBid = document.getElementById("highestBid");
   const auctionDesc = document.getElementById("singleAuctionDesc");
 
-  // // Run image carousel & placeholder image
-  const carouselContainer = document.getElementById("carouselExample");
-  const singleImageContainer = document.getElementById("auctionImg");
-
-  if (auction.media.length === 1) {
-    singleImageContainer.src = auction.media[0];
-    carouselContainer.style.display = "none";
-  } else if (auction.media.length > 1) {
-    auctionCarousel(auction);
-    singleImageContainer.style.display = "none";
-  } else if ((auction.media = [] || auction.media.length === 0)) {
-    singleImageContainer.src = "/assets/placeholder/placeholder_Gavel.png";
-  }
-
   auctionTitle.innerText = auction.title;
   auctionSeller.innerText = `${auction.seller.name}`;
   auctionSeller.href = `/profile/?name=${auction.seller.name}`;
-
+  auctionDesc.innerText = auction.description;
   auctionTimer.innerText = timer;
+  const media = auction.media;
+  const bids = auction.bids;
+
+  // Run image carousel & placeholder image
+  const carouselContainer = document.getElementById("carouselExample");
+  const singleImageContainer = document.getElementById("auctionImg");
+
+  if (media.length === 1) {
+    singleImageContainer.src = media[0];
+    carouselContainer.style.display = "none";
+  } else if (media.length > 1) {
+    auctionCarousel(auction);
+    singleImageContainer.style.display = "none";
+  } else if ((media = [] || media.length === 0)) {
+    singleImageContainer.src = "/assets/placeholder/placeholder_Gavel.png";
+  }
 
   // Sort and show bids
   const bidsContainer = document.getElementById("bidsHistory");
-  const bids = auction.bids;
 
   if (bids.length > 0) {
     highestBid.innerText = `Highest bid: $${
@@ -94,26 +82,5 @@ export async function displayAuction() {
   } else {
     highestBid.innerText = "No bids";
     bidsHistory.style.display = "none";
-  }
-  auctionDesc.innerText = auction.description;
-
-  // Display current auction as placeholder in update form
-  const newTitle = document.getElementById("newTitle");
-  const newDesc = document.getElementById("newAuctionDesc");
-  const newMediaOne = document.getElementById("newMediaOne");
-  const newMediaTwo = document.getElementById("newMediaTwo");
-  const newMediaThree = document.getElementById("newMediaThree");
-
-  newTitle.value = auction.title;
-  newDesc.value = auction.description;
-
-  if (auction.media.length > 0) {
-    newMediaOne.value = auction.media[0];
-  }
-  if (auction.media.length > 1) {
-    newMediaTwo.value = auction.media[1];
-  }
-  if (auction.media.length > 2) {
-    newMediaThree.value = auction.media[2];
   }
 }
