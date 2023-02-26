@@ -1,24 +1,25 @@
 export function getRandom() {
   const headerContent = [
     {
-      image: "../../../assets/catHeader.png",
+      image: "../../../assets/animationHeader/headerCatBorder.png",
       text: "cat?",
     },
     {
-      image: "../../../assets/headerBooks.png",
+      image: "../../../assets/animationHeader/headerBooksBorder.png",
       text: "books?",
     },
     {
-      image: "../../../assets/headerJacket.png",
+      image: "../../../assets/animationHeader/headerJacketBorder.png",
       text: "jacket?",
     },
+
     {
-      image: "../../../assets/headerPlant.png",
-      text: "plant?",
+      image: "../../../assets/animationHeader/headerShoeBorder.png",
+      text: "shoes?",
     },
     {
-      image: "../../../assets/headerShoe.png",
-      text: "shoes?",
+      image: "../../../assets/animationHeader/headerArtBorder.png",
+      text: "art?",
     },
   ];
 

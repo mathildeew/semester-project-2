@@ -10872,11 +10872,18 @@ input:focus {
   color: black;
 }
 
+#animImg {
+  width: 320px;
+  height: 320px;
+  object-fit: contain;
+  object-position: right;
+}
+
 #logRegAnim,
 header {
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: right bottom;
+  background-position: center right;
 }
 
 #animText {

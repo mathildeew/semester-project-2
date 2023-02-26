@@ -58,7 +58,8 @@ switch (path) {
 
   case "/accounts/login/":
     loginListener();
-    frontAnimation();
+    setInterval(frontAnimation, 1500);
+
     break;
 
   case "/accounts/register/":

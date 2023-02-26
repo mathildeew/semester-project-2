@@ -11,7 +11,7 @@
   </head>
 
   <body
-    class="bg-primary vw-100 d-flex flex-column justify-content-center align-items-center"
+    class="bg-primary d-flex flex-column justify-content-center align-items-center"
   >
     <main
       class="maxWidth d-flex justify-content-center align-items-center mx-auto mx-md-4"
@@ -19,18 +19,20 @@
       <div class="row gx-0 align-items-center justify-content-center">
         <div class="text-center col-11 my-4">
           <h1 class="">Gavel</h1>
-          <p class="">
+          <p class="text-secondary">
             Log in to view the auction, place bids and make an auction!
           </p>
         </div>
+
         <div
           id="logRegAnim"
-          class="mt-5 mb-4 d-none k col-md-6 d-md-flex flex-column justify-content-end"
+          class="mt-5 mb-5 d-none k col-md-6 d-md-flex justify-content-between"
         >
-          <div class="text-start">
-            <p class="mt-5">Maybe it's time to sell your</p>
+          <div>
+            <p class="text-secondary mt-5">Maybe it's time to sell your</p>
             <p id="animText" class="shoe text-secondary"></p>
           </div>
+          <img id="animImg" />
         </div>
 
         <form
