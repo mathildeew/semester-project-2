@@ -23,8 +23,6 @@ export function calcEndTime(ends) {
   // console.log(`${days}h, ${hours}h, ${minutes}m, ${seconds}s`);
   let timer;
 
-  console.log(days);
-
   if (difference < 0) {
     timer = `Ended`;
   }

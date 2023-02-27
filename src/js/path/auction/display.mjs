@@ -6,7 +6,7 @@ export function displayAuction(auction) {
   document.head.querySelector("meta[name=description]").content =
     auction.description;
 
-  console.log();
+  console.log(auction.updated);
 
   // Display auction
   const auctionTitle = document.getElementById("singleAuctionTitle");
@@ -14,11 +14,16 @@ export function displayAuction(auction) {
   const auctionTimer = document.getElementById("singleAuctionTimer");
   const highestBid = document.getElementById("highestBid");
   const auctionDesc = document.getElementById("singleAuctionDesc");
+  const auctionCreated = document.getElementById("singleAuctionCreated");
+  const auctionUpdated = document.getElementById("singleAuctionUpdated");
 
   auctionTitle.innerText = auction.title;
   auctionSeller.innerText = `${auction.seller.name}`;
   auctionSeller.href = `/profile/?name=${auction.seller.name}`;
   auctionDesc.innerText = auction.description;
+  auctionCreated.innerText += ` ${new Date(auction.created).toLocaleString()}`;
+  auctionUpdated.innerText += ` ${new Date(auction.updated).toLocaleString()}`;
+
   let media = auction.media;
   const bids = auction.bids;
 

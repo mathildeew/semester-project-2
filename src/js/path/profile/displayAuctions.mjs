@@ -15,9 +15,8 @@ export function displayAuctions(auctions) {
     }
 
     // Calculate auction end time
-    const today = new Date();
     const ends = auctions[i].endsAt;
-    const timer = calcEndTime(today, ends);
+    const timer = calcEndTime(ends);
 
     // Display auctions
     const auctionsContainer = document.getElementById("auctionsProfile");
