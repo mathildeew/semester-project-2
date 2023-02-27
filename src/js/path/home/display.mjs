@@ -3,8 +3,6 @@ import * as storage from "../../storage/localStorage.mjs";
 const token = storage.get("token");
 
 export function display(auctions) {
-  console.log(auctions);
-
   const auctionsContainer = document.getElementById("auctions");
   auctionsContainer.innerHTML = "";
 
@@ -59,6 +57,8 @@ export function display(auctions) {
                                 `;
       auctionCard.querySelector("a").href = `/auction/?id=${id}`;
       auctionCard.querySelector(".auctionCardSeller").innerText = seller;
+      auctionCard.querySelector(".auctionCardHighestBid").innerText =
+        highestBids;
     } else {
       // Not logged in
       auctionCard.classList.add("unauthBtn");
