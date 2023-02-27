@@ -57,6 +57,21 @@ header {
   font-size: 4rem;
 }
 
+#auctionCard {
+  animation: loadMore 0.2s linear;
+}
+
+@keyframes loadMore {
+  0% {
+    opacity: 0;
+    translate: 0 30px;
+  }
+  100% {
+    opacity: 0.3;
+    translate: 0 0;
+  }
+}
+
 #auctionsImg {
   // width: 125px;
   // height: 125px;
