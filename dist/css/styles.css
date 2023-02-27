@@ -10931,6 +10931,11 @@ header {
   object-fit: cover;
 }
 
+#auctionSellerLink img {
+  width: 30px;
+  height: 30px;
+}
+
 #avatar {
   width: 120px;
   height: 120px;

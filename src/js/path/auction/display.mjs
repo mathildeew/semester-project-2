@@ -11,6 +11,7 @@ export function displayAuction(auction) {
   // Display auction
   const auctionTitle = document.getElementById("singleAuctionTitle");
   const auctionSeller = document.getElementById("singleAuctionSeller");
+  const auctionSellerLink = document.getElementById("auctionSellerLink");
   const auctionTimer = document.getElementById("singleAuctionTimer");
   const highestBid = document.getElementById("highestBid");
   const auctionDesc = document.getElementById("singleAuctionDesc");
@@ -18,8 +19,9 @@ export function displayAuction(auction) {
   const auctionUpdated = document.getElementById("singleAuctionUpdated");
 
   auctionTitle.innerText = auction.title;
+  auctionSellerLink.href = `/profile/?name=${auction.seller.name}`;
+  auctionSellerLink.querySelector("img").src = auction.seller.avatar;
   auctionSeller.innerText = `${auction.seller.name}`;
-  auctionSeller.href = `/profile/?name=${auction.seller.name}`;
   auctionDesc.innerText = auction.description;
   auctionCreated.innerText += ` ${new Date(auction.created).toLocaleString()}`;
   auctionUpdated.innerText += ` ${new Date(auction.updated).toLocaleString()}`;
