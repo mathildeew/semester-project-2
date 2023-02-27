@@ -1,6 +1,12 @@
+import { get } from "../../api/apiCalls/get.mjs";
+import { baseUrl } from "../../api/apiUrls.mjs";
 import { display } from "./display.mjs";
 
-export function search(auctions) {
+export async function search() {
+  const auctions = await get(
+    `${baseUrl}/auction/listings?sort=created&sortOrder=desc&_seller=true&_bids=true&_active=true`
+  );
+
   const searchInput = document.getElementById("search");
 
   searchInput.addEventListener("keyup", (event) => {

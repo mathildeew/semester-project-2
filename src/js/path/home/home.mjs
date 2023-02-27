@@ -27,7 +27,7 @@ export async function home() {
   });
 
   // Run search
-  search(auctions);
+  search();
 
   // Run filter function if user are logged in
   const token = storage.get("token");
