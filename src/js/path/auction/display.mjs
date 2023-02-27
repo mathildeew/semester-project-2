@@ -18,9 +18,17 @@ export function displayAuction(auction) {
   const auctionCreated = document.getElementById("singleAuctionCreated");
   const auctionUpdated = document.getElementById("singleAuctionUpdated");
 
+  // Placeholder seller avatar
+  let sellerAvater;
+  if (auction.seller.avatar === [] || auction.seller.avatar === "") {
+    sellerAvater = "/assets/placeholder/placeholder_Gavel_avatar.png";
+  } else {
+    sellerAvater = auction.seller.avatar;
+  }
+
   auctionTitle.innerText = auction.title;
   auctionSellerLink.href = `/profile/?name=${auction.seller.name}`;
-  auctionSellerLink.querySelector("img").src = auction.seller.avatar;
+  auctionSellerLink.querySelector("img").src = sellerAvater;
   auctionSeller.innerText = `${auction.seller.name}`;
   auctionDesc.innerText = auction.description;
   auctionCreated.innerText += ` ${new Date(auction.created).toLocaleString()}`;
@@ -60,14 +68,12 @@ export function displayAuction(auction) {
   const bidsContainer = document.getElementById("bidsHistory");
 
   if (bids.length > 0) {
-    highestBid.innerText = `Highest bid: $${
-      auction.bids[auction.bids.length - 1].amount
-    }`;
-
     for (let i = 0; i < bids.length; i++) {
       const sortedBids = bids.sort((a, b) => {
         return b.amount - a.amount;
       });
+
+      highestBid.innerText = `Highest bid: $${sortedBids[0].amount}`;
 
       const created = new Date(sortedBids[i].created).toLocaleString();
 
@@ -77,19 +83,22 @@ export function displayAuction(auction) {
 
       bidsHistory.innerHTML += `
                                     <div>
-                                      <p class="fw-bold mb-0"></p>
-                                      <p class="mb-0"></p>
+                                      <a id="bidder" class="fw-bold mb-0"></a>
+                                      <p id="bidCreated" class="mb-0"></p>
                                     </div>
                                     <div>
-                                    <p class="fw-bold mb-0"></p>
+                                    <p id="biddersBid" class="fw-bold mb-0"></p>
                                     </div>
                                     `;
 
-      bidsHistory.querySelector("div p:nth-child(1)").innerText =
-        sortedBids[i].bidderName;
-      bidsHistory.querySelector("div p:nth-child(2)").innerText = created;
+      bidsHistory.querySelector("#bidder").innerText = sortedBids[i].bidderName;
       bidsHistory.querySelector(
-        "div:nth-child(2) p"
+        "#bidder"
+      ).href = `/profile/?name=${sortedBids[i].bidderName}`;
+
+      bidsHistory.querySelector("#bidCreated").innerText = created;
+      bidsHistory.querySelector(
+        "#biddersBid"
       ).innerText = `$${sortedBids[i].amount}`;
 
       bidsContainer.append(bidsHistory);
