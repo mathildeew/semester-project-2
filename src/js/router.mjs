@@ -7,7 +7,6 @@ import { loginListener } from "./handlers/loginListener.mjs";
 import { registerListener } from "./handlers/registerListener.mjs";
 
 // Home
-import { headerRandom } from "./components/header.mjs";
 
 import { unauth } from "./path/home/unauth/unauth.mjs";
 import { createAuctionListener } from "./handlers/createAuctionListener.mjs";
@@ -25,6 +24,7 @@ import { frontAnimation } from "./components/logregAnimation.mjs";
 import { home } from "./path/home/home.mjs";
 import { profile } from "./path/profile/profile.mjs";
 import { auction } from "./path/auction/auction.mjs";
+import { header } from "./path/home/header.mjs";
 
 // Run function based on pathname
 const path = location.pathname;
@@ -33,9 +33,8 @@ switch (path) {
   case "/" || "/semester-project-2/":
     nav();
     home();
-    headerRandom();
+    header();
     unauth();
-
     createAuctionListener();
     break;
 

@@ -38,24 +38,24 @@ export function display(auctions) {
     // Logged in
     if (token !== null) {
       auctionCard.innerHTML += `
-                                  <a>
-                                    <div class="card h-100 bg-light border border-secondary">
-                                      <div class="overflow-hidden rounded">
-                                        <img id="auctionsImg" class="card-img-top rouded" />
-                                      </div>
-                                      <div class="card-body d-flex flex-column justify-content-between">
-                                      <div>
-                                        <h3 class="auctionCardTitle card-title"></h3>
-                                        <p class="auctionCardSeller fw-light mb-2"></p>
-                                        <div class="d-flex mb-3">
-                                          <i class="bi bi-clock-fill me-1"></i>
-                                          <p class="auctionCardEnds mb-0"></p>
-                                        </div>
-                                        </div>
-                                          <p class="auctionCardHighestBid fw-bold"></p>
-                                      </div>
+                                <a>
+                                  <div class="card h-100 bg-light border border-secondary">
+                                    <div class="overflow-hidden rounded">
+                                      <img id="auctionsImg" class="card-img-top rouded" />
                                     </div>
-                                  </a>
+                                    <div class="card-body d-flex flex-column justify-content-between">
+                                    <div>
+                                      <h3 class="auctionCardTitle card-title"></h3>
+                                      <p class="auctionCardSeller fw-light mb-2"></p>
+                                      <div class="d-flex mb-3">
+                                        <i class="bi bi-clock-fill me-1"></i>
+                                        <p class="auctionCardEnds mb-0"></p>
+                                      </div>
+                                      </div>
+                                        <p class="auctionCardHighestBid fw-bold"></p>
+                                    </div>
+                                  </div>
+                                 </a>
                                 
                                 `;
       auctionCard.querySelector("a").href = `/auction/?id=${id}`;
@@ -68,22 +68,27 @@ export function display(auctions) {
       auctionCard.setAttribute("data-bs-toggle", "modal");
       auctionCard.setAttribute("data-bs-target", "#unauthModal");
       auctionCard.innerHTML += `
-                                <div class="row align-items-center p-2">
-                                  <div class="overflow-hidden rounded col-6 col-md-12">
-                                  <img id="auctionsImg" class="img-fluid rounded" />
-                                </div>
-                                <div class="col-6 col-md-12">
-                                  <p class="auctionCardTitle fw-bold mb-0"></p>
-                                  <div class="d-flex mb-3">
-                                    <i class="bi bi-clock-fill me-1"></i>
-                                    <p class="auctionCardEnds mb-0"></p>
+                                <div class="card h-100 bg-light border border-secondary">
+                                  <div class="overflow-hidden rounded">
+                                    <img id="auctionsImg" class="card-img-top rouded" />
                                   </div>
-                                </div>
+                                  <div class="card-body d-flex flex-column justify-content-between">
+                                    <div>
+                                      <h3 class="auctionCardTitle card-title"></h3>
+                                      <div class="d-flex mb-3">
+                                        <i class="bi bi-clock-fill me-1"></i>
+                                        <p class="auctionCardEnds mb-0"></p>
+                                      </div>
+                                    </div>
+                                    <p class="auctionCardHighestBid fw-bold"></p>
+                                    </div>
+                                  </div>
                               `;
     }
     auctionCard.querySelector("#auctionsImg").src = image;
     auctionCard.querySelector(".auctionCardTitle").innerText = title;
     auctionCard.querySelector(".auctionCardEnds ").innerText = timer;
+    auctionCard.querySelector(".auctionCardHighestBid").innerText = highestBids;
 
     auctionsContainer.append(auctionCard);
   }
