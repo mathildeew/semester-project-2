@@ -2,6 +2,10 @@ import { calcEndTime } from "../../globals/timer.mjs";
 import { auctionCarousel } from "./carousel.mjs";
 
 export function displayAuction(auction) {
+  document.title += ` ${auction.title}`;
+  document.head.querySelector("meta[name=description]").content =
+    auction.description;
+
   // Calculate auction end time
   const placeBidBtn = document.getElementById("placeBidModalBtn");
   const today = new Date();
