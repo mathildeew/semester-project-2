@@ -170,8 +170,9 @@
         </div>
       </div>
 
+      <!-- Header with new auction / log in button -->
       <header
-        class="row w-100 maxWidth bg-light d-flex flex-column justify-content-around py-3 align-items-sm-center py-sm-5"
+        class="row w-100 bg-light d-flex flex-column justify-content-around py-3 align-items-sm-center py-sm-5"
       >
         <div class="text-start d-flex flex-column col-6">
           <p id="headerText" class="text-secondary mb-0">Sell your</p>
@@ -179,7 +180,7 @@
         </div>
 
         <button
-          class="modalBtn bg-secondary text-white rounded border-0 py-2 col-6 col-sm-5 col-md-4 mx-auto"
+          class="modalBtn bg-secondary text-white rounded border-0 py-2 col-6 col-sm-5 col-md-4 col-lg-3 mx-auto"
           id="newAuctionModalBtn"
           type="button"
           data-bs-toggle="modal"
@@ -190,26 +191,26 @@
 
         <a
           href="/accounts/login/"
-          class="bg-secondary text-white text-center rounded border-0 py-2 px-5 col-10 col-sm-7 col-md-6 mx-auto"
+          class="bg-secondary text-white text-center rounded border-0 py-2 px-5 col-10 col-sm-7 col-md-6 col-lg-3 mx-auto"
           id="loginBtnHome"
         >
           Log in
         </a>
       </header>
 
-      <!-- New auction, search, filter and auctions-->
-      <div class="container">
+      <!-- Search & filters-->
+      <div class="container-fluid maxWidth">
         <div
           class="row mt-5 mb-4 justify-content-center justify-content-md-around"
         >
           <div
-            class="d-flex align-items-center justify-content-between p-0 col-11 col-sm-9 col-md-9 col-lg-11 justify-content-md-end"
+            class="p-0 d-flex align-items-center justify-content-between col-11 col-sm-9 justify-content-md-end col-lg-11"
           >
             <input
               id="search"
-              class="text-center rounded border-1 border-secondary me-3 py-2 py-2"
+              class="rounded border-1 border-secondary me-3 px-5 py-2"
               type="search"
-              placeholder="Search..."
+              placeholder="Search"
               aria-label="Search"
             />
 
@@ -233,8 +234,8 @@
       </div>
 
       <!-- API auctions -->
-      <section class="container-fluid align-items-center">
-        <h2 class="text-center">Latest auctions</h2>
+      <section class="container-fluid d-flex flex-column maxWidth">
+        <h2 class="text-center mb-4">Latest auctions</h2>
         <div id="auctions">
           <!-- Loader -->
           <div class="loader col-12 mx-auto mt-5">
