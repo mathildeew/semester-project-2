@@ -6,6 +6,8 @@ export function display(auctions) {
   const auctionsContainer = document.getElementById("auctions");
   auctionsContainer.innerHTML = "";
 
+  console.log(auctions);
+
   for (let i = 0; i < auctions.length; i++) {
     const title = auctions[i].title;
     let image = auctions[i].media[0];
@@ -19,9 +21,8 @@ export function display(auctions) {
     }
 
     // Calculate auctions end time
-    const today = new Date();
     const ends = auctions[i].endsAt;
-    let timer = calcEndTime(today, ends);
+    let timer = calcEndTime(ends);
 
     // If no bids
     let highestBids;
@@ -29,7 +30,7 @@ export function display(auctions) {
     if (bids.length === 0) {
       highestBids = "No bids";
     } else {
-      highestBids = `Highest bid: $${bids[0].amount}`;
+      highestBids = `Highest bid: $${bids[bids.length - 1].amount}`;
     }
 
     // Display auctions

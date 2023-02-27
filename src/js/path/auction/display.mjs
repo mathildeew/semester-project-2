@@ -1,20 +1,12 @@
-import { calcEndTime } from "../../globals/timer.mjs";
 import { auctionCarousel } from "./carousel.mjs";
+import { initializeCountdown } from "./countdown.mjs";
 
 export function displayAuction(auction) {
   document.title += ` ${auction.title}`;
   document.head.querySelector("meta[name=description]").content =
     auction.description;
 
-  // Calculate auction end time
-  const placeBidBtn = document.getElementById("placeBidModalBtn");
-  const today = new Date();
-  const ends = auction.endsAt;
-  let timer = calcEndTime(today, ends);
-
-  if (timer === `Ended`) {
-    placeBidBtn.style.display = "none";
-  }
+  console.log();
 
   // Display auction
   const auctionTitle = document.getElementById("singleAuctionTitle");
@@ -27,8 +19,7 @@ export function displayAuction(auction) {
   auctionSeller.innerText = `${auction.seller.name}`;
   auctionSeller.href = `/profile/?name=${auction.seller.name}`;
   auctionDesc.innerText = auction.description;
-  auctionTimer.innerText = timer;
-  const media = auction.media;
+  let media = auction.media;
   const bids = auction.bids;
 
   // Run image carousel & placeholder image
@@ -43,6 +34,21 @@ export function displayAuction(auction) {
     singleImageContainer.style.display = "none";
   } else if ((media = [] || media.length === 0)) {
     singleImageContainer.src = "/assets/placeholder/placeholder_Gavel.png";
+    carouselContainer.style.display = "none";
+  }
+
+  // Countdown auction end time
+  const placeBidBtn = document.getElementById("placeBidModalBtn");
+  let ends = auction.endsAt;
+  let timer;
+
+  console.log(timer);
+
+  if (Date.parse(ends) - Date.parse(new Date()) <= 0) {
+    placeBidBtn.style.display = "none";
+    auctionTimer.innerText = "Ended";
+  } else {
+    timer = initializeCountdown(auctionTimer, ends);
   }
 
   // Sort and show bids

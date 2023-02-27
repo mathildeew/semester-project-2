@@ -1,6 +1,5 @@
 /**
  * Calculates the time from start time to end time
- * @param {} today Starting time
  * @param {*} ends End time
  * @returns String with the calculated time in days, hours, minutes and seconds
  * ```
@@ -10,8 +9,8 @@
  * const timer = calcEndTime(today, ends);
  * ```
  */
-export function calcEndTime(today, ends) {
-  let difference = new Date(ends).getTime() - new Date(today).getTime();
+export function calcEndTime(ends) {
+  let difference = new Date(ends).getTime() - new Date().getTime();
   let seconds = Math.floor(difference / 1000);
   let minutes = Math.floor(seconds / 60);
   let hours = Math.floor(minutes / 60);
