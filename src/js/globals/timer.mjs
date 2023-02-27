@@ -20,9 +20,25 @@ export function calcEndTime(ends) {
   minutes %= 60;
   seconds %= 60;
 
+  // console.log(`${days}h, ${hours}h, ${minutes}m, ${seconds}s`);
+  let timer;
+
+  console.log(days);
+
   if (difference < 0) {
-    return `Ended`;
-  } else {
-    return `${days}d, ${hours}h, ${minutes}m, ${seconds}s`;
+    timer = `Ended`;
   }
+  if (days > 0) {
+    timer = `${days} days`;
+  }
+  if (hours > 0 && days === 0) {
+    timer = ` ${hours} hours`;
+  }
+  if (hours === 0 && days === 0) {
+    timer = `${minutes}m, ${seconds}s`;
+  }
+  if (hours === 0 && days === 0 && minutes === 0) {
+    timer = `${seconds}s`;
+  }
+  return timer;
 }

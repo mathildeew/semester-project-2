@@ -42,8 +42,6 @@ export function displayAuction(auction) {
   let ends = auction.endsAt;
   let timer;
 
-  console.log(timer);
-
   if (Date.parse(ends) - Date.parse(new Date()) <= 0) {
     placeBidBtn.style.display = "none";
     auctionTimer.innerText = "Ended";

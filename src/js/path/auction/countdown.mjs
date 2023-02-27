@@ -4,6 +4,7 @@ function countdown(ends) {
   let minutes = Math.floor((difference / 1000 / 60) % 60);
   let hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
   let days = Math.floor(difference / (1000 * 60 * 60 * 24));
+
   return {
     difference,
     days,
