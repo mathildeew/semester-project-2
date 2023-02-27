@@ -37,24 +37,25 @@ export function display(auctions) {
     let auctionCard = document.createElement("div");
     auctionCard.id = "auctionCard";
     auctionCard.className =
-      "col-12 col-md-5 col-lg-2 mx-lg-1 mb-4 bg-light rounded";
+      "container h-100 bg-light rounded mx-1 mb-4 col-12 col-md-5 col-lg-3  col-xl-2 ";
     // Logged in
     if (token !== null) {
       auctionCard.innerHTML += `
-                                <a class="p-1 d-flex flex-lg-column justify-content-start align-items-center align-items-lg-start">
-                                  <div class="overflow-hidden rounded">
-                                    <img id="auctionsImg" class="rounded" />
-                                  </div>
-                                    <div class="ms-2 ms-sm-4 ms-lg-0">
-                                      <p class="auctionCardTitle fw-bold mb-0"></p>
-                                      <p class="auctionCardSeller fw-light mb-2"></p>
-                                      <div class="d-flex mb-3">
-                                        <i class="bi bi-clock-fill me-1"></i>
-                                        <p class="auctionCardEnds mb-0"></p>
-                                      </div>
-                                      <p class="auctionCardHighestBid fs-5 fw-bold"></p>
+                                  <a class="row align-items-center p-2">
+                                    <div class="overflow-hidden rounded col-6 col-md-12">
+                                      <img id="auctionsImg" class="img-fluid rounded" />
                                     </div>
-                                  </a>
+                                      <div class="col-6 col-md-12">
+                                        <p class="auctionCardTitle fw-bold mb-0"></p>
+                                        <p class="auctionCardSeller fw-light mb-2"></p>
+                                        <div class="d-flex mb-3">
+                                          <i class="bi bi-clock-fill me-1"></i>
+                                          <p class="auctionCardEnds mb-0"></p>
+                                        </div>
+                                        <p class="auctionCardHighestBid fw-bold"></p>
+                                      </div>
+                                    </a>
+                                
                                 `;
       auctionCard.querySelector("a").href = `/auction/?id=${id}`;
       auctionCard.querySelector(".auctionCardSeller").innerText = seller;
@@ -66,14 +67,15 @@ export function display(auctions) {
       auctionCard.setAttribute("data-bs-toggle", "modal");
       auctionCard.setAttribute("data-bs-target", "#unauthModal");
       auctionCard.innerHTML += `
-                                <div class="p-1 d-flex flex-lg-column justify-content-start align-items-center align-items-lg-start">
-                                  <img id="auctionsImg" class="rounded mb-2" />
-                                  <div class="ms-3 ms-lg-0">
-                                    <p class="auctionCardTitle fw-bold mb-0"></p>
-                                    <div class="d-flex mb-3">
-                                      <i class="bi bi-clock-fill me-1"></i>
-                                      <p class="auctionCardEnds mb-0"></p>
-                                    </div>
+                                <div class="row align-items-center p-2">
+                                  <div class="overflow-hidden rounded col-6 col-md-12">
+                                  <img id="auctionsImg" class="img-fluid rounded" />
+                                </div>
+                                <div class="col-6 col-md-12">
+                                  <p class="auctionCardTitle fw-bold mb-0"></p>
+                                  <div class="d-flex mb-3">
+                                    <i class="bi bi-clock-fill me-1"></i>
+                                    <p class="auctionCardEnds mb-0"></p>
                                   </div>
                                 </div>
                               `;
