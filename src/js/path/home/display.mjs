@@ -6,8 +6,6 @@ export function display(auctions) {
   const auctionsContainer = document.getElementById("auctions");
   auctionsContainer.innerHTML = "";
 
-  console.log(auctions);
-
   for (let i = 0; i < auctions.length; i++) {
     const title = auctions[i].title;
     let image = auctions[i].media[0];

@@ -4,9 +4,11 @@ import { display } from "./display.mjs";
 import { filter } from "./filter.mjs";
 import { search } from "./search.mjs";
 import * as storage from "../../storage/localStorage.mjs";
-import { auction } from "../auction/auction.mjs";
 
 export async function home() {
+  // Run search
+  search();
+
   // Load more
   const loadMoreBtn = document.getElementById("loadAuctions");
 
@@ -26,11 +28,8 @@ export async function home() {
     display(auctions);
   });
 
-  // Run search
-  search();
-
   // Run filter function if user are logged in
   const token = storage.get("token");
   const filterContainer = document.getElementById("filter");
-  token ? filter(auctions) : (filterContainer.style.display = "none");
+  token ? filter() : (filterContainer.style.display = "none");
 }
