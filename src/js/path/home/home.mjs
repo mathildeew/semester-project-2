@@ -31,5 +31,5 @@ export async function home() {
   // Run filter function if user are logged in
   const token = storage.get("token");
   const filterContainer = document.getElementById("filter");
-  token ? filter() : (filterContainer.style.display = "none");
+  // token ? filter() : (filterContainer.style.display = "none");
 }

@@ -34,25 +34,28 @@ export function display(auctions) {
     // Display auctions
     let auctionCard = document.createElement("div");
     auctionCard.id = "auctionCard";
-    auctionCard.className =
-      "container h-100 bg-light rounded mx-1 mb-4 col-12 col-md-5 col-lg-3  col-xl-2 ";
+    auctionCard.className = "";
     // Logged in
     if (token !== null) {
       auctionCard.innerHTML += `
-                                  <a class="row align-items-center p-2">
-                                    <div class="overflow-hidden rounded col-6 col-md-12 p-0">
-                                      <img id="auctionsImg" class="img-fluid rounded" />
-                                    </div>
-                                      <div class="col-6 col-md-12">
-                                        <p class="auctionCardTitle fw-bold mb-0"></p>
+                                  <a>
+                                    <div class="card h-100 bg-light border border-secondary">
+                                      <div class="overflow-hidden rounded">
+                                        <img id="auctionsImg" class="card-img-top rouded" />
+                                      </div>
+                                      <div class="card-body d-flex flex-column justify-content-between">
+                                      <div>
+                                        <h3 class="auctionCardTitle card-title"></h3>
                                         <p class="auctionCardSeller fw-light mb-2"></p>
                                         <div class="d-flex mb-3">
                                           <i class="bi bi-clock-fill me-1"></i>
                                           <p class="auctionCardEnds mb-0"></p>
                                         </div>
-                                        <p class="auctionCardHighestBid fw-bold"></p>
+                                        </div>
+                                          <p class="auctionCardHighestBid fw-bold"></p>
                                       </div>
-                                    </a>
+                                    </div>
+                                  </a>
                                 
                                 `;
       auctionCard.querySelector("a").href = `/auction/?id=${id}`;

@@ -10914,6 +10914,12 @@ header {
   font-size: 4rem;
 }
 
+#auctions {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
 #auctionCard {
   animation: loadMore 0.2s linear;
 }
@@ -10929,6 +10935,7 @@ header {
   }
 }
 #auctionsImg {
+  height: 200px;
   object-fit: cover;
   vertical-align: middle;
   transition: all 0.2s ease;
@@ -11030,7 +11037,7 @@ header {
 }
 @media (min-width: 992px) {
   #auctionCard {
-    transition: all 0.3s ease-in;
+    transition: filter 0.3s ease-in;
   }
   #auctionCard img {
     transition: transform 0.3s ease-in;

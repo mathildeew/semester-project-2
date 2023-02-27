@@ -15,13 +15,13 @@ export async function filter() {
   const loadMoreBtn = document.getElementById("loadAuctions");
 
   //Filter by popularity
-  const auctionsWithBids = auctions.filter((auctions) => {
-    if (auctions._count.bids === 0) {
-      return false;
-    } else {
-      return true;
-    }
-  });
+  // const auctionsWithBids = auctions.filter((auctions) => {
+  //   if (auctions._count.bids === 0) {
+  //     return false;
+  //   } else {
+  //     return true;
+  //   }
+  // });
 
   popularFilter.addEventListener("click", () => {
     const mostPopular = auctionsWithBids.sort(function (a, b) {
