@@ -42,7 +42,7 @@ export function display(auctions) {
     if (token !== null) {
       auctionCard.innerHTML += `
                                   <a class="row align-items-center p-2">
-                                    <div class="overflow-hidden rounded col-6 col-md-12">
+                                    <div class="overflow-hidden rounded col-6 col-md-12 p-0">
                                       <img id="auctionsImg" class="img-fluid rounded" />
                                     </div>
                                       <div class="col-6 col-md-12">

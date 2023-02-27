@@ -11029,8 +11029,15 @@ header {
   }
 }
 @media (min-width: 992px) {
+  #auctionCard {
+    transition: all 0.3s ease-in;
+  }
+  #auctionCard img {
+    transition: transform 0.3s ease-in;
+  }
   #auctionCard:hover {
     cursor: pointer;
+    filter: drop-shadow(0 0 0.3rem rgba(185, 185, 185, 0.9));
   }
   #auctionCard:hover img {
     transform: scale(1.1);
