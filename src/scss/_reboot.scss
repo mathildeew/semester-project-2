@@ -16,6 +16,10 @@ h3 {
   font-family: "soleil", sans-serif;
 }
 
+h3 {
+  font-size: calc(0.9rem + 0.6vw) !important;
+}
+
 p,
 a,
 ::placeholder {
