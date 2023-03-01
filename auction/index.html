@@ -200,8 +200,13 @@
             <!-- Images -->
             <div
               id="imageContainer"
-              class="d-flex justify-content-center d-lg-block mb-3"
+              class="d-flex justify-content-center d-lg-block mb-3 position-relative"
             >
+              <span
+                class="position-absolute bottom-0 end-0 p-2 bg-primary rounded fw-bold p-2 mb-2 me-2"
+              >
+                <span id="highestBid" class="text-secondary">New alerts</span>
+              </span>
               <img id="auctionImg" class="rounded" src="" alt="" />
 
               <div id="carouselExample" class="carousel slide">
@@ -255,11 +260,6 @@
           </div>
 
           <div class="col-12 col-sm-10 col-md-6">
-            <p
-              id="highestBid"
-              class="fs-5 fw-bold bg-primary rounded p-2 mb-5"
-            ></p>
-
             <!-- Buttons -->
             <div class="d-flex flex-column mb-5">
               <button
