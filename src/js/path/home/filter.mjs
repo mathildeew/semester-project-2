@@ -10,8 +10,6 @@ export async function filter() {
   const popularFilter = document.querySelector("#filterOne");
   const endedFilter = document.querySelector("#filterTwo");
   const noTestFilter = document.querySelector("#filterThree");
-  const allAuctions = document.querySelector("#filterFour");
-
   const loadMoreBtn = document.getElementById("loadAuctions");
 
   //Filter by popularity
@@ -59,9 +57,5 @@ export async function filter() {
     display(endedAuctionsSorted);
     loadMoreBtn.style.display = "none";
     console.log(endedAuctionsSorted);
-  });
-
-  allAuctions.addEventListener("click", () => {
-    display(auctions);
   });
 }

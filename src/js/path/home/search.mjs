@@ -8,10 +8,12 @@ export async function search() {
   );
 
   const searchInput = document.getElementById("search");
+  const loadMoreBtn = document.getElementById("loadAuctions");
 
   searchInput.addEventListener("keyup", (event) => {
-    const filter = event.target.value.trim().toLowerCase();
+    loadMoreBtn.style.display = "none";
 
+    const filter = event.target.value.trim().toLowerCase();
     const filteredAuctions = auctions.filter(function (auction) {
       if (auction.title.toLowerCase().includes(filter)) {
         return true;

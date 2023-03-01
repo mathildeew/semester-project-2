@@ -32,4 +32,10 @@ export async function home() {
   const token = storage.get("token");
   const filterContainer = document.getElementById("filter");
   token ? filter() : (filterContainer.style.display = "none");
+
+  const allAuctions = document.querySelector("#filterFour");
+  allAuctions.addEventListener("click", () => {
+    loadMoreBtn.style.display = "block";
+    display(auctions);
+  });
 }
