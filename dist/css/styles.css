@@ -10956,17 +10956,17 @@ header {
 }
 
 #avatar {
-  width: 120px;
-  height: 120px;
+  width: 70px;
+  height: 70px;
   border: 2px solid #9ee2d8;
   object-position: center center;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 #auctionsProfile {
   display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 }
 
 #auction img {
@@ -11033,12 +11033,6 @@ header {
   }
   100% {
     opacity: 100;
-  }
-}
-@media (min-width: 768px) {
-  #avatar {
-    width: 150px;
-    height: 150px;
   }
 }
 @media (min-width: 992px) {

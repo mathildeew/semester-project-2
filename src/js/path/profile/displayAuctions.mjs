@@ -26,9 +26,9 @@ export function displayAuctions(auctions) {
     auctionCard.className = " ";
     auctionCard.innerHTML += `
                               <a>
-                              <div class="card h-100 bg-light border border-secondary">
+                              <div class="card h-100 bg-light  border-secondary">
                                 <div class="overflow-hidden rounded">
-                                 <img id="auctionsImg" class="card-img-top rouded" />
+                                 <img id="auctionsImg" class="card-img-top rounded" />
                                 </div>
                                 <div class="card-body d-flex flex-column justify-content-between">
                                 <div>

@@ -39,9 +39,9 @@ export function display(auctions) {
     if (token !== null) {
       auctionCard.innerHTML += `
                                 <a>
-                                  <div class="card h-100 bg-light border border-secondary">
-                                    <div class="overflow-hidden rounded">
-                                      <img id="auctionsImg" class="card-img-top rouded" />
+                                  <div class="card h-100 bg-light border border-2 border-secondary">
+                                    <div class="overflow-hidden  d">
+                                      <img id="auctionsImg" class="card-img-top" />
                                     </div>
                                     <div class="card-body d-flex flex-column justify-content-between">
                                     <div>
@@ -68,7 +68,7 @@ export function display(auctions) {
       auctionCard.setAttribute("data-bs-toggle", "modal");
       auctionCard.setAttribute("data-bs-target", "#unauthModal");
       auctionCard.innerHTML += `
-                                <div class="card h-100 bg-light border border-secondary">
+                                <div class="card h-100 bg-light border border-2 border-secondary">
                                   <div class="overflow-hidden rounded">
                                     <img id="auctionsImg" class="card-img-top rouded" />
                                   </div>

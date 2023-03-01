@@ -3,6 +3,7 @@ const userName = storage.get("name");
 const avatar = storage.get("avatar");
 
 export function displayProfile(profile) {
+  console.log(profile);
   //Update avatar modal
   const modalPlaceholderText = document.querySelector("#changeAvatar input");
   modalPlaceholderText.placeholder = avatar;
@@ -26,9 +27,11 @@ export function displayProfile(profile) {
     changeAvatarBtn.style.display = "none";
     document.getElementById("logoutBtn").style.display = "none";
   } else if (userName === profile.name) {
-    creditsContainer.innerText = `Credits: $${profile.credits}`;
+    creditsContainer.innerText += ` $${profile.credits}`;
   }
 
   const winsContainer = document.getElementById("wins");
-  winsContainer.innerText = `Wins: ${profile.wins.length}`;
+  winsContainer.innerText += ` ${profile.wins.length}`;
+  const listingsContainer = document.getElementById("listingsProfile");
+  listingsContainer.innerText += ` ${profile.listings.length}`;
 }
