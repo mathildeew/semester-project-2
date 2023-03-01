@@ -18,11 +18,15 @@ export function loginListener() {
     loginBtn.innerHTML = "Logging in...";
 
     const json = await post(`${baseUrl}/auction/auth/login`, postContent);
+    console.log(json);
 
-    json.accessToken
-      ? setStorage(json)((window.location.href = "/"))
-      : (errorMessage.style.display = "block")(
-          (errorMessage.innerText = "Invalid email or password")
-        )((loginBtn.innerHTML = "Log in"));
+    if (json.accessToken) {
+      setStorage(json);
+      window.location.href = "/";
+    } else {
+      errorMessage.style.display = "block";
+      errorMessage.innerText = "Invalid email or password";
+      loginBtn.innerHTML = "Log in";
+    }
   });
 }
