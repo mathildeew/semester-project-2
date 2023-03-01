@@ -4,6 +4,7 @@ import { getParams } from "../../globals/params.mjs";
 import { displayAuctions } from "./displayAuctions.mjs";
 import { displayBids } from "./displayBids.mjs";
 import { displayProfile } from "./displayProfile.mjs";
+import * as storage from "../../storage/localStorage.mjs";
 
 export async function profile() {
   const profileName = getParams("name");
@@ -23,11 +24,12 @@ export async function profile() {
     displayAuctions(auctions);
   }
 
+  const userName = storage.get("name");
+
   const auctionsBtn = document.getElementById("showAuctionsBtn");
   const auctionsContainer = document.getElementById("auctionsProfile");
-  const bidsContainer = document.getElementById("bidsProfile");
-
   const bidsBtn = document.getElementById("showBidsBtn");
+  const bidsContainer = document.getElementById("bidsProfile");
 
   bidsContainer.style.display = "none";
   auctionsBtn.style.textDecoration = "underline";
@@ -46,4 +48,8 @@ export async function profile() {
     bidsContainer.style.display = "none";
     auctionsContainer.style.display = "grid";
   });
+
+  if (profileName !== userName) {
+    bidsBtn.style.display = "none";
+  }
 }
