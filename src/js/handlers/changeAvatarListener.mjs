@@ -23,10 +23,13 @@ export function changeAvatarListener() {
     );
     console.log(json);
 
-    json.ok
-      ? (window.location.reload(), storage.set("avatar", json.avatar))
-      : (errorMessage.style.display = "block"),
-      (errorMessage.innerText = "Please try another UR link"),
-      (changeAvatarForm.querySelector("button").innerText = "Update");
+    if (json.statusCode === 400) {
+      errorMessage.style.display = "block";
+      errorMessage.innerText = "Please try another UR link";
+      changeAvatarForm.querySelector("button").innerText = "Update";
+    } else {
+      window.location.reload();
+      storage.set("avatar", json.avatar);
+    }
   });
 }
