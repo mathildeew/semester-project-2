@@ -12,7 +12,7 @@ export async function home() {
   // Load more
   const loadMoreBtn = document.getElementById("loadAuctions");
 
-  let limit = 5;
+  let limit = 20;
 
   const auctions = await get(
     `${baseUrl}/auction/listings?sort=created&sortOrder=desc&_seller=true&_bids=true&_active=true&limit=${limit}`

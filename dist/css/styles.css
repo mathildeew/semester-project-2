@@ -19,6 +19,10 @@ h3,
   font-family: "soleil", sans-serif;
 }
 
+h3, .h3 {
+  font-size: calc(0.9rem + 0.6vw) !important;
+}
+
 p,
 a,
 ::placeholder {
@@ -10920,18 +10924,18 @@ header {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
-#auctionCard {
-  animation: loadMore 0.2s linear;
+#auctionCard,
+#auctionCardProfile,
+#bidsProfile {
+  animation: loadMore 0.3s linear;
 }
 
 @keyframes loadMore {
   0% {
-    opacity: 0;
-    translate: 0 30px;
+    opacity: 0.5;
   }
   100% {
-    opacity: 0.3;
-    translate: 0 0;
+    opacity: 1;
   }
 }
 #auctionsImg {
@@ -10963,7 +10967,9 @@ header {
   object-fit: cover;
 }
 
-#auctionsProfile {
+#auctionsProfile,
+#auctionsBids,
+#bidsProfile {
   display: grid;
   gap: 40px;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));

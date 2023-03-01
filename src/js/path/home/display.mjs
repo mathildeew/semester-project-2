@@ -39,7 +39,7 @@ export function display(auctions) {
     if (token !== null) {
       auctionCard.innerHTML += `
                                 <a>
-                                  <div class="card h-100 bg-light border border-2 border-secondary">
+                                  <div class="card h-100 bg-light  border-secondary">
                                     <div class="overflow-hidden  d">
                                       <img id="auctionsImg" class="card-img-top" />
                                     </div>
