@@ -10982,6 +10982,10 @@ header {
   object-position: center center;
 }
 
+.bi-three-dots {
+  font-size: 30px;
+}
+
 .loader {
   display: inline-block;
   position: relative;

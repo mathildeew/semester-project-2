@@ -1,8 +1,7 @@
 import * as storage from "../../../storage/localStorage.mjs";
 
 export function hideButtons(auction) {
-  const updateBtn = document.getElementById("updateBtn");
-  const deleteBtn = document.getElementById("deleteModalBtn");
+  const settingsBtn = document.getElementById("settingsBtn");
   const placeBidBtn = document.getElementById("placeBidModalBtn");
   const userName = storage.get("name");
 
@@ -10,7 +9,6 @@ export function hideButtons(auction) {
     placeBidBtn.style.display = "none";
   }
   if (userName !== auction.seller.name) {
-    updateBtn.style.display = "none";
-    deleteBtn.style.display = "none";
+    settingsBtn.style.display = "none";
   }
 }
