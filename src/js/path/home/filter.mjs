@@ -15,13 +15,13 @@ export async function filter() {
   const loadMoreBtn = document.getElementById("loadAuctions");
 
   //Filter by popularity
-  // const auctionsWithBids = auctions.filter((auctions) => {
-  //   if (auctions._count.bids === 0) {
-  //     return false;
-  //   } else {
-  //     return true;
-  //   }
-  // });
+  const auctionsWithBids = auctions.filter((auctions) => {
+    if (auctions._count.bids === 0) {
+      return false;
+    } else {
+      return true;
+    }
+  });
 
   popularFilter.addEventListener("click", () => {
     const mostPopular = auctionsWithBids.sort(function (a, b) {
@@ -45,6 +45,7 @@ export async function filter() {
     display(auctionWithoutTest);
   });
 
+  //Filter ended auctions
   endedFilter.addEventListener("click", async (event) => {
     const endedAuctions = await get(
       `${baseUrl}/auction/listings?sort=created&sortOrder=desc&_seller=true&_bids=true`

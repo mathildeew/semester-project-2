@@ -12,7 +12,7 @@ export async function home() {
   // Load more
   const loadMoreBtn = document.getElementById("loadAuctions");
 
-  let limit = 20;
+  let limit = 24;
 
   const auctions = await get(
     `${baseUrl}/auction/listings?sort=created&sortOrder=desc&_seller=true&_bids=true&_active=true&limit=${limit}`
@@ -21,7 +21,7 @@ export async function home() {
   display(auctions);
 
   loadMoreBtn.addEventListener("click", async () => {
-    limit = limit + 5;
+    limit = limit + 6;
     const auctions = await get(
       `${baseUrl}/auction/listings?sort=created&sortOrder=desc&_seller=true&_bids=true&_active=true&limit=${limit}`
     );
@@ -31,5 +31,5 @@ export async function home() {
   // Run filter function if user are logged in
   const token = storage.get("token");
   const filterContainer = document.getElementById("filter");
-  // token ? filter() : (filterContainer.style.display = "none");
+  token ? filter() : (filterContainer.style.display = "none");
 }
