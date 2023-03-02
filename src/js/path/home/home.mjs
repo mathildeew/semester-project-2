@@ -4,12 +4,13 @@ import { display } from "./display.mjs";
 import { filter } from "./filter.mjs";
 import { search } from "./search.mjs";
 import * as storage from "../../storage/localStorage.mjs";
+import { nav } from "../../components/nav.mjs";
 
 export async function home() {
-  // Run search
-  search();
+  // Load nav
+  nav();
 
-  // Load more
+  // Display austions and load more
   const loadMoreBtn = document.getElementById("loadAuctions");
 
   let limit = 24;
@@ -27,6 +28,9 @@ export async function home() {
     );
     display(auctions);
   });
+
+  // Run search
+  search();
 
   // Run filter function if user are logged in
   const token = storage.get("token");

@@ -5,8 +5,10 @@ import { displayAuctions } from "./displayAuctions.mjs";
 import { displayBids } from "./displayBids.mjs";
 import { displayProfile } from "./displayProfile.mjs";
 import * as storage from "../../storage/localStorage.mjs";
+import { logoutListener } from "../../handlers/logoutListener.mjs";
 
 export async function profile() {
+  logoutListener();
   const profileName = getParams("name");
 
   const profile = await get(

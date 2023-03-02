@@ -150,10 +150,18 @@ nav {
   }
 }
 #navBtn {
-  width: 45px;
-  height: 45px;
+  width: 30px;
+  height: 30px;
   background-position: center center;
   background-size: contain;
+}
+
+.bi-house {
+  font-size: 28px;
+}
+
+.bi-plus-square {
+  font-size: 23px;
 }
 
 header {

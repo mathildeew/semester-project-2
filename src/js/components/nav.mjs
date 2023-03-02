@@ -5,15 +5,14 @@ export function nav() {
   const name = storage.get("name");
   const avatar = storage.get("avatar");
   const token = storage.get("token");
-  const credits = storage.get("credits");
 
   const navBtn = document.getElementById("navBtn");
-  const profileLink = document.getElementById("profileLink");
-  const navCredits = document.getElementById("navCredits");
+  const navIcon = document.querySelector(".bi-house");
 
   navBtn.style.backgroundImage = `url(${avatar})`;
-  profileLink.href = `/profile/?name=${name}`;
-  navCredits.innerText = `$${credits}`;
+  navBtn.href = `/profile/?name=${name}`;
 
-  logoutListener();
+  if (token === [] || token === undefined || token === null) {
+    navIcon.style.display = "none";
+  }
 }
