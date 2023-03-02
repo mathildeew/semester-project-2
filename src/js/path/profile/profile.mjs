@@ -7,7 +7,7 @@ import { renderProfile } from "../../render/renderProfile.mjs";
 import * as storage from "../../storage/localStorage.mjs";
 import { logoutListener } from "../../listeners/logout.mjs";
 import { auctionAndBids } from "../../listeners/auctionsAndBids.mjs";
-import { changeAvatar } from "../../listeners/changeAvatar.mjs";
+import { updateAvatarListener } from "../../listeners/changeAvatar.mjs";
 
 export async function profile() {
   logoutListener();
@@ -19,7 +19,7 @@ export async function profile() {
 
   renderProfile(profile);
   auctionAndBids();
-  changeAvatar();
+  updateAvatarListener();
 
   const auctions = profile.listings;
   if (auctions.length === 0) {

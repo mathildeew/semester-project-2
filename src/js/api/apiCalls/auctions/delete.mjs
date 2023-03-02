@@ -1,5 +1,5 @@
-import { fetchOptions } from "../fetchOptions.mjs";
-import * as storage from "../../storage/localStorage.mjs";
+import { fetchOptions } from "../../fetchOptions.mjs";
+import * as storage from "../../../storage/localStorage.mjs";
 
 /**
  * Sends a DELETE request to the server

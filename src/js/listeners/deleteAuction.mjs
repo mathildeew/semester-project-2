@@ -1,5 +1,5 @@
 import { baseUrl } from "../api/apiUrls.mjs";
-import { deleteAPI } from "../api/apiCalls/delete.mjs";
+import { deleteAPI } from "../api/apiCalls/auctions/delete.mjs";
 import { getParams } from "../func/params.mjs";
 
 export async function deleteAuction() {

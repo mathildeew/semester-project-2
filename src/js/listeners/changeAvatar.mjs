@@ -1,35 +1,31 @@
 import { baseUrl } from "../api/apiUrls.mjs";
-import { put } from "../api/apiCalls/put.mjs";
+import { updateAvatar } from "../api/apiCalls/profile/update.mjs";
 import * as storage from "../storage/localStorage.mjs";
 
-// const name = storage.get("name");
-const changeAvatarForm = document.getElementById("changeAvatar");
-const errorMessage = document.querySelector(".errorMessage");
+export async function updateAvatarListener() {
+  const changeAvatarForm = document.getElementById("changeAvatar");
+  const errorMessage = document.querySelector(".errorMessage");
 
-export function changeAvatar() {
   changeAvatarForm.addEventListener("submit", async (event) => {
     event.preventDefault();
+
+    changeAvatarForm.querySelector("button").innerText = "Please wait...";
 
     const form = event.target;
     const formData = new FormData(form);
     const putContent = Object.fromEntries(formData.entries());
 
-    changeAvatarForm.querySelector("button").innerText = "Please wait...";
-
     const name = storage.get("name");
-    const json = await put(
+    const json = await updateAvatar(
       `${baseUrl}/auction/profiles/${name}/media`,
       putContent
     );
-    console.log(json);
 
-    if (json.statusCode === 400) {
-      errorMessage.style.display = "block";
-      errorMessage.innerText = "Please try another UR link";
-      changeAvatarForm.querySelector("button").innerText = "Update";
-    } else {
-      window.location.reload();
-      storage.set("avatar", json.avatar);
+    if (json.errors) {
+      errorMessage.style.display = "inline";
+      errorMessage.innerHTML = "Please try another link";
+      changeAvatarForm.querySelector("button").innerText =
+        "Please try another link";
     }
   });
 }
