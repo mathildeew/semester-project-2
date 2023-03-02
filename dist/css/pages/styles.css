@@ -1,0 +1,13 @@
+#animText {
+  font-family: bely-display, serif;
+  font-size: 4rem;
+}
+
+#animImg {
+  width: 320px;
+  height: 320px;
+  object-fit: contain;
+  object-position: right;
+}
+
+/*# sourceMappingURL=styles.css.map */

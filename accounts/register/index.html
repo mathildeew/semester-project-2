@@ -4,30 +4,39 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
+    <meta name="keywords" content="Auction, bid, sell, auction" />
+    <meta
+      name="description"
+      content="Are you looking for a place to sell or buy? Then Gavel is the place for you. Register here to view the auctions, place a bid on an item you want or create a new auction."
+    />
+    <link rel="icon" type="image/x-icon" href="/assets/faviconGavel.png" />
     <link rel="stylesheet" href="../../dist/css/styles.css" />
     <title>Gavel - Log in</title>
   </head>
 
-  <body
-    class="bg-primary vh-100 vw-100 d-flex flex-column justify-content-center align-items-center"
-  >
-    <main
-      class="maxWidth vh-100 d-flex justify-content-center align-items-center mx-auto"
-    >
-      <div class="row align-items-center justify-content-center">
-        <div
-          class="d-flex flex-column align-items-center my-5 col-12 me-md-5 col-md-5"
-        >
-          <h1 class="">Gavel</h1>
-          <p class="text-secondary d-none d-md-inline">
-            Log in to see the auction details, make an auction or a bid.
+  <body class="vh-100 bg-primary d-flex flex-column align-items-center">
+    <main class="d-flex justify-content-center align-items-center mx-md-4">
+      <div class="row gx-0">
+        <div class="text-center my-5">
+          <h1>Gavel</h1>
+          <p class="text-secondary d-md-none">
+            Log in to view the auction, place bids and make an auction!
           </p>
         </div>
 
+        <div id="logRegAnim" class="my-5 d-none d-md-flex col-md-7">
+          <div>
+            <p class="text-secondary my-5">
+              Log in to view the auction, place bids and make an auction!
+            </p>
+            <p class="text-secondary mb-0">Maybe it's time to sell your</p>
+            <p id="animText" class="text-secondary">cat?</p>
+          </div>
+          <img id="animImg" src="/assets/animationHeader/headerCatBorder.png" />
+        </div>
+
         <form
-          class="d-flex flex-column justify-content-center align-items-center mb-5 col-12 col-md-6"
+          class="d-flex flex-column justify-content-center mb-5 col-9 col-sm-7 mx-auto col-md-5"
           id="registerForm"
         >
           <div

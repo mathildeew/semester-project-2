@@ -4,37 +4,51 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="keywords" content="Auction, bid, sell, listing" />
+    <meta name="keywords" content="Auction, bid, sell, online auction" />
     <meta
       name="description"
-      content="Are you looking for a place to sell or buy? Then Gavel is the place for you."
+      content="Are you looking for a place to sell or buy? Then Gavel is the place for you. Create a new auction and place a bid on other auction by loggin in. Gavel - Where every auction is an adventure!"
     />
+    <link rel="icon" type="image/x-icon" href="/assets/faviconGavel.png" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
     />
 
     <link rel="stylesheet" href="dist/css/styles.css" />
-    <title>Gavel - Home</title>
+    <title>Gavel - Where every auction is an adventure!</title>
   </head>
 
   <body class="vh-100 d-flex flex-column">
     <nav class="navbar bg-primary">
-      <div class="container-fluid maxWidth mx-auto mx-sm-5 mx-lg-auto">
+      <div
+        class="container-fluid maxWidth mx-auto mx-sm-5 mx-lg-auto justify-content-between"
+      >
         <a class="navbar-brand" href="/"><h1 class="mb-0">Gavel</h1></a>
-        <a id="profileLink">
-          <button
+        <div id="navMenu" class="align-items-center">
+          <div
+            class="mt-1 me-4 me-lg-5"
+            type="button"
+            data-bs-toggle="modal"
+            data-bs-target="#newAuctionModal"
+          >
+            <i class="bi bi-plus-square text-secondary"></i>
+          </div>
+          <a href="/" class="me-4 me-lg-5"
+            ><i class="bi bi-house text-secondary"></i
+          ></a>
+          <a
+            href=""
             id="navBtn"
             class="bg-primary border border-secondary border-2 rounded-circle"
-            type=""
-          ></button>
-        </a>
+          ></a>
+        </div>
       </div>
     </nav>
 
     <main class="d-flex flex-column justify-content-center align-items-center">
       <!-- Unauthorized modal -->
-      <div class="modal" tabindex="-1" id="unauthModal">
+      <div class="modal fade" tabindex="-1" id="unauthModal">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="d-flex justify-content-end pt-3 pe-3 mb-5">
@@ -51,7 +65,7 @@
               <p>You must log in to view the auctions.</p>
               <a
                 href="accounts/login/"
-                class="fw-bolder bg-secondary rounded border-0 px-5 py-2 mt-4"
+                class="text-white fw-bolder bg-secondary rounded border-0 px-5 py-2 mt-4"
               >
                 Log in
               </a>
@@ -61,7 +75,7 @@
       </div>
 
       <!-- New auction modal -->
-      <div class="modal" tabindex="-1" id="newAuctionModal">
+      <div class="modal fade" tabindex="-1" id="newAuctionModal">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="d-flex justify-content-end pt-3 pe-3">
@@ -169,16 +183,17 @@
         </div>
       </div>
 
+      <!-- Header with new auction / log in button -->
       <header
-        class="w-100 maxWidth bg-light d-flex flex-column justify-content-around align-items-sm-center py-3 row"
+        class="row w-100 bg-light d-flex flex-column justify-content-around py-3 align-items-sm-center py-sm-5"
       >
-        <div class="d-flex flex-column col-6 text-start text-lg-center">
+        <div class="text-start d-flex flex-column col-6">
           <p id="headerText" class="text-secondary mb-0">Sell your</p>
           <p id="headerOutline" class="text-secondary"></p>
         </div>
 
         <button
-          class="modalBtn bg-secondary text-white rounded border-0 py-2 px-5 col-10 col-sm-7 col-md-6 mx-auto"
+          class="modalBtn bg-secondary text-white rounded border-0 py-2 col-6 col-sm-5 col-md-4 col-lg-3 mx-auto"
           id="newAuctionModalBtn"
           type="button"
           data-bs-toggle="modal"
@@ -189,30 +204,29 @@
 
         <a
           href="/accounts/login/"
-          class="bg-secondary text-white text-center rounded border-0 py-2 px-5 col-10 col-sm-7 col-md-6 mx-auto"
-          id="loginBtn"
+          class="bg-secondary text-white text-center rounded border-0 py-2 px-5 col-10 col-sm-7 col-md-6 col-lg-3 mx-auto"
+          id="loginBtnHome"
         >
           Log in
         </a>
       </header>
 
-      <!-- New auction, search, filter and auctions-->
-      <div class="container">
+      <!-- Search & filters-->
+      <div class="container-fluid maxWidth">
         <div
           class="row mt-5 mb-4 justify-content-center justify-content-md-around"
         >
           <div
-            class="d-flex align-items-center justify-content-between p-0 col-11 col-sm-9 col-md-9 col-lg-11 justify-content-md-end"
+            class="p-0 d-flex align-items-center justify-content-between col-11 col-sm-9 justify-content-md-end col-lg-11"
           >
             <input
               id="search"
-              class="text-center rounded border-1 border-secondary me-3 py-2 py-2"
-              type="search"
-              placeholder="Search..."
+              class="rounded border-1 border-secondary me-3 px-5 py-2"
+              placeholder="Search"
               aria-label="Search"
             />
 
-            <div class="dropdown">
+            <div id="filter" class="dropdown">
               <i
                 class="bi bi-funnel-fill dropdown-toggle"
                 type="button"
@@ -222,18 +236,19 @@
               </i>
               <ul class="dropdown-menu">
                 <li id="filterOne" class="dropdown-item">Most popular</li>
-                <li id="filterTwo" class="dropdown-item">Ongoing auctions</li>
+                <li id="filterTwo" class="dropdown-item">Ended auctions</li>
                 <li id="filterThree" class="dropdown-item">Without test</li>
+                <li id="filterFour" class="dropdown-item">All</li>
               </ul>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- API auctions -->
-        <div
-          id="auctions"
-          class="row justify-content-center mx-auto col-12 col-sm-9 col-md-10 col-lg-12 justify-content-md-between"
-        >
+      <!-- API auctions -->
+      <section class="container-fluid d-flex flex-column maxWidth">
+        <h2 class="text-center mb-4">Latest auctions</h2>
+        <div id="auctions">
           <!-- Loader -->
           <div class="loader col-12 mx-auto mt-5">
             <div class="gavel"></div>
@@ -242,7 +257,13 @@
           </div>
           <p class="text-center">Loading...</p>
         </div>
-      </div>
+        <button
+          id="loadAuctions"
+          class="bg-secondary text-white rounded border-0 px-4 py-2 mx-auto my-5"
+        >
+          Load more auctions
+        </button>
+      </section>
     </main>
 
     <footer class="text-center bg-secondary mt-auto p-2">

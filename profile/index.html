@@ -4,8 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
+    <meta name="keywords" content="Auction, bid, sell, auction" />
+    <meta
+      name="description"
+      content="Are you looking for a place to sell or buy? Then Gavel is the place for you."
+    />
+    <link rel="icon" type="image/x-icon" href="/assets/faviconGavel.png" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
@@ -16,21 +20,143 @@
 
   <body class="vh-100 d-flex flex-column">
     <nav class="navbar bg-primary">
-      <div class="container-fluid maxWidth mx-auto mx-sm-5 mx-lg-auto">
+      <div
+        class="container-fluid maxWidth mx-auto mx-sm-5 mx-lg-auto justify-content-between"
+      >
         <a class="navbar-brand" href="/"><h1 class="mb-0">Gavel</h1></a>
-        <a id="profileLink">
-          <button
+        <div id="navMenu" class="align-items-center">
+          <div
+            class="mt-1 me-4 me-lg-5"
+            type="button"
+            data-bs-toggle="modal"
+            data-bs-target="#newAuctionModal"
+          >
+            <i class="bi bi-plus-square text-secondary"></i>
+          </div>
+          <a href="/" class="me-4 me-lg-5"
+            ><i class="bi bi-house text-secondary"></i
+          ></a>
+          <a
+            href=""
             id="navBtn"
             class="bg-primary border border-secondary border-2 rounded-circle"
-            type=""
-          ></button>
-        </a>
+          ></a>
+        </div>
       </div>
     </nav>
 
-    <main class="">
+    <main>
+      <!-- Create auction modal -->
+      <div class="modal fade" tabindex="-1" id="newAuctionModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="d-flex justify-content-end pt-3 pe-3">
+              <i
+                class="bi bi-x-lg"
+                type="button"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></i>
+            </div>
+            <form
+              id="createAuction"
+              class="row flex-column align-items-center p-3 mb-4"
+            >
+              <label for="title" class="col-10 fw-bold p-1"
+                >Title of auction</label
+              >
+              <input
+                id="auctionTitle"
+                class="col-10 rounded border p-1 mb-3"
+                name="title"
+                type="text"
+                placeholder="A very cool..."
+                maxlength="280"
+                required
+              />
+              <label for="media" class="col-10 fw-bold p-1"
+                >Choose up to three images:</label
+              >
+              <input
+                id="mediaOne"
+                class="col-10 rounded border p-1 mb-3"
+                name="media"
+                type="url"
+                placeholder="URL to image one"
+              />
+              <input
+                id="mediaTwo"
+                class="col-10 rounded border p-1 mb-3"
+                name="media"
+                type="url"
+                placeholder="URL to image two"
+              />
+              <input
+                id="mediaThree"
+                class="col-10 rounded border p-1 mb-4"
+                name="media"
+                type="url"
+                placeholder="URL to image three"
+              />
+              <label for="description" class="col-10 fw-bold p-1"
+                >Description</label
+              >
+              <textarea
+                id="auctionDesc"
+                class="col-10 rounded border mb-3"
+                name="description"
+                type="text"
+                cols="30"
+                rows="5"
+                maxlength="280"
+                placeholder="Max 280 characters"
+              ></textarea>
+
+              <!-- Radios -->
+              <div class="col-10 mb-3">
+                <p class="fw-bold mb-0">Auctions ends in:</p>
+                <div class="form-check">
+                  <input
+                    id="optionOne"
+                    class="form-check-input"
+                    type="radio"
+                    name="endsAt"
+                    value="6"
+                    checked
+                  />
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    6 hours
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    id="optionTwo"
+                    class="form-check-input"
+                    type="radio"
+                    name="endsAt"
+                    value="12"
+                  />
+                  <label class="form-check-label" for="flexRadioDefault2">
+                    12 hours
+                  </label>
+                </div>
+              </div>
+              <p class="errorMessage text-danger col-10"></p>
+
+              <!-- Create auction button -->
+              <button
+                type="submit"
+                class="createAuctionBtn text-white col-10 bg-secondary fw-bolder rounded border-0 py-2 mt-3"
+              >
+                Create auction
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
       <!-- Change avatar modal -->
-      <div class="modal" tabindex="-1" id="myModal">
+      <div class="modal fade" tabindex="-1" id="myModal">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="d-flex justify-content-end pt-3 pe-3">
@@ -67,48 +193,99 @@
         </div>
       </div>
 
-      <div class="container mx-auto my-5">
-        <div class="row mx-auto">
+      <div class="container mb-5">
+        <div class="row justify-content-center">
           <!-- User info column -->
-          <div
-            class="bg-light rounded p-2 d-flex flex-column mb-5 mx-auto col-10 col-sm-8 col-md-5 col-lg-3"
+          <section
+            class="rounded py-4 my-5 d-flex flex-column mx-md-0 col-11 col-md-6"
           >
-            <div class="d-flex flex-column align-items-center mb-3">
-              <img id="avatar" class="rounded-circle" />
-              <h2 id="username" class="fw-bold"></h2>
-              <p id="credits" class="mb-0"></p>
-              <p id="wins" class="mb-0"></p>
-            </div>
-
             <div class="d-flex flex-column">
-              <button
-                class="text-white fw-bolder bg-secondary border-0 rounded p-2 mb-3"
-                id="myInput"
-                type="button"
-                data-bs-toggle="modal"
-                data-bs-target="#myModal"
-              >
-                Change avatar
-              </button>
-              <button
-                id="logoutBtn"
-                class="text-secondary fw-bolder bg-white border-1 border-secondary rounded p-2"
-                type="button"
-              >
-                Log out
-              </button>
-            </div>
-          </div>
+              <div class="d-flex align-items-center mb-2">
+                <img id="avatar" class="rounded-circle me-2" />
+                <div class="d-flex align-items-center flex-lg-column">
+                  <h2 id="username" class="fw-bol me-3"></h2>
 
-          <!-- Auctions column-->
-          <div class="container p-0 col-12 col-lg-8">
-            <div
-              id="auctionsProfile"
-              class="row mx-auto justify-content-center justify-content-md-around"
-            >
-              <h3 class="text-center mb-4">Auctions</h3>
+                  <!-- Log out & update avatar -->
+                  <div class="dropdown d-lg-none">
+                    <i
+                      class="bi bi-gear-fill mb-1 d-lg-none"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    ></i>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <p
+                          class="dropdown-item"
+                          data-bs-toggle="modal"
+                          data-bs-target="#myModal"
+                        >
+                          Update avatar
+                        </p>
+                      </li>
+                      <li>
+                        <p id="logoutBtnSmall" class="dropdown-item mb-2">
+                          Log out
+                        </p>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="dropdown d-none d-lg-block">
+                    <button
+                      class="rounded btn bg-secondary text-white dropdown-toggle"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Settings
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <p
+                          class="dropdown-item"
+                          data-bs-toggle="modal"
+                          data-bs-target="#myModal"
+                        >
+                          Update avatar
+                        </p>
+                      </li>
+                      <li>
+                        <p id="logoutBtnBig" class="dropdown-item mb-2">
+                          Log out
+                        </p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <hr />
+
+              <div class="d-flex justify-content-around">
+                <p id="credits" class="fw-bold">Credits:</p>
+                <p id="wins" class="fw-bold">Wins:</p>
+                <p id="listingsProfile" class="fw-bold">Auctions:</p>
+              </div>
             </div>
-          </div>
+          </section>
+
+          <section
+            class="d-flex flex-column justify-content-between justify-content-lg-around col-12 col-md-9"
+          >
+            <div class="d-flex justify-content-around">
+              <h3 id="showAuctionsBtn" class="text-center mb-4">Auctions</h3>
+              <h3 id="showBidsBtn" class="text-center mb-4">Bids</h3>
+            </div>
+
+            <!-- Auctions & bids carousel-->
+
+            <div>
+              <div id="auctionsProfile"></div>
+            </div>
+
+            <div id="bidsProfile"></div>
+          </section>
         </div>
       </div>
     </main>

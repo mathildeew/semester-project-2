@@ -9,15 +9,16 @@
 @import url("https://use.typekit.net/hmk0koo.css");
 
 // Custom styles
+@import "./components/loader";
 @import "./components/nav";
+@import "./pages/home/home";
+@import "./pages/styles";
+@import "./components/auctionCard";
+@import "./pages/auction/_auction";
+@import "./pages/profile/profile";
 
 // Bootstrap
-@import "../../node_modules/bootstrap/scss/bootstrap.scss";
-
-// Nav - - - - - - - - - - - - - - - - - - - -
-#navBtn {
-  object-position: bottom center;
-}
+@import "../../node_modules/bootstrap/scss/bootstrap";
 
 // Global - - - - - - - - - - - - - - - - - - - -
 .maxWidth {
@@ -28,10 +29,10 @@
   display: none;
 }
 
-#loginBtn {
+#loginBtnHome {
   display: none;
 }
-//
+
 input:focus {
   outline: none;
 }
@@ -40,152 +41,12 @@ input:focus {
   color: black;
 }
 
-// Home - - - - - - - - - - - - - - - - - - - -
-
-// Login
-#animImg {
-  width: 320px;
-  height: 320px;
-  object-fit: contain;
-  object-position: right;
-}
-
-header {
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center right;
-}
-
-#animText {
-  font-family: bely-display, serif;
-  font-size: 4rem;
-}
-
-#headerText {
-  font-family: bely-display;
-}
-
-#headerOutline {
-  font-family: bely-display;
-  font-size: 4rem;
-  // -webkit-text-stroke: 1px $secondary;
-}
-
-#auctionsImg {
-  width: 125px;
-  height: 125px;
-  object-fit: cover;
-  vertical-align: middle;
-  transition: all 0.2s ease;
-}
-
-// Auction - - - - - - - - - - - - - - - - - - - -
-#auction {
-  img,
-  .slideOne,
-  .slideTwo,
-  .slideThree {
-    max-width: 600px;
-    max-height: 450px;
-    object-fit: cover;
-  }
-}
-
 // Profile - - - - - - - - - - - - - - - - - - - -
-#avatar {
-  width: 120px;
-  height: 120px;
-  border: 2px solid $primary;
-  object-position: center center;
-  object-fit: cover;
-}
 
-// Auction - - - - - - - - - - - - - - - - - - - -
-#auction {
-  img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
-    object-position: center center;
-  }
-}
-
-// Loader - - - - - - - - - - - - - - - - - - - -
-.loader {
-  display: inline-block;
-  position: relative;
-  width: 100px;
-  height: 100px;
-}
-
-.gavel {
-  background: url(/assets/loader/gavel.png);
-  width: 100px;
-  height: 40px;
-  top: 20px;
-  left: 35px;
-  transform: rotate(45deg);
-  animation: rotate-gavel 2s linear infinite;
-}
-
-.blobs {
-  background: url(/assets/loader/blobs.png);
-  width: 50px;
-  height: 30px;
-  top: 40px;
-  left: 15px;
-  opacity: 0;
-  animation: show-blobs 2s linear infinite;
-}
-
-.block {
-  background: url(/assets/loader/block.png);
-  width: 50px;
-  height: 40px;
-  top: 60px;
-  left: 21px;
-}
-
-.gavel,
-.blobs,
-.block {
-  background-size: contain;
-  background-repeat: no-repeat;
-  position: absolute;
-}
-
-@keyframes rotate-gavel {
-  50% {
-    rotate: -45deg;
-  }
-}
-
-@keyframes show-blobs {
-  50% {
-    opacity: 0;
-  }
-  75% {
-    opacity: 70;
-  }
-  100% {
-    opacity: 100;
-  }
-}
-
-// Media quieres - - - - - - - - - - - - - - - - - - - -
-@media (min-width: 768px) {
-  #avatar {
-    width: 150px;
-    height: 150px;
-  }
-}
-
-@media (min-width: 992px) {
-  #auctionCard:hover {
-    cursor: pointer;
-
-    img {
-      transform: scale(1.1);
-    }
-  }
+#auctionsProfile,
+#auctionsBids,
+#bidsProfile {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 }

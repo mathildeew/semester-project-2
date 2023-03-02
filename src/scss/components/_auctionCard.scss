@@ -1,0 +1,40 @@
+#auctionCard,
+#auctionCardProfile,
+#bidsProfile {
+  animation: loadMore 0.3s linear;
+}
+
+@keyframes loadMore {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#auctionsImg {
+  height: 200px;
+  object-fit: cover;
+  vertical-align: middle;
+  transition: all 0.2s ease;
+}
+
+@media (min-width: 992px) {
+  #auctionCard {
+    transition: filter 0.3s ease-in;
+
+    img {
+      transition: transform 0.3s ease-in;
+    }
+
+    &:hover {
+      cursor: pointer;
+      filter: drop-shadow(0 0 0.3rem $grey);
+
+      img {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
