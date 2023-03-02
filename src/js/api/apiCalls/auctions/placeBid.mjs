@@ -7,19 +7,19 @@ import { fetchOptions } from "../../fetchOptions.mjs";
  * @returns The response from the request
  * @example
  * ```
- * // Sends a POST request with the data of the new auction
- * // Location is replaced with the new auction
- * const response = await createAuction(`${baseUrl}/auction/listings`, postContent)
+ * // Sends a POST request to place a bid on an auction
+ * // Location is reloaded if successfull
+ * const response = await placeBid( `${baseUrl}/auction/listings/${id}/bids`, postContent)
  *```
  */
-export async function createAuction(url, postContent) {
+export async function placeBid(url, postContent) {
   const [getData, postData] = fetchOptions;
   postData["body"] = JSON.stringify(postContent);
   const response = await fetch(url, postData);
   const json = await response.json();
 
-  if (response.ok === true) {
-    window.location.href = `/auction/?id=${json.id}`;
+  if (response.ok) {
+    window.location.reload();
   }
   return json;
 }
