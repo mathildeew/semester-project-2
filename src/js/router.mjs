@@ -14,7 +14,6 @@ import { createAuctionListener } from "./handlers/createAuctionListener.mjs";
 // Profile
 // import { display } from "./path/profile/display.mjs";
 import { changeAvatarListener } from "./handlers/changeAvatarListener.mjs";
-import { logoutListener } from "./handlers/logoutListener.mjs";
 
 // Auction
 import { updateAuctionListener } from "./handlers/updateAuctionListener.mjs";
@@ -41,7 +40,6 @@ switch (path) {
   case "/profile/":
     redirect();
     nav();
-    logoutListener();
     profile();
     // displayProfile();
     changeAvatarListener();
@@ -49,7 +47,7 @@ switch (path) {
 
   case "/auction/":
     redirect();
-    nav();
+    // nav();
     auction();
     placeBidListener();
     deleteAuctionListener();

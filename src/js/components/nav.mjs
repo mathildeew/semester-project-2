@@ -1,3 +1,4 @@
+import { logoutListener } from "../handlers/logoutListener.mjs";
 import * as storage from "../storage/localStorage.mjs";
 
 export function nav() {
@@ -13,4 +14,6 @@ export function nav() {
   navBtn.style.backgroundImage = `url(${avatar})`;
   profileLink.href = `/profile/?name=${name}`;
   navCredits.innerText = `$${credits}`;
+
+  logoutListener();
 }
