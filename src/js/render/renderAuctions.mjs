@@ -4,7 +4,6 @@ const token = storage.get("token");
 
 export function display(auctions) {
   const auctionsContainer = document.getElementById("auctions");
-  auctionsContainer.innerHTML = "";
 
   for (let i = 0; i < auctions.length; i++) {
     const title = auctions[i].title;

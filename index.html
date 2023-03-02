@@ -250,12 +250,14 @@
         <h2 class="text-center mb-4">Latest auctions</h2>
         <div id="auctions">
           <!-- Loader -->
-          <div class="loader col-12 mx-auto mt-5">
+          <div id="loader" class="loader col-12 mx-auto mt-5">
             <div class="gavel"></div>
             <div class="blobs"></div>
             <div class="block"></div>
           </div>
-          <p class="text-center">Loading...</p>
+        </div>
+        <div id="errorMessageAPI">
+          <p>Ooops! Somethings went wrong. Please try again later</p>
         </div>
         <button
           id="loadAuctions"

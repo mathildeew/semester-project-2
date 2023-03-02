@@ -11,27 +11,38 @@ export async function home() {
   nav();
   header();
   unauth();
-  // Display austions and load more
   const loadMoreBtn = document.getElementById("loadAuctions");
-  let limit = 24;
-  const auctions = await get(
-    `${baseUrl}/auction/listings?sort=created&sortOrder=desc&_seller=true&_bids=true&_active=true&limit=${limit}`
-  );
-  const allAuctions = await get(
-    `${baseUrl}/auction/listings?sort=created&sortOrder=desc&_seller=true&_bids=true&_active=true`
-  );
-  const endedAuctions = await get(
-    `${baseUrl}/auction/listings?sort=created&sortOrder=desc&_seller=true&_bids=true`
-  );
+  const loader = document.getElementById("loader");
+  const errorMessage = document.getElementById("errorMessageAPI");
 
-  display(auctions);
-  search();
-  filter(auctions, allAuctions, endedAuctions);
-  loadMoreBtn.addEventListener("click", async () => {
-    limit = limit + 6;
+  loader.style.display = "none";
+  errorMessage.style.display = "none";
+
+  try {
+    let limit = 24;
     const auctions = await get(
-      `${baseUrl}/auction/listings?sort=created&sortOrder=desc&_seller=true&_bids=true&_active=true&limit=${limit}`
+      `${baseUrl}/auctionPP/listings?sort=created&sortOrder=desc&_seller=true&_bids=true&_active=true&limit=${limit}`
     );
+    // const allAuctions = await get(
+    //   `${baseUrl}/auction/listings?sort=created&sortOrder=desc&_seller=true&_bids=true&_active=true`
+    // );
+    // const endedAuctions = await get(
+    //   `${baseUrl}/auction/listings?sort=created&sortOrder=desc&_seller=true&_bids=true`
+    // );
+
     display(auctions);
-  });
+    search();
+    // filter(auctions, allAuctions, endedAuctions);
+    loadMoreBtn.addEventListener("click", async () => {
+      limit = limit + 6;
+      const auctions = await get(
+        `${baseUrl}/auction/listings?sort=created&sortOrder=desc&_seller=true&_bids=true&_active=true&limit=${limit}`
+      );
+      display(auctions);
+    });
+  } catch (error) {
+    errorMessage.style.display = "inline";
+    loadMoreBtn.style.display = "none";
+    console.log(error);
+  }
 }

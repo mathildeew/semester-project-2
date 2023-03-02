@@ -4,7 +4,7 @@ import { redirect } from "../auth/redirect.mjs";
 import { createAuction } from "../listeners/createAuction.mjs";
 
 // Paths
-import { login } from "../listeners/login.mjs";
+import { loginListener } from "../listeners/login.mjs";
 import { register } from "../listeners/register.mjs";
 import { home } from "./home/home.mjs";
 import { profile } from "./profile/profile.mjs";
@@ -37,7 +37,7 @@ switch (path) {
     break;
 
   case "/accounts/login/":
-    login();
+    loginListener();
     setInterval(frontAnimation, 1500);
     break;
 
