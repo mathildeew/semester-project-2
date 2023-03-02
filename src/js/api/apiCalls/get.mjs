@@ -5,7 +5,7 @@ import { fetchOptions } from "../fetchOptions.mjs";
  * @param {url} url
  * @returns The API json
  */
-export async function get(url) {
+export async function getOld(url) {
   const [getData, postData] = fetchOptions;
   const response = await fetch(url, getData);
   const json = await response.json();

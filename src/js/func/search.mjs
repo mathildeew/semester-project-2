@@ -1,4 +1,4 @@
-import { get } from "../api/apiCalls/get.mjs";
+import { getOld } from "../api/apiCalls/get.mjs";
 import { baseUrl } from "../api/apiUrls.mjs";
 import { display } from "../render/renderAuctions.mjs";
 

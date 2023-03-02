@@ -1,5 +1,4 @@
 import { baseUrl } from "../api/apiUrls.mjs";
-import { post } from "../api/apiCalls/post.mjs";
 import { createAuction } from "../api/apiCalls/auctions/create.mjs";
 
 export function createAuctionListener() {

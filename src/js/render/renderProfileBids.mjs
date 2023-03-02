@@ -1,15 +1,8 @@
-import { get } from "../api/apiCalls/get.mjs";
-import { baseUrl } from "../api/apiUrls.mjs";
 import { getParams } from "../func/params.mjs";
 import { calcEndTime } from "../func/timers/timer.mjs";
 
-export async function renderProfileBids() {
+export async function renderProfileBids(bidsUnSort) {
   const profileName = getParams("name");
-  const bidsUnSort = await get(
-    `${baseUrl}/auction/profiles/${profileName}/bids?_listings=true`
-  );
-
-  console.log(bidsUnSort);
 
   for (let i = 0; i < bidsUnSort.length; i++) {
     const bids = bidsUnSort.sort((a, b) => {

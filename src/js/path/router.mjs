@@ -22,12 +22,12 @@ switch (path) {
     createAuctionListener();
     break;
 
-  // case "/profile/":
-  //   redirect();
-  //   nav();
-  //   profile();
-  //   createAuctionListener();
-  //   break;
+  case "/profile/":
+    redirect();
+    nav();
+    profile();
+    createAuctionListener();
+    break;
 
   case "/auction/":
     redirect();
