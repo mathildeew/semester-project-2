@@ -157,11 +157,18 @@ nav {
 }
 
 .bi-house {
-  font-size: 28px;
+  font-size: 29px;
 }
 
 .bi-plus-square {
-  font-size: 23px;
+  font-size: 25px;
+}
+
+#navAvatar {
+  width: 30px;
+  height: 30px;
+  background: #9ee2d8;
+  object-fit: cover;
 }
 
 header {

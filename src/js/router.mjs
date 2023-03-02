@@ -8,9 +8,6 @@ import { registerListener } from "./handlers/registerListener.mjs";
 
 // Home
 
-import { unauth } from "./path/home/unauth/unauth.mjs";
-import { createAuctionListener } from "./handlers/createAuctionListener.mjs";
-
 // Profile
 // import { display } from "./path/profile/display.mjs";
 import { changeAvatarListener } from "./handlers/changeAvatarListener.mjs";
@@ -30,11 +27,7 @@ const path = location.pathname;
 
 switch (path) {
   case "/" || "/semester-project-2/":
-    nav();
     home();
-    header();
-    unauth();
-    createAuctionListener();
     break;
 
   case "/profile/":

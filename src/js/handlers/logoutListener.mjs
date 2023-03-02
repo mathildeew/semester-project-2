@@ -1,9 +1,15 @@
 import { logout } from "../auth/logout.mjs";
 
 export function logoutListener() {
-  const logoutBtn = document.getElementById("logoutBtn");
+  const logoutBtnS = document.getElementById("logoutBtnSmall");
+  const logoutBtnB = document.getElementById("logoutBtnBig");
 
-  logoutBtn.addEventListener("click", () => {
+  logoutBtnS.addEventListener("click", () => {
+    logout();
+    window.location.href = "/";
+  });
+
+  logoutBtnB.addEventListener("click", () => {
     logout();
     window.location.href = "/";
   });
