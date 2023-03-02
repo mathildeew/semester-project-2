@@ -5,7 +5,7 @@ import { createAuction } from "../listeners/createAuction.mjs";
 
 // Paths
 import { loginListener } from "../listeners/login.mjs";
-import { register } from "../listeners/register.mjs";
+import { registerListener } from "../listeners/register.mjs";
 import { home } from "./home/home.mjs";
 import { profile } from "./profile/profile.mjs";
 import { auction } from "./auction/auction.mjs";
@@ -42,7 +42,7 @@ switch (path) {
     break;
 
   case "/accounts/register/":
-    register();
+    registerListener();
     setInterval(frontAnimation, 1500);
     break;
 }

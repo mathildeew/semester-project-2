@@ -1,11 +1,11 @@
 import { baseUrl } from "../api/apiUrls.mjs";
-import { post } from "../api/apiCalls/post.mjs";
+import { register } from "../api/apiCalls/auth/register.mjs";
 
 const registerForm = document.getElementById("registerForm");
 const registerBtn = document.getElementById("registerBtn");
 const errorMessage = document.querySelector(".errorMessage");
 
-export function register() {
+export async function registerListener() {
   registerForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
@@ -15,15 +15,15 @@ export function register() {
 
     registerBtn.innerHTML = "Please wait...";
 
-    const response = await post(
+    const response = await register(
       `${baseUrl}/auction/auth/register`,
       postContent
     );
 
-    response.id
-      ? (window.location.href = "/accounts/login/")
-      : (errorMessage.style.display = "block"),
-      (errorMessage.innerText = "Profile already exist"),
-      (registerBtn.innerHTML = "Register");
+    if (response.errors) {
+      errorMessage.style.display = "block";
+      errorMessage.innerText = `${response.errors[0].message}`;
+      registerBtn.innerHTML = "Register";
+    }
   });
 }
