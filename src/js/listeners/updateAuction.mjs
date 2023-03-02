@@ -1,5 +1,4 @@
 import { baseUrl } from "../api/apiUrls.mjs";
-import { put } from "../api/apiCalls/put.mjs";
 import { getParams } from "../func/params.mjs";
 import { updateAuction } from "../api/apiCalls/auctions/update.mjs";
 

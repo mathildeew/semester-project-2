@@ -1,14 +1,15 @@
 import { baseUrl } from "../api/apiUrls.mjs";
 import { post } from "../api/apiCalls/post.mjs";
+import { createAuction } from "../api/apiCalls/auctions/create.mjs";
 
-export function createAuction() {
+export function createAuctionListener() {
   const auctionForm = document.getElementById("createAuction");
-  const errorMessage = auctionForm.querySelector(".errorMessage");
+  const createAuctionBtn = document.querySelector(".createAuctionBtn");
 
   auctionForm.addEventListener("submit", async (event) => {
     event.preventDefault();
+    createAuctionBtn.innerHTML = "Creating auction...";
 
-    auctionForm.querySelector("button").innerText = "Creating auction...";
     const title = document.getElementById("auctionTitle");
     const description = document.getElementById("auctionDesc");
 
@@ -52,15 +53,19 @@ export function createAuction() {
 
     console.log(typeof postContent);
 
-    const response = await post(`${baseUrl}/auction/listings`, postContent);
+    const response = await createAuction(
+      `${baseUrl}/auction/listings`,
+      postContent
+    );
 
     console.log(response);
 
-    // response.id
-    //   ? window.location.reload()
-    //   : (errorMessage.style.display = "block"),
-    //   console.log(response);
-    // errorMessage.innerText = "Something went wrong! Please try again later";
-    // auctionForm.querySelector("button").innerText = "Create auction";
+    if (response.errors) {
+      const errorMessage = document.createElement("p");
+      errorMessage.className = "text-danger col-10 mt-3";
+      errorMessage.innerHTML = `${response.errors[0].message}`;
+      auctionForm.append(errorMessage);
+      auctionForm.querySelector("button").innerText = "Create auction";
+    }
   });
 }

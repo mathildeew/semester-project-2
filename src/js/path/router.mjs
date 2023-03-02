@@ -1,7 +1,7 @@
 // Global
 import { nav } from "../components/nav.mjs";
 import { redirect } from "../auth/redirect.mjs";
-import { createAuction } from "../listeners/createAuction.mjs";
+import { createAuctionListener } from "../listeners/createAuction.mjs";
 
 // Paths
 import { loginListener } from "../listeners/login.mjs";
@@ -19,21 +19,21 @@ const path = location.pathname;
 switch (path) {
   case "/":
     home();
-    createAuction();
+    createAuctionListener();
     break;
 
   case "/profile/":
     redirect();
     nav();
     profile();
-    createAuction();
+    createAuctionListener();
     break;
 
   case "/auction/":
     redirect();
     nav();
     auction();
-    createAuction();
+    createAuctionListener();
     break;
 
   case "/accounts/login/":
