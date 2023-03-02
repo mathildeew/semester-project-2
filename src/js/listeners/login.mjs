@@ -1,7 +1,4 @@
 import { baseUrl } from "../api/apiUrls.mjs";
-import { post } from "../api/apiCalls/post.mjs";
-import { setStorage } from "../storage/setStorage.mjs";
-import * as storage from "../storage/localStorage.mjs";
 import { login } from "../api/apiCalls/auth/login.mjs";
 
 const loginForm = document.getElementById("loginForm");
