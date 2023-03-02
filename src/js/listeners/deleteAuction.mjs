@@ -7,7 +7,7 @@ const deleteBtn = document.getElementById("deleteBtn");
 const userName = storage.get("name");
 const errorMessage = document.querySelector("deleteMessage");
 
-export function deleteAuctionListener() {
+export function deleteAuction() {
   deleteBtn.addEventListener("click", async (event) => {
     event.preventDefault();
 

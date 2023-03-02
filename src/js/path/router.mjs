@@ -9,9 +9,6 @@ import { registerListener } from "../handlers/registerListener.mjs";
 // Home
 
 // Auction
-import { updateAuctionListener } from "../handlers/updateAuctionListener.mjs";
-import { deleteAuctionListener } from "../handlers/deleteAuctionListener.mjs";
-import { placeBidListener } from "../handlers/placeBidListener.mjs";
 import { frontAnimation } from "../components/logregAnimation.mjs";
 import { home } from "./home/home.mjs";
 import { profile } from "./profile/profile.mjs";
@@ -35,9 +32,6 @@ switch (path) {
     redirect();
     // nav();
     auction();
-    placeBidListener();
-    deleteAuctionListener();
-    updateAuctionListener();
     break;
 
   case "/accounts/login/":

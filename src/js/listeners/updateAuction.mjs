@@ -2,7 +2,7 @@ import { baseUrl } from "../api/apiUrls.mjs";
 import { put } from "../api/apiCalls/put.mjs";
 import { getParams } from "../globals/params.mjs";
 
-export function updateAuctionListener() {
+export function updateAuction() {
   const updateAuctionForm = document.getElementById("updateAuctionForm");
   const updateBtn = document.getElementById("updateAuctionBtn");
   const errorMessage = document.querySelector(".errorMessage");
