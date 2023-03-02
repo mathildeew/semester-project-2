@@ -1,6 +1,6 @@
-import { calcEndTime } from "../../globals/timer.mjs";
+import { calcEndTime } from "../globals/timer.mjs";
 
-export function displayAuctions(auctions) {
+export function renderProfileAuctions(auctions) {
   for (let i = 0; i < auctions.length; i++) {
     const title = auctions[i].title;
     const id = auctions[i].id;

@@ -1,11 +1,13 @@
 import { get } from "../../api/apiCalls/get.mjs";
 import { baseUrl } from "../../api/apiUrls.mjs";
 import { getParams } from "../../globals/params.mjs";
-import { displayAuctions } from "./displayAuctions.mjs";
-import { displayBids } from "./displayBids.mjs";
-import { displayProfile } from "./displayProfile.mjs";
+import { renderProfileAuctions } from "../../render/renderProfileAuctions.mjs";
+import { renderProfileBids } from "../../render/renderProfileBids.mjs";
+import { renderProfile } from "../../render/renderProfile.mjs";
 import * as storage from "../../storage/localStorage.mjs";
-import { logoutListener } from "../../handlers/logoutListener.mjs";
+import { logoutListener } from "../../listeners/logout.mjs";
+import { auctionAndBids } from "../../listeners/auctionsAndBids.mjs";
+import { changeAvatar } from "../../listeners/changeAvatar.mjs";
 
 export async function profile() {
   logoutListener();
@@ -15,43 +17,14 @@ export async function profile() {
     `${baseUrl}/auction/profiles/${profileName}?_listings=true&_count.listings=true&_bids=true`
   );
 
-  //   Render profile info
-  displayProfile(profile);
+  renderProfile(profile);
+  auctionAndBids();
+  changeAvatar();
 
-  //   Render auctions
   const auctions = profile.listings;
   if (auctions.length === 0) {
     auctionsContainer.innerHTML = `<p>No auctions yet</p>`;
   } else {
-    displayAuctions(auctions);
-  }
-
-  const userName = storage.get("name");
-
-  const auctionsBtn = document.getElementById("showAuctionsBtn");
-  const auctionsContainer = document.getElementById("auctionsProfile");
-  const bidsBtn = document.getElementById("showBidsBtn");
-  const bidsContainer = document.getElementById("bidsProfile");
-
-  bidsContainer.style.display = "none";
-  auctionsBtn.style.textDecoration = "underline";
-
-  bidsBtn.addEventListener("click", () => {
-    bidsBtn.style.textDecoration = "underline";
-    auctionsBtn.style.textDecoration = "none";
-    auctionsContainer.style.display = "none";
-    bidsContainer.style.display = "grid";
-    displayBids();
-  });
-
-  auctionsBtn.addEventListener("click", () => {
-    auctionsBtn.style.textDecoration = "underline";
-    bidsBtn.style.textDecoration = "none";
-    bidsContainer.style.display = "none";
-    auctionsContainer.style.display = "grid";
-  });
-
-  if (profileName !== userName) {
-    bidsBtn.style.display = "none";
+    renderProfileAuctions(auctions);
   }
 }

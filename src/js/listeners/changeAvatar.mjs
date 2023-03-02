@@ -6,7 +6,7 @@ import * as storage from "../storage/localStorage.mjs";
 const changeAvatarForm = document.getElementById("changeAvatar");
 const errorMessage = document.querySelector(".errorMessage");
 
-export function changeAvatarListener() {
+export function changeAvatar() {
   changeAvatarForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 

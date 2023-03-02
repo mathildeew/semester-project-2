@@ -1,9 +1,9 @@
-import { get } from "../../api/apiCalls/get.mjs";
-import { baseUrl } from "../../api/apiUrls.mjs";
-import { getParams } from "../../globals/params.mjs";
-import { calcEndTime } from "../../globals/timer.mjs";
+import { get } from "../api/apiCalls/get.mjs";
+import { baseUrl } from "../api/apiUrls.mjs";
+import { getParams } from "../globals/params.mjs";
+import { calcEndTime } from "../globals/timer.mjs";
 
-export async function displayBids() {
+export async function renderProfileBids() {
   const profileName = getParams("name");
   const bidsUnSort = await get(
     `${baseUrl}/auction/profiles/${profileName}/bids?_listings=true`

@@ -1,9 +1,8 @@
-import * as storage from "../../storage/localStorage.mjs";
+import * as storage from "../storage/localStorage.mjs";
 const userName = storage.get("name");
 const avatar = storage.get("avatar");
 
-export function displayProfile(profile) {
-  console.log(profile);
+export function renderProfile(profile) {
   //Update avatar modal
   const modalPlaceholderText = document.querySelector("#changeAvatar input");
   modalPlaceholderText.placeholder = avatar;
