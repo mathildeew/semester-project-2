@@ -1,12 +1,6 @@
 export function auctionCarousel(auction) {
   const images = auction.media;
-
   const carousel = document.querySelector(".carousel-inner");
-  const slideOne = document.querySelector(".slideOne");
-  const slideTwo = document.querySelector(".slideTwo");
-  const slideThree = document.querySelector(".slideThree");
-
-  console.log(images.length);
 
   if (images.length === 2) {
     carousel.innerHTML = `

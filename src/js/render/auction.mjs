@@ -1,12 +1,10 @@
 import { auctionCarousel } from "./carousel.mjs";
-import { initializeCountdown } from "./countdown.mjs";
+import { initializeCountdown } from "../func/timers/countdown.mjs";
 
-export function displayAuction(auction) {
+export function renderAuction(auction) {
   document.title += ` ${auction.title}`;
   document.head.querySelector("meta[name=description]").content =
     auction.description;
-
-  console.log(auction.updated);
 
   // Display auction
   const auctionTitle = document.getElementById("singleAuctionTitle");

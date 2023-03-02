@@ -1,4 +1,4 @@
-import * as storage from "../../../storage/localStorage.mjs";
+import * as storage from "../storage/localStorage.mjs";
 
 export function hideButtons(auction) {
   const settingsBtn = document.getElementById("settingsBtn");

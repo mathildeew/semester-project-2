@@ -1,1 +1,1 @@
-import "./router.mjs";
+import "./path/router.mjs";

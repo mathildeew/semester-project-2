@@ -1,9 +1,9 @@
 import { get } from "../../api/apiCalls/get.mjs";
 import { baseUrl } from "../../api/apiUrls.mjs";
 import { getParams } from "../../globals/params.mjs";
-import { displayAuction } from "./display.mjs";
-import { hideButtons } from "./auth/auth.mjs";
-import { updateModal } from "./updateModal.mjs";
+import { renderAuction } from "../../render/auction.mjs";
+import { hideButtons } from "../../auth/hideButtons.mjs";
+import { updateModal } from "../../render/updateModal.mjs";
 
 export async function auction() {
   const id = getParams("id");
@@ -11,7 +11,7 @@ export async function auction() {
     `${baseUrl}/auction/listings/${id}?_seller=true&_bids=true`
   );
 
-  displayAuction(auction);
+  renderAuction(auction);
   hideButtons(auction);
   updateModal(auction);
 }
