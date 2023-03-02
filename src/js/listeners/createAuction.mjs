@@ -50,15 +50,17 @@ export function createAuction() {
       endsAt: `${optionValue}`,
     };
 
+    console.log(typeof postContent);
+
     const response = await post(`${baseUrl}/auction/listings`, postContent);
 
     console.log(response);
 
-    response.id
-      ? window.location.reload()
-      : (errorMessage.style.display = "block"),
-      console.log(response);
-    errorMessage.innerText = "Something went wrong! Please try again later";
-    auctionForm.querySelector("button").innerText = "Create auction";
+    // response.id
+    //   ? window.location.reload()
+    //   : (errorMessage.style.display = "block"),
+    //   console.log(response);
+    // errorMessage.innerText = "Something went wrong! Please try again later";
+    // auctionForm.querySelector("button").innerText = "Create auction";
   });
 }
