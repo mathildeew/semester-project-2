@@ -7,13 +7,11 @@ import * as storage from "../../storage/localStorage.mjs";
 import { nav } from "../../components/nav.mjs";
 import { header } from "./header.mjs";
 import { unauth } from "./unauth/unauth.mjs";
-import { createAuctionListener } from "../../handlers/createAuctionListener.mjs";
 
 export async function home() {
   nav();
   header();
   unauth();
-  createAuctionListener();
   // Display austions and load more
   const loadMoreBtn = document.getElementById("loadAuctions");
   let limit = 24;

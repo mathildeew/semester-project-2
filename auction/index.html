@@ -43,6 +43,115 @@
     </nav>
 
     <main class="maxWidth mx-auto">
+      <!-- Create auction modal -->
+      <div class="modal fade" tabindex="-1" id="newAuctionModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="d-flex justify-content-end pt-3 pe-3">
+              <i
+                class="bi bi-x-lg"
+                type="button"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></i>
+            </div>
+            <form
+              id="createAuction"
+              class="row flex-column align-items-center p-3 mb-4"
+            >
+              <label for="title" class="col-10 fw-bold p-1"
+                >Title of auction</label
+              >
+              <input
+                id="auctionTitle"
+                class="col-10 rounded border p-1 mb-3"
+                name="title"
+                type="text"
+                placeholder="A very cool..."
+                maxlength="280"
+                required
+              />
+              <label for="media" class="col-10 fw-bold p-1"
+                >Choose up to three images:</label
+              >
+              <input
+                id="mediaOne"
+                class="col-10 rounded border p-1 mb-3"
+                name="media"
+                type="url"
+                placeholder="URL to image one"
+              />
+              <input
+                id="mediaTwo"
+                class="col-10 rounded border p-1 mb-3"
+                name="media"
+                type="url"
+                placeholder="URL to image two"
+              />
+              <input
+                id="mediaThree"
+                class="col-10 rounded border p-1 mb-4"
+                name="media"
+                type="url"
+                placeholder="URL to image three"
+              />
+              <label for="description" class="col-10 fw-bold p-1"
+                >Description</label
+              >
+              <textarea
+                id="auctionDesc"
+                class="col-10 rounded border mb-3"
+                name="description"
+                type="text"
+                cols="30"
+                rows="5"
+                maxlength="280"
+                placeholder="Max 280 characters"
+              ></textarea>
+
+              <!-- Radios -->
+              <div class="col-10 mb-3">
+                <p class="fw-bold mb-0">Auctions ends in:</p>
+                <div class="form-check">
+                  <input
+                    id="optionOne"
+                    class="form-check-input"
+                    type="radio"
+                    name="endsAt"
+                    value="6"
+                    checked
+                  />
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    6 hours
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    id="optionTwo"
+                    class="form-check-input"
+                    type="radio"
+                    name="endsAt"
+                    value="12"
+                  />
+                  <label class="form-check-label" for="flexRadioDefault2">
+                    12 hours
+                  </label>
+                </div>
+              </div>
+              <p class="errorMessage text-danger col-10"></p>
+
+              <!-- Create auction button -->
+              <button
+                type="submit"
+                class="createAuctionBtn text-white col-10 bg-secondary fw-bolder rounded border-0 py-2 mt-3"
+              >
+                Create auction
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
       <!-- Settings modal -->
       <div class="modal fade" tabindex="-1" id="settingsMdl">
         <div class="modal-dialog">

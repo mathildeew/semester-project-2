@@ -1,46 +1,48 @@
-// Auth
-import { redirect } from "../auth/redirect.mjs";
+// Global
 import { nav } from "../components/nav.mjs";
-import { loginListener } from "../handlers/loginListener.mjs";
+import { redirect } from "../auth/redirect.mjs";
+import { createAuction } from "../listeners/createAuction.mjs";
 
-//Accounts
-import { registerListener } from "../handlers/registerListener.mjs";
-
-// Home
-
-// Auction
-import { frontAnimation } from "../components/logregAnimation.mjs";
+// Paths
+import { login } from "../listeners/login.mjs";
+import { register } from "../listeners/register.mjs";
 import { home } from "./home/home.mjs";
 import { profile } from "./profile/profile.mjs";
 import { auction } from "./auction/auction.mjs";
+
+// Auction
+import { frontAnimation } from "../components/logregAnimation.mjs";
 
 // Run function based on pathname
 const path = location.pathname;
 
 switch (path) {
-  case "/" || "/semester-project-2/":
+  case "/":
     home();
+    createAuction();
     break;
 
   case "/profile/":
     redirect();
     nav();
     profile();
+    createAuction();
     break;
 
   case "/auction/":
     redirect();
-    // nav();
+    nav();
     auction();
+    createAuction();
     break;
 
   case "/accounts/login/":
-    loginListener();
+    login();
     setInterval(frontAnimation, 1500);
     break;
 
   case "/accounts/register/":
-    registerListener();
+    register();
     setInterval(frontAnimation, 1500);
     break;
 }

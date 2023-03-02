@@ -5,7 +5,7 @@ const registerForm = document.getElementById("registerForm");
 const registerBtn = document.getElementById("registerBtn");
 const errorMessage = document.querySelector(".errorMessage");
 
-export function registerListener() {
+export function register() {
   registerForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 

@@ -7,7 +7,7 @@ const loginForm = document.getElementById("loginForm");
 const loginBtn = document.getElementById("loginBtn");
 const errorMessage = document.querySelector(".errorMessage");
 
-export function loginListener() {
+export function login() {
   loginForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 

@@ -1,9 +1,9 @@
 import { baseUrl } from "../api/apiUrls.mjs";
 import { post } from "../api/apiCalls/post.mjs";
 
-export function createAuctionListener() {
+export function createAuction() {
   const auctionForm = document.getElementById("createAuction");
-  const errorMessage = auctionForm.querySelector(".errorMessage");
+  // const errorMessage = auctionForm.querySelector(".errorMessageCreate");
 
   auctionForm.addEventListener("submit", async (event) => {
     event.preventDefault();
