@@ -39,16 +39,7 @@ export async function home() {
     );
     display(auctions);
   });
-  // Run search
-  search();
-  // Run filter function if user are logged in
-  const token = storage.get("token");
-  const filterContainer = document.getElementById("filter");
-  // token ? filter() : (filterContainer.style.display = "none");
-  filter(auctions, allAuctions, endedAuctions);
 
-  // popularityFilter(allAuctions);
-  // endedFilter(allAuctions);
-  // notestFilter(allAuctions);
-  // allAuctionsFilter(auctions);
+  search();
+  filter(auctions, allAuctions, endedAuctions);
 }
