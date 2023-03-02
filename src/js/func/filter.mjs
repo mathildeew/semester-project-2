@@ -1,6 +1,6 @@
-import { get } from "../../api/apiCalls/get.mjs";
-import { baseUrl } from "../../api/apiUrls.mjs";
-import { display } from "./display.mjs";
+import { get } from "../api/apiCalls/get.mjs";
+import { baseUrl } from "../api/apiUrls.mjs";
+import { display } from "../render/renderAuctions.mjs";
 
 export async function filter() {
   const auctions = await get(

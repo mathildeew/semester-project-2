@@ -3,7 +3,7 @@ import { post } from "../api/apiCalls/post.mjs";
 
 export function createAuction() {
   const auctionForm = document.getElementById("createAuction");
-  // const errorMessage = auctionForm.querySelector(".errorMessageCreate");
+  const errorMessage = auctionForm.querySelector(".errorMessage");
 
   auctionForm.addEventListener("submit", async (event) => {
     event.preventDefault();

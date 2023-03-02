@@ -1,6 +1,6 @@
 import { baseUrl } from "../api/apiUrls.mjs";
 import { post } from "../api/apiCalls/post.mjs";
-import { getParams } from "../globals/params.mjs";
+import { getParams } from "../func/params.mjs";
 
 export function placeBid() {
   const bidForm = document.getElementById("makeBid");

@@ -1,6 +1,6 @@
 import { baseUrl } from "../api/apiUrls.mjs";
 import { deleteAPI } from "../api/apiCalls/delete.mjs";
-import { getParams } from "../globals/params.mjs";
+import { getParams } from "../func/params.mjs";
 import * as storage from "../storage/localStorage.mjs";
 
 const deleteBtn = document.getElementById("deleteBtn");

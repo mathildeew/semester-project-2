@@ -1,6 +1,6 @@
 import { get } from "../../api/apiCalls/get.mjs";
 import { baseUrl } from "../../api/apiUrls.mjs";
-import { getParams } from "../../globals/params.mjs";
+import { getParams } from "../../func/params.mjs";
 import { renderProfileAuctions } from "../../render/renderProfileAuctions.mjs";
 import { renderProfileBids } from "../../render/renderProfileBids.mjs";
 import { renderProfile } from "../../render/renderProfile.mjs";

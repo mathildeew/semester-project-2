@@ -1,6 +1,6 @@
 import { baseUrl } from "../api/apiUrls.mjs";
 import { put } from "../api/apiCalls/put.mjs";
-import { getParams } from "../globals/params.mjs";
+import { getParams } from "../func/params.mjs";
 
 export function updateAuction() {
   const updateAuctionForm = document.getElementById("updateAuctionForm");

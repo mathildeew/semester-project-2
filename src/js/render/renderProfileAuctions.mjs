@@ -1,4 +1,4 @@
-import { calcEndTime } from "../globals/timer.mjs";
+import { calcEndTime } from "../func/timers/timer.mjs";
 
 export function renderProfileAuctions(auctions) {
   for (let i = 0; i < auctions.length; i++) {

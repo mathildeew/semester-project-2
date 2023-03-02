@@ -1,5 +1,5 @@
-import { calcEndTime } from "../../globals/timer.mjs";
-import * as storage from "../../storage/localStorage.mjs";
+import { calcEndTime } from "../func/timers/timer.mjs";
+import * as storage from "../storage/localStorage.mjs";
 const token = storage.get("token");
 
 export function display(auctions) {

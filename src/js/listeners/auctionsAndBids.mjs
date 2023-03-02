@@ -1,4 +1,4 @@
-import { getParams } from "../globals/params.mjs";
+import { getParams } from "../func/params.mjs";
 import { renderProfileBids } from "../render/renderProfileBids.mjs";
 import * as storage from "../storage/localStorage.mjs";
 

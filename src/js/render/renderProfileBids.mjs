@@ -1,7 +1,7 @@
 import { get } from "../api/apiCalls/get.mjs";
 import { baseUrl } from "../api/apiUrls.mjs";
-import { getParams } from "../globals/params.mjs";
-import { calcEndTime } from "../globals/timer.mjs";
+import { getParams } from "../func/params.mjs";
+import { calcEndTime } from "../func/timers/timer.mjs";
 
 export async function renderProfileBids() {
   const profileName = getParams("name");

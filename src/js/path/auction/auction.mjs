@@ -1,6 +1,6 @@
 import { get } from "../../api/apiCalls/get.mjs";
 import { baseUrl } from "../../api/apiUrls.mjs";
-import { getParams } from "../../globals/params.mjs";
+import { getParams } from "../../func/params.mjs";
 import { renderAuction } from "../../render/renderAuction.mjs";
 import { hideButtons } from "../../auth/hideButtons.mjs";
 import { updateModal } from "../../render/updateModal.mjs";
