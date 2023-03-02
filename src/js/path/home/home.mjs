@@ -1,15 +1,8 @@
 import { baseUrl } from "../../api/apiUrls.mjs";
 import { get } from "../../api/apiCalls/get.mjs";
 import { display } from "../../render/renderAuctions.mjs";
-import {
-  // allAuctionsFilter,
-  // endedFilter,
-  filter,
-  // notestFilter,
-  // popularityFilter,
-} from "../../func/filter.mjs";
+import { filter } from "../../func/filter.mjs";
 import { search } from "../../func/search.mjs";
-import * as storage from "../../storage/localStorage.mjs";
 import { nav } from "../../components/nav.mjs";
 import { header } from "../../render/header.mjs";
 import { unauth } from "../../auth/unauthHome.mjs";
@@ -32,6 +25,8 @@ export async function home() {
   );
 
   display(auctions);
+  search();
+  filter(auctions, allAuctions, endedAuctions);
   loadMoreBtn.addEventListener("click", async () => {
     limit = limit + 6;
     const auctions = await get(
@@ -39,7 +34,4 @@ export async function home() {
     );
     display(auctions);
   });
-
-  search();
-  filter(auctions, allAuctions, endedAuctions);
 }
