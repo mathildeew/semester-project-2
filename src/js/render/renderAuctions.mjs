@@ -62,7 +62,13 @@ export function display(auctions) {
       loadButton.addEventListener("click", (e) => {
         pageIndex = e.target.innerHTML - 1;
         display(auctions);
+        window.scrollTo(top);
       });
+
+      if (i === pageIndex) {
+        loadButton.className += " bg-secondary";
+        loadButton.querySelector("p").className += " text-white";
+      }
       loadNav.append(loadButton);
     }
   }
