@@ -57,12 +57,12 @@ export function display(auctions) {
     for (let i = 0; i < auctions.length / limit; i++) {
       const loadButton = document.createElement("div");
       loadButton.className =
-        "loadButtons d-flex align-items-center justify-content-center rounded-circle border border-2 border-secondary";
+        "loadButtons d-flex align-items-center justify-content-center rounded-circle border border-2 border-secondary me-2";
       loadButton.innerHTML = `<p class="fs-5 text-secondary mb-0">${i + 1}</p>`;
       loadButton.addEventListener("click", (e) => {
         pageIndex = e.target.innerHTML - 1;
         display(auctions);
-        window.scrollTo(top);
+        auctionsContainer.scrollIntoView();
       });
 
       if (i === pageIndex) {
