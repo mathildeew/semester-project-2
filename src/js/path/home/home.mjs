@@ -14,11 +14,20 @@ export async function home() {
   unauth();
   search();
 
-  let auctions = await getAll(
-    `${baseUrl}/auction/listings?sort=created&sortOrder=desc&_seller=true&_bids=true&_active=true&limit=6`
+  let limit = 6;
+  const auctions = await getAll(
+    `${baseUrl}/auction/listings?sort=created&sortOrder=desc&_seller=true&_bids=true&_active=true&limit=${limit}`
   );
-  display(auctions);
 
+  display(auctions);
   loadMoreListener();
+
+  // function loadMoreListener() {
+  //   const loadMoreBtn = document.getElementById("loadMoreBtn");
+  //   loadMoreBtn.addEventListener("click", () => {
+  //     loadMore();
+  //   });
+  // }
+
   search(auctions);
 }
