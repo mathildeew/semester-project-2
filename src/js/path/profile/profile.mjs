@@ -7,12 +7,13 @@ import { logoutListener } from "../../listeners/logout.mjs";
 import { auctionAndBids } from "../../listeners/auctionsAndBids.mjs";
 import { updateAvatarListener } from "../../listeners/changeAvatar.mjs";
 import { getAll } from "../../api/apiCalls/auctions/get.mjs";
+import { getProfile } from "../../api/apiCalls/profile/get.mjs";
 
 export async function profile() {
   logoutListener();
   const profileName = getParams("name");
 
-  const profile = await getAll(
+  const profile = await getProfile(
     `${baseUrl}/auction/profiles/${profileName}?_listings=true`
   );
 
