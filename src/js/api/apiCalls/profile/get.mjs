@@ -1,3 +1,4 @@
+import { errorMessage } from "../../../templates/errorMessage.mjs";
 import { fetchOptions } from "../../fetchOptions.mjs";
 
 /**
@@ -19,10 +20,11 @@ export async function getProfile(url) {
   const response = await fetch(url, getData);
   const json = await response.json();
 
-  const errorMessage = document.getElementById("errorMessageAPI");
   if (response.ok) {
     return json;
   } else {
-    errorMessage.style.display = "flex";
+    const main = document.querySelector("main");
+    const errorMessageContent = errorMessage();
+    main.innerHTML = errorMessageContent;
   }
 }
