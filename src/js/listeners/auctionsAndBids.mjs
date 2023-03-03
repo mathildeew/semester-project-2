@@ -3,8 +3,6 @@ import { renderProfileBids } from "../render/renderProfileBids.mjs";
 import * as storage from "../storage/localStorage.mjs";
 
 export function auctionAndBids() {
-  renderProfileBids();
-
   const auctionsBtn = document.getElementById("showAuctionsBtn");
   const auctionsContainer = document.getElementById("auctionsProfile");
   const bidsBtn = document.getElementById("showBidsBtn");

@@ -1,11 +1,10 @@
 import { baseUrl } from "../api/apiUrls.mjs";
-import { put } from "../api/apiCalls/put.mjs";
 import { getParams } from "../func/params.mjs";
+import { updateAuction } from "../api/apiCalls/auctions/update.mjs";
 
-export function updateAuction() {
+export function updateAuctionListener() {
   const updateAuctionForm = document.getElementById("updateAuctionForm");
   const updateBtn = document.getElementById("updateAuctionBtn");
-  const errorMessage = document.querySelector(".errorMessage");
 
   updateAuctionForm.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -31,20 +30,24 @@ export function updateAuction() {
     if (mediaThree.value !== "") {
       medias.push(mediaThree.value);
     }
-
     const putContent = {
       title: title.value,
       description: description.value,
       media: medias,
     };
 
-    // Get params to link
     const id = getParams("id");
-    const response = await put(`${baseUrl}/auction/listings/${id}`, putContent);
+    const response = await updateAuction(
+      `${baseUrl}/auction/listings/${id}`,
+      putContent
+    );
 
-    response.id ? window.location.reload() : window.location.reload,
-      (errorMessage.style.display = "block"),
-      (errorMessage.innerText = "Something went wrong. Please try again later"),
-      (updateBtn.innerText = "Update");
+    if (response.errors) {
+      const errorMessage = document.createElement("p");
+      errorMessage.className = "text-danger col-10 mt-3";
+      errorMessage.innerHTML = `${response.errors[0].message}`;
+      updateAuctionForm.append(errorMessage);
+      updateBtn.innerText = "Update";
+    }
   });
 }

@@ -74,7 +74,7 @@
         </div>
       </div>
 
-      <!-- New auction modal -->
+      <!-- Create auction modal -->
       <div class="modal fade" tabindex="-1" id="newAuctionModal">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -169,9 +169,7 @@
                   </label>
                 </div>
               </div>
-              <p class="errorMessage text-danger col-10"></p>
 
-              <!-- Create auction button -->
               <button
                 type="submit"
                 class="createAuctionBtn text-white col-10 bg-secondary fw-bolder rounded border-0 py-2 mt-3"
@@ -248,20 +246,20 @@
       <!-- API auctions -->
       <section class="container-fluid d-flex flex-column maxWidth">
         <h2 class="text-center mb-4">Latest auctions</h2>
-        <div id="auctions">
-          <!-- Loader -->
-          <div class="loader col-12 mx-auto mt-5">
-            <div class="gavel"></div>
-            <div class="blobs"></div>
-            <div class="block"></div>
-          </div>
-          <p class="text-center">Loading...</p>
+
+        <div id="auctions" class="mb-4"></div>
+        <div
+          id="loader"
+          class="spinner-border text-secondary mx-auto my-5"
+          role="status"
+        >
+          <span class="visually-hidden">Loading...</span>
         </div>
         <button
-          id="loadAuctions"
-          class="bg-secondary text-white rounded border-0 px-4 py-2 mx-auto my-5"
+          id="loadMoreBtn"
+          class="text-white fw-bolder w-50 bg-secondary rounded border-0 py-2 mx-auto mb-5"
         >
-          Load more auctions
+          Load more
         </button>
       </section>
     </main>

@@ -1,30 +1,48 @@
-import { get } from "../../api/apiCalls/get.mjs";
 import { baseUrl } from "../../api/apiUrls.mjs";
 import { getParams } from "../../func/params.mjs";
 import { renderProfileAuctions } from "../../render/renderProfileAuctions.mjs";
 import { renderProfileBids } from "../../render/renderProfileBids.mjs";
 import { renderProfile } from "../../render/renderProfile.mjs";
-import * as storage from "../../storage/localStorage.mjs";
 import { logoutListener } from "../../listeners/logout.mjs";
 import { auctionAndBids } from "../../listeners/auctionsAndBids.mjs";
-import { changeAvatar } from "../../listeners/changeAvatar.mjs";
+import { updateAvatarListener } from "../../listeners/changeAvatar.mjs";
+import { getAll } from "../../api/apiCalls/auctions/get.mjs";
+import { getProfile } from "../../api/apiCalls/profile/get.mjs";
 
 export async function profile() {
   logoutListener();
   const profileName = getParams("name");
 
-  const profile = await get(
-    `${baseUrl}/auction/profiles/${profileName}?_listings=true&_count.listings=true&_bids=true`
+  const profile = await getProfile(
+    `${baseUrl}/auction/profiles/${profileName}?_listings=true`
   );
 
   renderProfile(profile);
   auctionAndBids();
-  changeAvatar();
+  updateAvatarListener();
 
   const auctions = profile.listings;
   if (auctions.length === 0) {
-    auctionsContainer.innerHTML = `<p>No auctions yet</p>`;
+    const auctionsContainer = document.getElementById("auctionsProfile");
+
+    const noAuctions = document.createElement("div");
+    noAuctions.className = "d-flex justify-content-center";
+    noAuctions.innerHTML = `<p>No auctions yet</p>`;
+    auctionsContainer.append(noAuctions);
   } else {
     renderProfileAuctions(auctions);
+  }
+
+  const profileBids = await getAll(
+    `${baseUrl}/auction/profiles/${profileName}/bids?_listings=true`
+  );
+  if (profileBids.length === 0) {
+    const bidsContainer = document.getElementById("bidsProfile");
+    const noBids = document.createElement("div");
+    noBids.className = "d-flex justify-content-center";
+    noBids.innerHTML = `<p>No bids yet</p>`;
+    bidsContainer.append(noBids);
+  } else {
+    renderProfileBids(profileBids);
   }
 }

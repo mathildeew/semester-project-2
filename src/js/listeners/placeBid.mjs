@@ -1,8 +1,8 @@
 import { baseUrl } from "../api/apiUrls.mjs";
-import { post } from "../api/apiCalls/post.mjs";
 import { getParams } from "../func/params.mjs";
+import { placeBid } from "../api/apiCalls/auctions/placeBid.mjs";
 
-export function placeBid() {
+export function placeBidListener() {
   const bidForm = document.getElementById("makeBid");
   const errorMessage = document.querySelector(".errorMessage");
 
@@ -12,23 +12,19 @@ export function placeBid() {
     bidForm.querySelector("button").innerText = "Please wait...";
 
     const postContent = {
-      amount: parseInt(document.querySelector("input").value),
+      amount: parseInt(document.querySelector("#makeBidModal input").value),
     };
 
-    // Get ID param to link
     const id = getParams("id");
-    const response = await post(
+    const response = await placeBid(
       `${baseUrl}/auction/listings/${id}/bids`,
       postContent
     );
 
-    console.log(response);
+    if (response.errors) response.id;
 
-    response.id
-      ? window.location.reload()
-      : (errorMessage.style.display = "block"),
-      (errorMessage.innerText =
-        "Your bid must be higher then current highest bid"),
-      (bidForm.querySelector("button").innerText = "Place bid");
+    errorMessage.style.display = "block";
+    errorMessage.innerText = "Your bid must be higher then current highest bid";
+    bidForm.querySelector("button").innerText = "Place bid";
   });
 }

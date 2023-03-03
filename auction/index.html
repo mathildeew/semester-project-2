@@ -138,9 +138,7 @@
                   </label>
                 </div>
               </div>
-              <p class="errorMessage text-danger col-10"></p>
 
-              <!-- Create auction button -->
               <button
                 type="submit"
                 class="createAuctionBtn text-white col-10 bg-secondary fw-bolder rounded border-0 py-2 mt-3"
@@ -169,11 +167,11 @@
               <button
                 id="updateBtn"
                 type="button"
-                class="text-white fw-bolder rounded bg-secondary border-0 py-2 px-5 mb-3 col-5"
+                class="text-white fw-bolder rounded bg-secondary border-0 py-2 px-2 mb-3 col-5"
                 data-bs-toggle="modal"
                 data-bs-target="#updateAuctionMdl"
               >
-                Update post
+                Update auction
               </button>
 
               <button
@@ -181,9 +179,9 @@
                 type="button"
                 data-bs-toggle="modal"
                 data-bs-target="#deleteAuctionMdl"
-                class="d-block text-secondary fw-bolder rounded bg-white border-2 border-secondary py-2 px-5 col-5"
+                class="d-block text-secondary fw-bolder rounded bg-white border-2 border-secondary py-2 px-2 col-5"
               >
-                Delete post
+                Delete auction
               </button>
             </div>
           </div>
@@ -333,15 +331,11 @@
                 maxlength="280"
               ></textarea>
 
-              <p class="errorMessage text-danger col-10"></p>
-
               <!-- Update auction button -->
               <button
                 id="updateAuctionBtn"
                 type="submit"
                 class="text-white col-10 bg-secondary fw-bolder rounded border-0 py-2 mt-3"
-                data-bs-dismiss="modal"
-                aria-label="Close"
               >
                 Update auction
               </button>
