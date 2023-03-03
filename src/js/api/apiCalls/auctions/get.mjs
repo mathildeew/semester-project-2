@@ -20,7 +20,6 @@ export async function getAll(url) {
   const json = await response.json();
 
   const errorMessage = document.getElementById("errorMessageAPI");
-  console.log(json);
   if (response.ok) {
     return json;
   } else {

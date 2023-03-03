@@ -22,22 +22,5 @@ export async function home() {
   );
 
   display(auctions);
-
-  const loadMoreBtn = document.getElementById("loadAuctions");
-
   search(auctions);
-
-  // }
-
-  // console.log(auctions);
-  // display(auctions);
-
-  // const allAuctions = await get(
-  //   `${baseUrl}/auction/listings?sort=created&sortOrder=desc&_seller=true&_bids=true&_active=true`
-  // );
-  // const endedAuctions = await get(
-  //   `${baseUrl}/auction/listings?sort=created&sortOrder=desc&_seller=true&_bids=true`
-  // );
-
-  // filter(auctions, allAuctions, endedAuctions);
 }
