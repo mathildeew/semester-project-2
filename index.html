@@ -246,7 +246,8 @@
       <!-- API auctions -->
       <section class="container-fluid d-flex flex-column maxWidth">
         <h2 class="text-center mb-4">Latest auctions</h2>
-        <div id="auctions">
+
+        <div id="auctions" class="">
           <!-- Loader -->
           <div id="loader" class="loader col-12 mx-auto mt-5">
             <div class="gavel"></div>
@@ -257,12 +258,10 @@
         <div id="errorMessageAPI">
           <p>Ooops! Somethings went wrong. Please try again later</p>
         </div>
-        <button
-          id="loadAuctions"
-          class="bg-secondary text-white rounded border-0 px-4 py-2 mx-auto my-5"
-        >
-          Load more auctions
-        </button>
+        <div
+          id="pagesNav"
+          class="d-flex justify-content-evenly mx-auto w-50"
+        ></div>
       </section>
     </main>
 

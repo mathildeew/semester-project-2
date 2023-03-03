@@ -192,6 +192,17 @@ header {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
+.loadButtons {
+  width: 30px;
+  height: 30px;
+}
+.loadButtons .active {
+  background-color: #9ee2d8;
+}
+.loadButtons .active p {
+  color: white;
+}
+
 #animText {
   font-family: bely-display, serif;
   font-size: 4rem;
