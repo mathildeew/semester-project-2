@@ -11052,7 +11052,8 @@ textarea.form-control-lg {
   max-width: 900px;
 }
 
-.errorMessage {
+.errorMessage,
+#loadMoreBtn {
   display: none;
 }
 
