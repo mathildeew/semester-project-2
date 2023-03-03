@@ -1,5 +1,5 @@
 import { calcEndTime } from "../func/timers/timer.mjs";
-import { profileBids } from "../templates/profileBids.mjs";
+import { profileBids } from "../templates/profileBidsTemplate.mjs";
 
 export async function renderProfileBids(bidsUnSort) {
   for (let i = 0; i < bidsUnSort.length; i++) {

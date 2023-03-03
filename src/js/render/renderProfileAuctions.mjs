@@ -1,5 +1,5 @@
 import { calcEndTime } from "../func/timers/timer.mjs";
-import { profileAuctions } from "../templates/profileAuctions.mjs";
+import { profileAuctions } from "../templates/profileAuctionsTemplate.mjs";
 
 export function renderProfileAuctions(auctions) {
   for (let i = 0; i < auctions.length; i++) {

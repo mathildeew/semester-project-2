@@ -1,7 +1,7 @@
 import { calcEndTime } from "../func/timers/timer.mjs";
 import { auction } from "../path/auction/auction.mjs";
 import * as storage from "../storage/localStorage.mjs";
-import { auctionsTemplate } from "../templates/auctions.mjs";
+import { auctionsTemplate } from "../templates/auctionsTemplate.mjs";
 const token = storage.get("token");
 
 let pageIndex = 0;
