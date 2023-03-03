@@ -6,6 +6,7 @@ import { nav } from "../../components/nav.mjs";
 import { header } from "../../render/header.mjs";
 import { unauth } from "../../auth/unauthHome.mjs";
 import { getAll } from "../../api/apiCalls/auctions/get.mjs";
+import { loadMoreListener } from "../../listeners/loadMoreListener.mjs";
 
 export async function home() {
   nav();
@@ -13,14 +14,11 @@ export async function home() {
   unauth();
   search();
 
-  const loader = document.getElementById("loader");
-
-  loader.style.display = "none";
-
   let auctions = await getAll(
-    `${baseUrl}/auction/listings?sort=created&sortOrder=desc&_seller=true&_bids=true&_active=true`
+    `${baseUrl}/auction/listings?sort=created&sortOrder=desc&_seller=true&_bids=true&_active=true&limit=6`
   );
-
   display(auctions);
+
+  loadMoreListener();
   search(auctions);
 }

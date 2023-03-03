@@ -244,12 +244,12 @@
       </div>
 
       <!-- API auctions -->
-      <section class="container-fluid d-flex flex-column maxWidth">
+      <section class="container-fluid d-flex flex-column maxWidth mx-auto">
         <h2 class="text-center mb-4">Latest auctions</h2>
 
         <div id="auctions" class="mb-4">
           <!-- Loader -->
-          <div id="loader" class="loader col-12 mx-auto mt-5">
+          <div id="loader" class="loader mx-auto mt-5">
             <div class="gavel"></div>
             <div class="blobs"></div>
             <div class="block"></div>
@@ -259,6 +259,12 @@
           id="pagesNav"
           class="d-flex justify-content-evenly mx-auto w-lg-50 mb-5"
         ></div>
+        <button
+          id="loadMoreBtn"
+          class="text-white fw-bolder bg-secondary rounded border-0 py-2 mt-2 mb-5 w-50 mx-auto"
+        >
+          Load more
+        </button>
       </section>
     </main>
 
