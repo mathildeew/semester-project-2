@@ -12,7 +12,7 @@ export function placeBidListener() {
     bidForm.querySelector("button").innerText = "Please wait...";
 
     const postContent = {
-      amount: parseInt(document.querySelector("input").value),
+      amount: parseInt(document.querySelector("#makeBidModal input").value),
     };
 
     const id = getParams("id");
