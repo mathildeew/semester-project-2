@@ -12,5 +12,6 @@ export async function search(auctions) {
       }
     });
     console.log(filteredAuctions);
+    // display(filteredAuctions);
   });
 }
