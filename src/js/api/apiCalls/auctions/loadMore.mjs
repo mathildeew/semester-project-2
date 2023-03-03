@@ -1,4 +1,5 @@
 import { display } from "../../../render/renderAuctions.mjs";
+import { errorMessage } from "../../../templates/errorMessage.mjs";
 import { baseUrl } from "../../apiUrls.mjs";
 
 export async function loadMore() {
@@ -9,6 +10,11 @@ export async function loadMore() {
   const response = await fetch(link);
   const json = await response.json();
   moreItems = moreItems + increment;
-  console.log(json);
-  display(json);
+  if (response.ok) {
+    display(json);
+  } else {
+    const main = document.querySelector("main");
+    const errorMessageContent = errorMessage();
+    main.innerHTML = errorMessageContent;
+  }
 }
