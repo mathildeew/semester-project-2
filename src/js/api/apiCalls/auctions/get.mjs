@@ -1,6 +1,7 @@
 import { errorMessage } from "../../../templates/errorMessage.mjs";
 import { fetchOptions } from "../../fetchOptions.mjs";
-
+import * as loadMoreBtn from "../../../func/loadMoreButton.mjs";
+import * as loader from "../../../components/loader.mjs";
 /**
  * Sends a GET request to the server
  * @param {url} url All auction Url
@@ -16,11 +17,16 @@ import { fetchOptions } from "../../fetchOptions.mjs";
  * ```
  */
 export async function getAll(url) {
+  loader.showLoader();
+  loadMoreBtn.hideLoadMore();
+
   const [getData, postData] = fetchOptions;
   const response = await fetch(url, getData);
   const json = await response.json();
 
   if (response.ok) {
+    loader.hideLoader();
+    loadMoreBtn.showLoadMore();
     return json;
   } else {
     const main = document.querySelector("main");

@@ -12,7 +12,6 @@ export async function home() {
   nav();
   header();
   unauth();
-  search();
 
   let limit = 6;
   const auctions = await getAll(
