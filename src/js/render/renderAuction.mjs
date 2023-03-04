@@ -8,7 +8,6 @@ export function renderAuction(auction) {
     auction.description;
 
   const auctionDetails = {
-    avatar: auction.seller.avatar,
     title: auction.title,
     seller: auction.seller,
     desc: auction.description,
@@ -21,8 +20,7 @@ export function renderAuction(auction) {
 
   // Display auction
   const auctionTitle = document.getElementById("singleAuctionTitle");
-  const auctionSeller = document.getElementById("singleAuctionSeller");
-  const auctionSellerLink = document.getElementById("auctionSellerLink");
+  const auctionSeller = document.getElementById("auctionSellerLink");
   const auctionTimer = document.getElementById("singleAuctionTimer");
   const highestBid = document.getElementById("highestBid");
   const highestBidCar = document.getElementById("highestBidCar");
@@ -31,18 +29,10 @@ export function renderAuction(auction) {
   const auctionCreated = document.getElementById("singleAuctionCreated");
   const auctionUpdated = document.getElementById("singleAuctionUpdated");
 
-  // Placeholder seller avatar
-  let sellerAvater;
-  if (auction.seller.avatar === [] || auction.seller.avatar === "") {
-    sellerAvater = "/assets/placeholder/placeholder_Gavel_avatar.png";
-  } else {
-    sellerAvater = auction.seller.avatar;
-  }
-
   auctionTitle.innerText = auction.title;
-  auctionSellerLink.href = `/profile/?name=${auction.seller.name}`;
-  auctionSellerLink.querySelector("img").src = sellerAvater;
-  auctionSeller.innerText = `${auction.seller.name}`;
+  auctionSeller.href = `/profile/?name=${auction.seller.name}`;
+  auctionSeller.innerText = auction.seller.name;
+
   auctionDesc.innerText = auction.description;
   auctionCreated.innerText += ` ${new Date(auction.created).toLocaleString()}`;
   auctionUpdated.innerText += ` ${new Date(auction.updated).toLocaleString()}`;

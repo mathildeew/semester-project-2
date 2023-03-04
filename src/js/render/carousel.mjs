@@ -16,13 +16,13 @@ export function auctionCarousel(auction) {
   } else if (images.length === 3) {
     carousel.innerHTML = `
                           <div class="carousel-item slideOne active">
-                            <img class="" />
+                            <img class="carouselImg" />
                           </div>
                           <div class="carousel-item slideTwo">
-                            <img class="" />
+                            <img class="carouselImg" />
                           </div>
                           <div class="carousel-item slideThree">
-                            <img class="" />
+                            <img class="carouselImg" />
                           </div>
                           `;
     carousel.querySelector(".slideOne img").src = images[0];
