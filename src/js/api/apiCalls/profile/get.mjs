@@ -1,5 +1,6 @@
 import { errorMessage } from "../../../templates/errorMessage.mjs";
 import { fetchOptions } from "../../fetchOptions.mjs";
+import * as loader from "../../../components/loader.mjs";
 
 /**
  * Sends a GET request to the server
@@ -21,6 +22,7 @@ export async function getProfile(url) {
   const json = await response.json();
 
   if (response.ok) {
+    loader.hideLoader();
     return json;
   } else {
     const main = document.querySelector("main");
