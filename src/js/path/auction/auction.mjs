@@ -7,10 +7,11 @@ import { placeBidListener } from "../../listeners/placeBid.mjs";
 import { updateAuctionListener } from "../../listeners/updateAuction.mjs";
 import { deleteAuction } from "../../listeners/deleteAuction.mjs";
 import { getAll } from "../../api/apiCalls/auctions/get.mjs";
+import { getSingleID } from "../../api/apiCalls/auctions/getSingleID.mjs";
 
 export async function auction() {
   const id = getParams("id");
-  const auction = await getAll(
+  const auction = await getSingleID(
     `${baseUrl}/auction/listings/${id}?_seller=true&_bids=true`
   );
 
