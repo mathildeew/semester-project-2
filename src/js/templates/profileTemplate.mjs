@@ -32,7 +32,7 @@ export function profileTemplate() {
                                             </p>
                                           </li>
                                           <li>
-                                            <p id="logoutBtnBig" class="dropdown-item mb-2">
+                                            <p id="logoutBtn" class="dropdown-item mb-2">
                                             Log out
                                             </p>
                                           </li>

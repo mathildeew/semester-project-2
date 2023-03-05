@@ -8,7 +8,7 @@ describe("Log out", () => {
     cy.clearLocalStorage();
     cy.visit("/");
     cy.wait(1000);
-    cy.get("#navBtn").click();
+    cy.get("#loginBtnHome").click();
     cy.get("#loginForm button").contains("Log in").click();
     cy.wait(1000);
     cy.get("input[name=email]").type(TEST_USER.email);
@@ -23,9 +23,8 @@ describe("Log out", () => {
 
   it("Can log out with the logout button", () => {
     cy.get("#navBtn").click();
-    cy.wait(1000);
+    cy.get("#settingsProfile").contains("Settings").click();
     cy.get("#logoutBtn").contains("Log out").click();
-    cy.wait(1000);
 
     cy.then(() => {
       expect(localStorage.getItem("token")).to.eq(null);
