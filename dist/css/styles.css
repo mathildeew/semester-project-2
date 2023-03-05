@@ -263,11 +263,11 @@ header {
   }
 }
 #auction img,
-#auction .slideOne,
-#auction .slideTwo,
-#auction .slideThree {
-  max-width: 100%;
-  max-height: 100%;
+#auction .slideOne img,
+#auction .slideTwo img,
+#auction .slideThree img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center center;
 }
@@ -276,6 +276,20 @@ header {
   font-size: 30px;
 }
 
+@media (max-width: 576px) {
+  .carousel-item,
+  #imageContainer {
+    height: 300px;
+    width: 100%;
+  }
+}
+@media (min-width: 576px) {
+  .carousel-item,
+  #imageContainer {
+    height: 500px;
+    width: 100%;
+  }
+}
 #avatar {
   width: 70px;
   height: 70px;

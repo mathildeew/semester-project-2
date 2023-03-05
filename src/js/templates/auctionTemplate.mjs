@@ -11,7 +11,7 @@ export function auctionTemplate() {
                           id="carouselExample"
                           class="carousel slide position-relative"
                           >
-                          <div class="carousel-inner h-100"></div>
+                          <div class="carousel-inner"></div>
                             <span class="position-absolute bottom-0 end-0 p-2 bg-primary rounded fw-bold p-2 mb-2 me-2">
                               <span id="highestBidCar" class="text-secondary"></span>
                             </span>
