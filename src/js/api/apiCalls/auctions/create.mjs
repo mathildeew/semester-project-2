@@ -4,7 +4,7 @@ import { fetchOptions } from "../../fetchOptions.mjs";
  * Sends a POST request to the server
  * @param {url} url Create auction url
  * @param {object} postContent The body of the request
- * @returns The response from the request
+ * @returns The json from the request
  * @example
  * ```
  * // Sends a POST request with the data of the new auction
