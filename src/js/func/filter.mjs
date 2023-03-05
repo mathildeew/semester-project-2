@@ -1,11 +1,9 @@
 import { endedFilter } from "./filter/ended.mjs";
-import { notestFilter } from "./filter/noTest.mjs";
-import { popularityFilter } from "./filter/popular.mjs";
-import { allAuctionsFilter } from "./filter/withoutTest.mjs";
+import { popular } from "./filter/popular.mjs";
+import { showAll } from "./filter/showAll.mjs";
 
-export function filter(auctions, allAuctions, endedAuctions) {
-  popularityFilter(allAuctions);
-  endedFilter(endedAuctions);
-  notestFilter(allAuctions);
-  allAuctionsFilter(auctions);
+export function filter() {
+  popular();
+  endedFilter();
+  showAll();
 }

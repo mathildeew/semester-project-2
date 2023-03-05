@@ -1,17 +1,26 @@
+import { getAllAuctions } from "../../api/apiCalls/auctions/search.mjs";
+import { baseUrl } from "../../api/apiUrls.mjs";
 import { display } from "../../render/renderAuctions.mjs";
 
-export function endedFilter(endedAuctions) {
+export function endedFilter() {
   const endedFilter = document.querySelector("#filterTwo");
-  const loadMoreBtn = document.getElementById("loadAuctions");
+  const heading = document.querySelector("h2");
 
   endedFilter.addEventListener("click", async (event) => {
-    const today = new Date().getTime();
-    const endedAuctionsSorted = endedAuctions.filter((auction) => {
-      if (new Date(auction.endsAt).getTime() < today) {
+    const allAuctions = await getAllAuctions(
+      `${baseUrl}/auction/listings?sort=created&sortOrder=desc&_seller=true&_bids=true`
+    );
+
+    const endedAuctions = allAuctions.filter((auction) => {
+      if (new Date(auction.endsAt).getTime() < new Date().getTime()) {
         return true;
       }
     });
-    display(endedAuctionsSorted);
-    loadMoreBtn.style.display = "none";
+
+    const auctionsContainer = document.getElementById("auctions");
+    auctionsContainer.innerHTML = "";
+    heading.innerHTML = "Ended auctions";
+
+    display(endedAuctions);
   });
 }

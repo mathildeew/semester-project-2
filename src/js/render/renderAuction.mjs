@@ -1,19 +1,11 @@
 import { auctionCarousel } from "./carousel.mjs";
 import { initializeCountdown } from "../func/timers/countdown.mjs";
-import { auctionTemplate } from "../templates/auctionIDTemplate.mjs";
+import { auctionTemplate } from "../templates/auctionTemplate.mjs";
 
 export function renderAuction(auction) {
   document.title += ` ${auction.title}`;
   document.head.querySelector("meta[name=description]").content =
     auction.description;
-
-  const auctionDetails = {
-    title: auction.title,
-    seller: auction.seller,
-    desc: auction.description,
-    created: auction.created,
-    updated: auction.updated,
-  };
 
   const auctionContainer = document.getElementById("auction");
   auctionContainer.innerHTML = auctionTemplate();

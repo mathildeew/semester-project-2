@@ -21,6 +21,7 @@ export function profileAuctions(link, image, title, timer) {
                            `;
   auctionCard.querySelector("a").href = link;
   auctionCard.querySelector("#auctionsImg").src = image;
+  auctionCard.querySelector("#auctionsImg").alt = title;
   auctionCard.querySelector(".auctionCardTitle").innerText = title;
   auctionCard.querySelector(".auctionCardEnds").innerText = timer;
   return auctionCard;

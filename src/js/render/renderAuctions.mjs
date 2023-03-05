@@ -4,8 +4,6 @@ import { auctionsTemplate } from "../templates/auctionsTemplate.mjs";
 export function display(auctions) {
   const auctionsContainer = document.getElementById("auctions");
 
-  console.log(auctions);
-
   for (let i = 0; i < auctions.length; i++) {
     const id = auctions[i].id;
     const link = `/auction/?id=${id}`;

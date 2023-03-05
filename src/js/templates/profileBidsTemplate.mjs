@@ -23,6 +23,8 @@ export function profileBids(link, image, title, timer, yourBid) {
 
   bidCard.querySelector("a").href = link;
   bidCard.querySelector("#auctionsImg").src = image;
+  bidCard.querySelector("#auctionsImg").alt = title;
+
   bidCard.querySelector(".auctionCardTitle").innerText = title;
   bidCard.querySelector(".auctionCardEnds").innerText = timer;
   bidCard.querySelector(".auctionCardBid").innerText = `Your bid: $${yourBid}`;

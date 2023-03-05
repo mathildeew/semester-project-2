@@ -9,7 +9,11 @@
       name="description"
       content="Are you looking for a place to sell or buy? Then Gavel is the place for you. Create a new auction and place a bid on other auction by loggin in. Gavel - Where every auction is an adventure!"
     />
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
       integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
@@ -138,7 +142,6 @@
                 id="auctionDesc"
                 class="col-10 rounded border mb-3"
                 name="description"
-                type="text"
                 cols="30"
                 rows="5"
                 maxlength="280"
@@ -196,7 +199,7 @@
         </div>
 
         <button
-          class="modalBtn bg-secondary text-white rounded border-0 py-2 col-6 col-sm-5 col-md-4 col-lg-3 mx-auto"
+          class="modalBtn bg-secondary text-white fw-bold rounded border-0 py-2 col-6 col-sm-5 col-md-4 col-lg-3 mx-auto cta-button"
           id="newAuctionModalBtn"
           type="button"
           data-bs-toggle="modal"
@@ -237,10 +240,9 @@
                 aria-expanded="false"
               >
               </i>
-              <ul class="dropdown-menu">
+              <ul id="filterMenu" class="dropdown-menu">
                 <li id="filterOne" class="dropdown-item">Most popular</li>
                 <li id="filterTwo" class="dropdown-item">Ended auctions</li>
-                <li id="filterThree" class="dropdown-item">Without test</li>
                 <li id="filterFour" class="dropdown-item">All</li>
               </ul>
             </div>
