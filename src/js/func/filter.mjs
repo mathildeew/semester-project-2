@@ -1,11 +1,12 @@
 import { endedFilter } from "./filter/ended.mjs";
 import { notestFilter } from "./filter/noTest.mjs";
 import { popular } from "./filter/popular.mjs";
-import { allAuctionsFilter } from "./filter/withoutTest.mjs";
+import { showAll } from "./filter/showAll.mjs";
 
 export function filter() {
   popular();
   endedFilter();
+  showAll();
   // notestFilter(allAuctions);
   // allAuctionsFilter(auctions);
 }
