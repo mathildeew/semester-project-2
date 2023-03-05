@@ -1,5 +1,6 @@
 export function auctionTemplate() {
   const auction = ` 
+                    <!-- Images / carousel -->
                     <div class="col-12 col-sm-10 col-md-6">
                       <div id="imageContainer" class="d-flex justify-content-center mb-3 position-relative">
                         <span class="position-absolute bottom-0 end-0 p-2 bg-primary rounded fw-bold p-2 mb-2 me-2">
@@ -33,6 +34,8 @@ export function auctionTemplate() {
                           </div>
                         </div>
                       </div>
+
+                    <!-- Auction info -->
                       <div class="h-100 mb-3 bg-light rounded p-2 col-11 col-md-6">
                         <div class="d-flex align-items-center justify-content-between">
                           <h2 id="singleAuctionTitle" class="mb-2"></h2>
@@ -66,8 +69,9 @@ export function auctionTemplate() {
                         >
                         Place bid
                         </button> 
-                      </div>                      
+                      </div>           
 
+                      <!-- Bids history -->
                       <div id="bidsHistory" class="col-11 col-md-6 offset-md-6 mb-5">
                         <h2 class="ms-3">Bidding history</h2>
                       </div>
