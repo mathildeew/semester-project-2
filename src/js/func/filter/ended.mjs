@@ -4,6 +4,7 @@ import { display } from "../../render/renderAuctions.mjs";
 
 export function endedFilter() {
   const endedFilter = document.querySelector("#filterTwo");
+  const heading = document.querySelector("h2");
 
   endedFilter.addEventListener("click", async (event) => {
     const allAuctions = await getAllAuctions(
@@ -18,6 +19,8 @@ export function endedFilter() {
 
     const auctionsContainer = document.getElementById("auctions");
     auctionsContainer.innerHTML = "";
+    heading.innerHTML = "Ended auctions";
+
     display(endedAuctions);
   });
 }
