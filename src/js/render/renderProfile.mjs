@@ -26,12 +26,11 @@ export function renderProfile(profile, bids) {
   avatarContainer.alt = `${profileDetails.name}'s avatar`;
 
   const creditsContainer = document.getElementById("credits");
-  const changeAvatarBtn = document.getElementById("myInput");
+  const settings = document.getElementById("settingsProfile");
 
   if (userName !== profile.name) {
     creditsContainer.style.display = "none";
-    changeAvatarBtn.style.display = "none";
-    document.getElementById("logoutBtn").style.display = "none";
+    settings.style.display = "none";
   } else if (userName === profile.name) {
     creditsContainer.innerText += ` $${profileDetails.credits}`;
   }

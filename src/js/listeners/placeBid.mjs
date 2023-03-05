@@ -4,7 +4,6 @@ import { placeBid } from "../api/apiCalls/auctions/placeBid.mjs";
 
 export function placeBidListener() {
   const bidForm = document.getElementById("makeBid");
-  const errorMessage = document.querySelector(".errorMessage");
 
   bidForm.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -16,15 +15,6 @@ export function placeBidListener() {
     };
 
     const id = getParams("id");
-    const response = await placeBid(
-      `${baseUrl}/auction/listings/${id}/bids`,
-      postContent
-    );
-
-    if (response.errors) response.id;
-
-    errorMessage.style.display = "block";
-    errorMessage.innerText = "Your bid must be higher then current highest bid";
-    bidForm.querySelector("button").innerText = "Place bid";
+    await placeBid(`${baseUrl}/auction/listings/${id}/bids`, postContent);
   });
 }

@@ -1,6 +1,6 @@
 import { errorMessage } from "../../../templates/errorMessage.mjs";
-import { fetchOptions } from "../../fetchOptions.mjs";
 import * as loader from "../../../components/loader.mjs";
+
 /**
  * Sends a GET request to the server
  * @param {url} url All auction Url
@@ -18,8 +18,7 @@ import * as loader from "../../../components/loader.mjs";
 export async function getSingleID(url) {
   loader.showLoader();
 
-  const [getData, postData] = fetchOptions;
-  const response = await fetch(url, getData);
+  const response = await fetch(url);
   const json = await response.json();
 
   if (response.ok) {

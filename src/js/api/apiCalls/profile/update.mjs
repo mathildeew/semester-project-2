@@ -9,7 +9,7 @@ import * as storage from "../../../storage/localStorage.mjs";
  * @example
  * ```
  * // Sends a PUT request with the new avatar.
- * // Profile page is reloaded if successfull and avatar is saved in localStorage
+ * // Profile page is reloaded if successfull and new avatar is saved in localStorage
  *  const json = await changeAvatar(`${baseUrl}/auction/profiles/${name}/media`, putContent);
  * ````
  */
@@ -20,7 +20,6 @@ export async function updateAvatar(url, putContent) {
   const json = await response.json();
 
   if (response.ok) {
-    console.log(json);
     storage.set("avatar", json.avatar);
     window.location.reload();
   }

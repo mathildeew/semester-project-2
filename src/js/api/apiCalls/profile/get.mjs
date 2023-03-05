@@ -4,16 +4,14 @@ import * as loader from "../../../components/loader.mjs";
 
 /**
  * Sends a GET request to the server
- * @param {url} url All auction Url
- * @returns The API json
+ * @param {url} url API profile url
+ * @returns The json of the response
  * @example
  * ```
- * // Sends a GET request to the server
+ * // Sends a GET request to the server to retrieve a specific profile
  * // Returns json if the response.ok
  * // Shows error message if !response.ok
- *   const profile = await getProfile(
-    `${baseUrl}/auction/profiles/${profileName}?_listings=true`
-  );
+ *   const profile = await getProfile(`${baseUrl}/auction/profiles/${profileName}?_listings=true`);
  * ```
  */
 export async function getProfile(url) {

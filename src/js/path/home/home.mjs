@@ -20,13 +20,5 @@ export async function home() {
 
   display(auctions);
   loadMoreListener();
-
-  // function loadMoreListener() {
-  //   const loadMoreBtn = document.getElementById("loadMoreBtn");
-  //   loadMoreBtn.addEventListener("click", () => {
-  //     loadMore();
-  //   });
-  // }
-
-  search(auctions);
+  search();
 }

@@ -37,17 +37,6 @@ export function updateAuctionListener() {
     };
 
     const id = getParams("id");
-    const response = await updateAuction(
-      `${baseUrl}/auction/listings/${id}`,
-      putContent
-    );
-
-    if (response.errors) {
-      const errorMessage = document.createElement("p");
-      errorMessage.className = "text-danger col-10 mt-3";
-      errorMessage.innerHTML = `${response.errors[0].message}`;
-      updateAuctionForm.append(errorMessage);
-      updateBtn.innerText = "Update";
-    }
+    await updateAuction(`${baseUrl}/auction/listings/${id}`, putContent);
   });
 }

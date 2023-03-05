@@ -7,12 +7,14 @@ import * as storage from "../../../storage/localStorage.mjs";
  * @returns The API response
  * @example
  * ```
- * // Deletes an auction.
- * // User is sent to profile page if the request is successfull.
+ * // Deletes an auction
+ * // Redirects to profile page if the request is successfull
+ * // Shows error message if something went wrong
  *  const response = await deleteAPI(`${baseUrl}/auction/listings/${id}`);
  * ```
  */
 export async function deleteAPI(url) {
+  const errorMessage = document.querySelector("deleteMessage");
   const userName = storage.get("name");
 
   const [getData, postData, putData, deleteData] = fetchOptions;
@@ -21,5 +23,8 @@ export async function deleteAPI(url) {
   if (response.ok) {
     window.location.href = `/profile/?name=${userName}`;
   }
-  return response;
+
+  if (json.errors) {
+    errorMessage.innerText = "Something went wrong! Try again later.";
+  }
 }

@@ -15,15 +15,6 @@ export async function registerListener() {
 
     registerBtn.innerHTML = "Please wait...";
 
-    const response = await register(
-      `${baseUrl}/auction/auth/register`,
-      postContent
-    );
-
-    if (response.errors) {
-      errorMessage.style.display = "block";
-      errorMessage.innerText = `${response.errors[0].message}`;
-      registerBtn.innerHTML = "Register";
-    }
+    await register(`${baseUrl}/auction/auth/register`, postContent);
   });
 }
