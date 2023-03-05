@@ -1,6 +1,6 @@
 import { auctionCarousel } from "./carousel.mjs";
 import { initializeCountdown } from "../func/timers/countdown.mjs";
-import { auctionTemplate } from "../templates/auctionIDTemplate.mjs";
+import { auctionTemplate } from "../templates/auctionTemplate.mjs";
 
 export function renderAuction(auction) {
   document.title += ` ${auction.title}`;
