@@ -1,6 +1,9 @@
 import { setStorage } from "../../../storage/setStorage.mjs";
 import { fetchOptions } from "../../fetchOptions.mjs";
 
+const errorMessage = document.querySelector(".errorMessage");
+const loginBtn = document.getElementById("loginBtn");
+
 /**
  * Sends a POST request to the server
  * @param {url} url Log in url
@@ -8,8 +11,9 @@ import { fetchOptions } from "../../fetchOptions.mjs";
  * @returns The returned response json
  * @example
  * ```
- * // Sends a POST request with log in credentials.
- * // Stores the json in localStorage if successfull.
+ * // Sends request with log in credentials.
+ * // Stores the json in localStorage if successfull and redirects to home.
+ * // Shows error message if invalid email or password.
  * const response = await login(`${baseUrl}/auction/auth/login`, postContent)
  *```
  */
@@ -19,9 +23,16 @@ export async function login(url, postContent) {
   const response = await fetch(url, postData);
   const json = await response.json();
 
+  console.log(json);
+
   if (response.ok) {
     setStorage(json);
     window.location.href = "/";
   }
-  return json;
+
+  if (json.errors) {
+    errorMessage.style.display = "block";
+    errorMessage.innerText = "Invalid email or password";
+    loginBtn.innerHTML = "Log in";
+  }
 }
