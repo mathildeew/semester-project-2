@@ -36,39 +36,45 @@ export function auctionTemplate() {
                       </div>
 
                     <!-- Auction info -->
-                      <div class="h-100 mb-3 bg-light rounded p-2 col-11 col-md-6">
-                        <div class="d-flex align-items-center justify-content-between">
-                          <h2 id="singleAuctionTitle" class="mb-2"></h2>
-                          <i
-                            class="bi bi-three-dots mb-0"
-                            id="settingsBtn"
-                            type="button"
-                            class="text-white fw-bolder rounded bg-secondary border-0 py-2 px-5 mb-3"
-                            data-bs-toggle="modal"
-                            data-bs-target="#settingsMdl"
-                            ></i>
+                      <div class=" mb-3 bg-light rounded p-2 col-11 col-md-6 d-md-flex flex-column justify-content-md-around">
+                        <div>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <h2 id="singleAuctionTitle" class="mb-2"></h2>
+                            <i
+                              class="bi bi-three-dots mb-0"
+                              id="settingsBtn"
+                              type="button"
+                              class="text-white fw-bolder rounded bg-secondary border-0 py-2 px-5 mb-3"
+                              data-bs-toggle="modal"
+                              data-bs-target="#settingsMdl"
+                              ></i>
+                          </div>
+                          <div class="d-flex">
+                            <i class="bi bi-clock-fill me-1"></i>
+                            <p id="singleAuctionTimer"></p>
+                          </div>
+                          <div>
+                            <a id="auctionSellerLink"class="d-inline fw-bold"></a>                      
+                            <p id="singleAuctionDesc" class="d-inline mb-"></p>
+                          </div>
                         </div>
-                        <div class="d-flex">
-                          <i class="bi bi-clock-fill me-1"></i>
-                          <p id="singleAuctionTimer"></p>
-                        </div>
-                        <a id="auctionSellerLink"class="d-inline fw-bold"></a>                      
-                        <p id="singleAuctionDesc" class="d-inline mb-"></p>
-                        
-                        <p id="singleAuctionCreated" class="mt-4 mb-0 text-muted">
-                          Created:
-                        </p>
-                        <p id="singleAuctionUpdated" class="text-muted">Last updated:</p>
-                       
+                      
                         <button
-                          id="placeBidModalBtn"
-                          type="button"
-                          class="d-block text-white fw-bolder rounded bg-secondary border-0 py-2 px-5 my-4 mx-auto cta-button"
-                          data-bs-toggle="modal"
-                          data-bs-target="#makeBidModal"
+                        id="placeBidModalBtn"
+                        type="button"
+                        class="d-block text-white fw-bolder rounded bg-secondary border-0 py-2 px-5 my-4 me-md-5 cta-button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#makeBidModal"
                         >
-                        Place bid
+                          Place bid
                         </button> 
+
+                        <div>
+                          <p id="singleAuctionCreated" class="mt-4 mb-0 text-muted">
+                            Created:
+                          </p>
+                          <p id="singleAuctionUpdated" class="text-muted">Last updated:</p>
+                        </div>                        
                       </div>           
 
                       <!-- Bids history -->
