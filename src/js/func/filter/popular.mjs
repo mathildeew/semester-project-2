@@ -28,7 +28,6 @@ export function popular() {
     const auctionsContainer = document.getElementById("auctions");
     auctionsContainer.innerHTML = "";
     heading.innerHTML = "Most popular auctions";
-    console.log(mostPopularLimit);
     display(mostPopularLimit);
   });
 }

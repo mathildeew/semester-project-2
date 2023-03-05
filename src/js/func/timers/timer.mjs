@@ -20,7 +20,6 @@ export function calcEndTime(ends) {
   minutes %= 60;
   seconds %= 60;
 
-  // console.log(`${days}h, ${hours}h, ${minutes}m, ${seconds}s`);
   let timer;
 
   if (difference < 0) {

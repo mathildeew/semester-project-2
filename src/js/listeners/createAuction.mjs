@@ -50,14 +50,10 @@ export function createAuctionListener() {
       endsAt: `${optionValue}`,
     };
 
-    console.log(typeof postContent);
-
     const response = await createAuction(
       `${baseUrl}/auction/listings`,
       postContent
     );
-
-    console.log(response);
 
     if (response.errors) {
       const errorMessage = document.createElement("p");
