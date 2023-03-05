@@ -9,6 +9,7 @@ export function unauth() {
   if (token === undefined || token === null || token === "") {
     newAuctionBtn.style.display = "none";
     loginBtn.style.display = "inline";
-    filterContainer.style.display = "none";
+    filterContainer.setAttribute("data-bs-toggle", "modal");
+    filterContainer.setAttribute("data-bs-target", "#unauthModal");
   }
 }
