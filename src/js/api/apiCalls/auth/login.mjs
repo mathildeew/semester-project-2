@@ -23,8 +23,6 @@ export async function login(url, postContent) {
   const response = await fetch(url, postData);
   const json = await response.json();
 
-  console.log(json);
-
   if (response.ok) {
     setStorage(json);
     window.location.href = "/";

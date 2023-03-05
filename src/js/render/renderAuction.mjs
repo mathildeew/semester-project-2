@@ -15,7 +15,6 @@ export function renderAuction(auction) {
   const auctionSeller = document.getElementById("auctionSellerLink");
   const auctionTimer = document.getElementById("singleAuctionTimer");
   const highestBid = document.getElementById("highestBid");
-  const highestBidCar = document.getElementById("highestBidCar");
 
   const auctionDesc = document.getElementById("singleAuctionDesc");
   const auctionCreated = document.getElementById("singleAuctionCreated");
@@ -69,7 +68,6 @@ export function renderAuction(auction) {
       });
 
       highestBid.innerText = `Highest bid: $${sortedBids[0].amount}`;
-      highestBidCar.innerText = `Highest bid: $${sortedBids[0].amount}`;
 
       const created = new Date(sortedBids[i].created).toLocaleString();
 

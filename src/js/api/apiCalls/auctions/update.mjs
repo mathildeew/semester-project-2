@@ -20,8 +20,6 @@ export async function updateAuction(url, putContent) {
   const response = await fetch(url, putData);
   const json = await response.json();
 
-  console.log(json);
-
   if (response.ok) {
     window.location.reload();
   }
