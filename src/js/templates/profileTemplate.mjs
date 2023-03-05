@@ -53,8 +53,8 @@ export function profileTemplate() {
 
                             <section class="d-flex flex-column justify-content-between justify-content-lg-around col-12 col-md-9">
                                   <div class="d-flex justify-content-around">
-                                    <h3 id="showAuctionsBtn" class="text-center mb-4">Auctions</h3>
-                                    <h3 id="showBidsBtn" class="text-center mb-4">Bids</h3>
+                                    <h3 id="showAuctionsBtn" class="fw-bold text-center mb-4">Auctions</h3>
+                                    <h3 id="showBidsBtn" class="fw-bold text-center mb-4">Bids</h3>
                                   </div>
 
                                 <!-- Auctions & bids carousel-->
