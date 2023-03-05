@@ -4,8 +4,8 @@ import { popularityFilter } from "./filter/popular.mjs";
 import { allAuctionsFilter } from "./filter/withoutTest.mjs";
 
 export function filter(auctions, allAuctions, endedAuctions) {
-  popularityFilter(allAuctions);
+  // popularityFilter(allAuctions);
   endedFilter(endedAuctions);
-  notestFilter(allAuctions);
-  allAuctionsFilter(auctions);
+  // notestFilter(allAuctions);
+  // allAuctionsFilter(auctions);
 }

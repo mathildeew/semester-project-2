@@ -21,4 +21,5 @@ export async function home() {
   display(auctions);
   loadMoreListener();
   search();
+  filter();
 }
