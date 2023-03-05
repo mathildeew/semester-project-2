@@ -2,15 +2,14 @@ import { errorMessage } from "../../../templates/errorMessage.mjs";
 import { fetchOptions } from "../../fetchOptions.mjs";
 import * as loadMoreBtn from "../../../func/loadMoreButton.mjs";
 import * as loader from "../../../components/loader.mjs";
-import { display } from "../../../render/renderAuctions.mjs";
 /**
  * Sends a GET request to the server
- * @param {url} url All auction Url
+ * @param {url} url API url
  * @returns The API json
  * @example
  * ```
  * // Sends a GET request to the server
- * // Returns json if the response.ok
+ * // Returns json if the response.ok. Trigger hide/show loader and load more button.
  * // Shows error message if !response.ok
  * const json = await getAll(
     `${baseUrl}/auction/listings?sort=created&sortOrder=desc&_seller=true&_bids=true&_active=true`
@@ -21,8 +20,7 @@ export async function getAll(url) {
   loader.showLoader();
   loadMoreBtn.hideLoadMore();
 
-  const [getData, postData] = fetchOptions;
-  const response = await fetch(url, getData);
+  const response = await fetch(url);
   const json = await response.json();
 
   if (response.ok) {
