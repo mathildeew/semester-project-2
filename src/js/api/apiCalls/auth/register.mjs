@@ -5,7 +5,7 @@ import { fetchOptions } from "../../fetchOptions.mjs";
  * Sends a POST request to the server
  * @param {url} url Register url
  * @param {object} postContent The body of the request
- * @returns The response from the request
+ * @returns The response json from the request
  * @example
  * ```
  * // Sends a POST request with register credentials.
@@ -19,9 +19,11 @@ export async function register(url, postContent) {
   const response = await fetch(url, postData);
   const json = await response.json();
 
+  console.log(json);
+
   if (response.ok === true) {
     setStorage(json);
-    window.location.href = "/";
+    window.location.href = "/accounts/login/";
   }
   return json;
 }
