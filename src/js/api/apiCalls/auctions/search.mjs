@@ -1,13 +1,14 @@
 import { errorMessage } from "../../../templates/errorMessage.mjs";
 import * as loadMoreBtn from "../../../func/loadMoreButton.mjs";
 import * as loader from "../../../components/loader.mjs";
+
 /**
- * Sends a GET request to the server
- * @param {url} url All auction Url
+ * Sends a fetch request to the server
+ * @param {url} url All auctions rl
  * @returns The API json
  * @example
  * ```
- * // Sends a GET request to the server
+ * // Sends a fetch request to the server
  * // Returns json if the response.ok
  * // Shows error message if !response.ok
  * const json = await getAll(
