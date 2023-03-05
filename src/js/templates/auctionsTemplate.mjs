@@ -60,6 +60,8 @@ export function auctionsTemplate(
                                 `;
   }
   auctionCard.querySelector("#auctionsImg").src = image;
+  auctionCard.querySelector("#auctionsImg").alt = title;
+
   auctionCard.querySelector(".auctionCardTitle").innerText = title;
   auctionCard.querySelector(".auctionCardEnds ").innerText = timer;
 
