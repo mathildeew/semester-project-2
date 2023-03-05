@@ -63,7 +63,7 @@ export function auctionTemplate() {
                         <button
                           id="placeBidModalBtn"
                           type="button"
-                          class="d-block text-white fw-bolder rounded bg-secondary border-0 py-2 px-5 my-4 mx-auto"
+                          class="d-block text-white fw-bolder rounded bg-secondary border-0 py-2 px-5 my-4 mx-auto cta-button"
                           data-bs-toggle="modal"
                           data-bs-target="#makeBidModal"
                         >

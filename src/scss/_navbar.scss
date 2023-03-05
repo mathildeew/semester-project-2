@@ -12,3 +12,14 @@ nav {
   align-items: flex-end;
   box-shadow: 0 0 3px 3px $primary;
 }
+
+.navbar-brand :hover {
+  color: $secondary !important;
+}
+
+.cta-button {
+  transition: background-color 0.2s ease;
+  &:hover {
+    background-color: rgba(45, 53, 99, 0.9) !important;
+  }
+}
