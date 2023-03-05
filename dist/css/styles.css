@@ -262,10 +262,7 @@ header {
     transform: scale(1.1);
   }
 }
-#auction img,
-#auction .slideOne img,
-#auction .slideTwo img,
-#auction .slideThree img {
+#auction img {
   width: 100%;
   height: 100%;
   object-fit: cover;

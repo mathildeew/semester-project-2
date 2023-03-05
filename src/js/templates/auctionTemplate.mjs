@@ -2,19 +2,13 @@ export function auctionTemplate() {
   const auction = ` 
                     <!-- Images / carousel -->
                     <div class="col-12 col-sm-10 col-md-6">
-                      <div id="imageContainer" class="d-flex justify-content-center mb-3 position-relative">
-                        <span class="position-absolute bottom-0 end-0 p-2 bg-primary rounded fw-bold p-2 mb-2 me-2">
-                          <span id="highestBid" class="highestBid text-secondary"></span>
-                        </span>
+                      <div id="imageContainer" class="d-flex justify-content-center mb-3">
                         <img id="auctionImg" class="rounded" src="" alt="" />                     
                         <div
                           id="carouselExample"
-                          class="carousel slide position-relative"
+                          class="carousel slide "
                           >
                           <div class="carousel-inner"></div>
-                            <span class="position-absolute bottom-0 end-0 p-2 bg-primary rounded fw-bold p-2 mb-2 me-2">
-                              <span id="highestBidCar" class="text-secondary"></span>
-                            </span>
                             <button
                               class="carousel-control-prev"
                               type="button"
@@ -53,7 +47,8 @@ export function auctionTemplate() {
                             <i class="bi bi-clock-fill me-1"></i>
                             <p id="singleAuctionTimer"></p>
                           </div>
-                          <div>
+                          <p id="highestBid" class="fw-bold bg-primary text-secondary p-2 rounded mb-5 me-5 mx-auto my-4 d-inline"></p>
+                          <div class="mt-4">
                             <a id="auctionSellerLink"class="d-inline fw-bold"></a>                      
                             <p id="singleAuctionDesc" class="d-inline mb-"></p>
                           </div>
