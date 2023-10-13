@@ -3,6 +3,8 @@
 
 Gavel is an online auction site. The API functionality is managed by an existing application, and the project covers the front-end application for the API. It features user authentication, listing auctions and bidding. The project integrates Prettier for code formatting, ESLint for linting and Cypress for E2E testing.
 
+[Visit demo site](https://gavel-sp2.netlify.app/)
+
 ## Brief
 The goal for this project was to take the skills learned over the past three semesters and create an auction website. The technical restrictions was to use an CSS framework, the site must be hosted on an approved static host and use an approved design application.
 
@@ -16,9 +18,6 @@ The goal for this project was to take the skills learned over the past three sem
 - A registered user may add a Bid to another user’s Listing
 - A registered user may view Bids made on a Listing
 - An unregistered user may search through Listings
-
-
-[Visit demo site](https://gavel-sp2.netlify.app/)
 
 ## Built with
 
