@@ -18,7 +18,7 @@ The goal for this project was to take the skills learned over the past three sem
 - An unregistered user may search through Listings
 
 
-[Visit demo site](https://gavel-sp2.netlify.app/]
+[Visit demo site](https://gavel-sp2.netlify.app/)
 
 ## Built with
 
